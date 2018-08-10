@@ -1,0 +1,29 @@
+#!usr/bin/ruby
+
+fastlane_version "2.0"
+
+default_platform :ios
+
+platform :ios do
+
+    before_all do
+        ENV["FASTLANE_XCODE_LIST_TIMEOUT"] = "120"
+        ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
+    end
+
+    lane :update_carthage do
+        carthage(
+            platform: "iOS",
+            cache_builds: true,
+            use_binaries: false
+        )
+    end
+
+    after_all do |lane|
+        clean_build_artifacts
+    end
+
+    error do |lane, exception|
+        clean_build_artifacts
+    end
+end

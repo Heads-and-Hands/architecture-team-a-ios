@@ -1,0 +1,24 @@
+//
+//  ARCHRouterWindowOptions.swift
+//  architectureTeamA
+//
+//  Created by basalaev on 11.07.2018.
+//  Copyright © 2018 HandH. All rights reserved.
+//
+
+import UIKit
+
+public class ARCHRouterWindowOptions: ARCHRouterOptions {
+
+    public func proccess(transition: Transition, animated: Bool) -> Transition {
+        if let from = transition.from as? UIWindow, let to = transition.to as? UIViewController {
+
+            // TODO: Добавить поддержку анимации
+
+            from.rootViewController = to
+            from.makeKeyAndVisible()
+        }
+
+        return transition
+    }
+}
