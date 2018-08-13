@@ -3,7 +3,7 @@
 //  HHList
 //
 //  Created by basalaev on 09.08.2018.
-//  Copyright © 2018 HandH. All rights reserved.
+//  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

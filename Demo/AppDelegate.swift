@@ -3,16 +3,18 @@
 //  architectureTeamA
 //
 //  Created by basalaev on 10.07.2018.
-//  Copyright © 2018 HandH. All rights reserved.
+//  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
 import UIKit
+import HHNetwork
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     typealias LaunchOptions = [UIApplicationLaunchOptionsKey: Any]
 
     var window: UIWindow?
+    var authBufferedController: UIViewController?
 
     func application(
         _ application: UIApplication,
@@ -27,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func launchOn(window: ARCHWindow) {
-        ModulesUserStory.listExt(moduleIO: nil).displayOn(window: window, animated: false)
+        ModulesUserStory.network(moduleIO: nil).displayOn(window: window, animated: false)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -43,5 +45,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
+    }
+}
+
+extension AppDelegate: ARCHAuthObserverMoyaPluginDelegate {
+
+    func didExpiredAuthToken() {
+        print("[AppDelegate] >> didExpiredAuthToken")
+
+        authBufferedController = window?.rootViewController
+        // Делаем переход на экран авторизации
+    }
+}
+
+extension AppDelegate: ARCHSignMoyaPluginDelegate {
+
+    var signHeaderFields: [String: String] {
+        if let token = Dependency.shared.userStorage.token?.value {
+            return ["X-Auth-Token": token]
+        } else {
+            return [:]
+        }
+    }
+}
+
+extension AppDelegate: ARCHUserStorageDelegate {
+
+    func didUpdateUser(from: ARCHUser?, to: ARCHUser?) {
+        // TODO: Обновляем стек
     }
 }
