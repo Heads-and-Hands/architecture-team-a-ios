@@ -82,9 +82,31 @@ public class ARCHCollectionViewController<D: Hashable, VM: ARCHCellViewModel & A
     }
 
     private func reloadViewWith(data: [D], changes: [Change<D>]) {
-        dataAdapter.data = data
-        collectionView.reload(changes: changes,
-                              section: 0,
-                              completion: { _ in })
+        let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: 0)
+
+        collectionView.performBatchUpdates({
+            dataAdapter.data = data
+            internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
+        }, completion: nil)
+    }
+
+    private func internalBatchUpdates(changesWithIndexPath: ChangeWithIndexPath) {
+        changesWithIndexPath.deletes.executeIfPresent {
+            self.collectionView.deleteItems(at: $0)
+        }
+
+        changesWithIndexPath.inserts.executeIfPresent {
+            self.collectionView.insertItems(at: $0)
+        }
+
+        changesWithIndexPath.moves.executeIfPresent {
+            $0.forEach { move in
+                self.collectionView.moveItem(at: move.from, to: move.to)
+            }
+        }
+
+        changesWithIndexPath.replaces.executeIfPresent {
+            self.collectionView.reloadItems(at: $0)
+        }
     }
 }
