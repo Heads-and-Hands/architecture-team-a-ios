@@ -86,12 +86,38 @@ public class ARCHTableViewController<D: Hashable, VM: ARCHCellViewModel & ARCHMo
     }
 
     private func reloadViewWith(data: [D], changes: [Change<D>]) {
-        dataAdapter.data = data
-        tableView.reload(changes: changes,
-                         section: 0,
-                         insertionAnimation: insertionAnimation,
-                         deletionAnimation: deletionAnimation,
-                         replacementAnimation: replacementAnimation,
-                         completion: { _ in })
+        let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: 0)
+
+        if #available(iOS 11, tvOS 11, *) {
+            tableView.performBatchUpdates({
+                dataAdapter.data = data
+                internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
+            }, completion: nil)
+        } else {
+            tableView.beginUpdates()
+            dataAdapter.data = data
+            internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
+            tableView.endUpdates()
+        }
+    }
+
+    private func internalBatchUpdates(changesWithIndexPath: ChangeWithIndexPath) {
+        changesWithIndexPath.deletes.executeIfPresent {
+            tableView.deleteRows(at: $0, with: deletionAnimation)
+        }
+
+        changesWithIndexPath.inserts.executeIfPresent {
+            tableView.insertRows(at: $0, with: insertionAnimation)
+        }
+
+        changesWithIndexPath.moves.executeIfPresent {
+            $0.forEach { move in
+                tableView.moveRow(at: move.from, to: move.to)
+            }
+        }
+
+        changesWithIndexPath.replaces.executeIfPresent {
+            tableView.reloadRows(at: $0, with: replacementAnimation)
+        }
     }
 }
