@@ -3,7 +3,7 @@
 //  architectureTeamA
 //
 //  Created by basalaev on 11.07.2018.
-//  Copyright © 2018 HandH. All rights reserved.
+//  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
 import Foundation
@@ -18,6 +18,9 @@ enum ModulesUserStory: ARCHModuleID {
     case listExt(
         moduleIO: ((ListExtModuleInput) -> ListExtModuleOutput?)?
     )
+    case network(
+        moduleIO: ((NetworkModuleInput) -> NetworkModuleOutput?)?
+    )
 
     var configurator: ARCHModuleConfigurator {
         switch self {
@@ -27,6 +30,8 @@ enum ModulesUserStory: ARCHModuleID {
             return ListConfigurator(moduleIO: moduleIO)
         case let .listExt(moduleIO):
             return ListExtConfigurator(moduleIO: moduleIO)
+        case let .network(moduleIO):
+            return NetworkConfigurator(moduleIO: moduleIO)
         }
     }
 }

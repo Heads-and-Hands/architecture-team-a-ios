@@ -1,0 +1,9 @@
+/* 
+  ARCHNetworkError.strings
+  architecture
+
+  Created by basalaev on 15.08.2018.
+  Copyright © 2018 HandH. All rights reserved.
+*/
+
+"HHNetwork.default-error-title" = "Не удалось загрузить данные";

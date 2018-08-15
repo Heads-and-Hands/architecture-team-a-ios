@@ -3,6 +3,7 @@
 
 # architecture-team-a-ios
 
-- [Архитектура модуля](Source/Architecture/README.md)
-- [Хелпер для UITableView/UICollectionView](Source/List/README.md)
-- [Хелпер для хелпера для UITableView/UICollectionView](Source/ListExtension/README.md)
+- [Архитектура модуля](Source/HHModule/README.md)
+- [Хелпер для UITableView/UICollectionView](Source/HHList/README.md)
+- [Хелпер для хелпера для UITableView/UICollectionView](Source/HHListExtension/README.md)
+- [Взаимодействие с сетью](Source/HHNetwork/README.md)

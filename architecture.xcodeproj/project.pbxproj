@@ -24,6 +24,27 @@
 		501AA65A211C6C8B002D3264 /* ARCHListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089233620FC8DA30032985E /* ARCHListDataSource.swift */; };
 		501AA65B211C6C8E002D3264 /* ARCHCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */; };
 		501AA65C211C6C9A002D3264 /* ARCHEmptyListDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81EB211ACF8D00ADA769 /* ARCHEmptyListDataAdapter.swift */; };
+		5067972E2124144F0034CDA2 /* ARCHNetworkError.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5067972D2124144F0034CDA2 /* ARCHNetworkError.strings */; };
+		50679730212416B60034CDA2 /* ARCHLoggerMoyaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067972F212416B60034CDA2 /* ARCHLoggerMoyaPlugin.swift */; };
+		5067973A212419970034CDA2 /* HHNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 50679738212419970034CDA2 /* HHNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5067973D212419970034CDA2 /* HHNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50679736212419970034CDA2 /* HHNetwork.framework */; };
+		5067973E212419970034CDA2 /* HHNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50679736212419970034CDA2 /* HHNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50679742212419A30034CDA2 /* ARCHLoggerMoyaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067972F212416B60034CDA2 /* ARCHLoggerMoyaPlugin.swift */; };
+		50679743212419A50034CDA2 /* ARCHSignMoyaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2648D21231EAE00E3B47A /* ARCHSignMoyaPlugin.swift */; };
+		50679744212419A80034CDA2 /* ARCHAuthObserverMoyaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D264652121B03B00E3B47A /* ARCHAuthObserverMoyaPlugin.swift */; };
+		50679745212419AB0034CDA2 /* ARCHNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC80D62121757000D77262 /* ARCHNetworkError.swift */; };
+		50679746212419AD0034CDA2 /* ARCHApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC80D82121765900D77262 /* ARCHApiResponse.swift */; };
+		50679747212419AF0034CDA2 /* ARCHMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D264782121FA1400E3B47A /* ARCHMoyaProvider.swift */; };
+		50679748212419B30034CDA2 /* ARCHTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D26461212196B600E3B47A /* ARCHTargetType.swift */; };
+		50679749212419B50034CDA2 /* ARCHNetworkError.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5067972D2124144F0034CDA2 /* ARCHNetworkError.strings */; };
+		5067974A212419B90034CDA2 /* ARCHUserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2647D2122CEA400E3B47A /* ARCHUserStorage.swift */; };
+		5067974B212419BC0034CDA2 /* ARCHKeychainUserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2647F2122CEC400E3B47A /* ARCHKeychainUserStorage.swift */; };
+		5067974C212419FF0034CDA2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BC80D22121748400D77262 /* Alamofire.framework */; };
+		5067974D212419FF0034CDA2 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D264812122D1E300E3B47A /* KeychainAccess.framework */; };
+		5067974E212419FF0034CDA2 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BC80D02121748400D77262 /* Moya.framework */; };
+		5067974F212419FF0034CDA2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BC80D12121748400D77262 /* Result.framework */; };
+		5067975121241A7E0034CDA2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5067975021241A7E0034CDA2 /* README.md */; };
+		50679752212436EA0034CDA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5032B7F421186C4600271A1D /* Foundation.framework */; };
 		5072DD99211D84B800E08A92 /* HHModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5072DD97211D84B800E08A92 /* HHModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5072DD9C211D84B800E08A92 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
 		5072DD9D211D84B800E08A92 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -77,6 +98,27 @@
 		50BC80B3211DFAE200D77262 /* ARCHRouterPresentOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */; };
 		50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */; };
 		50BC80B5211DFAE900D77262 /* ARCHRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232D20FC8DA30032985E /* ARCHRouter.swift */; };
+		50BC80D32121748500D77262 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BC80D02121748400D77262 /* Moya.framework */; };
+		50BC80D42121748500D77262 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BC80D12121748400D77262 /* Result.framework */; };
+		50BC80D52121748500D77262 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BC80D22121748400D77262 /* Alamofire.framework */; };
+		50BC80D72121757000D77262 /* ARCHNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC80D62121757000D77262 /* ARCHNetworkError.swift */; };
+		50BC80D92121765900D77262 /* ARCHApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC80D82121765900D77262 /* ARCHApiResponse.swift */; };
+		50D26462212196B600E3B47A /* ARCHTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D26461212196B600E3B47A /* ARCHTargetType.swift */; };
+		50D264662121B03B00E3B47A /* ARCHAuthObserverMoyaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D264652121B03B00E3B47A /* ARCHAuthObserverMoyaPlugin.swift */; };
+		50D2646F2121B47500E3B47A /* NetworkModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2646A2121B47500E3B47A /* NetworkModuleIO.swift */; };
+		50D264702121B47500E3B47A /* NetworkEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2646B2121B47500E3B47A /* NetworkEventHandler.swift */; };
+		50D264712121B47500E3B47A /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2646C2121B47500E3B47A /* NetworkViewController.swift */; };
+		50D264722121B47500E3B47A /* NetworkConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2646D2121B47500E3B47A /* NetworkConfigurator.swift */; };
+		50D264732121B47500E3B47A /* NetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2646E2121B47500E3B47A /* NetworkState.swift */; };
+		50D264792121FA1400E3B47A /* ARCHMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D264782121FA1400E3B47A /* ARCHMoyaProvider.swift */; };
+		50D2647E2122CEA400E3B47A /* ARCHUserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2647D2122CEA400E3B47A /* ARCHUserStorage.swift */; };
+		50D264802122CEC400E3B47A /* ARCHKeychainUserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2647F2122CEC400E3B47A /* ARCHKeychainUserStorage.swift */; };
+		50D264822122D1E400E3B47A /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D264812122D1E300E3B47A /* KeychainAccess.framework */; };
+		50D264862123077E00E3B47A /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D264842123077E00E3B47A /* Dependency.swift */; };
+		50D264872123077E00E3B47A /* ApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D264852123077E00E3B47A /* ApiTarget.swift */; };
+		50D2648A212307BC00E3B47A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D26489212307BC00E3B47A /* User.swift */; };
+		50D2648C2123083F00E3B47A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2648B2123083F00E3B47A /* Token.swift */; };
+		50D2648E21231EAF00E3B47A /* ARCHSignMoyaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2648D21231EAE00E3B47A /* ARCHSignMoyaPlugin.swift */; };
 		50FA81EC211ACF8D00ADA769 /* ARCHEmptyListDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81EB211ACF8D00ADA769 /* ARCHEmptyListDataAdapter.swift */; };
 		50FA81F5211AE47C00ADA769 /* ListModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81F0211AE47C00ADA769 /* ListModuleIO.swift */; };
 		50FA81F6211AE47C00ADA769 /* ListEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81F1211AE47C00ADA769 /* ListEventHandler.swift */; };
@@ -96,6 +138,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 501AA647211C6C4A002D3264;
 			remoteInfo = HHList;
+		};
+		5067973B212419970034CDA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50679735212419970034CDA2;
+			remoteInfo = HHNetwork;
 		};
 		5072DD9A211D84B800E08A92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -121,6 +170,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5072DD9D211D84B800E08A92 /* HHModule.framework in Embed Frameworks */,
+				5067973E212419970034CDA2 /* HHNetwork.framework in Embed Frameworks */,
 				501AA650211C6C4B002D3264 /* HHList.framework in Embed Frameworks */,
 				5072DDEF211DE83200E08A92 /* HHListExtension.framework in Embed Frameworks */,
 			);
@@ -148,6 +198,12 @@
 		501AA64B211C6C4B002D3264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5032B7F421186C4600271A1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5032B7F621186C4D00271A1D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5067972D2124144F0034CDA2 /* ARCHNetworkError.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ARCHNetworkError.strings; sourceTree = "<group>"; };
+		5067972F212416B60034CDA2 /* ARCHLoggerMoyaPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHLoggerMoyaPlugin.swift; sourceTree = "<group>"; };
+		50679736212419970034CDA2 /* HHNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50679738212419970034CDA2 /* HHNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHNetwork.h; sourceTree = "<group>"; };
+		50679739212419970034CDA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5067975021241A7E0034CDA2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5072DD95211D84B800E08A92 /* HHModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5072DD97211D84B800E08A92 /* HHModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHModule.h; sourceTree = "<group>"; };
 		5072DD98211D84B800E08A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,6 +256,27 @@
 		5093688220F683030044CA62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5093688520F683030044CA62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5093688720F683030044CA62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50BC80D02121748400D77262 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		50BC80D12121748400D77262 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		50BC80D22121748400D77262 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		50BC80D62121757000D77262 /* ARCHNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHNetworkError.swift; sourceTree = "<group>"; };
+		50BC80D82121765900D77262 /* ARCHApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHApiResponse.swift; sourceTree = "<group>"; };
+		50D26461212196B600E3B47A /* ARCHTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHTargetType.swift; sourceTree = "<group>"; };
+		50D264652121B03B00E3B47A /* ARCHAuthObserverMoyaPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHAuthObserverMoyaPlugin.swift; sourceTree = "<group>"; };
+		50D2646A2121B47500E3B47A /* NetworkModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModuleIO.swift; sourceTree = "<group>"; };
+		50D2646B2121B47500E3B47A /* NetworkEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEventHandler.swift; sourceTree = "<group>"; };
+		50D2646C2121B47500E3B47A /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
+		50D2646D2121B47500E3B47A /* NetworkConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurator.swift; sourceTree = "<group>"; };
+		50D2646E2121B47500E3B47A /* NetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkState.swift; sourceTree = "<group>"; };
+		50D264782121FA1400E3B47A /* ARCHMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHMoyaProvider.swift; sourceTree = "<group>"; };
+		50D2647D2122CEA400E3B47A /* ARCHUserStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHUserStorage.swift; sourceTree = "<group>"; };
+		50D2647F2122CEC400E3B47A /* ARCHKeychainUserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHKeychainUserStorage.swift; sourceTree = "<group>"; };
+		50D264812122D1E300E3B47A /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		50D264842123077E00E3B47A /* Dependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
+		50D264852123077E00E3B47A /* ApiTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTarget.swift; sourceTree = "<group>"; };
+		50D26489212307BC00E3B47A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		50D2648B2123083F00E3B47A /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		50D2648D21231EAE00E3B47A /* ARCHSignMoyaPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHSignMoyaPlugin.swift; sourceTree = "<group>"; };
 		50FA81EB211ACF8D00ADA769 /* ARCHEmptyListDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHEmptyListDataAdapter.swift; sourceTree = "<group>"; };
 		50FA81F0211AE47C00ADA769 /* ListModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModuleIO.swift; sourceTree = "<group>"; };
 		50FA81F1211AE47C00ADA769 /* ListEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventHandler.swift; sourceTree = "<group>"; };
@@ -219,6 +296,18 @@
 			files = (
 				501AA655211C6C72002D3264 /* Foundation.framework in Frameworks */,
 				501AA654211C6C69002D3264 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50679732212419970034CDA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50679752212436EA0034CDA2 /* Foundation.framework in Frameworks */,
+				5067974C212419FF0034CDA2 /* Alamofire.framework in Frameworks */,
+				5067974D212419FF0034CDA2 /* KeychainAccess.framework in Frameworks */,
+				5067974E212419FF0034CDA2 /* Moya.framework in Frameworks */,
+				5067974F212419FF0034CDA2 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +334,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				501AA64F211C6C4B002D3264 /* HHList.framework in Frameworks */,
+				50BC80D32121748500D77262 /* Moya.framework in Frameworks */,
+				50D264822122D1E400E3B47A /* KeychainAccess.framework in Frameworks */,
+				5067973D212419970034CDA2 /* HHNetwork.framework in Frameworks */,
 				5089230B20FB78750032985E /* DeepDiff.framework in Frameworks */,
+				50BC80D42121748500D77262 /* Result.framework in Frameworks */,
+				50BC80D52121748500D77262 /* Alamofire.framework in Frameworks */,
 				5072DDEE211DE83200E08A92 /* HHListExtension.framework in Frameworks */,
 				5072DD9C211D84B800E08A92 /* HHModule.framework in Frameworks */,
 			);
@@ -297,6 +391,15 @@
 				501AA64B211C6C4B002D3264 /* Info.plist */,
 			);
 			path = HHList;
+			sourceTree = "<group>";
+		};
+		50679737212419970034CDA2 /* HHNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				50679738212419970034CDA2 /* HHNetwork.h */,
+				50679739212419970034CDA2 /* Info.plist */,
+			);
+			path = HHNetwork;
 			sourceTree = "<group>";
 		};
 		5072DD96211D84B800E08A92 /* HHModule */ = {
@@ -377,6 +480,10 @@
 		5089230620FB77520032985E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50D264812122D1E300E3B47A /* KeychainAccess.framework */,
+				50BC80D22121748400D77262 /* Alamofire.framework */,
+				50BC80D02121748400D77262 /* Moya.framework */,
+				50BC80D12121748400D77262 /* Result.framework */,
 				5032B7F621186C4D00271A1D /* UIKit.framework */,
 				5032B7F421186C4600271A1D /* Foundation.framework */,
 				5089230720FB77520032985E /* DeepDiff.framework */,
@@ -390,6 +497,8 @@
 				5089231F20FC8DA30032985E /* HHModule */,
 				5089232E20FC8DA30032985E /* HHList */,
 				5072DDC5211DD40A00E08A92 /* HHListExtension */,
+				50BC80B621216C6300D77262 /* HHNetwork */,
+				50D2647C2122CEA400E3B47A /* HHUserStorage */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -502,6 +611,7 @@
 				501AA649211C6C4B002D3264 /* HHList */,
 				5072DD96211D84B800E08A92 /* HHModule */,
 				5072DDE8211DE83200E08A92 /* HHListExtension */,
+				50679737212419970034CDA2 /* HHNetwork */,
 				5093687920F683010044CA62 /* Products */,
 				5089230620FB77520032985E /* Frameworks */,
 			);
@@ -514,6 +624,7 @@
 				501AA648211C6C4A002D3264 /* HHList.framework */,
 				5072DD95211D84B800E08A92 /* HHModule.framework */,
 				5072DDE7211DE83200E08A92 /* HHListExtension.framework */,
+				50679736212419970034CDA2 /* HHNetwork.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -521,6 +632,9 @@
 		5093687A20F683010044CA62 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				50D26488212307AC00E3B47A /* Models */,
+				50D264832123077E00E3B47A /* Business */,
+				50D264672121B43300E3B47A /* Network */,
 				5072DDD0211DE36600E08A92 /* ListExtension */,
 				50FA81EF211AE45900ADA769 /* List */,
 				5010AA3B2118341300158C1F /* EmptyModule */,
@@ -531,6 +645,77 @@
 				5093688720F683030044CA62 /* Info.plist */,
 			);
 			path = Demo;
+			sourceTree = "<group>";
+		};
+		50BC80B621216C6300D77262 /* HHNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				5067975021241A7E0034CDA2 /* README.md */,
+				50BC80BF21216C6300D77262 /* Plugins */,
+				50D264782121FA1400E3B47A /* ARCHMoyaProvider.swift */,
+				50BC80D82121765900D77262 /* ARCHApiResponse.swift */,
+				50BC80D62121757000D77262 /* ARCHNetworkError.swift */,
+				50D26461212196B600E3B47A /* ARCHTargetType.swift */,
+				5067972D2124144F0034CDA2 /* ARCHNetworkError.strings */,
+			);
+			path = HHNetwork;
+			sourceTree = "<group>";
+		};
+		50BC80BF21216C6300D77262 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				5067972F212416B60034CDA2 /* ARCHLoggerMoyaPlugin.swift */,
+				50D2648D21231EAE00E3B47A /* ARCHSignMoyaPlugin.swift */,
+				50D264652121B03B00E3B47A /* ARCHAuthObserverMoyaPlugin.swift */,
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		50D264672121B43300E3B47A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				50D264692121B46200E3B47A /* Module */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		50D264692121B46200E3B47A /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				50D2646D2121B47500E3B47A /* NetworkConfigurator.swift */,
+				50D2646C2121B47500E3B47A /* NetworkViewController.swift */,
+				50D2646B2121B47500E3B47A /* NetworkEventHandler.swift */,
+				50D2646A2121B47500E3B47A /* NetworkModuleIO.swift */,
+				50D2646E2121B47500E3B47A /* NetworkState.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		50D2647C2122CEA400E3B47A /* HHUserStorage */ = {
+			isa = PBXGroup;
+			children = (
+				50D2647D2122CEA400E3B47A /* ARCHUserStorage.swift */,
+				50D2647F2122CEC400E3B47A /* ARCHKeychainUserStorage.swift */,
+			);
+			path = HHUserStorage;
+			sourceTree = "<group>";
+		};
+		50D264832123077E00E3B47A /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				50D264842123077E00E3B47A /* Dependency.swift */,
+				50D264852123077E00E3B47A /* ApiTarget.swift */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		50D26488212307AC00E3B47A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50D26489212307BC00E3B47A /* User.swift */,
+				50D2648B2123083F00E3B47A /* Token.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		50FA81EF211AE45900ADA769 /* List */ = {
@@ -564,6 +749,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				501AA64C211C6C4B002D3264 /* HHList.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50679733212419970034CDA2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5067973A212419970034CDA2 /* HHNetwork.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +795,24 @@
 			name = HHList;
 			productName = HHList;
 			productReference = 501AA648211C6C4A002D3264 /* HHList.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		50679735212419970034CDA2 /* HHNetwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5067973F212419970034CDA2 /* Build configuration list for PBXNativeTarget "HHNetwork" */;
+			buildPhases = (
+				50679731212419970034CDA2 /* Sources */,
+				50679732212419970034CDA2 /* Frameworks */,
+				50679733212419970034CDA2 /* Headers */,
+				50679734212419970034CDA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHNetwork;
+			productName = HHNetwork;
+			productReference = 50679736212419970034CDA2 /* HHNetwork.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5072DD94211D84B800E08A92 /* HHModule */ = {
@@ -657,6 +868,7 @@
 				501AA64E211C6C4B002D3264 /* PBXTargetDependency */,
 				5072DD9B211D84B800E08A92 /* PBXTargetDependency */,
 				5072DDED211DE83200E08A92 /* PBXTargetDependency */,
+				5067973C212419970034CDA2 /* PBXTargetDependency */,
 			);
 			name = architecture;
 			productName = architecture;
@@ -674,6 +886,9 @@
 				ORGANIZATIONNAME = HandH;
 				TargetAttributes = {
 					501AA647211C6C4A002D3264 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					50679735212419970034CDA2 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 					5072DD94211D84B800E08A92 = {
@@ -704,6 +919,7 @@
 				501AA647211C6C4A002D3264 /* HHList */,
 				5072DD94211D84B800E08A92 /* HHModule */,
 				5072DDE6211DE83200E08A92 /* HHListExtension */,
+				50679735212419970034CDA2 /* HHNetwork */,
 			);
 		};
 /* End PBXProject section */
@@ -713,6 +929,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50679734212419970034CDA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50679749212419B50034CDA2 /* ARCHNetworkError.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,8 +958,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5067972E2124144F0034CDA2 /* ARCHNetworkError.strings in Resources */,
 				50FA81FD211AE52A00ADA769 /* ExampleCell.xib in Resources */,
 				5093688620F683030044CA62 /* LaunchScreen.storyboard in Resources */,
+				5067975121241A7E0034CDA2 /* README.md in Resources */,
 				5072DDA8211DBCBC00E08A92 /* templates.md in Resources */,
 				5093688320F683030044CA62 /* Assets.xcassets in Resources */,
 				5072DDE0211DE4DB00E08A92 /* ListExtTVCell.xib in Resources */,
@@ -766,10 +992,18 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/DeepDiff.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
 			);
 			name = Carthage;
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DeepDiff.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Moya.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -789,6 +1023,22 @@
 				501AA65C211C6C9A002D3264 /* ARCHEmptyListDataAdapter.swift in Sources */,
 				501AA658211C6C85002D3264 /* ARCHListView.swift in Sources */,
 				501AA659211C6C88002D3264 /* ARCHCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50679731212419970034CDA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50679742212419A30034CDA2 /* ARCHLoggerMoyaPlugin.swift in Sources */,
+				50679748212419B30034CDA2 /* ARCHTargetType.swift in Sources */,
+				5067974A212419B90034CDA2 /* ARCHUserStorage.swift in Sources */,
+				50679743212419A50034CDA2 /* ARCHSignMoyaPlugin.swift in Sources */,
+				50679744212419A80034CDA2 /* ARCHAuthObserverMoyaPlugin.swift in Sources */,
+				50679746212419AD0034CDA2 /* ARCHApiResponse.swift in Sources */,
+				50679747212419AF0034CDA2 /* ARCHMoyaProvider.swift in Sources */,
+				50679745212419AB0034CDA2 /* ARCHNetworkError.swift in Sources */,
+				5067974B212419BC0034CDA2 /* ARCHKeychainUserStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,16 +1074,25 @@
 			files = (
 				5072DDCF211DE06D00E08A92 /* ARCHTableViewController.swift in Sources */,
 				5089234620FC8DA30032985E /* ARCHViewController.swift in Sources */,
+				50D264702121B47500E3B47A /* NetworkEventHandler.swift in Sources */,
 				5010AA442118342500158C1F /* EmptyModuleConfigurator.swift in Sources */,
+				50D264862123077E00E3B47A /* Dependency.swift in Sources */,
+				50D264662121B03B00E3B47A /* ARCHAuthObserverMoyaPlugin.swift in Sources */,
 				50FA81F9211AE47C00ADA769 /* ListState.swift in Sources */,
+				50D264732121B47500E3B47A /* NetworkState.swift in Sources */,
 				5089235220FC8DA30032985E /* ARCHListDataSource.swift in Sources */,
+				50D264802122CEC400E3B47A /* ARCHKeychainUserStorage.swift in Sources */,
+				50D2648E21231EAF00E3B47A /* ARCHSignMoyaPlugin.swift in Sources */,
+				50D2647E2122CEA400E3B47A /* ARCHUserStorage.swift in Sources */,
 				5010AA452118342500158C1F /* EmptyModuleState.swift in Sources */,
+				50BC80D92121765900D77262 /* ARCHApiResponse.swift in Sources */,
 				5010AA432118342500158C1F /* EmptyModuleViewController.swift in Sources */,
 				50FA81F6211AE47C00ADA769 /* ListEventHandler.swift in Sources */,
 				5089235020FC8DA30032985E /* ARCHListView.swift in Sources */,
 				5072DDD9211DE37F00E08A92 /* ListExtConfigurator.swift in Sources */,
 				5089234420FC8DA30032985E /* ARCHModuleConfigurator.swift in Sources */,
 				50FA8209211C630900ADA769 /* ARCHCellViewModel.swift in Sources */,
+				50D264872123077E00E3B47A /* ApiTarget.swift in Sources */,
 				5072DDE1211DE4DB00E08A92 /* ListExtTVCellViewModel.swift in Sources */,
 				5072DDD6211DE37F00E08A92 /* ListExtModuleIO.swift in Sources */,
 				5072DDDF211DE4DB00E08A92 /* ListExtTVCell.swift in Sources */,
@@ -841,27 +1100,36 @@
 				50FA81FE211AE52A00ADA769 /* ExampleCell.swift in Sources */,
 				5089234720FC8DA30032985E /* ARCHModuleProtocols.swift in Sources */,
 				5093687C20F683010044CA62 /* AppDelegate.swift in Sources */,
+				50D264792121FA1400E3B47A /* ARCHMoyaProvider.swift in Sources */,
+				50D264712121B47500E3B47A /* NetworkViewController.swift in Sources */,
 				5089234920FC8DA30032985E /* ARCHRouterPushOptions.swift in Sources */,
 				50FA81F7211AE47C00ADA769 /* ListViewController.swift in Sources */,
 				50FA8200211AE55E00ADA769 /* ExampleCellViewModel.swift in Sources */,
 				5072DDCD211DE05500E08A92 /* ARCHCollectionViewController.swift in Sources */,
 				50FA81F5211AE47C00ADA769 /* ListModuleIO.swift in Sources */,
+				50D2646F2121B47500E3B47A /* NetworkModuleIO.swift in Sources */,
 				5010AA412118342500158C1F /* EmptyModuleModuleIO.swift in Sources */,
 				5089234D20FC8DA30032985E /* ARCHRouter.swift in Sources */,
 				50FA81EC211ACF8D00ADA769 /* ARCHEmptyListDataAdapter.swift in Sources */,
 				50FA81F8211AE47C00ADA769 /* ListConfigurator.swift in Sources */,
 				5010AA422118342500158C1F /* EmptyModuleEventHandler.swift in Sources */,
+				50D264722121B47500E3B47A /* NetworkConfigurator.swift in Sources */,
+				50D2648C2123083F00E3B47A /* Token.swift in Sources */,
 				5089235120FC8DA30032985E /* ARCHCell.swift in Sources */,
+				50679730212416B60034CDA2 /* ARCHLoggerMoyaPlugin.swift in Sources */,
 				5089234B20FC8DA30032985E /* ARCHRouterWindowOptions.swift in Sources */,
 				5089236720FC8E7B0032985E /* ModulesUserStory.swift in Sources */,
+				50D26462212196B600E3B47A /* ARCHTargetType.swift in Sources */,
 				5089234F20FC8DA30032985E /* ARCHCollectionViewDataSource.swift in Sources */,
 				5089234C20FC8DA30032985E /* ARCHWindow.swift in Sources */,
 				5072DDD8211DE37F00E08A92 /* ListExtViewController.swift in Sources */,
 				5089234820FC8DA30032985E /* ARCHEventHandler.swift in Sources */,
 				5089234E20FC8DA30032985E /* ARCHTableViewDataSource.swift in Sources */,
 				5072DDD7211DE37F00E08A92 /* ListExtEventHandler.swift in Sources */,
+				50BC80D72121757000D77262 /* ARCHNetworkError.swift in Sources */,
 				5089234A20FC8DA30032985E /* ARCHRouterPresentOptions.swift in Sources */,
 				5089234520FC8DA30032985E /* ARCHModuleID.swift in Sources */,
+				50D2648A212307BC00E3B47A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -872,6 +1140,11 @@
 			isa = PBXTargetDependency;
 			target = 501AA647211C6C4A002D3264 /* HHList */;
 			targetProxy = 501AA64D211C6C4B002D3264 /* PBXContainerItemProxy */;
+		};
+		5067973C212419970034CDA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50679735212419970034CDA2 /* HHNetwork */;
+			targetProxy = 5067973B212419970034CDA2 /* PBXContainerItemProxy */;
 		};
 		5072DD9B211D84B800E08A92 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -949,6 +1222,70 @@
 				PRODUCT_BUNDLE_IDENTIFIER = handh.HHList;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		50679740212419970034CDA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = HHNetwork/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = handh.HHNetwork;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		50679741212419970034CDA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = HHNetwork/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = handh.HHNetwork;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1253,6 +1590,15 @@
 			buildConfigurations = (
 				501AA652211C6C4B002D3264 /* Debug */,
 				501AA653211C6C4B002D3264 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5067973F212419970034CDA2 /* Build configuration list for PBXNativeTarget "HHNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50679740212419970034CDA2 /* Debug */,
+				50679741212419970034CDA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

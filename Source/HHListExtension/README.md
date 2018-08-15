@@ -18,14 +18,17 @@
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
-Чтобы интегрировать HHKit пропишите в `Cartfile`:
+Для интеграции **HHListExtension** пропиши в `Cartfile`:
 
 ```
 github "Heads-and-Hands/architecture-team-a-ios"
 ```
 
-Запусить команду `carthage update --platform ios` и перетащите
-`HHListExtension.framework` и `DeepDiff.framework`  в Xcode проект.
+Запусти команду `carthage update --platform ios`. Добавь в проект:
+
+- `HHListExtension.framework`
+- `HHList.framework`
+- `DeepDiff.framework`
 
 ## Использование
 

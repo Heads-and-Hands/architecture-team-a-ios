@@ -1,1 +1,3 @@
-github "onmyway133/DeepDiff" ~> 1.2.0
+github "onmyway133/DeepDiff"
+github "Moya/Moya"
+github "kishikawakatsumi/KeychainAccess"

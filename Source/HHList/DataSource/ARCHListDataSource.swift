@@ -3,7 +3,7 @@
 //  architecture
 //
 //  Created by basalaev on 14.07.2018.
-//  Copyright © 2018 HandH. All rights reserved.
+//  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
 import UIKit

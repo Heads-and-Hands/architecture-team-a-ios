@@ -47,14 +47,13 @@
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
-Чтобы интегрировать HHKit пропишите в `Cartfile`:
+Для интеграции **HHList** пропиши в `Cartfile`:
 
 ```
 github "Heads-and-Hands/architecture-team-a-ios"
 ```
 
-Запусить команду `carthage update --platform ios` и перетащите
-`HHList.framework` в Xcode проект.
+Запусти команду `carthage update --platform ios`. Добавь в проект `HHList.framework`
 
 ## Использование
 
@@ -65,7 +64,7 @@ github "Heads-and-Hands/architecture-team-a-ios"
 При помощи шаблона TableViewCell или CollectionViewCell создай файлы для ячейки:
 - Cell
 - CellViewModel
-- Cell.xib (удали если не используешь)
+- Cell.xib удали если не используешь, а если используешь поставь галочку http://prntscr.com/kiweng
 
 ### 3. Настрой DataAdapter
 
