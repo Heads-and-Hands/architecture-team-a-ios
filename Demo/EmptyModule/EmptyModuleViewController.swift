@@ -6,7 +6,7 @@
 //  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
-import UIKit
+import HHModule
 
 final class EmptyModuleViewController: ARCHViewController<EmptyModuleState, EmptyModuleEventHandler> {
 

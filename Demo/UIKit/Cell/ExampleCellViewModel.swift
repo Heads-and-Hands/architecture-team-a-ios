@@ -6,7 +6,7 @@
 //  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
-import Foundation
+import HHList
 
 struct ExampleCellViewModel: ARCHCellViewModel, ARCHModelInitilizable {
     typealias Data = SimpleEntity

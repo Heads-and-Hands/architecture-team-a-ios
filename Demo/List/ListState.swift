@@ -6,12 +6,8 @@
 //  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
-import Foundation
+import HHModule
 
 struct ListState: ARCHState {
     var list: [SimpleEntity] = []
-}
-
-struct SimpleEntity: Hashable {
-    let id: String
 }

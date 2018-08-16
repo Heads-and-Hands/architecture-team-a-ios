@@ -7,11 +7,12 @@
 //
 
 import HHModule
+import HHListExtension
 
 final class ListExtViewController: ARCHViewController<ListExtState, ListExtEventHandler> {
 
     let button = UIButton()
-    let listController = ARCHTableViewController<ListExtItem, ListExtTVCellViewModel, ListExtTVCell>()
+    let listController = ARCHTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>()
 
     override func viewDidLoad() {
         super.viewDidLoad()

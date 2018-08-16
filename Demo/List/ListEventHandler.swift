@@ -6,15 +6,11 @@
 //  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
-import Foundation
+import HHModule
 
 final class ListEventHandler: ARCHEventHandler<ListState>, ListModuleInput {
 
     weak var moduleOutput: ListModuleOutput?
-
-    override func viewIsReady() {
-        super.viewIsReady()
-    }
 
     func pressAddButton() {
         var newData: [SimpleEntity] = []

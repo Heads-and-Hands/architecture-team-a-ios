@@ -7,31 +7,23 @@
 //
 
 import Foundation
+import HHModule
 
 enum ModulesUserStory: ARCHModuleID {
-    case emptyModule(
-        moduleIO: ((EmptyModuleModuleInput) -> EmptyModuleModuleOutput?)?
-    )
-    case list(
-        moduleIO: ((ListModuleInput) -> ListModuleOutput?)?
-    )
-    case listExt(
-        moduleIO: ((ListExtModuleInput) -> ListExtModuleOutput?)?
-    )
-    case network(
-        moduleIO: ((NetworkModuleInput) -> NetworkModuleOutput?)?
-    )
+    case main
 
     var configurator: ARCHModuleConfigurator {
         switch self {
-        case let .emptyModule(moduleIO):
-            return EmptyModuleConfigurator(moduleIO: moduleIO)
-        case let .list(moduleIO):
-            return ListConfigurator(moduleIO: moduleIO)
-        case let .listExt(moduleIO):
-            return ListExtConfigurator(moduleIO: moduleIO)
-        case let .network(moduleIO):
-            return NetworkConfigurator(moduleIO: moduleIO)
+        case .main:
+#if HHModule
+            return EmptyModuleConfigurator(moduleIO: nil)
+#elseif HHList
+            return ListConfigurator(moduleIO: nil)
+#elseif HHListExtDemo
+            return ListExtConfigurator(moduleIO: nil)
+#elseif HHNetwork
+            return NetworkConfigurator(moduleIO: nil)
+#endif
         }
     }
 }
