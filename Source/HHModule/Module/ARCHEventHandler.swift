@@ -11,6 +11,7 @@ import Foundation
 open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
     public weak var router: ARCHRouter?
     public weak var viewInput: ARCHViewInputAbstact?
+    private var ignoreStateChanges: Bool = false
 
     public init() {}
 
@@ -20,6 +21,21 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
         }
     }
 
+    open func beginStateChanges() {
+        ignoreStateChanges = true
+    }
+
+    open func commitStateChanges() {
+        ignoreStateChanges = false
+        viewSetNeedsRedraw()
+    }
+
+    open func updateState(_ block: () -> Void) {
+        beginStateChanges()
+        block()
+        commitStateChanges()
+    }
+
     // MARK: - ACRHViewOutput
 
     open func viewIsReady() {
@@ -27,6 +43,8 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
     }
 
     open func viewSetNeedsRedraw() {
-        viewInput?.abstractRender(state: state)
+        if !ignoreStateChanges {
+            viewInput?.abstractRender(state: state)
+        }
     }
 }
