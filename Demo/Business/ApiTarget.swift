@@ -17,7 +17,7 @@ enum ApiTarget {
 extension ApiTarget: ARCHTargetType {
 
     var baseURL: URL {
-        guard let url = URL(string: "https://api.xxx.Heads and Hands.ru/v1/") else {
+        guard let url = URL(string: "http://gdemost.handh.ru/api/v1/") else {
             fatalError("Wrong debug api base url")
         }
         return url
@@ -26,7 +26,7 @@ extension ApiTarget: ARCHTargetType {
     var path: String {
         switch self {
         case .main:
-            return "main"
+            return "bridges"
         }
     }
 
@@ -35,7 +35,7 @@ extension ApiTarget: ARCHTargetType {
     }
 
     var parameters: [String: Any]? {
-        return nil
+        return ["format": "json"]
     }
 
     var sampleData: Data {

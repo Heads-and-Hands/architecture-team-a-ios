@@ -19,7 +19,7 @@ final class ListExtEventHandler: ARCHEventHandler<ListExtState>, ListExtModuleIn
     func pressAddButton() {
         var newData: [SimpleEntity] = []
         for id in state.list.count..<state.list.count + 20 {
-            newData.append(SimpleEntity(id: "\(id)"))
+            newData.append(SimpleEntity(id: id))
         }
 
         state.list += newData

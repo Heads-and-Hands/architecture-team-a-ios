@@ -9,7 +9,7 @@
 import UIKit
 import HHModule
 
-#if HHNetwork
+#if HHNetwork || HHPaginationDemo
 import HHNetwork
 #endif
 
@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-#if HHNetwork
+#if HHNetwork || HHPaginationDemo
 extension AppDelegate: ARCHAuthObserverMoyaPluginDelegate {
 
     func didExpiredAuthToken() {

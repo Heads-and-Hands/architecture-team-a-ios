@@ -18,6 +18,6 @@ struct ExampleCellViewModel: ARCHCellViewModel, ARCHModelInitilizable {
     }
 
     var title: String {
-        return data.id
+        return "\(data.id)"
     }
 }

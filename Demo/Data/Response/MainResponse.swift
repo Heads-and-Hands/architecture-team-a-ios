@@ -9,4 +9,5 @@
 import Foundation
 
 struct MainResponse: Codable {
+    let objects: [SimpleEntity]
 }

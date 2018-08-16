@@ -7,3 +7,6 @@
 - [Хелпер для UITableView/UICollectionView](Source/HHList/README.md)
 - [Хелпер для хелпера для UITableView/UICollectionView](Source/HHListExtension/README.md)
 - [Взаимодействие с сетью](Source/HHNetwork/README.md)
+    - [Постраничная загрузка данных](Source/HHPagingManager/README.md)
+- Best practices
+    - [Мультиделегирование](Source/HHBestPractice/Multidelegate.md)

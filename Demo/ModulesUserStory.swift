@@ -23,6 +23,8 @@ enum ModulesUserStory: ARCHModuleID {
             return ListExtConfigurator(moduleIO: nil)
 #elseif HHNetwork
             return NetworkConfigurator(moduleIO: nil)
+#elseif HHPaginationDemo
+            return PaginationConfigurator(moduleIO: nil)
 #endif
         }
     }
