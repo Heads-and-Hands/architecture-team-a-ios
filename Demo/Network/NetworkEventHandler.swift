@@ -3,14 +3,11 @@
 //  architecture
 //
 //  Created by basalaev on 13.08.2018.
-//  Copyright © 2018 HandH. All rights reserved.
+//  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
 import HHModule
 import HHNetwork
-
-struct MainResponse: Codable {
-}
 
 final class NetworkEventHandler: ARCHEventHandler<NetworkState>, NetworkModuleInput {
 
@@ -20,7 +17,7 @@ final class NetworkEventHandler: ARCHEventHandler<NetworkState>, NetworkModuleIn
     override func viewIsReady() {
         super.viewIsReady()
 
-        apiProvider?.requestTarget(.main, for: ARCHApiResponse<MainResponse>.self, completion: { result in
+        apiProvider?.requestTarget(.main, for: MainResponse.self, completion: { result in
             switch result {
             case let .success(response):
                 print("\(response)")

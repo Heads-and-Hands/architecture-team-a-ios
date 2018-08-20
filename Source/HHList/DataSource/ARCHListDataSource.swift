@@ -16,7 +16,7 @@ public protocol ARCHListDataSourceAdapter: class {
 }
 
 public protocol ARCHListDataSourceDelegate: class {
-    func configure(cell: Any, viewModel: ARCHCellViewModel)
+    func configure(cell: Any, viewModel: ARCHCellViewModel, indexPath: IndexPath)
 }
 
 open class ARCHListDataSource<View: ARCHListView>: NSObject {
@@ -66,7 +66,7 @@ open class ARCHListDataSource<View: ARCHListView>: NSObject {
             fatalError("Not found cell id \(id) indexPath \(indexPath)")
         }
 
-        delegate?.configure(cell: cell, viewModel: cellViewModel)
+        delegate?.configure(cell: cell, viewModel: cellViewModel, indexPath: indexPath)
 
         if var cell = cell as? ARCHCellAbstract {
             cell.abstractViewModel = cellViewModel

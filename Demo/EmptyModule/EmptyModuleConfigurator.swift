@@ -6,7 +6,7 @@
 //  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
-import Foundation
+import HHModule
 
 final class EmptyModuleConfigurator: ARCHModuleConfigurator {
     typealias ModuleIO = (EmptyModuleModuleInput) -> EmptyModuleModuleOutput?

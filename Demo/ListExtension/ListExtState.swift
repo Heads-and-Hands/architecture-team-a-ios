@@ -9,13 +9,5 @@
 import HHModule
 
 struct ListExtState: ARCHState {
-    var list: [ListExtItem] = []
-}
-
-struct ListExtItem: Hashable {
-    let id: String
-
-    var hashValue: Int {
-        return id.hashValue
-    }
+    var list: [SimpleEntity] = []
 }

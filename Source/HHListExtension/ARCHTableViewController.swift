@@ -80,8 +80,13 @@ public class ARCHTableViewController<D: Hashable, VM: ARCHCellViewModel & ARCHMo
 
     public var data: [D] = [] {
         didSet {
-            let changes = diff(old: dataAdapter.data, new: data)
-            reloadViewWith(data: data, changes: changes)
+            if UIView.areAnimationsEnabled {
+                let changes = diff(old: dataAdapter.data, new: data)
+                reloadViewWith(data: data, changes: changes)
+            } else {
+                dataAdapter.data = data
+                tableView.reloadData()
+            }
         }
     }
 

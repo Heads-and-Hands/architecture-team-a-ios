@@ -7,16 +7,20 @@
 //
 
 import HHModule
+import HHListExtension
 
 final class ListExtViewController: ARCHViewController<ListExtState, ListExtEventHandler> {
 
     let button = UIButton()
-    let listController = ARCHTableViewController<ListExtItem, ListExtTVCellViewModel, ListExtTVCell>()
+    let listController = ARCHTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>()
+//    let delegateProxy = ARCHTableViewDelegate<UITableViewDelegate>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+
+//        listController.tableView.delegate = delegateProxy
 
         configure(button: button)
         setupLayout()
@@ -61,14 +65,6 @@ final class ListExtViewController: ARCHViewController<ListExtState, ListExtEvent
     }
 
     // MARK: - UITableViewDataSource
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        fatalError("Realizated in ARCHTableViewDataSource")
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("Realizated in ARCHTableViewDataSource")
-    }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Section title"

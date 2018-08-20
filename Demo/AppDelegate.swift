@@ -7,7 +7,11 @@
 //
 
 import UIKit
+import HHModule
+
+#if HHNetwork || HHPaginationDemo
 import HHNetwork
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func launchOn(window: ARCHWindow) {
-        ModulesUserStory.network(moduleIO: nil).displayOn(window: window, animated: false)
+        ModulesUserStory.main.displayOn(window: window, animated: false)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -48,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+#if HHNetwork || HHPaginationDemo
 extension AppDelegate: ARCHAuthObserverMoyaPluginDelegate {
 
     func didExpiredAuthToken() {
@@ -75,3 +80,4 @@ extension AppDelegate: ARCHUserStorageDelegate {
         // TODO: Обновляем стек
     }
 }
+#endif

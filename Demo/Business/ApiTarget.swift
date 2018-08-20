@@ -3,9 +3,10 @@
 //  architecture
 //
 //  Created by basalaev on 13.08.2018.
-//  Copyright © 2018 HandH. All rights reserved.
+//  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
+import Alamofire
 import Moya
 import HHNetwork
 
@@ -16,7 +17,7 @@ enum ApiTarget {
 extension ApiTarget: ARCHTargetType {
 
     var baseURL: URL {
-        guard let url = URL(string: "https://api.xxx.handh.ru/v1/") else {
+        guard let url = URL(string: "http://gdemost.handh.ru/api/v1/") else {
             fatalError("Wrong debug api base url")
         }
         return url
@@ -25,7 +26,7 @@ extension ApiTarget: ARCHTargetType {
     var path: String {
         switch self {
         case .main:
-            return "main"
+            return "bridges"
         }
     }
 
@@ -34,7 +35,7 @@ extension ApiTarget: ARCHTargetType {
     }
 
     var parameters: [String: Any]? {
-        return nil
+        return ["format": "json"]
     }
 
     var sampleData: Data {

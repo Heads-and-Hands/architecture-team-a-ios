@@ -1,13 +1,13 @@
 //
-//  ListState.swift
+//  PaginationState.swift
 //  architecture
 //
-//  Created by basalaev on 08.08.2018.
+//  Created by basalaev on 20.08.2018.
 //  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
 import HHModule
 
-struct ListState: ARCHState {
+struct PaginationState: ARCHState {
     var list: [SimpleEntity] = []
 }

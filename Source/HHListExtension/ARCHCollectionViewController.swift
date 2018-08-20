@@ -76,8 +76,13 @@ public class ARCHCollectionViewController<D: Hashable, VM: ARCHCellViewModel & A
 
     public var data: [D] = [] {
         didSet {
-            let changes = diff(old: dataAdapter.data, new: data)
-            reloadViewWith(data: data, changes: changes)
+            if UIView.areAnimationsEnabled {
+                let changes = diff(old: dataAdapter.data, new: data)
+                reloadViewWith(data: data, changes: changes)
+            } else {
+                dataAdapter.data = data
+                collectionView.reloadData()
+            }
         }
     }
 
