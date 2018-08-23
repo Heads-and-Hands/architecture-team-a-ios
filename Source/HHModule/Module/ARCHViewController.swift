@@ -8,13 +8,21 @@
 
 import UIKit
 
-open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewController, ARCHRouter, ARCHViewInput {
+open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewController, ARCHRouter, ARCHViewRenderable {
 
     public typealias State = S
 
     public var output: Out?
 
+    open var childViews: [ARCHViewInput] {
+        return []
+    }
+
     open func render(state: State) {
+        let mirror = Mirror(reflecting: state)
+        for (_, childState) in mirror.children {
+            childViews.forEach({ $0.update(state: childState) })
+        }
     }
 
     override open func viewDidLoad() {

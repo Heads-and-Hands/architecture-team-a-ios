@@ -9,4 +9,5 @@
 import HHModule
 
 struct EmptyModuleState: ARCHState {
+    var text: String = ""
 }

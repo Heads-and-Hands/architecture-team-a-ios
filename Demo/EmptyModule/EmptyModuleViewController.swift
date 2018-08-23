@@ -10,17 +10,22 @@ import HHModule
 
 final class EmptyModuleViewController: ARCHViewController<EmptyModuleState, EmptyModuleEventHandler> {
 
+    let label = Label()
+
+    override var childViews: [ARCHViewInput] {
+        return [label]
+    }
+
     // MARK: - View life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        label.frame = view.bounds
+        label.textAlignment = .center
+        view.addSubview(label)
+
         view.backgroundColor = .white
-    }
-
-    // MARK: - Render
-
-    override func render(state: State) {
-        super.render(state: state)
     }
 }
