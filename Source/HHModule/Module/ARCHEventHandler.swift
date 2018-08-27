@@ -10,7 +10,7 @@ import Foundation
 
 open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
     public weak var router: ARCHRouter?
-    public weak var viewInput: ARCHViewInputAbstact?
+    public weak var viewInput: ARCHViewInput?
     private var ignoreStateChanges: Bool = false
 
     public init() {}
@@ -44,7 +44,7 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
 
     open func viewSetNeedsRedraw() {
         if !ignoreStateChanges {
-            viewInput?.abstractRender(state: state)
+            viewInput?.update(state: state)
         }
     }
 }

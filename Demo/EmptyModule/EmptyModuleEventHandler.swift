@@ -14,5 +14,7 @@ final class EmptyModuleEventHandler: ARCHEventHandler<EmptyModuleState>, EmptyMo
 
     override func viewIsReady() {
         super.viewIsReady()
+
+        state.text = "Hello world"
     }
 }

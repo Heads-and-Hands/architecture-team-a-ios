@@ -77,14 +77,6 @@ final class ListViewController: ARCHViewController<ListState, ListEventHandler>,
 
     // MARK: - UITableViewDataSource
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        fatalError("Realizated in ARCHTableViewDataSource")
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("Realizated in ARCHTableViewDataSource")
-    }
-
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Section title"
     }

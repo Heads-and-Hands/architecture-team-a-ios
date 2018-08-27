@@ -15,18 +15,18 @@ public protocol ARCHState {
     init()
 }
 
-public protocol ARCHViewInputAbstact: class {
-    func abstractRender(state: ARCHState)
+public protocol ARCHViewInput: class {
+    func update(state: Any)
 }
 
-public protocol ARCHViewInput: ARCHViewInputAbstact {
-    associatedtype State: ARCHState
+public protocol ARCHViewRenderable: ARCHViewInput {
+    associatedtype State: Any
     func render(state: State)
 }
 
-public extension ARCHViewInput where State: ARCHState {
+public extension ARCHViewRenderable where State: Any {
 
-    func abstractRender(state: ARCHState) {
+    func update(state: Any) {
         if let state = state as? State {
             render(state: state)
         }

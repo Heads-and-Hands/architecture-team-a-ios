@@ -70,11 +70,7 @@
 		5072DDEB211DE83200E08A92 /* HHListExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 5072DDE9211DE83200E08A92 /* HHListExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5072DDF5211DE87D00E08A92 /* ARCHTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072DDCE211DE06D00E08A92 /* ARCHTableViewController.swift */; };
 		5072DDF6211DE88100E08A92 /* ARCHCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072DDCC211DE05500E08A92 /* ARCHCollectionViewController.swift */; };
-		507ABCBA21257C64003DBDD7 /* EmptyModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA402118342500158C1F /* EmptyModuleState.swift */; };
-		507ABCBB21257C64003DBDD7 /* EmptyModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3E2118342500158C1F /* EmptyModuleViewController.swift */; };
 		507ABCBC21257C64003DBDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5093687B20F683010044CA62 /* AppDelegate.swift */; };
-		507ABCBD21257C64003DBDD7 /* EmptyModuleModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3C2118342500158C1F /* EmptyModuleModuleIO.swift */; };
-		507ABCBE21257C64003DBDD7 /* EmptyModuleEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3D2118342500158C1F /* EmptyModuleEventHandler.swift */; };
 		507ABCBF21257C64003DBDD7 /* ModulesUserStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089235E20FC8E7B0032985E /* ModulesUserStory.swift */; };
 		507ABCC121257C64003DBDD7 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
 		507ABCC421257C64003DBDD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
@@ -162,6 +158,11 @@
 		50C985C0212AF0D20002EF4B /* DeepDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5089230720FB77520032985E /* DeepDiff.framework */; };
 		50C985C1212AF5620002EF4B /* SimpleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506797A1212572AE0034CDA2 /* SimpleEntity.swift */; };
 		50DF383A2125802B000EFCD3 /* HHList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; };
+		50EA3021213420B600A95512 /* EmptyModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3E2118342500158C1F /* EmptyModuleViewController.swift */; };
+		50EA3022213420B600A95512 /* EmptyModuleEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3D2118342500158C1F /* EmptyModuleEventHandler.swift */; };
+		50EA3023213420B600A95512 /* EmptyModuleModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3C2118342500158C1F /* EmptyModuleModuleIO.swift */; };
+		50EA3024213420B600A95512 /* EmptyModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA402118342500158C1F /* EmptyModuleState.swift */; };
+		50EA3026213421E800A95512 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA3025213421E800A95512 /* Label.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -485,6 +486,7 @@
 		50D264842123077E00E3B47A /* Dependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
 		50D264852123077E00E3B47A /* ApiTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTarget.swift; sourceTree = "<group>"; };
 		50D2648D21231EAE00E3B47A /* ARCHSignMoyaPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHSignMoyaPlugin.swift; sourceTree = "<group>"; };
+		50EA3025213421E800A95512 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		50FA81EB211ACF8D00ADA769 /* ARCHEmptyListDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHEmptyListDataAdapter.swift; sourceTree = "<group>"; };
 		50FA81F0211AE47C00ADA769 /* ListModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModuleIO.swift; sourceTree = "<group>"; };
 		50FA81F1211AE47C00ADA769 /* ListEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventHandler.swift; sourceTree = "<group>"; };
@@ -659,6 +661,7 @@
 			isa = PBXGroup;
 			children = (
 				50679792212572610034CDA2 /* Cell */,
+				50EA3025213421E800A95512 /* Label.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -815,8 +818,8 @@
 		5089232320FC8DA30032985E /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				5089232420FC8DA30032985E /* ARCHViewController.swift */,
 				5089232520FC8DA30032985E /* ARCHModuleProtocols.swift */,
+				5089232420FC8DA30032985E /* ARCHViewController.swift */,
 				5089232620FC8DA30032985E /* ARCHEventHandler.swift */,
 			);
 			path = Module;
@@ -1634,8 +1637,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				507ABCBA21257C64003DBDD7 /* EmptyModuleState.swift in Sources */,
-				507ABCBB21257C64003DBDD7 /* EmptyModuleViewController.swift in Sources */,
 				50C985C1212AF5620002EF4B /* SimpleEntity.swift in Sources */,
 				507ABCDE21257D05003DBDD7 /* NetworkViewController.swift in Sources */,
 				507ABCBC21257C64003DBDD7 /* AppDelegate.swift in Sources */,
@@ -1645,8 +1646,6 @@
 				507ABCE521257D5A003DBDD7 /* Token.swift in Sources */,
 				507ABCE021257D31003DBDD7 /* MainResponse.swift in Sources */,
 				507ABCDD21257D05003DBDD7 /* NetworkState.swift in Sources */,
-				507ABCBD21257C64003DBDD7 /* EmptyModuleModuleIO.swift in Sources */,
-				507ABCBE21257C64003DBDD7 /* EmptyModuleEventHandler.swift in Sources */,
 				507ABCDB21257D05003DBDD7 /* NetworkEventHandler.swift in Sources */,
 				507ABCDC21257D05003DBDD7 /* NetworkModuleIO.swift in Sources */,
 				507ABCE121257D4F003DBDD7 /* Dependency.swift in Sources */,
@@ -1658,9 +1657,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50EA3022213420B600A95512 /* EmptyModuleEventHandler.swift in Sources */,
 				507ABCCF21257C97003DBDD7 /* EmptyModuleConfigurator.swift in Sources */,
 				5093687C20F683010044CA62 /* AppDelegate.swift in Sources */,
+				50EA3021213420B600A95512 /* EmptyModuleViewController.swift in Sources */,
 				5089236720FC8E7B0032985E /* ModulesUserStory.swift in Sources */,
+				50EA3023213420B600A95512 /* EmptyModuleModuleIO.swift in Sources */,
+				50EA3026213421E800A95512 /* Label.swift in Sources */,
+				50EA3024213420B600A95512 /* EmptyModuleState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
