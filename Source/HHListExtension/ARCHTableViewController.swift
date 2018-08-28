@@ -6,11 +6,13 @@
 //  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
+import HHModule
 import HHList
 import DeepDiff
 
 // swiftlint:disable:next line_length
-public class ARCHTableViewController<D: Hashable, VM: ARCHCellViewModel & ARCHModelInitilizable, C: UITableViewCell & ARCHCell>: UIViewController {
+public class ARCHTableViewController<D: Hashable, VM: ARCHCellViewModel & ARCHModelInitilizable, C: UITableViewCell & ARCHCell>: NSObject, ARCHViewRenderable {
+    public typealias State = [D]
 
     private let viewDataSource: ARCHTableViewDataSource
     private let dataAdapter: ARCHEmptyListDataAdapter<D, VM>
@@ -50,7 +52,7 @@ public class ARCHTableViewController<D: Hashable, VM: ARCHCellViewModel & ARCHMo
         self.viewDataSource = dataSource
         self.dataAdapter = dataAdapter
 
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
 
     convenience public init(
@@ -72,15 +74,11 @@ public class ARCHTableViewController<D: Hashable, VM: ARCHCellViewModel & ARCHMo
         return viewDataSource.view
     }
 
-    override public func loadView() {
-        view = tableView
-    }
-
     // MARK: - Data
 
     public var data: [D] = [] {
         didSet {
-            if UIView.areAnimationsEnabled {
+            if UIView.areAnimationsEnabled, !tableView.isHidden {
                 let changes = diff(old: dataAdapter.data, new: data)
                 reloadViewWith(data: data, changes: changes)
             } else {
@@ -124,5 +122,20 @@ public class ARCHTableViewController<D: Hashable, VM: ARCHCellViewModel & ARCHMo
         changesWithIndexPath.replaces.executeIfPresent {
             tableView.reloadRows(at: $0, with: replacementAnimation)
         }
+    }
+
+    // MARK: - ARCHViewInput
+
+    public func set(visible: Bool) {
+        tableView.isHidden = !visible
+        if !visible {
+            data = []
+        }
+    }
+
+    // MARK: - ARCHViewRenderable
+
+    public func render(state: State) {
+        data = state
     }
 }

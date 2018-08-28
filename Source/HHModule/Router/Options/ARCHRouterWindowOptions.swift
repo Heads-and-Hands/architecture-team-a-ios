@@ -10,6 +10,8 @@ import UIKit
 
 public class ARCHRouterWindowOptions: ARCHRouterOptions {
 
+    public init() {}
+
     public func proccess(transition: Transition, animated: Bool) -> Transition {
         if let from = transition.from as? UIWindow, let to = transition.to as? UIViewController {
 

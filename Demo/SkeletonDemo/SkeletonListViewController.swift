@@ -1,25 +1,34 @@
 //
-//  ListViewController.swift
+//  SkeletonListViewController.swift
 //  architecture
 //
-//  Created by basalaev on 08.08.2018.
-//  Copyright © 2018 Heads and Hands. All rights reserved.
+//  Created by basalaev on 28.08.2018.
+//  Copyright © 2018 HandH. All rights reserved.
 //
 
-import UIKit
 import HHModule
 import HHList
 
-final class ListViewController: ARCHViewController<ListState, ListEventHandler> {
+final class SkeletonListViewController: ARCHViewController<SkeletonListState, SkeletonListEventHandler>, ARCHIndicationContainer {
 
     let tableView = UITableView()
     let button = UIButton()
+    let indicationManager = ARCHIndicationHelper<Int>()
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+        indicationManager.container = self
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     lazy var dataSource: ARCHTableViewDataSource = {
         let dataSource = ARCHTableViewDataSource(view: tableView)
         dataSource.register(cell: ExampleCell.self, for: ExampleCellViewModel.self)
         dataSource.dataAdapter = dataAdapter
-        dataSource.dataSource = self
         return dataSource
     }()
 
@@ -65,6 +74,8 @@ final class ListViewController: ARCHViewController<ListState, ListEventHandler> 
     override func render(state: State) {
         super.render(state: state)
 
+        print("render")
+
         dataAdapter.data = state.list
         tableView.reloadData()
     }
@@ -74,15 +85,5 @@ final class ListViewController: ARCHViewController<ListState, ListEventHandler> 
     @objc
     func action(sender: UIButton) {
         output?.pressAddButton()
-    }
-
-    // MARK: - UITableViewDataSource
-
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section title"
-    }
-
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
     }
 }

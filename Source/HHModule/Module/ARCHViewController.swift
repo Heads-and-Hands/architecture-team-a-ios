@@ -14,20 +14,43 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
 
     public var output: Out?
 
-    open var childViews: [ARCHViewInput] {
+    open var autorenderIgnoreViews: [ARCHViewInput] {
         return []
     }
 
     open func render(state: State) {
-        let mirror = Mirror(reflecting: state)
-        for (_, childState) in mirror.children {
-            childViews.forEach({ $0.update(state: childState) })
+        let viewMirror = Mirror(reflecting: self)
+        let stateMirror = Mirror(reflecting: state)
+
+        for (_, viewProperty) in viewMirror.children {
+            guard let view = viewProperty as? ARCHViewInput else {
+                continue
+            }
+
+            if autorenderIgnoreViews.contains(where: { $0 === view }) {
+                continue
+            }
+
+            render(state: stateMirror, on: view)
+        }
+    }
+
+    open func render(state: Mirror, on view: ARCHViewInput) {
+        for (_, value) in state.children {
+            if view.typeExist(state: value) {
+                view.update(state: value)
+                return
+            }
         }
     }
 
     override open func viewDidLoad() {
         super.viewDidLoad()
 
+        prepareRootView()
         output?.viewIsReady()
+    }
+
+    open func prepareRootView() {
     }
 }

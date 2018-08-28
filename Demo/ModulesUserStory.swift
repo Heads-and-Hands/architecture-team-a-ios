@@ -25,6 +25,10 @@ enum ModulesUserStory: ARCHModuleID {
             return NetworkConfigurator(moduleIO: nil)
 #elseif HHPaginationDemo
             return PaginationConfigurator(moduleIO: nil)
+#elseif HHIndication
+            return IndicationDemoConfigurator(moduleIO: nil)
+#elseif HHSkeleton
+            return SkeletonListConfigurator(moduleIO: nil)
 #endif
         }
     }

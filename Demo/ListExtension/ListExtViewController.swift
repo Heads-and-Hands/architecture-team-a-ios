@@ -13,14 +13,11 @@ final class ListExtViewController: ARCHViewController<ListExtState, ListExtEvent
 
     let button = UIButton()
     let listController = ARCHTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>()
-//    let delegateProxy = ARCHTableViewDelegate<UITableViewDelegate>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
-
-//        listController.tableView.delegate = delegateProxy
 
         configure(button: button)
         setupLayout()
@@ -62,15 +59,5 @@ final class ListExtViewController: ARCHViewController<ListExtState, ListExtEvent
     @objc
     func action(sender: UIButton) {
         output?.pressAddButton()
-    }
-
-    // MARK: - UITableViewDataSource
-
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section title"
-    }
-
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
     }
 }
