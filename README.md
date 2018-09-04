@@ -4,6 +4,8 @@
 # architecture-team-a-ios
 
 - [Архитектура модуля](Source/HHModule/README.md)
+    - [Авторендеринг состояния модуля](Source/HHModule/AUTORENDERING.md)
+    - [Препроцессинг состояния модуля](Source/HHModule/PREPROCESSING.md)
 - [Хелпер для UITableView/UICollectionView](Source/HHList/README.md)
 - [Хелпер для хелпера для UITableView/UICollectionView](Source/HHListExtension/README.md)
 - [Взаимодействие с сетью](Source/HHNetwork/README.md)

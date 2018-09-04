@@ -521,6 +521,8 @@
 		5032B7F421186C4600271A1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5032B7F621186C4D00271A1D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		503FD70C213EA914008905ED /* ARCHIndicationLayoutGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHIndicationLayoutGuide.swift; sourceTree = "<group>"; };
+		503FD70F213EB2E5008905ED /* AUTORENDERING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AUTORENDERING.md; sourceTree = "<group>"; };
+		503FD710213ED792008905ED /* PREPROCESSING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = PREPROCESSING.md; sourceTree = "<group>"; };
 		5067972D2124144F0034CDA2 /* ARCHNetworkError.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ARCHNetworkError.strings; sourceTree = "<group>"; };
 		5067972F212416B60034CDA2 /* ARCHLoggerMoyaPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHLoggerMoyaPlugin.swift; sourceTree = "<group>"; };
 		50679736212419970034CDA2 /* HHNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1051,6 +1053,8 @@
 			isa = PBXGroup;
 			children = (
 				5072DDA3211D864600E08A92 /* README.md */,
+				503FD70F213EB2E5008905ED /* AUTORENDERING.md */,
+				503FD710213ED792008905ED /* PREPROCESSING.md */,
 				5089232020FC8DA30032985E /* Configuration */,
 				5089232320FC8DA30032985E /* Module */,
 				5089232720FC8DA30032985E /* Router */,
