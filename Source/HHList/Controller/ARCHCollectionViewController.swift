@@ -6,18 +6,19 @@
 //  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
-import HHList
-import DeepDiff
+import UIKit
 
 // swiftlint:disable:next line_length
-public class ARCHCollectionViewController<D: Hashable, VM: ARCHCellViewModel & ARCHModelInitilizable, C: UICollectionViewCell & ARCHCell>: UIViewController {
+open class ARCHCollectionViewController<D: Hashable, VM: ARCHCellViewModel & ARCHModelInitilizable, C: UICollectionViewCell & ARCHCell>: NSObject {
 
-    private let viewDataSource: ARCHCollectionViewDataSource
-    private let dataAdapter: ARCHEmptyListDataAdapter<D, VM>
+    public let viewDataSource: ARCHCollectionViewDataSource
+    public let dataAdapter: ARCHEmptyListDataAdapter<D, VM>
+
+    public var updateDataBlock: (([D]) -> Void)?
 
     public var delegate: ARCHListDataSourceDelegate? {
         set {
-            viewDataSource.delegate = delegate
+            viewDataSource.delegate = newValue
         }
         get {
             return viewDataSource.delegate
@@ -26,7 +27,7 @@ public class ARCHCollectionViewController<D: Hashable, VM: ARCHCellViewModel & A
 
     public var dataSource: UICollectionViewDataSource? {
         set {
-            viewDataSource.dataSource = dataSource
+            viewDataSource.dataSource = newValue
         }
         get {
             return viewDataSource.dataSource
@@ -46,7 +47,12 @@ public class ARCHCollectionViewController<D: Hashable, VM: ARCHCellViewModel & A
         self.viewDataSource = dataSource
         self.dataAdapter = dataAdapter
 
-        super.init(nibName: nil, bundle: nil)
+        super.init()
+
+        updateDataBlock = { [weak self] data in
+            self?.dataAdapter.data = data
+            self?.collectionView.reloadData()
+        }
     }
 
     convenience public init(
@@ -68,24 +74,34 @@ public class ARCHCollectionViewController<D: Hashable, VM: ARCHCellViewModel & A
         return viewDataSource.view
     }
 
-    override public func loadView() {
-        view = collectionView
-    }
-
     // MARK: - Data
 
     public var data: [D] = [] {
         didSet {
-            if UIView.areAnimationsEnabled {
-                let changes = diff(old: dataAdapter.data, new: data)
-                reloadViewWith(data: data, changes: changes)
-            } else {
-                dataAdapter.data = data
-                collectionView.reloadData()
-            }
+            didSet(data: data)
         }
     }
 
+    open func didSet(data: [D]) {
+        dataAdapter.data = data
+        collectionView.reloadData()
+    }
+
+//    public var data: [D] = [] {
+//        didSet {
+///*
+//            if UIView.areAnimationsEnabled {
+//                let changes = diff(old: dataAdapter.data, new: data)
+//                reloadViewWith(data: data, changes: changes)
+//            } else {
+//                dataAdapter.data = data
+//                collectionView.reloadData()
+//            }
+//*/
+//        }
+//    }
+
+/*
     private func reloadViewWith(data: [D], changes: [Change<D>]) {
         let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: 0)
 
@@ -113,5 +129,5 @@ public class ARCHCollectionViewController<D: Hashable, VM: ARCHCellViewModel & A
         changesWithIndexPath.replaces.executeIfPresent {
             self.collectionView.reloadItems(at: $0)
         }
-    }
+    }*/
 }

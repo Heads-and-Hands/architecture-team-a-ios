@@ -8,29 +8,18 @@
 
 import UIKit
 
-open class ARCHTableViewDataSource: ARCHListDataSource<UITableView> {
+open class ARCHTableViewDataSource: ARCHListDataSource<UITableView>, UITableViewDataSource {
 
     public func numberOfSections(in tableView: UITableView) -> Int {
         return sectionsCount
     }
 
-    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfRowsIn(section: section)
     }
 
-    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return reusableCell(indexPath: indexPath)
-    }
-}
-
-extension NSObject: UITableViewDataSource {
-
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        fatalError("Realizated in ARCHTableViewDataSource")
-    }
-
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("Realizated in ARCHTableViewDataSource")
+        return reusableCell(indexPath: indexPath)
     }
 }
 
