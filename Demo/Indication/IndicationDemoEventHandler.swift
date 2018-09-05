@@ -13,7 +13,6 @@ final class IndicationDemoEventHandler: ARCHEventHandler<IndicationDemoState>, I
     weak var moduleOutput: IndicationDemoModuleOutput?
 
     func startLoading() {
-        
         state.indication = IndicationState(type: .loading, title: nil)
     }
 
@@ -24,11 +23,6 @@ final class IndicationDemoEventHandler: ARCHEventHandler<IndicationDemoState>, I
         }
 
         state.list = newData
-
-        updateState {
-            state.indication = nil
-            state.list = newData
-        }
     }
 
     func finishLoadingWithEmptyData() {

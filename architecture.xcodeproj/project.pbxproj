@@ -16,6 +16,7 @@
 		501AA65B211C6C8E002D3264 /* ARCHCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */; };
 		501AA65C211C6C9A002D3264 /* ARCHEmptyListDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81EB211ACF8D00ADA769 /* ARCHEmptyListDataAdapter.swift */; };
 		503FD70E213EA920008905ED /* ARCHIndicationLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD70C213EA914008905ED /* ARCHIndicationLayoutGuide.swift */; };
+		503FD713213FF4E2008905ED /* IndicationViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD712213FF4E2008905ED /* IndicationViewProvider.swift */; };
 		5067973A212419970034CDA2 /* HHNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 50679738212419970034CDA2 /* HHNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50679742212419A30034CDA2 /* ARCHLoggerMoyaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067972F212416B60034CDA2 /* ARCHLoggerMoyaPlugin.swift */; };
 		50679743212419A50034CDA2 /* ARCHSignMoyaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D2648D21231EAE00E3B47A /* ARCHSignMoyaPlugin.swift */; };
@@ -132,7 +133,6 @@
 		508F842121393E0700137D66 /* ARCHIndicationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F842021393E0700137D66 /* ARCHIndicationProvider.swift */; };
 		508F842321393E3C00137D66 /* ARCHIndicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F842221393E3C00137D66 /* ARCHIndicationState.swift */; };
 		508F84272139612200137D66 /* DefaultIndicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F84262139612200137D66 /* DefaultIndicationView.swift */; };
-		508F84282139660C00137D66 /* IndicationViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F84242139451100137D66 /* IndicationViewProvider.swift */; };
 		508F842E21398AC700137D66 /* ARCHIndicationViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F14AD2137E8A10087DCDB /* ARCHIndicationViewProxy.swift */; };
 		5093687C20F683010044CA62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5093687B20F683010044CA62 /* AppDelegate.swift */; };
 		5093688320F683030044CA62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093688220F683030044CA62 /* Assets.xcassets */; };
@@ -523,6 +523,8 @@
 		503FD70C213EA914008905ED /* ARCHIndicationLayoutGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHIndicationLayoutGuide.swift; sourceTree = "<group>"; };
 		503FD70F213EB2E5008905ED /* AUTORENDERING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AUTORENDERING.md; sourceTree = "<group>"; };
 		503FD710213ED792008905ED /* PREPROCESSING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = PREPROCESSING.md; sourceTree = "<group>"; };
+		503FD712213FF4E2008905ED /* IndicationViewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicationViewProvider.swift; sourceTree = "<group>"; };
+		503FD714213FF4FB008905ED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5067972D2124144F0034CDA2 /* ARCHNetworkError.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ARCHNetworkError.strings; sourceTree = "<group>"; };
 		5067972F212416B60034CDA2 /* ARCHLoggerMoyaPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHLoggerMoyaPlugin.swift; sourceTree = "<group>"; };
 		50679736212419970034CDA2 /* HHNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -614,7 +616,6 @@
 		508F841E21393DD200137D66 /* ARCHIndicationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHIndicationTypes.swift; sourceTree = "<group>"; };
 		508F842021393E0700137D66 /* ARCHIndicationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHIndicationProvider.swift; sourceTree = "<group>"; };
 		508F842221393E3C00137D66 /* ARCHIndicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHIndicationState.swift; sourceTree = "<group>"; };
-		508F84242139451100137D66 /* IndicationViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IndicationViewProvider.swift; path = Source/HHIndication/IndicationViewProvider.swift; sourceTree = SOURCE_ROOT; };
 		508F84262139612200137D66 /* DefaultIndicationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultIndicationView.swift; sourceTree = "<group>"; };
 		5093687820F683010044CA62 /* HHModuleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHModuleDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5093687B20F683010044CA62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -966,6 +967,7 @@
 		507F14932137E67F0087DCDB /* HHIndication */ = {
 			isa = PBXGroup;
 			children = (
+				503FD714213FF4FB008905ED /* README.md */,
 				503FD70C213EA914008905ED /* ARCHIndicationLayoutGuide.swift */,
 				507F14A82137E81F0087DCDB /* ARCHIndicationContainer.swift */,
 				507F14AB2137E8680087DCDB /* ARCHIndicationView.swift */,
@@ -1012,10 +1014,10 @@
 		507F14F02138084A0087DCDB /* Indication */ = {
 			isa = PBXGroup;
 			children = (
+				503FD712213FF4E2008905ED /* IndicationViewProvider.swift */,
 				507F14F1213808570087DCDB /* IndicationState.swift */,
 				508F84262139612200137D66 /* DefaultIndicationView.swift */,
 				508F841621380E2F00137D66 /* IndicationHelper.swift */,
-				508F84242139451100137D66 /* IndicationViewProvider.swift */,
 			);
 			path = Indication;
 			sourceTree = "<group>";
@@ -2146,7 +2148,7 @@
 				507F14F2213808570087DCDB /* IndicationState.swift in Sources */,
 				507F14E12137EAE10087DCDB /* IndicationDemoState.swift in Sources */,
 				508F841821380E5500137D66 /* IndicationHelper.swift in Sources */,
-				508F84282139660C00137D66 /* IndicationViewProvider.swift in Sources */,
+				503FD713213FF4E2008905ED /* IndicationViewProvider.swift in Sources */,
 				507F14ED2137F0280087DCDB /* ARCHModuleID+.swift in Sources */,
 				507F14B72137E99C0087DCDB /* ModulesUserStory.swift in Sources */,
 				507F14DE2137EAE10087DCDB /* IndicationDemoEventHandler.swift in Sources */,

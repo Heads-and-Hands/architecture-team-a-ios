@@ -17,18 +17,21 @@ public class ARCHIndicationLayoutGuide: UILayoutGuide {
     public var rightConstraint: NSLayoutConstraint?
     public var bottomConstraint: NSLayoutConstraint?
 
-    public init(view: UIView) {
+    public override init() {
         super.init()
-
         identifier = ARCHIndicationLayoutGuide.layoutGuideId
-        registrate(view: view)
+    }
+
+    public convenience init(view: UIView) {
+        self.init()
+        registrate(view: view, makeConstraints: true)
     }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func registrate(view: UIView) {
+    private func registrate(view: UIView, makeConstraints: Bool) {
         view.addLayoutGuide(self)
 
         let topConstraint = topAnchor.constraint(equalTo: view.topAnchor)
