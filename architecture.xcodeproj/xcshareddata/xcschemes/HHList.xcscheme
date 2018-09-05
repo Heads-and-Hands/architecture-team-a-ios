@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9CFEE10621403A7D00EF41B9"
+               BuildableName = "HHModuleTests.xctest"
+               BlueprintName = "HHModuleTests"
+               ReferencedContainer = "container:architecture.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "501AA647211C6C4A002D3264"
+            BuildableName = "HHList.framework"
+            BlueprintName = "HHList"
+            ReferencedContainer = "container:architecture.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

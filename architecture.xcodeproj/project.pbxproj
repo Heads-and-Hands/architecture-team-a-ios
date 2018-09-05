@@ -222,6 +222,14 @@
 		50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
 		50EA303F2134529A00A95512 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CFEE10A21403A7D00EF41B9 /* HHModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE10921403A7D00EF41B9 /* HHModuleTests.swift */; };
+		9CFEE10C21403A7D00EF41B9 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
+		9CFEE11721403AAE00EF41B9 /* HHModuleTestsEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE11221403AAE00EF41B9 /* HHModuleTestsEventHandler.swift */; };
+		9CFEE11821403AAE00EF41B9 /* HHModuleTestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE11321403AAE00EF41B9 /* HHModuleTestsViewController.swift */; };
+		9CFEE11921403AAE00EF41B9 /* HHModuleTestsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE11421403AAE00EF41B9 /* HHModuleTestsProtocols.swift */; };
+		9CFEE11A21403AAE00EF41B9 /* HHModuleTestsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE11521403AAE00EF41B9 /* HHModuleTestsConfigurator.swift */; };
+		9CFEE11B21403AAE00EF41B9 /* HHModuleTestsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE11621403AAE00EF41B9 /* HHModuleTestsState.swift */; };
+		9CFEE11E21403B4300EF41B9 /* HHModuleTestsMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE11D21403B4300EF41B9 /* HHModuleTestsMockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -401,6 +409,13 @@
 			remoteInfo = HHList;
 		};
 		50EA302B2134529A00A95512 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5072DD94211D84B800E08A92;
+			remoteInfo = HHModule;
+		};
+		9CFEE10D21403A7D00EF41B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5093687020F683010044CA62 /* Project object */;
 			proxyType = 1;
@@ -661,6 +676,15 @@
 		50FA81F3211AE47C00ADA769 /* ListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListConfigurator.swift; sourceTree = "<group>"; };
 		50FA81F4211AE47C00ADA769 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHCellViewModel.swift; sourceTree = "<group>"; };
+		9CFEE10721403A7D00EF41B9 /* HHModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CFEE10921403A7D00EF41B9 /* HHModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHModuleTests.swift; sourceTree = "<group>"; };
+		9CFEE10B21403A7D00EF41B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CFEE11221403AAE00EF41B9 /* HHModuleTestsEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHModuleTestsEventHandler.swift; sourceTree = "<group>"; };
+		9CFEE11321403AAE00EF41B9 /* HHModuleTestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHModuleTestsViewController.swift; sourceTree = "<group>"; };
+		9CFEE11421403AAE00EF41B9 /* HHModuleTestsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHModuleTestsProtocols.swift; sourceTree = "<group>"; };
+		9CFEE11521403AAE00EF41B9 /* HHModuleTestsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHModuleTestsConfigurator.swift; sourceTree = "<group>"; };
+		9CFEE11621403AAE00EF41B9 /* HHModuleTestsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHModuleTestsState.swift; sourceTree = "<group>"; };
+		9CFEE11D21403B4300EF41B9 /* HHModuleTestsMockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHModuleTestsMockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -785,6 +809,14 @@
 			files = (
 				50EA30382134529A00A95512 /* HHModule.framework in Frameworks */,
 				50EA30392134529A00A95512 /* HHList.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CFEE10421403A7D00EF41B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CFEE10C21403A7D00EF41B9 /* HHModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1164,6 +1196,7 @@
 				50679737212419970034CDA2 /* HHNetwork */,
 				50C9855F212AE9D20002EF4B /* HHPagingManager */,
 				507F149C2137E6B50087DCDB /* HHIndication */,
+				9CFEE10821403A7D00EF41B9 /* HHModuleTests */,
 				5093687920F683010044CA62 /* Products */,
 				5089230620FB77520032985E /* Frameworks */,
 			);
@@ -1185,6 +1218,7 @@
 				50EA30442134529A00A95512 /* HHSkeletonDemo.app */,
 				507F149B2137E6B50087DCDB /* HHIndication.framework */,
 				507F14CE2137E99C0087DCDB /* HHIndicationDemo.app */,
+				9CFEE10721403A7D00EF41B9 /* HHModuleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1322,6 +1356,29 @@
 				50FA81F4211AE47C00ADA769 /* ListState.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		9CFEE10821403A7D00EF41B9 /* HHModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				9CFEE10921403A7D00EF41B9 /* HHModuleTests.swift */,
+				9CFEE11C21403ABD00EF41B9 /* HHModuleTestsModule */,
+				9CFEE10B21403A7D00EF41B9 /* Info.plist */,
+			);
+			path = HHModuleTests;
+			sourceTree = "<group>";
+		};
+		9CFEE11C21403ABD00EF41B9 /* HHModuleTestsModule */ = {
+			isa = PBXGroup;
+			children = (
+				9CFEE11221403AAE00EF41B9 /* HHModuleTestsEventHandler.swift */,
+				9CFEE11321403AAE00EF41B9 /* HHModuleTestsViewController.swift */,
+				9CFEE11421403AAE00EF41B9 /* HHModuleTestsProtocols.swift */,
+				9CFEE11521403AAE00EF41B9 /* HHModuleTestsConfigurator.swift */,
+				9CFEE11621403AAE00EF41B9 /* HHModuleTestsState.swift */,
+				9CFEE11D21403B4300EF41B9 /* HHModuleTestsMockView.swift */,
+			);
+			path = HHModuleTestsModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1649,6 +1706,24 @@
 			productReference = 50EA30442134529A00A95512 /* HHSkeletonDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9CFEE10621403A7D00EF41B9 /* HHModuleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CFEE11121403A7D00EF41B9 /* Build configuration list for PBXNativeTarget "HHModuleTests" */;
+			buildPhases = (
+				9CFEE10321403A7D00EF41B9 /* Sources */,
+				9CFEE10421403A7D00EF41B9 /* Frameworks */,
+				9CFEE10521403A7D00EF41B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CFEE10E21403A7D00EF41B9 /* PBXTargetDependency */,
+			);
+			name = HHModuleTests;
+			productName = HHModuleTests;
+			productReference = 9CFEE10721403A7D00EF41B9 /* HHModuleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1683,6 +1758,9 @@
 					50C9855D212AE9D20002EF4B = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					9CFEE10621403A7D00EF41B9 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 5093687320F683010044CA62 /* Build configuration list for PBXProject "architecture" */;
@@ -1711,6 +1789,7 @@
 				50679735212419970034CDA2 /* HHNetwork */,
 				50C9855D212AE9D20002EF4B /* HHPagingManager */,
 				507F149A2137E6B50087DCDB /* HHIndication */,
+				9CFEE10621403A7D00EF41B9 /* HHModuleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1829,6 +1908,13 @@
 				50EA303B2134529A00A95512 /* Assets.xcassets in Resources */,
 				50EA303C2134529A00A95512 /* ExampleCell.xib in Resources */,
 				50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CFEE10521403A7D00EF41B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2237,6 +2323,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9CFEE10321403A7D00EF41B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CFEE11821403AAE00EF41B9 /* HHModuleTestsViewController.swift in Sources */,
+				9CFEE11921403AAE00EF41B9 /* HHModuleTestsProtocols.swift in Sources */,
+				9CFEE10A21403A7D00EF41B9 /* HHModuleTests.swift in Sources */,
+				9CFEE11B21403AAE00EF41B9 /* HHModuleTestsState.swift in Sources */,
+				9CFEE11E21403B4300EF41B9 /* HHModuleTestsMockView.swift in Sources */,
+				9CFEE11721403AAE00EF41B9 /* HHModuleTestsEventHandler.swift in Sources */,
+				9CFEE11A21403AAE00EF41B9 /* HHModuleTestsConfigurator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -2369,6 +2469,11 @@
 			isa = PBXTargetDependency;
 			target = 5072DD94211D84B800E08A92 /* HHModule */;
 			targetProxy = 50EA302B2134529A00A95512 /* PBXContainerItemProxy */;
+		};
+		9CFEE10E21403A7D00EF41B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5072DD94211D84B800E08A92 /* HHModule */;
+			targetProxy = 9CFEE10D21403A7D00EF41B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3224,6 +3329,42 @@
 			};
 			name = Release;
 		};
+		9CFEE10F21403A7D00EF41B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7PJVL5L8D;
+				INFOPLIST_FILE = HHModuleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = evssar.HHModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9CFEE11021403A7D00EF41B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7PJVL5L8D;
+				INFOPLIST_FILE = HHModuleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = evssar.HHModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3349,6 +3490,15 @@
 			buildConfigurations = (
 				50EA30422134529A00A95512 /* Debug */,
 				50EA30432134529A00A95512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CFEE11121403A7D00EF41B9 /* Build configuration list for PBXNativeTarget "HHModuleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CFEE10F21403A7D00EF41B9 /* Debug */,
+				9CFEE11021403A7D00EF41B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
