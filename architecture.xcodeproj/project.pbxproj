@@ -222,6 +222,7 @@
 		50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
 		50EA303F2134529A00A95512 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CC5867021411B9900C33874 /* HHModuleTestsStateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC5866F21411B9900C33874 /* HHModuleTestsStateHandler.swift */; };
 		9CFEE10A21403A7D00EF41B9 /* HHModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE10921403A7D00EF41B9 /* HHModuleTests.swift */; };
 		9CFEE10C21403A7D00EF41B9 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
 		9CFEE11721403AAE00EF41B9 /* HHModuleTestsEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE11221403AAE00EF41B9 /* HHModuleTestsEventHandler.swift */; };
@@ -676,6 +677,7 @@
 		50FA81F3211AE47C00ADA769 /* ListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListConfigurator.swift; sourceTree = "<group>"; };
 		50FA81F4211AE47C00ADA769 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHCellViewModel.swift; sourceTree = "<group>"; };
+		9CC5866F21411B9900C33874 /* HHModuleTestsStateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHModuleTestsStateHandler.swift; sourceTree = "<group>"; };
 		9CFEE10721403A7D00EF41B9 /* HHModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CFEE10921403A7D00EF41B9 /* HHModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHModuleTests.swift; sourceTree = "<group>"; };
 		9CFEE10B21403A7D00EF41B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1377,6 +1379,7 @@
 				9CFEE11521403AAE00EF41B9 /* HHModuleTestsConfigurator.swift */,
 				9CFEE11621403AAE00EF41B9 /* HHModuleTestsState.swift */,
 				9CFEE11D21403B4300EF41B9 /* HHModuleTestsMockView.swift */,
+				9CC5866F21411B9900C33874 /* HHModuleTestsStateHandler.swift */,
 			);
 			path = HHModuleTestsModule;
 			sourceTree = "<group>";
@@ -2329,6 +2332,7 @@
 			files = (
 				9CFEE11821403AAE00EF41B9 /* HHModuleTestsViewController.swift in Sources */,
 				9CFEE11921403AAE00EF41B9 /* HHModuleTestsProtocols.swift in Sources */,
+				9CC5867021411B9900C33874 /* HHModuleTestsStateHandler.swift in Sources */,
 				9CFEE10A21403A7D00EF41B9 /* HHModuleTests.swift in Sources */,
 				9CFEE11B21403AAE00EF41B9 /* HHModuleTestsState.swift in Sources */,
 				9CFEE11E21403B4300EF41B9 /* HHModuleTestsMockView.swift in Sources */,
