@@ -8,7 +8,16 @@
 
 import HHModule
 
-struct HHModuleTestsState: ARCHState {
+struct HHModuleTestsStructState: ARCHState {
 
-    var mockObjectState = HHModuleTestsMockViewState()
+    var structState = HHModuleTestsMockViewStructState()
+    var classState = HHModuleTestsMockViewClassState()
+}
+
+class HHModuleTestsClassState: ARCHState {
+
+    var structState = HHModuleTestsMockViewStructState()
+    var classState = HHModuleTestsMockViewClassState()
+
+    required init() {}
 }

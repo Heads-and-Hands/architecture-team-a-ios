@@ -8,7 +8,8 @@
 
 import HHModule
 
-final class HHModuleTestsEventHandler: ARCHEventHandler<HHModuleTestsState>, HHModuleTestsViewOutput, HHModuleTestsModuleInput {
+final class HHModuleTestsEventHandler<S: ARCHState>: ARCHEventHandler<S>,
+HHModuleTestsViewOutput, HHModuleTestsModuleInput {
 
     weak var moduleOutput: HHModuleTestsModuleOutput?
 

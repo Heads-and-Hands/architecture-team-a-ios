@@ -8,9 +8,10 @@
 
 import HHModule
 
-final class HHModuleTestsViewController<Out: HHModuleTestsViewOutput>: ARCHViewController<HHModuleTestsState, Out> {
+final class HHModuleTestsViewController<Out: HHModuleTestsViewOutput, S: ARCHState>: ARCHViewController<S, Out> {
 
-    let mockObject = HHModuleTestsMockView()
+    let mockObjectWithStruct = HHModuleTestsMockView<HHModuleTestsMockViewStructState>()
+    let mockObjectWithClass = HHModuleTestsMockView<HHModuleTestsMockViewClassState>()
 
     override func render(state: State) {
         super.render(state: state)

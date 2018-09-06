@@ -8,19 +8,30 @@
 
 import HHModule
 
-struct HHModuleTestsMockViewState: Equatable {
+struct HHModuleTestsMockViewStructState: Equatable {
 
     var integerValue: Int = 0
     var stringValue: String = ""
 }
 
-class HHModuleTestsMockView: ARCHViewRenderable {
+class HHModuleTestsMockViewClassState: Equatable {
 
-    typealias State = HHModuleTestsMockViewState
+    var integerValue: Int = 0
+    var stringValue: String = ""
 
-    var state: HHModuleTestsMockViewState?
+    static func == (lhs: HHModuleTestsMockViewClassState, rhs: HHModuleTestsMockViewClassState) -> Bool {
+        return lhs.integerValue == rhs.integerValue
+            && lhs.stringValue == rhs.stringValue
+    }
+}
 
-    func render(state: HHModuleTestsMockViewState) {
+class HHModuleTestsMockView<T>: ARCHViewRenderable {
+
+    typealias State = T
+
+    var state: T?
+
+    func render(state: T) {
         self.state = state
     }
 }

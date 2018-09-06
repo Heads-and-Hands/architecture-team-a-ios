@@ -12,57 +12,374 @@ import XCTest
 
 class HHModuleTests: XCTestCase {
 
-    var controller: HHModuleTestsViewController<HHModuleTestsEventHandler>?
-    var eventHandler: HHModuleTestsEventHandler?
+    var structController: HHModuleTestsViewController<HHModuleTestsEventHandler<HHModuleTestsStructState>, HHModuleTestsStructState>?
+    var structEventHandler: HHModuleTestsEventHandler<HHModuleTestsStructState>?
+
+    var classController: HHModuleTestsViewController<HHModuleTestsEventHandler<HHModuleTestsClassState>, HHModuleTestsClassState>?
+    var classEventHandler: HHModuleTestsEventHandler<HHModuleTestsClassState>?
 
     override func setUp() {
         super.setUp()
 
-        controller = HHModuleTestsViewController<HHModuleTestsEventHandler>()
+        structController = HHModuleTestsViewController<HHModuleTestsEventHandler<HHModuleTestsStructState>, HHModuleTestsStructState>()
 
-        eventHandler = HHModuleTestsEventHandler()
-        eventHandler?.viewInput = controller
+        structEventHandler = HHModuleTestsEventHandler<HHModuleTestsStructState>()
+        structEventHandler?.viewInput = structController
 
-        controller?.output = eventHandler
+        structController?.output = structEventHandler
+
+
+        classController = HHModuleTestsViewController<HHModuleTestsEventHandler<HHModuleTestsClassState>, HHModuleTestsClassState>()
+
+        classEventHandler = HHModuleTestsEventHandler<HHModuleTestsClassState>()
+        classEventHandler?.viewInput = classController
+
+        classController?.output = classEventHandler
     }
     
     override func tearDown() {
 
-        controller = nil
+        structController = nil
 
-        eventHandler = nil
+        structEventHandler = nil
+
+        classController = nil
+
+        classEventHandler = nil
 
         super.tearDown()
     }
-    
-    func testRender() {
-        guard let controller = controller, let eventHandler = eventHandler else {
+
+    func testStructStateRenderInitialization() {
+        guard let controller = structController, let eventHandler = structEventHandler else {
             XCTFail("Initialization error")
             return
         }
 
-        var mockObjectState = HHModuleTestsMockViewState(integerValue: -1, stringValue: "Mock object state")
+        let structState = HHModuleTestsMockViewStructState(
+            integerValue: randomIntNotEqual(controller.mockObjectWithStruct.state?.integerValue),
+            stringValue: randomStringNotEqula(controller.mockObjectWithStruct.state?.stringValue)
+        )
 
-        eventHandler.state.mockObjectState = mockObjectState
+        let classState = HHModuleTestsMockViewClassState()
 
-        XCTAssert(isEqualState(of: controller, state: eventHandler.state), "Render test fail")
+        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+        classState.stringValue = randomStringNotEqula(controller.mockObjectWithClass.state?.stringValue)
 
-        mockObjectState.integerValue = 0
-
-        XCTAssert(isEqualState(of: controller, state: eventHandler.state), "Render test fail")
-
-        let state = HHModuleTestsState(mockObjectState: mockObjectState)
+        let state = HHModuleTestsStructState(structState: structState, classState: classState)
 
         eventHandler.state = state
 
-        XCTAssert(isEqualState(of: controller, state: eventHandler.state), "Render test fail")
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
     }
-
-    func isEqualState(of controller: HHModuleTestsViewController<HHModuleTestsEventHandler>, state: HHModuleTestsState) -> Bool {
-        guard let mockObjectState = controller.mockObject.state else {
-            return false
+    
+    func testStructStateRenderSetStruct() {
+        guard let controller = structController, let eventHandler = structEventHandler else {
+            XCTFail("Initialization error")
+            return
         }
 
-        return mockObjectState == state.mockObjectState
+        let structState = HHModuleTestsMockViewStructState(
+            integerValue: randomIntNotEqual(controller.mockObjectWithStruct.state?.integerValue),
+            stringValue: randomStringNotEqula(controller.mockObjectWithStruct.state?.stringValue)
+        )
+
+        eventHandler.state.structState = structState
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func testStructStateRenderChangeRetainStruct() {
+        guard let controller = structController, let eventHandler = structEventHandler else {
+            XCTFail("Initialization error")
+            return
+        }
+
+        var structState = HHModuleTestsMockViewStructState(
+            integerValue: randomIntNotEqual(controller.mockObjectWithStruct.state?.integerValue),
+            stringValue: randomStringNotEqula(controller.mockObjectWithStruct.state?.stringValue)
+        )
+
+        eventHandler.state.structState = structState
+
+        structState.integerValue = randomIntNotEqual(controller.mockObjectWithStruct.state?.integerValue)
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func testStructStateRenderSetClass() {
+        guard let controller = structController, let eventHandler = structEventHandler else {
+            XCTFail("Initialization error")
+            return
+        }
+
+        let classState = HHModuleTestsMockViewClassState()
+
+        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+        classState.stringValue = randomStringNotEqula(controller.mockObjectWithClass.state?.stringValue)
+
+        eventHandler.state.classState = classState
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func testStructStateRenderChangeRetainClass() {
+        guard let controller = structController, let eventHandler = structEventHandler else {
+            XCTFail("Initialization error")
+            return
+        }
+
+        let classState = HHModuleTestsMockViewClassState()
+
+        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+        classState.stringValue = randomStringNotEqula(controller.mockObjectWithClass.state?.stringValue)
+
+        eventHandler.state.classState = classState
+
+        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func testStructStateRenderBlockStateChanges() {
+        guard let controller = structController, let eventHandler = structEventHandler else {
+            XCTFail("Initialization error")
+            return
+        }
+
+        eventHandler.beginStateChanges()
+
+        eventHandler.state.structState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+
+        XCTAssertFalse(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+
+        eventHandler.commitStateChanges()
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func testStructStateRenderRetainBlockStateChanges() {
+        guard let controller = structController, let eventHandler = structEventHandler else {
+            XCTFail("Initialization error")
+            return
+        }
+
+        let classState = HHModuleTestsMockViewClassState()
+
+        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+        classState.stringValue = randomStringNotEqula(controller.mockObjectWithClass.state?.stringValue)
+
+        eventHandler.state.classState = classState
+
+        eventHandler.beginStateChanges()
+
+        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+
+        XCTAssertFalse(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+
+        eventHandler.commitStateChanges()
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func testClassStateRenderInitialization() {
+        guard let controller = classController, let eventHandler = classEventHandler else {
+            XCTFail("Initialization error")
+            return
+        }
+
+        let structState = HHModuleTestsMockViewStructState(
+            integerValue: randomIntNotEqual(controller.mockObjectWithStruct.state?.integerValue),
+            stringValue: randomStringNotEqula(controller.mockObjectWithStruct.state?.stringValue)
+        )
+
+        let classState = HHModuleTestsMockViewClassState()
+
+        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+        classState.stringValue = randomStringNotEqula(controller.mockObjectWithClass.state?.stringValue)
+
+        let state = HHModuleTestsClassState()
+
+        state.structState = structState
+        state.classState = classState
+
+        eventHandler.state = state
+
+        XCTAssertFalse(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+
+        eventHandler.viewSetNeedsRedraw()
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func testClassStateRenderSetStruct() {
+        guard let controller = classController, let eventHandler = classEventHandler else {
+            XCTFail("Initialization error")
+            return
+        }
+
+        let structState = HHModuleTestsMockViewStructState(
+            integerValue: randomIntNotEqual(controller.mockObjectWithStruct.state?.integerValue),
+            stringValue: randomStringNotEqula(controller.mockObjectWithStruct.state?.stringValue)
+        )
+
+        eventHandler.state.structState = structState
+
+        XCTAssertFalse(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+
+        eventHandler.viewSetNeedsRedraw()
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func testClassStateRenderChangeRetainStruct() {
+        guard let controller = classController, let eventHandler = classEventHandler else {
+            XCTFail("Initialization error")
+            return
+        }
+
+        var structState = HHModuleTestsMockViewStructState(
+            integerValue: randomIntNotEqual(controller.mockObjectWithStruct.state?.integerValue),
+            stringValue: randomStringNotEqula(controller.mockObjectWithStruct.state?.stringValue)
+        )
+
+        eventHandler.state.structState = structState
+
+        eventHandler.viewSetNeedsRedraw()
+
+        structState.integerValue = randomIntNotEqual(controller.mockObjectWithStruct.state?.integerValue)
+
+        XCTAssertFalse(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+
+        eventHandler.viewSetNeedsRedraw()
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func testClassStateRenderSetClass() {
+        guard let controller = classController, let eventHandler = classEventHandler else {
+            XCTFail("Initialization error")
+            return
+        }
+
+        let classState = HHModuleTestsMockViewClassState()
+
+        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+        classState.stringValue = randomStringNotEqula(controller.mockObjectWithClass.state?.stringValue)
+
+        eventHandler.state.classState = classState
+
+        XCTAssertFalse(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+
+        eventHandler.viewSetNeedsRedraw()
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func testClassStateRenderChangeRetainClass() {
+        guard let controller = classController, let eventHandler = classEventHandler else {
+            XCTFail("Initialization error")
+            return
+        }
+
+        let classState = HHModuleTestsMockViewClassState()
+
+        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+        classState.stringValue = randomStringNotEqula(controller.mockObjectWithClass.state?.stringValue)
+
+        eventHandler.state.classState = classState
+
+        eventHandler.viewSetNeedsRedraw()
+
+        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+
+        XCTAssertFalse(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+
+        eventHandler.viewSetNeedsRedraw()
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func testClassStateRenderBlockStateChanges() {
+        guard let controller = classController, let eventHandler = classEventHandler else {
+            XCTFail("Initialization error")
+            return
+        }
+
+        eventHandler.beginStateChanges()
+
+        eventHandler.state.structState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+
+        XCTAssertFalse(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+
+        eventHandler.commitStateChanges()
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func testClassStateRenderRetainBlockStateChanges() {
+        guard let controller = structController, let eventHandler = structEventHandler else {
+            XCTFail("Initialization error")
+            return
+        }
+
+        let classState = HHModuleTestsMockViewClassState()
+
+        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+        classState.stringValue = randomStringNotEqula(controller.mockObjectWithClass.state?.stringValue)
+
+        eventHandler.state.classState = classState
+
+        eventHandler.beginStateChanges()
+
+        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
+
+        XCTAssertFalse(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+
+        eventHandler.commitStateChanges()
+
+        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+    }
+
+    func isEqualState(of controller: HHModuleTestsViewController<HHModuleTestsEventHandler<HHModuleTestsStructState>, HHModuleTestsStructState>,
+                      withStateOf eventHandler: HHModuleTestsEventHandler<HHModuleTestsStructState>) -> Bool {
+        guard let structState = controller.mockObjectWithStruct.state,
+            let classState = controller.mockObjectWithClass.state else {
+                return false
+        }
+
+        return structState == eventHandler.state.structState
+            && classState == eventHandler.state.classState
+    }
+
+    func isEqualState(of controller: HHModuleTestsViewController<HHModuleTestsEventHandler<HHModuleTestsClassState>, HHModuleTestsClassState>,
+                      withStateOf eventHandler: HHModuleTestsEventHandler<HHModuleTestsClassState>) -> Bool {
+        guard let structState = controller.mockObjectWithStruct.state,
+            let classState = controller.mockObjectWithClass.state else {
+                return false
+        }
+
+        return structState == eventHandler.state.structState
+            && classState == eventHandler.state.classState
+    }
+
+    func randomIntNotEqual(_ value: Int?) -> Int {
+        var result: Int
+
+        repeat {
+            result = Int(arc4random_uniform(1_000))
+        } while result == (value ?? 0)
+
+        return result
+    }
+
+    func randomStringNotEqula(_ value: String?) -> String {
+        var result: String
+
+        repeat {
+            result = NSUUID().uuidString
+        } while result == (value ?? "")
+
+        return result
     }
 }

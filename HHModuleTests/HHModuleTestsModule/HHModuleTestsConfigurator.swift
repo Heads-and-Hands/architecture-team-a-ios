@@ -18,9 +18,9 @@ final class HHModuleTestsConfigurator: ARCHModuleConfigurator {
     }
 
     var router: ARCHRouter {
-        let controller = HHModuleTestsViewController<HHModuleTestsEventHandler>()
+        let controller = HHModuleTestsViewController<HHModuleTestsEventHandler<HHModuleTestsStructState>, HHModuleTestsStructState>()
 
-        let eventHandler = HHModuleTestsEventHandler()
+        let eventHandler = HHModuleTestsEventHandler<HHModuleTestsStructState>()
         eventHandler.router = controller
         eventHandler.viewInput = controller
 
