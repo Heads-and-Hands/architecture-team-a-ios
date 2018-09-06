@@ -222,6 +222,35 @@
 		50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
 		50EA303F2134529A00A95512 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CC586FB214141DE00C33874 /* ModulesCustomAnimationStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */; };
+		9CC586FC214141E900C33874 /* CustomAnimationMainEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F0214141A400C33874 /* CustomAnimationMainEventHandler.swift */; };
+		9CC586FD214141E900C33874 /* CustomAnimationMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F1214141A400C33874 /* CustomAnimationMainViewController.swift */; };
+		9CC586FE214141E900C33874 /* CustomAnimationMainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F2214141A400C33874 /* CustomAnimationMainProtocols.swift */; };
+		9CC586FF214141E900C33874 /* CustomAnimationMainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F3214141A400C33874 /* CustomAnimationMainConfigurator.swift */; };
+		9CC58700214141E900C33874 /* CustomAnimationMainState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F4214141A400C33874 /* CustomAnimationMainState.swift */; };
+		9CC58704214143C900C33874 /* CustomAnimationAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC587022141433C00C33874 /* CustomAnimationAppDelegate.swift */; };
+		9CC587052141443800C33874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093688220F683030044CA62 /* Assets.xcassets */; };
+		9CE1C6B32141467500C4C5C1 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CE1C6B921414B9A00C4C5C1 /* CustomAnimationPushEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B421414B9A00C4C5C1 /* CustomAnimationPushEventHandler.swift */; };
+		9CE1C6BA21414B9A00C4C5C1 /* CustomAnimationPushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B521414B9A00C4C5C1 /* CustomAnimationPushViewController.swift */; };
+		9CE1C6BB21414B9A00C4C5C1 /* CustomAnimationPushProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B621414B9A00C4C5C1 /* CustomAnimationPushProtocols.swift */; };
+		9CE1C6BC21414B9A00C4C5C1 /* CustomAnimationPushConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B721414B9A00C4C5C1 /* CustomAnimationPushConfigurator.swift */; };
+		9CE1C6BD21414B9A00C4C5C1 /* CustomAnimationPushState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B821414B9A00C4C5C1 /* CustomAnimationPushState.swift */; };
+		9CE1C6C421414BBE00C4C5C1 /* CustomAnimationPresentEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6BF21414BBE00C4C5C1 /* CustomAnimationPresentEventHandler.swift */; };
+		9CE1C6C521414BBE00C4C5C1 /* CustomAnimationPresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6C021414BBE00C4C5C1 /* CustomAnimationPresentViewController.swift */; };
+		9CE1C6C621414BBE00C4C5C1 /* CustomAnimationPresentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6C121414BBE00C4C5C1 /* CustomAnimationPresentProtocols.swift */; };
+		9CE1C6C721414BBE00C4C5C1 /* CustomAnimationPresentConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6C221414BBE00C4C5C1 /* CustomAnimationPresentConfigurator.swift */; };
+		9CE1C6C821414BBE00C4C5C1 /* CustomAnimationPresentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6C321414BBE00C4C5C1 /* CustomAnimationPresentState.swift */; };
+		9CE1C6CA21414C1800C4C5C1 /* CustomAnimationPushEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B421414B9A00C4C5C1 /* CustomAnimationPushEventHandler.swift */; };
+		9CE1C6CB21414C1800C4C5C1 /* CustomAnimationPushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B521414B9A00C4C5C1 /* CustomAnimationPushViewController.swift */; };
+		9CE1C6CC21414C1800C4C5C1 /* CustomAnimationPushProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B621414B9A00C4C5C1 /* CustomAnimationPushProtocols.swift */; };
+		9CE1C6CD21414C1800C4C5C1 /* CustomAnimationPushConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B721414B9A00C4C5C1 /* CustomAnimationPushConfigurator.swift */; };
+		9CE1C6CE21414C1800C4C5C1 /* CustomAnimationPushState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B821414B9A00C4C5C1 /* CustomAnimationPushState.swift */; };
+		9CE1C6CF21414C1F00C4C5C1 /* CustomAnimationPresentEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6BF21414BBE00C4C5C1 /* CustomAnimationPresentEventHandler.swift */; };
+		9CE1C6D021414C1F00C4C5C1 /* CustomAnimationPresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6C021414BBE00C4C5C1 /* CustomAnimationPresentViewController.swift */; };
+		9CE1C6D121414C1F00C4C5C1 /* CustomAnimationPresentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6C121414BBE00C4C5C1 /* CustomAnimationPresentProtocols.swift */; };
+		9CE1C6D221414C1F00C4C5C1 /* CustomAnimationPresentConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6C221414BBE00C4C5C1 /* CustomAnimationPresentConfigurator.swift */; };
+		9CE1C6D321414C1F00C4C5C1 /* CustomAnimationPresentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6C321414BBE00C4C5C1 /* CustomAnimationPresentState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -499,6 +528,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9CE1C6B22141465900C4C5C1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9CE1C6B32141467500C4C5C1 /* HHModule.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -661,6 +701,24 @@
 		50FA81F3211AE47C00ADA769 /* ListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListConfigurator.swift; sourceTree = "<group>"; };
 		50FA81F4211AE47C00ADA769 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHCellViewModel.swift; sourceTree = "<group>"; };
+		9CC586D52141400400C33874 /* HHCustomAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHCustomAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesCustomAnimationStory.swift; sourceTree = "<group>"; };
+		9CC586F0214141A400C33874 /* CustomAnimationMainEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationMainEventHandler.swift; sourceTree = "<group>"; };
+		9CC586F1214141A400C33874 /* CustomAnimationMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationMainViewController.swift; sourceTree = "<group>"; };
+		9CC586F2214141A400C33874 /* CustomAnimationMainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationMainProtocols.swift; sourceTree = "<group>"; };
+		9CC586F3214141A400C33874 /* CustomAnimationMainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationMainConfigurator.swift; sourceTree = "<group>"; };
+		9CC586F4214141A400C33874 /* CustomAnimationMainState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationMainState.swift; sourceTree = "<group>"; };
+		9CC587022141433C00C33874 /* CustomAnimationAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationAppDelegate.swift; sourceTree = "<group>"; };
+		9CE1C6B421414B9A00C4C5C1 /* CustomAnimationPushEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPushEventHandler.swift; sourceTree = "<group>"; };
+		9CE1C6B521414B9A00C4C5C1 /* CustomAnimationPushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPushViewController.swift; sourceTree = "<group>"; };
+		9CE1C6B621414B9A00C4C5C1 /* CustomAnimationPushProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPushProtocols.swift; sourceTree = "<group>"; };
+		9CE1C6B721414B9A00C4C5C1 /* CustomAnimationPushConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPushConfigurator.swift; sourceTree = "<group>"; };
+		9CE1C6B821414B9A00C4C5C1 /* CustomAnimationPushState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPushState.swift; sourceTree = "<group>"; };
+		9CE1C6BF21414BBE00C4C5C1 /* CustomAnimationPresentEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPresentEventHandler.swift; sourceTree = "<group>"; };
+		9CE1C6C021414BBE00C4C5C1 /* CustomAnimationPresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPresentViewController.swift; sourceTree = "<group>"; };
+		9CE1C6C121414BBE00C4C5C1 /* CustomAnimationPresentProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPresentProtocols.swift; sourceTree = "<group>"; };
+		9CE1C6C221414BBE00C4C5C1 /* CustomAnimationPresentConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPresentConfigurator.swift; sourceTree = "<group>"; };
+		9CE1C6C321414BBE00C4C5C1 /* CustomAnimationPresentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPresentState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -785,6 +843,13 @@
 			files = (
 				50EA30382134529A00A95512 /* HHModule.framework in Frameworks */,
 				50EA30392134529A00A95512 /* HHList.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CC586D22141400400C33874 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1185,6 +1250,7 @@
 				50EA30442134529A00A95512 /* HHSkeletonDemo.app */,
 				507F149B2137E6B50087DCDB /* HHIndication.framework */,
 				507F14CE2137E99C0087DCDB /* HHIndicationDemo.app */,
+				9CC586D52141400400C33874 /* HHCustomAnimationDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1203,8 +1269,10 @@
 				50C98574212AEB670002EF4B /* Pagination */,
 				507F14D72137EAC80087DCDB /* Indication */,
 				50EA3046213452EF00A95512 /* SkeletonDemo */,
+				9CC586EF2141410100C33874 /* CustomAnimation */,
 				5089235E20FC8E7B0032985E /* ModulesUserStory.swift */,
 				5093687B20F683010044CA62 /* AppDelegate.swift */,
+				9CC587022141433C00C33874 /* CustomAnimationAppDelegate.swift */,
 				5093688220F683030044CA62 /* Assets.xcassets */,
 				5093688420F683030044CA62 /* LaunchScreen.storyboard */,
 				5093688720F683030044CA62 /* Info.plist */,
@@ -1322,6 +1390,53 @@
 				50FA81F4211AE47C00ADA769 /* ListState.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		9CC586EF2141410100C33874 /* CustomAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */,
+				9CC586FA214141AF00C33874 /* CustomAnimationMain */,
+				9CE1C6BE21414B9F00C4C5C1 /* CustomAnimationPush */,
+				9CE1C6C921414BC800C4C5C1 /* CustomAnimationPresent */,
+			);
+			path = CustomAnimation;
+			sourceTree = "<group>";
+		};
+		9CC586FA214141AF00C33874 /* CustomAnimationMain */ = {
+			isa = PBXGroup;
+			children = (
+				9CC586F0214141A400C33874 /* CustomAnimationMainEventHandler.swift */,
+				9CC586F1214141A400C33874 /* CustomAnimationMainViewController.swift */,
+				9CC586F2214141A400C33874 /* CustomAnimationMainProtocols.swift */,
+				9CC586F3214141A400C33874 /* CustomAnimationMainConfigurator.swift */,
+				9CC586F4214141A400C33874 /* CustomAnimationMainState.swift */,
+			);
+			path = CustomAnimationMain;
+			sourceTree = "<group>";
+		};
+		9CE1C6BE21414B9F00C4C5C1 /* CustomAnimationPush */ = {
+			isa = PBXGroup;
+			children = (
+				9CE1C6B421414B9A00C4C5C1 /* CustomAnimationPushEventHandler.swift */,
+				9CE1C6B521414B9A00C4C5C1 /* CustomAnimationPushViewController.swift */,
+				9CE1C6B621414B9A00C4C5C1 /* CustomAnimationPushProtocols.swift */,
+				9CE1C6B721414B9A00C4C5C1 /* CustomAnimationPushConfigurator.swift */,
+				9CE1C6B821414B9A00C4C5C1 /* CustomAnimationPushState.swift */,
+			);
+			path = CustomAnimationPush;
+			sourceTree = "<group>";
+		};
+		9CE1C6C921414BC800C4C5C1 /* CustomAnimationPresent */ = {
+			isa = PBXGroup;
+			children = (
+				9CE1C6BF21414BBE00C4C5C1 /* CustomAnimationPresentEventHandler.swift */,
+				9CE1C6C021414BBE00C4C5C1 /* CustomAnimationPresentViewController.swift */,
+				9CE1C6C121414BBE00C4C5C1 /* CustomAnimationPresentProtocols.swift */,
+				9CE1C6C221414BBE00C4C5C1 /* CustomAnimationPresentConfigurator.swift */,
+				9CE1C6C321414BBE00C4C5C1 /* CustomAnimationPresentState.swift */,
+			);
+			path = CustomAnimationPresent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1649,6 +1764,24 @@
 			productReference = 50EA30442134529A00A95512 /* HHSkeletonDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9CC586D42141400400C33874 /* HHCustomAnimationDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CC586E62141400500C33874 /* Build configuration list for PBXNativeTarget "HHCustomAnimationDemo" */;
+			buildPhases = (
+				9CC586D12141400400C33874 /* Sources */,
+				9CC586D22141400400C33874 /* Frameworks */,
+				9CC586D32141400400C33874 /* Resources */,
+				9CE1C6B22141465900C4C5C1 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHCustomAnimationDemo;
+			productName = HHCustomAnimationDemo;
+			productReference = 9CC586D52141400400C33874 /* HHCustomAnimationDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1683,6 +1816,9 @@
 					50C9855D212AE9D20002EF4B = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					9CC586D42141400400C33874 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 5093687320F683010044CA62 /* Build configuration list for PBXProject "architecture" */;
@@ -1705,6 +1841,7 @@
 				50C9857F212AEBFF0002EF4B /* HHPaginationDemo */,
 				50EA30272134529A00A95512 /* HHSkeletonDemo */,
 				507F14AF2137E99C0087DCDB /* HHIndicationDemo */,
+				9CC586D42141400400C33874 /* HHCustomAnimationDemo */,
 				501AA647211C6C4A002D3264 /* HHList */,
 				5072DD94211D84B800E08A92 /* HHModule */,
 				5072DDE6211DE83200E08A92 /* HHListExtension */,
@@ -1829,6 +1966,14 @@
 				50EA303B2134529A00A95512 /* Assets.xcassets in Resources */,
 				50EA303C2134529A00A95512 /* ExampleCell.xib in Resources */,
 				50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CC586D32141400400C33874 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CC587052141443800C33874 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2168,13 +2313,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE1C6BA21414B9A00C4C5C1 /* CustomAnimationPushViewController.swift in Sources */,
+				9CE1C6C621414BBE00C4C5C1 /* CustomAnimationPresentProtocols.swift in Sources */,
+				9CE1C6BD21414B9A00C4C5C1 /* CustomAnimationPushState.swift in Sources */,
+				9CE1C6C821414BBE00C4C5C1 /* CustomAnimationPresentState.swift in Sources */,
 				50EA3022213420B600A95512 /* EmptyModuleEventHandler.swift in Sources */,
 				507ABCCF21257C97003DBDD7 /* EmptyModuleConfigurator.swift in Sources */,
 				5093687C20F683010044CA62 /* AppDelegate.swift in Sources */,
+				9CE1C6C421414BBE00C4C5C1 /* CustomAnimationPresentEventHandler.swift in Sources */,
 				50EA3021213420B600A95512 /* EmptyModuleViewController.swift in Sources */,
+				9CE1C6BB21414B9A00C4C5C1 /* CustomAnimationPushProtocols.swift in Sources */,
+				9CE1C6BC21414B9A00C4C5C1 /* CustomAnimationPushConfigurator.swift in Sources */,
 				5089236720FC8E7B0032985E /* ModulesUserStory.swift in Sources */,
+				9CE1C6C721414BBE00C4C5C1 /* CustomAnimationPresentConfigurator.swift in Sources */,
 				50EA3023213420B600A95512 /* EmptyModuleModuleIO.swift in Sources */,
 				50EA3026213421E800A95512 /* Label.swift in Sources */,
+				9CE1C6B921414B9A00C4C5C1 /* CustomAnimationPushEventHandler.swift in Sources */,
+				9CE1C6C521414BBE00C4C5C1 /* CustomAnimationPresentViewController.swift in Sources */,
 				50EA3024213420B600A95512 /* EmptyModuleState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2234,6 +2389,30 @@
 				50EA30342134529A00A95512 /* ExampleCellViewModel.swift in Sources */,
 				507F14E92137EB9E0087DCDB /* SkeletonListModuleIO.swift in Sources */,
 				50EA30362134529A00A95512 /* ListModuleIO.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CC586D12141400400C33874 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CC586FD214141E900C33874 /* CustomAnimationMainViewController.swift in Sources */,
+				9CC586FF214141E900C33874 /* CustomAnimationMainConfigurator.swift in Sources */,
+				9CE1C6D221414C1F00C4C5C1 /* CustomAnimationPresentConfigurator.swift in Sources */,
+				9CC586FC214141E900C33874 /* CustomAnimationMainEventHandler.swift in Sources */,
+				9CE1C6D321414C1F00C4C5C1 /* CustomAnimationPresentState.swift in Sources */,
+				9CE1C6CD21414C1800C4C5C1 /* CustomAnimationPushConfigurator.swift in Sources */,
+				9CE1C6D021414C1F00C4C5C1 /* CustomAnimationPresentViewController.swift in Sources */,
+				9CE1C6CC21414C1800C4C5C1 /* CustomAnimationPushProtocols.swift in Sources */,
+				9CE1C6CA21414C1800C4C5C1 /* CustomAnimationPushEventHandler.swift in Sources */,
+				9CC586FE214141E900C33874 /* CustomAnimationMainProtocols.swift in Sources */,
+				9CC58700214141E900C33874 /* CustomAnimationMainState.swift in Sources */,
+				9CE1C6CB21414C1800C4C5C1 /* CustomAnimationPushViewController.swift in Sources */,
+				9CE1C6CE21414C1800C4C5C1 /* CustomAnimationPushState.swift in Sources */,
+				9CE1C6CF21414C1F00C4C5C1 /* CustomAnimationPresentEventHandler.swift in Sources */,
+				9CC586FB214141DE00C33874 /* ModulesCustomAnimationStory.swift in Sources */,
+				9CE1C6D121414C1F00C4C5C1 /* CustomAnimationPresentProtocols.swift in Sources */,
+				9CC58704214143C900C33874 /* CustomAnimationAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3224,6 +3403,42 @@
 			};
 			name = Release;
 		};
+		9CC586E42141400500C33874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7PJVL5L8D;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = evssar.HHCustomAnimationDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9CC586E52141400500C33874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7PJVL5L8D;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = evssar.HHCustomAnimationDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3349,6 +3564,15 @@
 			buildConfigurations = (
 				50EA30422134529A00A95512 /* Debug */,
 				50EA30432134529A00A95512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CC586E62141400500C33874 /* Build configuration list for PBXNativeTarget "HHCustomAnimationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CC586E42141400500C33874 /* Debug */,
+				9CC586E52141400500C33874 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
