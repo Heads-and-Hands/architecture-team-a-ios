@@ -9,18 +9,6 @@
 import HHModule
 import HHList
 
-/*
-extension ARCHViewInput where Self: UITableViewDataSource {
-
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        fatalError("Realizated in ARCHTableViewDataSource")
-    }
-
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("Realizated in ARCHTableViewDataSource")
-    }
-}*/
-
 extension ARCHCollectionViewController: ARCHViewRenderable {
 
     public typealias State = [D]

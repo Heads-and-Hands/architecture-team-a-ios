@@ -86,48 +86,4 @@ open class ARCHCollectionViewController<D: Hashable, VM: ARCHCellViewModel & ARC
         dataAdapter.data = data
         collectionView.reloadData()
     }
-
-//    public var data: [D] = [] {
-//        didSet {
-///*
-//            if UIView.areAnimationsEnabled {
-//                let changes = diff(old: dataAdapter.data, new: data)
-//                reloadViewWith(data: data, changes: changes)
-//            } else {
-//                dataAdapter.data = data
-//                collectionView.reloadData()
-//            }
-//*/
-//        }
-//    }
-
-/*
-    private func reloadViewWith(data: [D], changes: [Change<D>]) {
-        let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: 0)
-
-        collectionView.performBatchUpdates({
-            dataAdapter.data = data
-            internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
-        }, completion: nil)
-    }
-
-    private func internalBatchUpdates(changesWithIndexPath: ChangeWithIndexPath) {
-        changesWithIndexPath.deletes.executeIfPresent {
-            self.collectionView.deleteItems(at: $0)
-        }
-
-        changesWithIndexPath.inserts.executeIfPresent {
-            self.collectionView.insertItems(at: $0)
-        }
-
-        changesWithIndexPath.moves.executeIfPresent {
-            $0.forEach { move in
-                self.collectionView.moveItem(at: move.from, to: move.to)
-            }
-        }
-
-        changesWithIndexPath.replaces.executeIfPresent {
-            self.collectionView.reloadItems(at: $0)
-        }
-    }*/
 }
