@@ -15,4 +15,8 @@ final class CustomAnimationPresentEventHandler: ARCHEventHandler<CustomAnimation
     override func viewIsReady() {
         super.viewIsReady()
     }
+
+    func didTapCloseButton() {
+        (router as? UIViewController)?.dismiss(animated: true, completion: nil)
+    }
 }

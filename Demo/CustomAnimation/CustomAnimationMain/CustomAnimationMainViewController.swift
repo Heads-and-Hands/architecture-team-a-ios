@@ -11,21 +11,22 @@ import UIKit
 
 final class CustomAnimationMainViewController<Out: CustomAnimationMainViewOutput>: ARCHViewController<CustomAnimationMainState, Out> {
 
-    private var pushButton: UIButton?
-    private var presentButton: UIButton?
+    let pushButton = CustomButton(title: "PUSH")
+    let presentButton = CustomButton(title: "PRESENT")
+    let stackView = UIStackView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
 
-        let pushButton = configureButton(with: "PUSH")
-        let presentButton = configureButton(with: "PRESENT")
-
         pushButton.addTarget(self, action: #selector(self.pushButtonDidTap(_:)), for: .touchUpInside)
         presentButton.addTarget(self, action: #selector(self.presentButtonDidTap(_:)), for: .touchUpInside)
 
-        let stackView = UIStackView(arrangedSubviews: [pushButton, presentButton])
+        [pushButton, presentButton].forEach({
+            self.stackView.addArrangedSubview($0)
+        })
+
         stackView.axis = .vertical
         stackView.spacing = 8.0
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,20 +59,22 @@ final class CustomAnimationMainViewController<Out: CustomAnimationMainViewOutput
     private func presentButtonDidTap(_ sender: UIButton) {
         output?.didTapPresentButton()
     }
+}
 
-    // MARK: - Private
+class CustomButton: UIButton {
 
-    private func configureButton(with title: String) -> UIButton {
+    init(title: String) {
+        super.init(frame: .zero)
 
-        let result = UIButton()
+        setTitle(title, for: .normal)
+        setTitleColor(.white, for: .normal)
+        backgroundColor = .blue
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 32.0)
 
-        result.setTitle(title, for: .normal)
-        result.setTitleColor(.white, for: .normal)
-        result.backgroundColor = .blue
-        result.titleLabel?.font = UIFont.boldSystemFont(ofSize: 32.0)
+        layer.cornerRadius = 15.0
+    }
 
-        result.layer.cornerRadius = 15.0
-
-        return result
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

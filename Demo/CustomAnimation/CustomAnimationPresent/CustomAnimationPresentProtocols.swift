@@ -9,6 +9,8 @@
 import HHModule
 
 protocol CustomAnimationPresentViewOutput: ACRHViewOutput {
+
+    func didTapCloseButton()
 }
 
 protocol CustomAnimationPresentModuleInput {
