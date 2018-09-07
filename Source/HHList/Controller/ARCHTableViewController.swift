@@ -25,7 +25,6 @@ open class ARCHTableViewController<D: Hashable, VM: ARCHCellViewModel & ARCHMode
     public var dataSource: UITableViewDataSource? {
         set {
             viewDataSource.dataSource = newValue
-//            viewDataSource.refreshViewDataSource()
         }
         get {
             return viewDataSource.dataSource
