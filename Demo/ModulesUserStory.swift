@@ -28,7 +28,7 @@ enum ModulesUserStory: ARCHModuleID {
 #elseif HHIndication
             return IndicationDemoConfigurator(moduleIO: nil)
 #elseif HHSkeleton
-            return SkeletonListConfigurator(moduleIO: nil)
+            return IndicationDemoConfigurator(moduleIO: nil)
 #endif
         }
     }

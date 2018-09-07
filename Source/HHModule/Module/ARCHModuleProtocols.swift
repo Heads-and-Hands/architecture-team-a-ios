@@ -16,21 +16,57 @@ public protocol ARCHState {
 }
 
 public protocol ARCHViewInput: class {
-    func update(state: Any?)
+
+    /**
+     Приоритет сортировки, чем больше значение,
+     тем раньше должна обработаться данное Вью
+     */
+    var sortPriority: Int { get }
+
+    /**
+     Обновлеяем вьюху на основании переданных данных
+     @return true - если удалось обработать переданное состояние
+     */
+    func update(state: Any) -> Bool
+
+    /**
+     Связанные вьюхи для конкретного стейт
+     */
+    func ignoredViews(by state: Any) -> [ARCHViewInput]
 
     func set(visible: Bool)
-
-    func typeExist(state: Any?) -> Bool
 }
 
 public extension ARCHViewInput where Self: UIView {
 
     func set(visible: Bool) {
-        isHidden = visible
+        print("[\(type(of: self))] set(visible: \(visible))")
+        isHidden = !visible
     }
 }
 
 public extension ARCHViewInput {
+
+    var sortPriority: Int {
+        return -1
+    }
+
+    func ignoredViews(by state: Any) -> [ARCHViewInput] {
+        return []
+    }
+
+    /*
+    func update(states: [Any]) -> [Any] {
+        var buffer = states
+
+        for (index, state) in states.enumerated() where typeExist(state: state) {
+            update(state: state)
+            buffer.remove(at: index)
+            break
+        }
+
+        return buffer
+    }*/
 
     func set(visible: Bool) {
     }
@@ -43,6 +79,17 @@ public protocol ARCHViewRenderable: ARCHViewInput {
 
 public extension ARCHViewRenderable where State: Any {
 
+    func update(state: Any) -> Bool {
+        if let state = state as? State {
+//            set(visible: true)
+            render(state: state)
+            return true
+        } else {
+            return false
+        }
+    }
+
+    /*
     func update(state: Any?) {
         if let state = state as? State {
             set(visible: true)
@@ -67,7 +114,7 @@ public extension ARCHViewRenderable where State: Any {
 
     private var optionalStateType: Any.Type {
         return Mirror(reflecting: State?.self).subjectType
-    }
+    }*/
 }
 
 /**

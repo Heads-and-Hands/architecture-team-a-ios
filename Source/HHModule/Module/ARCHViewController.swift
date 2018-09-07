@@ -19,29 +19,63 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
     }
 
     open func render(state: State) {
-        let viewMirror = Mirror(reflecting: self)
-        let stateMirror = Mirror(reflecting: state)
+        print("[ARCHViewController] start render(state:)")
 
-        for (_, viewProperty) in viewMirror.children {
-            guard let view = viewProperty as? ARCHViewInput else {
-                continue
+        var views = autorenderViews
+        let substates = self.substates(state: state)
+
+//        debugDisplay(states: substates)
+
+        var index: Int = 0
+        while index < views.count {
+            let view = views[index]
+            print("\(type(of: view))")
+            var isVisible = false
+
+            for substate in substates {
+                if view.update(state: substate) {
+                    let ignoredViews = view.ignoredViews(by: substate)
+                    views = views.filter { item -> Bool in
+                        ignoredViews.contains(where: { $0 === item })
+                    }
+                    isVisible = true
+                    break
+                }
             }
 
-            if autorenderIgnoreViews.contains(where: { $0 === view }) {
-                continue
-            }
+            print("isVisible \(isVisible)")
 
-            render(state: stateMirror, on: view)
+            view.set(visible: isVisible)
+            index += 1
         }
+
+        print("[ARCHViewController] end render(state:)")
     }
 
-    open func render(state: Mirror, on view: ARCHViewInput) {
-        for (_, value) in state.children {
-            if view.typeExist(state: value) {
-                view.update(state: value)
-                return
-            }
-        }
+    private func debugDisplay(states: [Any]) {
+        print("States >>>>>>>>>>>>>>>>>>>>>>>")
+        states.forEach({ print("\(type(of: $0))")})
+        print("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+    }
+
+    private func substates(state: State) -> [Any] {
+        return Mirror(reflecting: state).children.map({ $0.value })
+    }
+
+    private var autorenderViews: [ARCHViewInput] {
+        return Mirror(reflecting: self).children
+            .compactMap({ item -> ARCHViewInput? in
+                guard let value = item.value as? ARCHViewInput else {
+                    return nil
+                }
+
+                if autorenderIgnoreViews.contains(where: { $0 === value }) {
+                    return nil
+                } else {
+                    return value
+                }
+            })
+            .sorted(by: { $0.sortPriority > $1.sortPriority })
     }
 
     override open func viewDidLoad() {

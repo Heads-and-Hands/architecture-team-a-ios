@@ -17,3 +17,7 @@ class ExampleCell: UITableViewCell, ARCHCell {
         textLabel?.text = viewModel.title
     }
 }
+
+extension ExampleCell: ARCHSkeletonView {
+    
+}

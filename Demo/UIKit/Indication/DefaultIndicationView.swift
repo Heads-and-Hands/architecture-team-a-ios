@@ -56,11 +56,11 @@ class DefaultIndicationView: UIView, ARCHIndicationView {
         return stackView
     }
 
-    // MARK: -
+    // MARK: - ARCHViewInput
 
-    func update(state: Any?) {
+    func update(state: Any) -> Bool {
         guard let state = state as? IndicationState else {
-            return
+            return false
         }
 
         switch state.type {
@@ -72,9 +72,7 @@ class DefaultIndicationView: UIView, ARCHIndicationView {
             titleLabel.text = state.title
             indicatorView.stopAnimating()
         }
-    }
 
-    func typeExist(state: Any?) -> Bool {
-        return state is IndicationState
+        return true
     }
 }

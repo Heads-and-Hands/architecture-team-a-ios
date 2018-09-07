@@ -18,6 +18,8 @@ class IndicationHelper: ARCHIndicationHelper<IndicationState> {
     override init() {
         super.init()
 
-        providers = IndicationHelper.defaultProviders
+        for (key, value) in IndicationHelper.defaultProviders {
+            set(provider: value, by: key)
+        }
     }
 }

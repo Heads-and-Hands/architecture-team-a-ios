@@ -8,7 +8,8 @@
 
 import UIKit
 
-public class ARCHIndicationViewProxy: ARCHIndicationView {
+/*
+public class ARCHIndicationViewProxy: ARCHIndicationView, ARCHIndicationViewProvider {
 
     public let views: [ARCHIndicationView]
 
@@ -31,4 +32,4 @@ public class ARCHIndicationViewProxy: ARCHIndicationView {
     public func typeExist(state: Any?) -> Bool {
         return views.reduce(false, { $0 || $1.typeExist(state: state) })
     }
-}
+}*/
