@@ -10,9 +10,9 @@ import HHModule
 
 protocol CustomAnimationMainViewOutput: ACRHViewOutput {
 
-    func didTapPresentButton()
+    func didTapPresentButton(_ image: UIImage)
 
-    func didTapPushButton()
+    func didTapPushButton(_ image: UIImage)
 }
 
 protocol CustomAnimationMainModuleInput {

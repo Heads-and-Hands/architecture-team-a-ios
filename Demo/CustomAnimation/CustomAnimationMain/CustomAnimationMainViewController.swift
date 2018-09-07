@@ -10,13 +10,25 @@ import HHList
 import HHModule
 import UIKit
 
-final class CustomAnimationMainViewController<Out: CustomAnimationMainViewOutput>: ARCHViewController<CustomAnimationMainState, Out> {
+final class CustomAnimationMainViewController<Out: CustomAnimationMainViewOutput>: ARCHViewController<CustomAnimationMainState, Out>, UICollectionViewDelegateFlowLayout {
 
     let pushButton = CustomButton(title: "PUSH")
     let presentButton = CustomButton(title: "PRESENT")
     let stackView = UIStackView()
 
-    var collectionView: UICollectionView?
+    var currentImage: UIImage?
+    var currentFrame: CGRect?
+
+    var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+
+    lazy var dataSource: ARCHCollectionViewDataSource = {
+        let dataSource = ARCHCollectionViewDataSource(view: collectionView)
+        dataSource.register(cell: CustomAnimatorCell.self, for: CustomAnimatorCellViewModel.self)
+        dataSource.dataAdapter = dataAdapter
+        return dataSource
+    }()
+
+    lazy var dataAdapter = ARCHEmptyListDataAdapter<UIImage, CustomAnimatorCellViewModel>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,25 +42,46 @@ final class CustomAnimationMainViewController<Out: CustomAnimationMainViewOutput
             self.stackView.addArrangedSubview($0)
         })
 
-        stackView.axis = .vertical
+        stackView.axis = .horizontal
         stackView.spacing = 8.0
+        stackView.distribution = .fillProportionally
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(stackView)
 
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-
-            stackView.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor),
-            stackView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
-            stackView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor),
-            stackView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor)
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8.0),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8.0),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8.0)
         ])
+
+        collectionView.backgroundColor = .white
+        collectionView.dataSource = dataSource
+        collectionView.delegate = self
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.minimumLineSpacing = 0.0
+            flowLayout.minimumInteritemSpacing = 0.0
+        }
+
+        view.addSubview(collectionView)
+
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+
+        view.bringSubview(toFront: stackView)
     }
 
     override func render(state: State) {
         super.render(state: state)
+
+        dataAdapter.data = state.images
+        collectionView.reloadData()
     }
 
     // MARK: - Configuration
@@ -67,32 +100,51 @@ final class CustomAnimationMainViewController<Out: CustomAnimationMainViewOutput
 
     @objc
     private func pushButtonDidTap(_ sender: UIButton) {
-        output?.didTapPushButton()
+        guard let image = currentImage else {
+            return
+        }
+        output?.didTapPushButton(image)
     }
 
     @objc
     private func presentButtonDidTap(_ sender: UIButton) {
-        output?.didTapPresentButton()
+        guard let image = currentImage else {
+            return
+        }
+        output?.didTapPresentButton(image)
     }
 
-    // MARK: - UICollectionViewDataSource
+    // MARK: - UICollectionViewDelegateFlowLayout
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomAnimatorCell.reuseID, for: indexPath)
-
-        if let cell = cell as? CustomAnimatorCell {
-            cell.render()
+        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return .zero
         }
 
-        return cell
+        let columnsCount: CGFloat = 3.0
+
+        let width: CGFloat = (collectionView.frame.width
+            - flowLayout.minimumInteritemSpacing * (columnsCount - 1)
+            - flowLayout.sectionInset.left
+            - flowLayout.sectionInset.right)
+            / columnsCount
+
+        let height: CGFloat = width * 4.0 / 3.0
+        return CGSize(width: width, height: height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let image = (dataAdapter.cellViewModelAt(indexPath: indexPath) as? CustomAnimatorCellViewModel)?.image  else {
+            return
+        }
+
+        currentImage = image
+
+        currentFrame = collectionView.layoutAttributesForItem(at: indexPath)?.frame
+        currentFrame = collectionView.convert(currentFrame ?? .zero, to: collectionView.superview)
     }
 }
 
@@ -114,14 +166,25 @@ class CustomButton: UIButton {
     }
 }
 
-class CustomAnimatorCell: UICollectionViewCell {
+class CustomAnimatorCell: UICollectionViewCell, ARCHCell {
+
+    var viewModel: CustomAnimatorCellViewModel?
 
     static let reuseID = "CustomAnimatorCell"
 
     let imageView = UIImageView()
+    let foregroundView = UIView()
+
+    override var isSelected: Bool {
+        didSet {
+            foregroundView.alpha = isSelected ? 1.0 : 0.0
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
+
+        contentView.clipsToBounds = true
 
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -134,31 +197,40 @@ class CustomAnimatorCell: UICollectionViewCell {
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+
+        foregroundView.backgroundColor = UIColor.black.withAlphaComponent(0.25)
+        foregroundView.translatesAutoresizingMaskIntoConstraints = false
+        foregroundView.alpha = 0.0
+
+        contentView.addSubview(foregroundView)
+
+        NSLayoutConstraint.activate([
+            foregroundView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            foregroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            foregroundView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            foregroundView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func render() {
-        guard let url = URL(string: "https://placeimg.com/640/480/any") else {
-            return
-        }
+    override func prepareForReuse() {
+        imageView.image = nil
+    }
 
-        URLSession(configuration: .default).dataTask(
-            with: url,
-            completionHandler: {[weak self] data, url, error in
-                guard let `self` = self else {
-                    return
-                }
+    func render(viewModel: CustomAnimatorCellViewModel) {
+        imageView.image = viewModel.image
+    }
+}
 
-                if let error = error {
-                    print("LOG DEBUG: \(error.localizedDescription)")
-                } else if let imageData = data {
-                    self.imageView.image = UIImage(data: imageData)
-                } else {
-                    print("LOG DEBUG: Could not load image")
-                }
-        })
+class CustomAnimatorCellViewModel: ARCHCellViewModel, ARCHModelInitilizable {
+    typealias Data = UIImage
+
+    var image: UIImage
+
+    required init(data: Data) {
+        self.image = data
     }
 }

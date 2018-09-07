@@ -6,20 +6,23 @@
 //  Copyright © 2018 HandH. All rights reserved.
 //
 
-import UIKit
+import HHModule
 
-class CustomPresentInteractor: UIPercentDrivenInteractiveTransition {
+class CustomPresentInteractor: ARCHInteractiveTransition {
 
-    private let viewController: UIViewController
     private let maxTranslation: CGFloat = 200.0
 
-    init?(attachTo viewController : UIViewController) {
-        self.viewController = viewController
+    private var viewController: UIViewController?
 
-        super.init()
+     var isTransitionInProgress: Bool = false
+
+    func attach(to viewController: UIViewController) {
+
+        self.viewController = viewController
 
         self.configureCloseGesture(for: viewController.view)
     }
+
 
     private func configureCloseGesture(for view: UIView) {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(closeGestureHandler(_:)))
@@ -36,13 +39,14 @@ class CustomPresentInteractor: UIPercentDrivenInteractiveTransition {
 
         switch recognizer.state {
         case .began:
-            viewController.dismiss(animated: true, completion: nil)
-            break
+            isTransitionInProgress = true
+            viewController?.dismiss(animated: true, completion: nil)
         case .changed:
             update(progress)
         case .cancelled:
-            break
+            isTransitionInProgress = false
         case .ended:
+            isTransitionInProgress = false
             progress == 1.0 ? finish() : cancel()
         default:
             return

@@ -9,4 +9,6 @@
 import HHModule
 
 struct CustomAnimationMainState: ARCHState {
+
+    var images: [UIImage] = []
 }

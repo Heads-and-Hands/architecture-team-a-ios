@@ -8,11 +8,15 @@
 
 import UIKit
 
-open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewController, ARCHRouter, ARCHViewRenderable {
+open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewController, ARCHRouter, ARCHViewRenderable, ARCHRouterTransitioning {
 
     public typealias State = S
 
     public var output: Out?
+
+    public var transitioningRepresentative: ARCHTransitioningRepresentative?
+
+    public var interactiveTransition: ARCHInteractiveTransition?
 
     open var autorenderIgnoreViews: [ARCHViewInput] {
         return []

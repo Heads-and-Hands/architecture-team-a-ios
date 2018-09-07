@@ -10,14 +10,27 @@ import HHModule
 
 final class CustomAnimationPresentViewController<Out: CustomAnimationPresentViewOutput>: ARCHViewController<CustomAnimationPresentState, Out>, UIViewControllerTransitioningDelegate {
 
-    let button = CustomButton(title: "PRESENT")
-
-    var customInteractor: CustomPresentInteractor?
+    let button = CustomButton(title: "SWIPE TO CLOSE")
+    let imageView: UIImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(imageView)
+
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+
+
         view.addSubview(button)
 
         button.addTarget(self, action: #selector(self.closeButtonDidTap(_:)), for: .touchUpInside)
@@ -28,14 +41,14 @@ final class CustomAnimationPresentViewController<Out: CustomAnimationPresentView
             button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8.0),
             button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8.0)
         ])
-
-        transitioningDelegate = self
-        customInteractor = CustomPresentInteractor(attachTo: self)
-
     }
 
     override func render(state: State) {
         super.render(state: state)
+
+        imageView.image = state.image
+
+        view.layoutIfNeeded()
     }
 
     // MARK: - Animation
@@ -43,23 +56,5 @@ final class CustomAnimationPresentViewController<Out: CustomAnimationPresentView
     @objc
     private func closeButtonDidTap(_ sender: UIButton) {
         output?.didTapCloseButton()
-    }
-
-    // MARK: - UIViewControllerTransitioningDelegate
-
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return CustomPresentAnimator(animationDuration: 1.5, isPresented: false)
-    }
-
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return CustomPresentAnimator(animationDuration: 1.5, isPresented: true)
-    }
-
-    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return customInteractor
-    }
-
-    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return customInteractor
     }
 }

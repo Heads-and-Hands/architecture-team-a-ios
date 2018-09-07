@@ -225,6 +225,7 @@
 		9C0F756A214253FE00B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F7563214252B700B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift */; };
 		9C0F756B214253FE00B3FDE2 /* ARCHRouterDismissOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F75652142538100B3FDE2 /* ARCHRouterDismissOptions.swift */; };
 		9C0F756E21425BC300B3FDE2 /* CustomPresentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F756C2142587700B3FDE2 /* CustomPresentInteractor.swift */; };
+		9C0F75712142A12300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F756F21429D0300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift */; };
 		9CC586FB214141DE00C33874 /* ModulesCustomAnimationStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */; };
 		9CC586FC214141E900C33874 /* CustomAnimationMainEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F0214141A400C33874 /* CustomAnimationMainEventHandler.swift */; };
 		9CC586FD214141E900C33874 /* CustomAnimationMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F1214141A400C33874 /* CustomAnimationMainViewController.swift */; };
@@ -698,6 +699,7 @@
 		9C0F7563214252B700B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterEmbedInNavigationOptions.swift; sourceTree = "<group>"; };
 		9C0F75652142538100B3FDE2 /* ARCHRouterDismissOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterDismissOptions.swift; sourceTree = "<group>"; };
 		9C0F756C2142587700B3FDE2 /* CustomPresentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentInteractor.swift; sourceTree = "<group>"; };
+		9C0F756F21429D0300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterPresentCustomAnimationOptions.swift; sourceTree = "<group>"; };
 		9CC586D52141400400C33874 /* HHCustomAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHCustomAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesCustomAnimationStory.swift; sourceTree = "<group>"; };
 		9CC586F0214141A400C33874 /* CustomAnimationMainEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationMainEventHandler.swift; sourceTree = "<group>"; };
@@ -1161,6 +1163,7 @@
 			children = (
 				5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */,
 				5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */,
+				9C0F756F21429D0300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift */,
 				5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */,
 				9C0F7563214252B700B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift */,
 				9C0F75652142538100B3FDE2 /* ARCHRouterDismissOptions.swift */,
@@ -2239,6 +2242,7 @@
 				50BC80AF211DFAD100D77262 /* ARCHModuleProtocols.swift in Sources */,
 				50BC80AD211DFACA00D77262 /* ARCHModuleID.swift in Sources */,
 				50BC80B3211DFAE200D77262 /* ARCHRouterPresentOptions.swift in Sources */,
+				9C0F75712142A12300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift in Sources */,
 				50BC80AC211DFAC700D77262 /* ARCHModuleConfigurator.swift in Sources */,
 				50BC80B0211DFAD300D77262 /* ARCHEventHandler.swift in Sources */,
 			);

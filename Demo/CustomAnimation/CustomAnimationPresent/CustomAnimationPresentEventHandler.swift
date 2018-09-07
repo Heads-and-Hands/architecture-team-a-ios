@@ -12,14 +12,19 @@ final class CustomAnimationPresentEventHandler: ARCHEventHandler<CustomAnimation
 
     weak var moduleOutput: CustomAnimationPresentModuleOutput?
 
+    var image: UIImage!
+
     override func viewIsReady() {
         super.viewIsReady()
+
+        self.state.image = image
     }
 
     func didTapCloseButton() {
         guard let router = router else {
             return
         }
+
         router.transit(from: router, options: [ARCHRouterDismissOptions()], animated: true)
     }
 }

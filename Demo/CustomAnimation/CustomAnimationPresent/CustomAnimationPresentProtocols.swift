@@ -14,6 +14,8 @@ protocol CustomAnimationPresentViewOutput: ACRHViewOutput {
 }
 
 protocol CustomAnimationPresentModuleInput {
+
+    var image: UIImage! { get set }
 }
 
 protocol CustomAnimationPresentModuleOutput: class {

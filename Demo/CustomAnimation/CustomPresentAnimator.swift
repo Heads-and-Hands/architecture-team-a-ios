@@ -6,16 +6,16 @@
 //  Copyright © 2018 HandH. All rights reserved.
 //
 
+import HHModule
 import UIKit
 
-class CustomPresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class CustomPresentAnimator: NSObject, ARCHAnimatedTransitioning {
 
-    var animationDuration: TimeInterval
-    var isPresented: Bool
+    var isPresented: Bool = false
+    var transitionDuration: TimeInterval
 
-    init(animationDuration: TimeInterval, isPresented: Bool) {
-        self.animationDuration = animationDuration
-        self.isPresented = isPresented
+    init(transitionDuration: TimeInterval = 1.0) {
+        self.transitionDuration = transitionDuration
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -34,29 +34,21 @@ class CustomPresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
         let container = transitionContext.containerView
 
-        let transitionButton = CustomButton(title: "PRESENT")
-        transitionButton.frame = fromVC.stackView.convert(fromVC.presentButton.frame, to: fromVC.view)
-        container.addSubview(transitionButton)
+        let imageView = UIImageView(image: fromVC.currentImage)
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = fromVC.currentFrame ?? .zero
 
-        container.addSubview(toVC.view)
-        toVC.view.frame = fromVC.view.frame
         toVC.view.alpha = 0.0
-        toVC.button.alpha = 0.0
-
-        container.bringSubview(toFront: transitionButton)
-
-        fromVC.presentButton.alpha = 0.0
-
-        container.layoutIfNeeded()
+        container.addSubview(toVC.view)
+        container.addSubview(imageView)
 
         UIView.animate(
-            withDuration: animationDuration, animations: {
-                transitionButton.frame = toVC.button.frame
-                 toVC.view.alpha = 1.0
+            withDuration: transitionDuration, animations: {
+                imageView.frame = toVC.view.frame
         }, completion: { isFinished in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-            transitionButton.removeFromSuperview()
-            toVC.button.alpha = 1.0
+            imageView.removeFromSuperview()
+            toVC.view.alpha = 1.0
         })
     }
 
@@ -68,33 +60,29 @@ class CustomPresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
         let container = transitionContext.containerView
 
-        let transitionButton = CustomButton(title: "PRESENT")
-        transitionButton.frame = fromVC.button.frame
-        container.addSubview(transitionButton)
-
-        container.addSubview(toVC.view)
         toVC.view.frame = fromVC.view.frame
-        toVC.view.alpha = 0.0
-        toVC.presentButton.alpha = 0.0
+        isPresented ? container.insertSubview(toVC.view, belowSubview: fromVC.view) : container.addSubview(toVC.view)
 
-        container.bringSubview(toFront: transitionButton)
+        let imageView = UIImageView(image: fromVC.imageView.image)
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = fromVC.view.frame
+        container.addSubview(imageView)
 
-        fromVC.button.alpha = 0.0
-
-        container.layoutIfNeeded()
+        fromVC.view.alpha = 0.0
 
         UIView.animate(
-            withDuration: animationDuration, animations: {
-                transitionButton.frame = toVC.stackView.convert(toVC.presentButton.frame, to: toVC.view)
-                toVC.view.alpha = 1.0
+            withDuration: transitionDuration, animations: {
+                imageView.frame = toVC.currentFrame ?? .zero
         }, completion: { isFinished in
+            if transitionContext.transitionWasCancelled {
+                fromVC.view.alpha = 1.0
+            }
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-            transitionButton.removeFromSuperview()
-            toVC.presentButton.alpha = 1.0
+            imageView.removeFromSuperview()
         })
     }
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return animationDuration
+        return transitionDuration
     }
 }
