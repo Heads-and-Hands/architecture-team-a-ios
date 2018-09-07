@@ -8,18 +8,29 @@
 
 import UIKit
 
-open class ARCHCollectionViewDataSource: ARCHListDataSource<UICollectionView>, UICollectionViewDataSource {
+open class ARCHCollectionViewDataSource: ARCHListDataSource<UICollectionView> {
 
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sectionsCount
     }
 
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numberOfRowsIn(section: section)
     }
 
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return reusableCell(indexPath: indexPath)
+    }
+}
+
+extension NSObject: UICollectionViewDataSource {
+
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        fatalError("Realizated in ARCHCollectionViewDataSource")
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        fatalError("Realizated in ARCHCollectionViewDataSource")
     }
 }
 

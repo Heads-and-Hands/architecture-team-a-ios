@@ -12,10 +12,6 @@ final class EmptyModuleViewController: ARCHViewController<EmptyModuleState, Empt
 
     let label = Label()
 
-    override var childViews: [ARCHViewInput] {
-        return [label]
-    }
-
     // MARK: - View life cycle
 
     override func viewDidLoad() {
