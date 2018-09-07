@@ -17,6 +17,9 @@ final class CustomAnimationPresentEventHandler: ARCHEventHandler<CustomAnimation
     }
 
     func didTapCloseButton() {
-        (router as? UIViewController)?.dismiss(animated: true, completion: nil)
+        guard let router = router else {
+            return
+        }
+        router.transit(from: router, options: [ARCHRouterDismissOptions()], animated: true)
     }
 }

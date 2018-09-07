@@ -222,6 +222,9 @@
 		50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
 		50EA303F2134529A00A95512 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C0F756A214253FE00B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F7563214252B700B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift */; };
+		9C0F756B214253FE00B3FDE2 /* ARCHRouterDismissOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F75652142538100B3FDE2 /* ARCHRouterDismissOptions.swift */; };
+		9C0F756E21425BC300B3FDE2 /* CustomPresentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F756C2142587700B3FDE2 /* CustomPresentInteractor.swift */; };
 		9CC586FB214141DE00C33874 /* ModulesCustomAnimationStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */; };
 		9CC586FC214141E900C33874 /* CustomAnimationMainEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F0214141A400C33874 /* CustomAnimationMainEventHandler.swift */; };
 		9CC586FD214141E900C33874 /* CustomAnimationMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F1214141A400C33874 /* CustomAnimationMainViewController.swift */; };
@@ -692,6 +695,9 @@
 		50FA81F3211AE47C00ADA769 /* ListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListConfigurator.swift; sourceTree = "<group>"; };
 		50FA81F4211AE47C00ADA769 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHCellViewModel.swift; sourceTree = "<group>"; };
+		9C0F7563214252B700B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterEmbedInNavigationOptions.swift; sourceTree = "<group>"; };
+		9C0F75652142538100B3FDE2 /* ARCHRouterDismissOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterDismissOptions.swift; sourceTree = "<group>"; };
+		9C0F756C2142587700B3FDE2 /* CustomPresentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentInteractor.swift; sourceTree = "<group>"; };
 		9CC586D52141400400C33874 /* HHCustomAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHCustomAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesCustomAnimationStory.swift; sourceTree = "<group>"; };
 		9CC586F0214141A400C33874 /* CustomAnimationMainEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationMainEventHandler.swift; sourceTree = "<group>"; };
@@ -1156,6 +1162,8 @@
 				5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */,
 				5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */,
 				5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */,
+				9C0F7563214252B700B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift */,
+				9C0F75652142538100B3FDE2 /* ARCHRouterDismissOptions.swift */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -1389,6 +1397,7 @@
 			children = (
 				9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */,
 				9CE1C6D42141595F00C4C5C1 /* CustomPresentAnimator.swift */,
+				9C0F756C2142587700B3FDE2 /* CustomPresentInteractor.swift */,
 				9CC586FA214141AF00C33874 /* CustomAnimationMain */,
 				9CE1C6BE21414B9F00C4C5C1 /* CustomAnimationPush */,
 				9CE1C6C921414BC800C4C5C1 /* CustomAnimationPresent */,
@@ -2220,8 +2229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C0F756B214253FE00B3FDE2 /* ARCHRouterDismissOptions.swift in Sources */,
 				50BC80AE211DFACE00D77262 /* ARCHViewController.swift in Sources */,
 				50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */,
+				9C0F756A214253FE00B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift in Sources */,
 				50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */,
 				50BC80B1211DFAD700D77262 /* ARCHWindow.swift in Sources */,
 				50BC80B5211DFAE900D77262 /* ARCHRouter.swift in Sources */,
@@ -2393,6 +2404,7 @@
 				9CE1C6D72141613D00C4C5C1 /* CustomPresentAnimator.swift in Sources */,
 				9CE1C6CB21414C1800C4C5C1 /* CustomAnimationPushViewController.swift in Sources */,
 				9CE1C6CE21414C1800C4C5C1 /* CustomAnimationPushState.swift in Sources */,
+				9C0F756E21425BC300B3FDE2 /* CustomPresentInteractor.swift in Sources */,
 				9CE1C6CF21414C1F00C4C5C1 /* CustomAnimationPresentEventHandler.swift in Sources */,
 				9CC586FB214141DE00C33874 /* ModulesCustomAnimationStory.swift in Sources */,
 				9CE1C6D121414C1F00C4C5C1 /* CustomAnimationPresentProtocols.swift in Sources */,

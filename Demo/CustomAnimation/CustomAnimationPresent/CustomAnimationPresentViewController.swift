@@ -12,6 +12,8 @@ final class CustomAnimationPresentViewController<Out: CustomAnimationPresentView
 
     let button = CustomButton(title: "PRESENT")
 
+    var customInteractor: CustomPresentInteractor?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +30,8 @@ final class CustomAnimationPresentViewController<Out: CustomAnimationPresentView
         ])
 
         transitioningDelegate = self
+        customInteractor = CustomPresentInteractor(attachTo: self)
+
     }
 
     override func render(state: State) {
@@ -49,5 +53,13 @@ final class CustomAnimationPresentViewController<Out: CustomAnimationPresentView
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return CustomPresentAnimator(animationDuration: 1.5, isPresented: true)
+    }
+
+    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return customInteractor
+    }
+
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return customInteractor
     }
 }
