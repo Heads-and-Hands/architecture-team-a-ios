@@ -1,93 +1,74 @@
 //
-//  HHModuleTests.swift
+//  StructStateTests.swift
 //  HHModuleTests
 //
-//  Created by Eugene Sorokin on 05/09/2018.
+//  Created by basalaev on 07.09.2018.
 //  Copyright © 2018 HandH. All rights reserved.
 //
-/*
+
 import XCTest
 @testable import HHModule
 
-class HHModuleTests: XCTestCase {
+class StructStateTests: XCTestCase {
+    private typealias MState = State<MockViewStructState>
+    private typealias Module = (view: ViewController<EventHandler<MState>, MState>, eventHandler: EventHandler<MState>)
 
-    var structController: ViewController<EventHandler<StructState>, StructState>?
-    var structEventHandler: EventHandler<StructState>?
+    private let configurator = Configurator<MState>()
 
-    var classController: ViewController<EventHandler<HHModuleTestsClassState>, HHModuleTestsClassState>?
-    var classEventHandler: EventHandler<HHModuleTestsClassState>?
+    private var module: Module {
+        let router = configurator.router
+        guard let controller = router as? ViewController<EventHandler<MState>, MState> else {
+            fatalError("Initialization error")
+        }
 
-    override func setUp() {
-        super.setUp()
+        guard let eventHandler = controller.output else {
+            fatalError("Initialization error")
+        }
 
-        structController = ViewController<EventHandler<StructState>, StructState>()
-
-        structEventHandler = EventHandler<StructState>()
-        structEventHandler?.viewInput = structController
-
-        structController?.output = structEventHandler
-
-
-        classController = ViewController<EventHandler<HHModuleTestsClassState>, HHModuleTestsClassState>()
-
-        classEventHandler = EventHandler<HHModuleTestsClassState>()
-        classEventHandler?.viewInput = classController
-
-        classController?.output = classEventHandler
-    }
-    
-    override func tearDown() {
-
-        structController = nil
-
-        structEventHandler = nil
-
-        classController = nil
-
-        classEventHandler = nil
-
-        super.tearDown()
+        return (controller, eventHandler)
     }
 
-    func testStructStateRenderInitialization() {
-        guard let controller = structController, let eventHandler = structEventHandler else {
-            XCTFail("Initialization error")
+    private var mockState: MockViewStructState {
+        return MockViewStructState(
+            integerValue: randomIntNotEqual(0),
+            stringValue: randomStringNotEqula("")
+        )
+    }
+
+    private func verification(module: Module, error: String) {
+        guard let mockViewState = module.view.mockView.state else {
+            XCTFail("Mock state not found")
             return
         }
 
-        let structState = HHModuleTestsMockViewStructState(
-            integerValue: randomIntNotEqual(controller.mockObjectWithStruct.state?.integerValue),
-            stringValue: randomStringNotEqula(controller.mockObjectWithStruct.state?.stringValue)
-        )
+        let mockState = module.eventHandler.state.mockState
 
-        let classState = HHModuleTestsMockViewClassState()
-
-        classState.integerValue = randomIntNotEqual(controller.mockObjectWithClass.state?.integerValue)
-        classState.stringValue = randomStringNotEqula(controller.mockObjectWithClass.state?.stringValue)
-
-        let state = StructState(structState: structState, classState: classState)
-
-        eventHandler.state = state
-
-        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
-    }
-    
-    func testStructStateRenderSetStruct() {
-        guard let controller = structController, let eventHandler = structEventHandler else {
-            XCTFail("Initialization error")
-            return
-        }
-
-        let structState = HHModuleTestsMockViewStructState(
-            integerValue: randomIntNotEqual(controller.mockObjectWithStruct.state?.integerValue),
-            stringValue: randomStringNotEqula(controller.mockObjectWithStruct.state?.stringValue)
-        )
-
-        eventHandler.state.structState = structState
-
-        XCTAssert(isEqualState(of: controller, withStateOf: eventHandler), "Render test fail")
+        let result = mockViewState == mockState
+        XCTAssert(result, error)
     }
 
+    // MARK: - Tests
+
+    func testStateInitialization() {
+        let module = self.module
+        var moduleState = MState()
+        moduleState.mockState = mockState
+
+        module.1.state = moduleState
+
+        verification(module: module, error: "Initialization fail")
+    }
+
+    func testSetSubstate() {
+        let module = self.module
+        let mockState = self.mockState
+
+        module.1.state.mockState = mockState
+
+        verification(module: module, error: "Set substate fail")
+    }
+
+    /*
     func testStructStateRenderChangeRetainStruct() {
         guard let controller = structController, let eventHandler = structEventHandler else {
             XCTFail("Initialization error")
@@ -467,7 +448,7 @@ class HHModuleTests: XCTestCase {
     // MARK: - Private
 
     private func isEqualState(of controller: ViewController<EventHandler<StructState>, StructState>,
-                      withStateOf eventHandler: EventHandler<StructState>) -> Bool {
+                              withStateOf eventHandler: EventHandler<StructState>) -> Bool {
         guard let structState = controller.mockObjectWithStruct.state,
             let classState = controller.mockObjectWithClass.state else {
                 return false
@@ -478,7 +459,7 @@ class HHModuleTests: XCTestCase {
     }
 
     private func isEqualState(of controller: ViewController<EventHandler<HHModuleTestsClassState>, HHModuleTestsClassState>,
-                      withStateOf eventHandler: EventHandler<HHModuleTestsClassState>) -> Bool {
+                              withStateOf eventHandler: EventHandler<HHModuleTestsClassState>) -> Bool {
         guard let structState = controller.mockObjectWithStruct.state,
             let classState = controller.mockObjectWithClass.state else {
                 return false
@@ -506,6 +487,5 @@ class HHModuleTests: XCTestCase {
         } while result == (value ?? "")
 
         return result
-    }
+    }*/
 }
-*/

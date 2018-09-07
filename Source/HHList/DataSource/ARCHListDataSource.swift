@@ -35,6 +35,8 @@ open class ARCHListDataSource<View: ARCHListView>: NSObject {
         }
     }
 
+    // Обновление ds сделать через функцию
+
     public init(view: View) {
         self.view = view
         super.init()

@@ -23,7 +23,7 @@
 
 Реализации:
 
-- ````ARCHTableViewDataSource```` для **UITableView**
+-  ````ARCHTableViewDataSource```` для **UITableView**
 -  ````ARCHCollectionViewDataSource```` для **UICollectionView**
 
 ### ARCHListDataSourceAdapter
@@ -82,7 +82,11 @@ lazy var dataAdapter = ARCHEmptyListDataAdapter<SimpleEntity, ExampleCellViewMod
 dataSource.register(cell: ExampleCell.self, for: ExampleCellViewModel.self)
 ````
 
+Если у ячейки есть одноименный xib, то он тоже будет зарегестрирован во вью
+
 2. Подключи **dataAdapter**
 3. *Опционально*. Для более детальной настройки подключи **dataSource** или **delegate**
 
 ### 5. Установи dataSource у UITableView/UICollectionView
+
+Или используй уже готовое решение ARCHTableViewController/ARCHCollectionViewController для UITableView/UICollectionView соответственно
