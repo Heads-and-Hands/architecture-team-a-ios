@@ -14,7 +14,9 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
 
     public var output: Out?
 
-    public var transitioningRepresentative: ARCHTransitioningRepresentative?
+    public var presentTransitioningRepresentative: ARCHPresentTransitioningRepresentativeProtocol?
+
+    public var pushTransitioningRepresentative: ARCHPushTransitioningRepresentativeProtocol?
 
     public var interactiveTransition: ARCHInteractiveTransition?
 

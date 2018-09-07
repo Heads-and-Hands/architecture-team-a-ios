@@ -27,14 +27,20 @@ public extension ARCHRouter {
 
 public typealias ARCHInteractiveTransition = (ARCHInteractiveTransitionProtocol & UIPercentDrivenInteractiveTransition)
 
+public typealias ARCHPresentTransitioningRepresentativeProtocol = (ARCHTransitioningRepresentative & UIViewControllerTransitioningDelegate)
+
+public typealias ARCHPushTransitioningRepresentativeProtocol = (ARCHTransitioningRepresentative & UINavigationControllerDelegate)
+
 public protocol ARCHRouterTransitioning: class {
 
-    var transitioningRepresentative: ARCHTransitioningRepresentative? { get set }
+    var presentTransitioningRepresentative: ARCHPresentTransitioningRepresentativeProtocol? { get set }
+
+    var pushTransitioningRepresentative: ARCHPushTransitioningRepresentativeProtocol? { get set }
 
     var interactiveTransition: ARCHInteractiveTransition? { get set }
 }
 
-public protocol ARCHTransitioningRepresentative: UIViewControllerTransitioningDelegate {
+public protocol ARCHTransitioningRepresentative: class {
 
     var animatedTransitioning: ARCHAnimatedTransitioning? { get set }
 }
