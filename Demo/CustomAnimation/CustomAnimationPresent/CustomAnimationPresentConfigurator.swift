@@ -19,8 +19,7 @@ final class CustomAnimationPresentConfigurator: ARCHModuleConfigurator {
 
     var router: ARCHRouter {
         let controller = CustomAnimationPresentViewController<CustomAnimationPresentEventHandler>()
-        controller.modalPresentationStyle = .overCurrentContext
-        
+
         let eventHandler = CustomAnimationPresentEventHandler()
         eventHandler.router = controller
         eventHandler.viewInput = controller

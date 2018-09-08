@@ -20,6 +20,7 @@ final class CustomAnimationPresentViewController<Out: CustomAnimationPresentView
 
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.isUserInteractionEnabled = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(imageView)
@@ -32,11 +33,10 @@ final class CustomAnimationPresentViewController<Out: CustomAnimationPresentView
         ])
 
         closeButton.setTitle("Close", for: .normal)
-        closeButton.setTitleColor(UIColor.gray, for: .normal)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.addTarget(self, action: #selector(self.closeButtonDidTap(_:)), for: .touchUpInside)
 
-        view.addSubview(closeButton)
+        imageView.addSubview(closeButton)
 
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: imageView.topAnchor),

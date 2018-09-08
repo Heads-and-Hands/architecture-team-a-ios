@@ -66,7 +66,6 @@ class CustomPresentAnimator: NSObject, ARCHAnimatedTransitioning {
         let container = transitionContext.containerView
 
         toVC.view.frame = fromVC.view.frame
-        container.insertSubview(toVC.view, belowSubview: fromVC.view)
 
         let imageView = UIImageView(image: fromVC.imageView.image)
         imageView.contentMode = .scaleAspectFill

@@ -28,6 +28,7 @@ public class ARCHRouterPresentCustomAnimationOptions: ARCHRouterOptions {
         }
 
         if let to = transition.to as? UIViewController {
+            to.modalPresentationStyle = .custom
             to.transitioningDelegate = transitioningRepresentative
             interactiveTransition?.attach(to: to)
         }
