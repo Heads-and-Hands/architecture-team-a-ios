@@ -51,4 +51,15 @@ public extension ARCHModuleID {
                                     options: [ARCHRouterWindowOptions()],
                                     animated: animated)
     }
+
+    func displayEmbedInNavOn(window: ARCHWindow, animated: Bool) {
+        configurator.router.transit(
+            from: window,
+            options: [
+                ARCHRouterEmbedInNavigationOptions(),
+                ARCHRouterWindowOptions()
+            ],
+            animated: animated
+        )
+    }
 }

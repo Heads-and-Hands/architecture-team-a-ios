@@ -12,6 +12,8 @@ protocol CustomAnimationPushViewOutput: ACRHViewOutput {
 }
 
 protocol CustomAnimationPushModuleInput {
+
+    var image: UIImage! { get set }
 }
 
 protocol CustomAnimationPushModuleOutput: class {

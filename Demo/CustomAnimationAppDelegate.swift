@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func launchOn(window: ARCHWindow) {
-        ModulesCustomAnimationStory.main.displayOn(window: window, animated: false)
+        ModulesCustomAnimationStory.main.displayEmbedInNavOn(window: window, animated: false)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

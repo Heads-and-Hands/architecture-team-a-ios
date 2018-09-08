@@ -1,15 +1,15 @@
 //
-//  CustomAnimator.swift
+//  CustomPushAnimator.swift
 //  HHModuleDemo
 //
-//  Created by Eugene Sorokin on 06/09/2018.
+//  Created by Eugene Sorokin on 08/09/2018.
 //  Copyright © 2018 HandH. All rights reserved.
 //
 
 import HHModule
 import UIKit
 
-class CustomPresentAnimator: NSObject, ARCHAnimatedTransitioning {
+class CustomPushAnimator: NSObject, ARCHAnimatedTransitioning {
 
     var isPresented: Bool = false
     var transitionDuration: TimeInterval
@@ -28,7 +28,7 @@ class CustomPresentAnimator: NSObject, ARCHAnimatedTransitioning {
 
     func animateAppearance(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromVC = viewController(from: transitionContext, for: .from) as? CustomAnimationMainViewController<CustomAnimationMainEventHandler>,
-            let toVC = viewController(from: transitionContext, for: .to) as? CustomAnimationPresentViewController<CustomAnimationPresentEventHandler> else {
+            let toVC = viewController(from: transitionContext, for: .to) as? CustomAnimationPushViewController<CustomAnimationPushEventHandler> else {
                 return
         }
 
@@ -59,7 +59,7 @@ class CustomPresentAnimator: NSObject, ARCHAnimatedTransitioning {
 
     func animateDisappearance(using transitionContext: UIViewControllerContextTransitioning) {
         guard let toVC = viewController(from: transitionContext, for: .to) as? CustomAnimationMainViewController<CustomAnimationMainEventHandler>,
-            let fromVC = viewController(from: transitionContext, for: .from) as? CustomAnimationPresentViewController<CustomAnimationPresentEventHandler> else {
+            let fromVC = viewController(from: transitionContext, for: .from) as? CustomAnimationPushViewController<CustomAnimationPushEventHandler> else {
                 return
         }
 

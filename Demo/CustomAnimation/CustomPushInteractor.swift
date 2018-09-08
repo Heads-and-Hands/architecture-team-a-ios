@@ -1,20 +1,20 @@
 //
-//  CustomPresentInteractor.swift
+//  CustomPushInteractor.swift
 //  HHModuleDemo
 //
-//  Created by Eugene Sorokin on 07/09/2018.
+//  Created by Eugene Sorokin on 08/09/2018.
 //  Copyright © 2018 HandH. All rights reserved.
 //
 
 import HHModule
 
-class CustomPresentInteractor: ARCHInteractiveTransition {
+class CustomPushInteractor: ARCHInteractiveTransition {
 
     private let maxTranslation: CGFloat = 200.0
 
     private var viewController: UIViewController?
 
-     var isTransitionInProgress: Bool = false
+    var isTransitionInProgress: Bool = false
 
     func attach(to viewController: UIViewController) {
 
@@ -42,7 +42,7 @@ class CustomPresentInteractor: ARCHInteractiveTransition {
         switch recognizer.state {
         case .began:
             isTransitionInProgress = true
-            viewController?.dismiss(animated: true, completion: nil)
+            viewController?.navigationController?.popViewController(animated: true)
         case .changed:
             update(progress)
         case .cancelled:
@@ -55,4 +55,3 @@ class CustomPresentInteractor: ARCHInteractiveTransition {
         }
     }
 }
-

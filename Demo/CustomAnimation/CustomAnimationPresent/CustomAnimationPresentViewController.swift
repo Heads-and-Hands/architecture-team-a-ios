@@ -10,36 +10,37 @@ import HHModule
 
 final class CustomAnimationPresentViewController<Out: CustomAnimationPresentViewOutput>: ARCHViewController<CustomAnimationPresentState, Out>, UIViewControllerTransitioningDelegate {
 
-    let button = CustomButton(title: "SWIPE TO CLOSE")
-    let imageView: UIImageView = UIImageView()
+    var imageView = UIImageView()
+    var closeButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.35)
 
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(imageView)
 
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: view.topAnchor),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2.0 / 3.0),
+            imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1.0 / 2.0),
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
 
+        closeButton.setTitle("Close", for: .normal)
+        closeButton.setTitleColor(UIColor.gray, for: .normal)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.addTarget(self, action: #selector(self.closeButtonDidTap(_:)), for: .touchUpInside)
 
-        view.addSubview(button)
-
-        button.addTarget(self, action: #selector(self.closeButtonDidTap(_:)), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(closeButton)
 
         NSLayoutConstraint.activate([
-            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8.0),
-            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8.0),
-            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8.0)
+            closeButton.topAnchor.constraint(equalTo: imageView.topAnchor),
+            closeButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -8.0)
         ])
     }
 
@@ -47,11 +48,9 @@ final class CustomAnimationPresentViewController<Out: CustomAnimationPresentView
         super.render(state: state)
 
         imageView.image = state.image
-
-        view.layoutIfNeeded()
     }
 
-    // MARK: - Animation
+    // MARK: - Private
 
     @objc
     private func closeButtonDidTap(_ sender: UIButton) {

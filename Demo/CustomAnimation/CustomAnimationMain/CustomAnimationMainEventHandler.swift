@@ -23,9 +23,8 @@ final class CustomAnimationMainEventHandler: ARCHEventHandler<CustomAnimationMai
             return
         }
 
-        let animator = CustomPresentAnimator()
-        let interactor = CustomPresentInteractor()
-        let animationsOption = ARCHRouterPresentCustomAnimationOptions(animatedTransitioning: animator, interactiveTransition: interactor)
+        let animationsOption = ARCHRouterPresentCustomAnimationOptions(
+            animatedTransitioning: CustomPresentAnimator(), interactiveTransition: CustomPresentInteractor())
 
         CustomAnimationPresentConfigurator(
             moduleIO: { (input: CustomAnimationPresentModuleInput) -> CustomAnimationPresentModuleOutput? in
@@ -36,6 +35,17 @@ final class CustomAnimationMainEventHandler: ARCHEventHandler<CustomAnimationMai
     }
 
     func didTapPushButton(_ image: UIImage) {
+        guard let router = router else {
+            return
+        }
+
+        let animationOption = ARCHRouterPushCustomAnimationOptions(animatedTransitioning: CustomPushAnimator(), interactiveTransition: CustomPushInteractor())
+
+        CustomAnimationPushConfigurator(moduleIO: { (input: CustomAnimationPushModuleInput) -> CustomAnimationPushModuleOutput? in
+            var moduleInput = input
+            moduleInput.image = image
+            return nil
+        }).router.transit(from: router, options: [animationOption, ARCHRouterPushOptions()], animated: true)
     }
 
     // MARK: - Private

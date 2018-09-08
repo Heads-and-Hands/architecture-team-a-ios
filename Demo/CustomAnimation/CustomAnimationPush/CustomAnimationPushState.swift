@@ -9,4 +9,6 @@
 import HHModule
 
 struct CustomAnimationPushState: ARCHState {
+
+    var image: UIImage?
 }

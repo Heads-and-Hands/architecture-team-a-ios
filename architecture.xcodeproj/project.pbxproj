@@ -247,6 +247,9 @@
 		9C0F756B214253FE00B3FDE2 /* ARCHRouterDismissOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F75652142538100B3FDE2 /* ARCHRouterDismissOptions.swift */; };
 		9C0F756E21425BC300B3FDE2 /* CustomPresentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F756C2142587700B3FDE2 /* CustomPresentInteractor.swift */; };
 		9C0F75712142A12300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F756F21429D0300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift */; };
+		9C807DA32143BC2D00D2F20B /* ARCHRouterPushCustomAnimationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C807DA12143BB2D00D2F20B /* ARCHRouterPushCustomAnimationOptions.swift */; };
+		9C807DA82143CB1600D2F20B /* CustomPushInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C807DA62143CA4E00D2F20B /* CustomPushInteractor.swift */; };
+		9C807DA92143CB1D00D2F20B /* CustomPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C807DA42143CA3C00D2F20B /* CustomPushAnimator.swift */; };
 		9CC586FB214141DE00C33874 /* ModulesCustomAnimationStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */; };
 		9CC586FC214141E900C33874 /* CustomAnimationMainEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F0214141A400C33874 /* CustomAnimationMainEventHandler.swift */; };
 		9CC586FD214141E900C33874 /* CustomAnimationMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F1214141A400C33874 /* CustomAnimationMainViewController.swift */; };
@@ -752,6 +755,9 @@
 		9C0F75652142538100B3FDE2 /* ARCHRouterDismissOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterDismissOptions.swift; sourceTree = "<group>"; };
 		9C0F756C2142587700B3FDE2 /* CustomPresentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentInteractor.swift; sourceTree = "<group>"; };
 		9C0F756F21429D0300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterPresentCustomAnimationOptions.swift; sourceTree = "<group>"; };
+		9C807DA12143BB2D00D2F20B /* ARCHRouterPushCustomAnimationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterPushCustomAnimationOptions.swift; sourceTree = "<group>"; };
+		9C807DA42143CA3C00D2F20B /* CustomPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushAnimator.swift; sourceTree = "<group>"; };
+		9C807DA62143CA4E00D2F20B /* CustomPushInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushInteractor.swift; sourceTree = "<group>"; };
 		9CC586D52141400400C33874 /* HHCustomAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHCustomAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesCustomAnimationStory.swift; sourceTree = "<group>"; };
 		9CC586F0214141A400C33874 /* CustomAnimationMainEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationMainEventHandler.swift; sourceTree = "<group>"; };
@@ -1236,6 +1242,7 @@
 				5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */,
 				5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */,
 				9C0F756F21429D0300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift */,
+				9C807DA12143BB2D00D2F20B /* ARCHRouterPushCustomAnimationOptions.swift */,
 				5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */,
 				9C0F7563214252B700B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift */,
 				9C0F75652142538100B3FDE2 /* ARCHRouterDismissOptions.swift */,
@@ -1474,7 +1481,9 @@
 			children = (
 				9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */,
 				9CE1C6D42141595F00C4C5C1 /* CustomPresentAnimator.swift */,
+				9C807DA42143CA3C00D2F20B /* CustomPushAnimator.swift */,
 				9C0F756C2142587700B3FDE2 /* CustomPresentInteractor.swift */,
+				9C807DA62143CA4E00D2F20B /* CustomPushInteractor.swift */,
 				9CC586FA214141AF00C33874 /* CustomAnimationMain */,
 				9CE1C6BE21414B9F00C4C5C1 /* CustomAnimationPush */,
 				9CE1C6C921414BC800C4C5C1 /* CustomAnimationPresent */,
@@ -2374,6 +2383,7 @@
 				9C0F756B214253FE00B3FDE2 /* ARCHRouterDismissOptions.swift in Sources */,
 				50BC80AE211DFACE00D77262 /* ARCHViewController.swift in Sources */,
 				50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */,
+				9C807DA32143BC2D00D2F20B /* ARCHRouterPushCustomAnimationOptions.swift in Sources */,
 				9C0F756A214253FE00B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift in Sources */,
 				50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */,
 				50BC80B1211DFAD700D77262 /* ARCHWindow.swift in Sources */,
@@ -2538,6 +2548,7 @@
 				9CC586FD214141E900C33874 /* CustomAnimationMainViewController.swift in Sources */,
 				9CC586FF214141E900C33874 /* CustomAnimationMainConfigurator.swift in Sources */,
 				9CE1C6D221414C1F00C4C5C1 /* CustomAnimationPresentConfigurator.swift in Sources */,
+				9C807DA82143CB1600D2F20B /* CustomPushInteractor.swift in Sources */,
 				9CC586FC214141E900C33874 /* CustomAnimationMainEventHandler.swift in Sources */,
 				9CE1C6D321414C1F00C4C5C1 /* CustomAnimationPresentState.swift in Sources */,
 				9CE1C6CD21414C1800C4C5C1 /* CustomAnimationPushConfigurator.swift in Sources */,
@@ -2546,6 +2557,7 @@
 				9CE1C6CA21414C1800C4C5C1 /* CustomAnimationPushEventHandler.swift in Sources */,
 				9CC586FE214141E900C33874 /* CustomAnimationMainProtocols.swift in Sources */,
 				9CC58700214141E900C33874 /* CustomAnimationMainState.swift in Sources */,
+				9C807DA92143CB1D00D2F20B /* CustomPushAnimator.swift in Sources */,
 				9CE1C6D72141613D00C4C5C1 /* CustomPresentAnimator.swift in Sources */,
 				9CE1C6CB21414C1800C4C5C1 /* CustomAnimationPushViewController.swift in Sources */,
 				9CE1C6CE21414C1800C4C5C1 /* CustomAnimationPushState.swift in Sources */,

@@ -12,7 +12,11 @@ final class CustomAnimationPushEventHandler: ARCHEventHandler<CustomAnimationPus
 
     weak var moduleOutput: CustomAnimationPushModuleOutput?
 
+    var image: UIImage!
+
     override func viewIsReady() {
         super.viewIsReady()
+
+        state.image = image
     }
 }
