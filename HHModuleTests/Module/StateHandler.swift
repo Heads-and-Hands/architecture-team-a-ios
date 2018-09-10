@@ -1,5 +1,5 @@
 //
-//  HHModuleTestsStateHandler.swift
+//  StateHandler.swift
 //  HHModuleTests
 //
 //  Created by Eugene Sorokin on 06/09/2018.
@@ -8,5 +8,5 @@
 
 import HHModule
 
-class HHModuleTestsStateHandler<S: ARCHState>: ARCHStateHandler<S> {
+class StateHandler<S: TestState>: ARCHStateHandler<S> {
 }

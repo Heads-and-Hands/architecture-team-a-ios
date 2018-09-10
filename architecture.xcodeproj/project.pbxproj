@@ -117,7 +117,7 @@
 		507C3FB32142907600A21073 /* StructStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C3FB22142907600A21073 /* StructStateTests.swift */; };
 		507C3FB52142908600A21073 /* ClassStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C3FB42142908600A21073 /* ClassStateTests.swift */; };
 		507C3FBE214290EC00A21073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C3FB7214290EB00A21073 /* ViewController.swift */; };
-		507C3FC0214290EC00A21073 /* HHModuleTestsStateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C3FB9214290EB00A21073 /* HHModuleTestsStateHandler.swift */; };
+		507C3FC0214290EC00A21073 /* StateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C3FB9214290EB00A21073 /* StateHandler.swift */; };
 		507C3FC1214290EC00A21073 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C3FBA214290EB00A21073 /* Configurator.swift */; };
 		507C3FC3214290EC00A21073 /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C3FBC214290EB00A21073 /* EventHandler.swift */; };
 		507C3FC4214290EC00A21073 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C3FBD214290EB00A21073 /* State.swift */; };
@@ -255,7 +255,11 @@
 		50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
 		50EA303F2134529A00A95512 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9CFEE10A21403A7D00EF41B9 /* HHModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE10921403A7D00EF41B9 /* HHModuleTests.swift */; };
+		9CD03C6D214657BC00EC0B5B /* StateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD03C6C214657BC00EC0B5B /* StateTests.swift */; };
+		9CD03C6F21465BF200EC0B5B /* MockViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD03C6E21465BF200EC0B5B /* MockViewState.swift */; };
+		9CD03C712146737A00EC0B5B /* StateHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD03C702146737A00EC0B5B /* StateHandlerTests.swift */; };
+		9CD03C7321467AD800EC0B5B /* StructStateHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD03C7221467AD800EC0B5B /* StructStateHandlerTests.swift */; };
+		9CD03C7521467B4900EC0B5B /* ClassStateHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD03C7421467B4900EC0B5B /* ClassStateHandlerTests.swift */; };
 		9CFEE10C21403A7D00EF41B9 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
 /* End PBXBuildFile section */
 
@@ -654,7 +658,7 @@
 		507C3FB22142907600A21073 /* StructStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructStateTests.swift; sourceTree = "<group>"; };
 		507C3FB42142908600A21073 /* ClassStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStateTests.swift; sourceTree = "<group>"; };
 		507C3FB7214290EB00A21073 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		507C3FB9214290EB00A21073 /* HHModuleTestsStateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHModuleTestsStateHandler.swift; sourceTree = "<group>"; };
+		507C3FB9214290EB00A21073 /* StateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateHandler.swift; sourceTree = "<group>"; };
 		507C3FBA214290EB00A21073 /* Configurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		507C3FBC214290EB00A21073 /* EventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		507C3FBD214290EB00A21073 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -746,8 +750,12 @@
 		50FA81F3211AE47C00ADA769 /* ListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListConfigurator.swift; sourceTree = "<group>"; };
 		50FA81F4211AE47C00ADA769 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHCellViewModel.swift; sourceTree = "<group>"; };
+		9CD03C6C214657BC00EC0B5B /* StateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTests.swift; sourceTree = "<group>"; };
+		9CD03C6E21465BF200EC0B5B /* MockViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewState.swift; sourceTree = "<group>"; };
+		9CD03C702146737A00EC0B5B /* StateHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateHandlerTests.swift; sourceTree = "<group>"; };
+		9CD03C7221467AD800EC0B5B /* StructStateHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructStateHandlerTests.swift; sourceTree = "<group>"; };
+		9CD03C7421467B4900EC0B5B /* ClassStateHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStateHandlerTests.swift; sourceTree = "<group>"; };
 		9CFEE10721403A7D00EF41B9 /* HHModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CFEE10921403A7D00EF41B9 /* HHModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHModuleTests.swift; sourceTree = "<group>"; };
 		9CFEE10B21403A7D00EF41B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1088,7 +1096,7 @@
 				507C3FC52142922600A21073 /* Protocols.swift */,
 				507C3FBC214290EB00A21073 /* EventHandler.swift */,
 				507C3FBD214290EB00A21073 /* State.swift */,
-				507C3FB9214290EB00A21073 /* HHModuleTestsStateHandler.swift */,
+				507C3FB9214290EB00A21073 /* StateHandler.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1097,6 +1105,7 @@
 			isa = PBXGroup;
 			children = (
 				507C3FC8214292B300A21073 /* MockView.swift */,
+				9CD03C6E21465BF200EC0B5B /* MockViewState.swift */,
 				507C3FCA2142933D00A21073 /* MockViewStructState.swift */,
 				507C3FCC2142936600A21073 /* MockViewClassState.swift */,
 			);
@@ -1478,9 +1487,12 @@
 		9CFEE10821403A7D00EF41B9 /* HHModuleTests */ = {
 			isa = PBXGroup;
 			children = (
-				507C3FB22142907600A21073 /* StructStateTests.swift */,
+				9CD03C6C214657BC00EC0B5B /* StateTests.swift */,
 				507C3FB42142908600A21073 /* ClassStateTests.swift */,
-				9CFEE10921403A7D00EF41B9 /* HHModuleTests.swift */,
+				507C3FB22142907600A21073 /* StructStateTests.swift */,
+				9CD03C702146737A00EC0B5B /* StateHandlerTests.swift */,
+				9CD03C7221467AD800EC0B5B /* StructStateHandlerTests.swift */,
+				9CD03C7421467B4900EC0B5B /* ClassStateHandlerTests.swift */,
 				507C3FC72142929E00A21073 /* UIKit */,
 				507C3FCE21429FFD00A21073 /* Helpers */,
 				507C3FB6214290EB00A21073 /* Module */,
@@ -2502,15 +2514,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CFEE10A21403A7D00EF41B9 /* HHModuleTests.swift in Sources */,
+				9CD03C7321467AD800EC0B5B /* StructStateHandlerTests.swift in Sources */,
+				9CD03C6F21465BF200EC0B5B /* MockViewState.swift in Sources */,
+				9CD03C6D214657BC00EC0B5B /* StateTests.swift in Sources */,
 				507C3FB52142908600A21073 /* ClassStateTests.swift in Sources */,
+				9CD03C712146737A00EC0B5B /* StateHandlerTests.swift in Sources */,
 				507C3FD02142A00C00A21073 /* Function.swift in Sources */,
-				507C3FC0214290EC00A21073 /* HHModuleTestsStateHandler.swift in Sources */,
+				507C3FC0214290EC00A21073 /* StateHandler.swift in Sources */,
 				507C3FBE214290EC00A21073 /* ViewController.swift in Sources */,
 				507C3FC9214292B300A21073 /* MockView.swift in Sources */,
 				507C3FCD2142936600A21073 /* MockViewClassState.swift in Sources */,
 				507C3FC3214290EC00A21073 /* EventHandler.swift in Sources */,
 				507C3FC1214290EC00A21073 /* Configurator.swift in Sources */,
+				9CD03C7521467B4900EC0B5B /* ClassStateHandlerTests.swift in Sources */,
 				507C3FCB2142933D00A21073 /* MockViewStructState.swift in Sources */,
 				507C3FB32142907600A21073 /* StructStateTests.swift in Sources */,
 				507C3FC62142922600A21073 /* Protocols.swift in Sources */,

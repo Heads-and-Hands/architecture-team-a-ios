@@ -6,6 +6,5 @@
 //  Copyright © 2018 HandH. All rights reserved.
 //
 
-import Foundation
-
-// TODO: Сделать аналогичные тесты для классов
+class ClassStateTests: StateTests<ClassState<MockViewClassState>> {
+}

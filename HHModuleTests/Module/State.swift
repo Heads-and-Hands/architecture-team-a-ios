@@ -8,7 +8,15 @@
 
 import HHModule
 
-struct State<T: Equatable & ARCHState>: TestState {
+struct StructState<T: MockStateProtocol>: TestState {
     typealias MockState = T
     var mockState: MockState = MockState.init()
 }
+
+class ClassState<T: MockStateProtocol>: TestState {
+    typealias MockState = T
+    var mockState: MockState = MockState.init()
+
+    required init() {}
+}
+

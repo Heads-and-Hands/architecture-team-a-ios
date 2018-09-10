@@ -8,16 +8,22 @@
 
 import HHModule
 
-class MockViewClassState: Equatable, ARCHState {
-    var integerValue: Int
-    var stringValue: String
+class MockViewClassState: MockStateProtocol {
+
+    typealias T = Int
+
+    var value: Int
 
     required init() {
-        integerValue = 0
-        stringValue = ""
+        self.value = randomIntNotEqual(nil)
+    }
+
+    func chageRandomly(constraint: Int?) {
+        let constraint = constraint ?? value
+        self.value = randomIntNotEqual(constraint)
     }
 
     static func == (lhs: MockViewClassState, rhs: MockViewClassState) -> Bool {
-        return lhs.integerValue == rhs.integerValue && lhs.stringValue == rhs.stringValue
+        return lhs.value == rhs.value
     }
 }

@@ -8,8 +8,20 @@
 
 import HHModule
 
+protocol MockStateProtocol: Equatable & ARCHState {
+
+    associatedtype T: Equatable
+
+    var value: T { get set }
+
+    init()
+
+    mutating func chageRandomly(constraint: T?)
+}
+
 protocol TestState: ARCHState {
-    associatedtype MockState: Equatable & ARCHState
+
+    associatedtype MockState: MockStateProtocol
 
     var mockState: MockState { get set }
 }

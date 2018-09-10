@@ -9,7 +9,18 @@
 import Foundation
 import HHModule
 
-struct MockViewStructState: Equatable, ARCHState {
-    var integerValue: Int = 0
-    var stringValue: String = ""
+struct MockViewStructState: MockStateProtocol {
+
+    typealias T = String
+
+    var value: String
+
+    init() {
+        self.value = randomStringNotEqula(nil)
+    }
+
+    mutating func chageRandomly(constraint: String?) {
+        let constraint = constraint ?? value
+        value = randomStringNotEqula(constraint)
+    }
 }
