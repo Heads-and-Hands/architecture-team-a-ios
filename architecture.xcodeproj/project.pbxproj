@@ -243,6 +243,18 @@
 		50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
 		50EA303F2134529A00A95512 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C1417F42146B23C009F1073 /* ParentModuleEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417EF2146B23B009F1073 /* ParentModuleEventHandler.swift */; };
+		9C1417F52146B23C009F1073 /* ParentModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F02146B23B009F1073 /* ParentModuleProtocols.swift */; };
+		9C1417F62146B23C009F1073 /* ParentModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F12146B23C009F1073 /* ParentModuleViewController.swift */; };
+		9C1417F72146B23C009F1073 /* ParentModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F22146B23C009F1073 /* ParentModuleConfigurator.swift */; };
+		9C1417F82146B23C009F1073 /* ParentModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F32146B23C009F1073 /* ParentModuleState.swift */; };
+		9C1418042146B57C009F1073 /* ChildEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417FF2146B57C009F1073 /* ChildEventHandler.swift */; };
+		9C1418052146B57C009F1073 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418002146B57C009F1073 /* ChildViewController.swift */; };
+		9C1418062146B57C009F1073 /* ChildProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418012146B57C009F1073 /* ChildProtocols.swift */; };
+		9C1418072146B57C009F1073 /* ChildConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418022146B57C009F1073 /* ChildConfigurator.swift */; };
+		9C1418082146B57C009F1073 /* ChildState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418032146B57C009F1073 /* ChildState.swift */; };
+		9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14180A2146B6EC009F1073 /* ParentView.swift */; };
+		9C14180D2146BB96009F1073 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14180C2146BB96009F1073 /* ChildView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -713,6 +725,18 @@
 		50FA81F3211AE47C00ADA769 /* ListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListConfigurator.swift; sourceTree = "<group>"; };
 		50FA81F4211AE47C00ADA769 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHCellViewModel.swift; sourceTree = "<group>"; };
+		9C1417EF2146B23B009F1073 /* ParentModuleEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentModuleEventHandler.swift; sourceTree = "<group>"; };
+		9C1417F02146B23B009F1073 /* ParentModuleProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentModuleProtocols.swift; sourceTree = "<group>"; };
+		9C1417F12146B23C009F1073 /* ParentModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentModuleViewController.swift; sourceTree = "<group>"; };
+		9C1417F22146B23C009F1073 /* ParentModuleConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentModuleConfigurator.swift; sourceTree = "<group>"; };
+		9C1417F32146B23C009F1073 /* ParentModuleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentModuleState.swift; sourceTree = "<group>"; };
+		9C1417FF2146B57C009F1073 /* ChildEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildEventHandler.swift; sourceTree = "<group>"; };
+		9C1418002146B57C009F1073 /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		9C1418012146B57C009F1073 /* ChildProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildProtocols.swift; sourceTree = "<group>"; };
+		9C1418022146B57C009F1073 /* ChildConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildConfigurator.swift; sourceTree = "<group>"; };
+		9C1418032146B57C009F1073 /* ChildState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildState.swift; sourceTree = "<group>"; };
+		9C14180A2146B6EC009F1073 /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
+		9C14180C2146BB96009F1073 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -926,6 +950,7 @@
 		50679791212572610034CDA2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				9C1418092146B6A3009F1073 /* ModuleDemo */,
 				507F14F02138084A0087DCDB /* Indication */,
 				50679792212572610034CDA2 /* Cell */,
 				50EA3025213421E800A95512 /* Label.swift */,
@@ -1273,6 +1298,8 @@
 				50D264672121B43300E3B47A /* Network */,
 				5072DDD0211DE36600E08A92 /* ListExtension */,
 				50FA81EF211AE45900ADA769 /* List */,
+				9C1417FE2146B551009F1073 /* ChildModule */,
+				9C1417EE2146B1EF009F1073 /* ParentModule */,
 				5010AA3B2118341300158C1F /* EmptyModule */,
 				50C98574212AEB670002EF4B /* Pagination */,
 				507F14D72137EAC80087DCDB /* Indication */,
@@ -1396,6 +1423,39 @@
 				50FA81F4211AE47C00ADA769 /* ListState.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		9C1417EE2146B1EF009F1073 /* ParentModule */ = {
+			isa = PBXGroup;
+			children = (
+				9C1417F22146B23C009F1073 /* ParentModuleConfigurator.swift */,
+				9C1417EF2146B23B009F1073 /* ParentModuleEventHandler.swift */,
+				9C1417F02146B23B009F1073 /* ParentModuleProtocols.swift */,
+				9C1417F32146B23C009F1073 /* ParentModuleState.swift */,
+				9C1417F12146B23C009F1073 /* ParentModuleViewController.swift */,
+			);
+			path = ParentModule;
+			sourceTree = "<group>";
+		};
+		9C1417FE2146B551009F1073 /* ChildModule */ = {
+			isa = PBXGroup;
+			children = (
+				9C1417FF2146B57C009F1073 /* ChildEventHandler.swift */,
+				9C1418002146B57C009F1073 /* ChildViewController.swift */,
+				9C1418012146B57C009F1073 /* ChildProtocols.swift */,
+				9C1418022146B57C009F1073 /* ChildConfigurator.swift */,
+				9C1418032146B57C009F1073 /* ChildState.swift */,
+			);
+			path = ChildModule;
+			sourceTree = "<group>";
+		};
+		9C1418092146B6A3009F1073 /* ModuleDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9C14180A2146B6EC009F1073 /* ParentView.swift */,
+				9C14180C2146BB96009F1073 /* ChildView.swift */,
+			);
+			path = ModuleDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2309,12 +2369,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1418072146B57C009F1073 /* ChildConfigurator.swift in Sources */,
 				50EA3022213420B600A95512 /* EmptyModuleEventHandler.swift in Sources */,
 				507ABCCF21257C97003DBDD7 /* EmptyModuleConfigurator.swift in Sources */,
+				9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */,
+				9C1417F42146B23C009F1073 /* ParentModuleEventHandler.swift in Sources */,
+				9C1418082146B57C009F1073 /* ChildState.swift in Sources */,
 				5093687C20F683010044CA62 /* AppDelegate.swift in Sources */,
+				9C1417F62146B23C009F1073 /* ParentModuleViewController.swift in Sources */,
 				50EA3021213420B600A95512 /* EmptyModuleViewController.swift in Sources */,
+				9C14180D2146BB96009F1073 /* ChildView.swift in Sources */,
 				5089236720FC8E7B0032985E /* ModulesUserStory.swift in Sources */,
 				50EA3023213420B600A95512 /* EmptyModuleModuleIO.swift in Sources */,
+				9C1418062146B57C009F1073 /* ChildProtocols.swift in Sources */,
+				9C1418042146B57C009F1073 /* ChildEventHandler.swift in Sources */,
+				9C1417F82146B23C009F1073 /* ParentModuleState.swift in Sources */,
+				9C1417F72146B23C009F1073 /* ParentModuleConfigurator.swift in Sources */,
+				9C1418052146B57C009F1073 /* ChildViewController.swift in Sources */,
+				9C1417F52146B23C009F1073 /* ParentModuleProtocols.swift in Sources */,
 				50EA3026213421E800A95512 /* Label.swift in Sources */,
 				50EA3024213420B600A95512 /* EmptyModuleState.swift in Sources */,
 			);

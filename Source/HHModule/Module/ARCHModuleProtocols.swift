@@ -26,7 +26,7 @@ public protocol ARCHViewInput: class {
 public extension ARCHViewInput where Self: UIView {
 
     func set(visible: Bool) {
-        isHidden = visible
+        isHidden = !visible
     }
 }
 
