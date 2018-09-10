@@ -8,7 +8,7 @@
 
 import HHModule
 
-class MockView<T: Equatable & ARCHState>: ARCHViewRenderable {
+class MockView<T: MockStateProtocol>: ARCHViewRenderable {
     typealias State = T
 
     var state: T?
