@@ -9,10 +9,10 @@
 import HHModule
 import UIKit
 
-final class ParentModuleViewController<Out: ParentModuleViewOutput>: ARCHViewController<ParentModuleState, Out> {
+class ParentModuleViewController<Out: ParentModuleViewOutput, S: ParentModuleStateProtocol>: ARCHViewController<S, Out> {
 
     let rootStackView = UIStackView()
-    let parentView = ParentView()
+    let parentView = ParentView(title: "PARENT VIEW", buttonTitle: "CHANGE PARENT VIEW STATE")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +39,6 @@ final class ParentModuleViewController<Out: ParentModuleViewOutput>: ARCHViewCon
 
             rootStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-    }
-
-    override func render(state: State) {
-        super.render(state: state)
     }
 }
 

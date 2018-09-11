@@ -1,5 +1,5 @@
 //
-//  ChildConfigurator.swift
+//  ChildModuleConfigurator.swift
 //  architecture
 //
 //  Created by Eugene Sorokin on 10/09/2018.
@@ -8,7 +8,7 @@
 
 import HHModule
 
-final class ChildConfigurator: ARCHModuleConfigurator {
+final class ChildModuleConfigurator: ARCHModuleConfigurator {
     typealias ModuleIO = (ChildModuleInput) -> ChildModuleOutput?
 
     let moduleIO: ModuleIO?
@@ -18,9 +18,9 @@ final class ChildConfigurator: ARCHModuleConfigurator {
     }
 
     var router: ARCHRouter {
-        let controller = ChildViewController<ChildEventHandler>()
+        let controller = ChildModuleViewController()
 
-        let eventHandler = ChildEventHandler()
+        let eventHandler = ChildModuleEventHandler()
         eventHandler.router = controller
         eventHandler.viewInput = controller
 

@@ -21,7 +21,5 @@ protocol ParentModuleOutput: class {
 
 protocol ParentModuleStateProtocol: ARCHState {
 
-    associatedtype ParentModulePrimitiveState
-
-    var parentPrimitiveState: ParentModulePrimitiveState { get set }
+    var parentPrimitiveState: ParentViewState { get set }
 }

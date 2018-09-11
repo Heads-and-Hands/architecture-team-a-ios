@@ -1,5 +1,5 @@
 //
-//  ParentState.swift
+//  ChildState.swift
 //  architecture
 //
 //  Created by Eugene Sorokin on 10/09/2018.
@@ -8,7 +8,9 @@
 
 import HHModule
 
-struct ParentModuleState: ParentModuleStateProtocol {
+struct ChildModuleState: ParentModuleStateProtocol {
 
     var parentPrimitiveState: ParentViewState = ParentViewState(text: "")
+
+    var childPrimitiveState: ChildViewState = ChildViewState(text: "")
 }

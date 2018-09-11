@@ -8,9 +8,17 @@
 
 import HHModule
 
-class ParentModuleEventHandler: ARCHEventHandler<ParentModuleState>, ParentModuleViewOutput, ParentModuleInput {
+class ParentModuleEventHandler<S: ParentModuleStateProtocol>: ARCHEventHandler<S>, ParentModuleViewOutput, ParentModuleInput {
 
-    weak var moduleOutput: ParentModuleOutput?
+    weak var internalModuleOutput: ParentModuleOutput?
+    open var moduleOutput: AnyObject? {
+        set {
+            internalModuleOutput = newValue as? ParentModuleOutput
+        }
+        get {
+            return internalModuleOutput
+        }
+    }
 
     override func viewIsReady() {
         super.viewIsReady()

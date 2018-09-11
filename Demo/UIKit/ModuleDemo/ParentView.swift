@@ -27,14 +27,14 @@ class ParentView: UIView, ARCHViewRenderable {
 
     let label = UILabel()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(title: String, buttonTitle: String) {
+        super.init(frame: .zero)
 
-        label.text = "PARENT STATE"
+        label.text = title
         label.textAlignment = .center
 
         let button = UIButton()
-        button.setTitle("CHANGE PARENT STATE", for: .normal)
+        button.setTitle(buttonTitle, for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.contentHorizontalAlignment = .center
         button.addTarget(self, action: #selector(self.changeButtonDidTap(_:)), for: .touchUpInside)

@@ -18,9 +18,8 @@ class ParentModuleConfigurator: ARCHModuleConfigurator {
     }
 
     var router: ARCHRouter {
-        let controller = ParentModuleViewController<ParentModuleEventHandler>()
-
-        let eventHandler = ParentModuleEventHandler()
+        let controller = ParentModuleViewController<ParentModuleEventHandler<ParentModuleState>, ParentModuleState >()
+        let eventHandler = ParentModuleEventHandler<ParentModuleState>()
         eventHandler.router = controller
         eventHandler.viewInput = controller
 

@@ -2,12 +2,11 @@
 //  ChildView.swift
 //  HHModuleDemo
 //
-//  Created by Eugene Sorokin on 10/09/2018.
+//  Created by Eugene Sorokin on 11/09/2018.
 //  Copyright © 2018 HandH. All rights reserved.
 //
 
 import HHModule
-import UIKit
 
 protocol ChildViewProtocol: class {
 
@@ -27,15 +26,17 @@ class ChildView: UIView, ARCHViewRenderable {
 
     let label = UILabel()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(title: String, buttonTitle: String) {
+        super.init(frame: .zero)
 
+        label.text = title
         label.textAlignment = .center
 
         let button = UIButton()
-        button.setTitle("CHANGE PARENT STATE", for: .normal)
+        button.setTitle(buttonTitle, for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.contentHorizontalAlignment = .center
+        button.addTarget(self, action: #selector(self.changeButtonDidTap(_:)), for: .touchUpInside)
 
         [label, button].forEach({
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +52,7 @@ class ChildView: UIView, ARCHViewRenderable {
             button.leadingAnchor.constraint(equalTo: leadingAnchor),
             button.trailingAnchor.constraint(equalTo: trailingAnchor),
             button.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+            ])
     }
 
     required init(coder: NSCoder) {

@@ -19,29 +19,54 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
     }
 
     open func render(state: State) {
-        let viewMirror = Mirror(reflecting: self)
+        var viewMirrors: [Mirror] = []
+
+        var mirror: Mirror = Mirror(reflecting: self)
+
+        viewMirrors.append(mirror)
+
+        while let superclassMirror = mirror.superclassMirror,
+            String(describing: mirror.subjectType) != String(describing: UIViewController.self) {
+                viewMirrors.append(superclassMirror)
+                mirror = superclassMirror
+        }
+
         let stateMirror = Mirror(reflecting: state)
 
-        for (_, viewProperty) in viewMirror.children {
-            guard let view = viewProperty as? ARCHViewInput else {
-                continue
-            }
+        viewMirrors.forEach({ viewMirror in
 
-            if autorenderIgnoreViews.contains(where: { $0 === view }) {
-                continue
-            }
+            for (_, viewProperty) in viewMirror.children {
+                guard let view = viewProperty as? ARCHViewInput else {
+                    continue
+                }
 
-            render(state: stateMirror, on: view)
-        }
+                if self.autorenderIgnoreViews.contains(where: { $0 === view }) {
+                    continue
+                }
+
+                self.render(state: stateMirror, on: view)
+            }
+        })
     }
 
     open func render(state: Mirror, on view: ARCHViewInput) {
-        for (_, value) in state.children {
-            if view.typeExist(state: value) {
-                view.update(state: value)
-                return
-            }
+
+        var currentState = state
+        var states: [Mirror] = [state]
+
+        while let superclassState = currentState.superclassMirror {
+            states.append(superclassState)
+            currentState = superclassState
         }
+
+        states.forEach({ state in
+            for (_, value) in state.children {
+                if view.typeExist(state: value) {
+                    view.update(state: value)
+                    return
+                }
+            }
+        })
     }
 
     override open func viewDidLoad() {
