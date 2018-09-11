@@ -737,6 +737,7 @@
 		9C1418032146B57C009F1073 /* ChildModuleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleState.swift; sourceTree = "<group>"; };
 		9C14180A2146B6EC009F1073 /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 		9CF722492147BB0500DE0915 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
+		9CF7224B2147E92100DE0915 /* INHERITANCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = INHERITANCE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1157,6 +1158,7 @@
 				5089232020FC8DA30032985E /* Configuration */,
 				5089232320FC8DA30032985E /* Module */,
 				5089232720FC8DA30032985E /* Router */,
+				9CF7224B2147E92100DE0915 /* INHERITANCE.md */,
 			);
 			path = HHModule;
 			sourceTree = "<group>";

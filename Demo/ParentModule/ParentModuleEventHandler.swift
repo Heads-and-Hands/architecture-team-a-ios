@@ -10,7 +10,7 @@ import HHModule
 
 class ParentModuleEventHandler<S: ParentModuleStateProtocol>: ARCHEventHandler<S>, ParentModuleViewOutput, ParentModuleInput {
 
-    weak var internalModuleOutput: ParentModuleOutput?
+    private weak var internalModuleOutput: ParentModuleOutput?
     open var moduleOutput: AnyObject? {
         set {
             internalModuleOutput = newValue as? ParentModuleOutput

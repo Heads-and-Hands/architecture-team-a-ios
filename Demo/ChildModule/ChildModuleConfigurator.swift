@@ -25,7 +25,7 @@ final class ChildModuleConfigurator: ARCHModuleConfigurator {
         eventHandler.viewInput = controller
 
         if let moduleIO = moduleIO {
-            eventHandler.moduleOutput = moduleIO(eventHandler)
+            eventHandler.moduleOutput = moduleIO(eventHandler) as? ChildModuleOutput
         }
 
         controller.output = eventHandler

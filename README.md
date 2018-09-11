@@ -6,6 +6,7 @@
 - [Архитектура модуля](Source/HHModule/README.md)
     - [Авторендеринг состояния модуля](Source/HHModule/AUTORENDERING.md)
     - [Препроцессинг состояния модуля](Source/HHModule/PREPROCESSING.md)
+    - [Наследование](Source/HHBestPractice/INHERITANCE.md)
 - [Работа с UITableView/UICollectionView](Source/HHList/README.md)
     - [Расширения](Source/HHListExtension/README.md)
 - [Взаимодействие с сетью](Source/HHNetwork/README.md)

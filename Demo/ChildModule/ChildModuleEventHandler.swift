@@ -10,13 +10,13 @@ import HHModule
 
 final class ChildModuleEventHandler: ParentModuleEventHandler<ChildModuleState>, ChildModuleViewOutput, ChildModuleInput {
 
-    weak var childModuleOutput: ChildModuleOutput?
+    private weak var internalModuleOutput: ChildModuleOutput?
     override var moduleOutput: AnyObject? {
         set {
-            childModuleOutput = newValue as? ChildModuleOutput
+            internalModuleOutput = newValue as? ChildModuleOutput
         }
         get {
-            return childModuleOutput
+            return internalModuleOutput
         }
     }
 
