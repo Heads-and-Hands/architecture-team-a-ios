@@ -13,7 +13,6 @@ fi
 # Enviroments
 
 PROJECT_GIT_REPO_PATH="https://github.com/Heads-and-Hands/template-project-ios.git"
-PROGECT_TEMPLATE_NAME="templateProject"
 PROGECT_TEMPLATE_SUBPATH="branches/master"
 PROGECT_TEMPLATE_DIRECTORY="$(echo ${PROGECT_TEMPLATE_SUBPATH} | awk -F '/' '{print $NF}')"
 XCODE_TEMPLATES_PATH="/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates"
@@ -140,26 +139,52 @@ echo "Rename ${PROGECT_TEMPLATE_DIRECTORY} to ${NEW_APP_NAME}"
 mv "${PROGECT_TEMPLATE_DIRECTORY}" "${NEW_APP_NAME}"
 cd "${NEW_APP_NAME}"
 
-ecto "Remove 'git' if exists"
+echo "Remove 'git' if exists"
 rm -rf git
 
+find . -name "*.xcodeproj" | while read fname; do
+PROJECT_TEMPLATE_NAME="$(echo "$fname" | awk -F'/' '{print $NF}' | awk -F'.' '{ s = ""; for (i = 1; i < NF; i++) s = s $i "."; print s }')"
+PROJECT_TEMPLATE_NAME="$(awk '{print substr($0, 1, length($0)-1)}') ${PROJECT_TEMPLATE_NAME})"
+done
+
+echo ${PROJECT_TEMPLATE_NAME}
+
+if [ -z "${PROJECT_TEMPLATE_NAME}" ]; then
+echo "Error: Project file does not found"
+exit 1
+fi
+
 echo "Rename project template files"
-OUTPUT="$(find . -name ${PROGECT_TEMPLATE_NAME}*)"
+echo "${PROJECT_TEMPLATE_NAME}"
+OUTPUT="$(find . -name "${PROJECT_TEMPLATE_NAME}*")"
 echo "${OUTPUT}"
 
 while [ ! -z "${OUTPUT}" ]; do
-find . -name "${PROGECT_TEMPLATE_NAME}*" -print0 | xargs -0 rename --subst-all ${PROGECT_TEMPLATE_NAME} ${NEW_APP_NAME}
-OUTPUT="$(find . -name ${PROGECT_TEMPLATE_NAME}*)"
+find . -name "${PROJECT_TEMPLATE_NAME}*" -print0 | xargs -0 rename --subst-all "${PROJECT_TEMPLATE_NAME}" "${NEW_APP_NAME}"
+OUTPUT="$(find . -name "${PROJECT_TEMPLATE_NAME}*")"
 echo "$(OUTPUT)"
 done
 
 echo "Rename project template files content"
-OUTPUT="$(ack --literal ${PROGECT_TEMPLATE_NAME})"
+OUTPUT="$(ack --literal ${PROJECT_TEMPLATE_NAME})"
 echo "${OUTPUT}"
 
 while [ ! -z "${OUTPUT}" ]; do
-ack --literal --files-with-matches "${PROGECT_TEMPLATE_NAME}" --print0 | xargs -0 sed -i '' "s/${PROGECT_TEMPLATE_NAME}/${NEW_APP_NAME}/g"
-OUTPUT="$(ack --literal ${PROGECT_TEMPLATE_NAME})"
+ack --literal --files-with-matches "${PROJECT_TEMPLATE_NAME}" --print0 | xargs -0 sed -i '' "s/${PROJECT_TEMPLATE_NAME}/${NEW_APP_NAME}/g"
+OUTPUT="$(ack --literal ${PROJECT_TEMPLATE_NAME})"
+done
+
+echo "syslog_apr_24_30" | awk '{print toupper(substr($1,1,1)) substr($1,2)}'
+
+CAPITALIZED_NEW_APP_NAME="$(echo ${NEW_APP_NAME} | awk '{print toupper(substr($1,1,1)) substr($1,2)}')"
+CAPITALIZED_PROJECT_TEMPLATE_NAME="$(echo ${PROJECT_TEMPLATE_NAME} | awk '{print toupper(substr($1,1,1)) substr($1,2)}')"
+
+OUTPUT="$(ack --literal ${CAPITALIZED_PROJECT_TEMPLATE_NAME})"
+echo "${OUTPUT}"
+
+while [ ! -z "${OUTPUT}" ]; do
+ack --literal --files-with-matches "${CAPITALIZED_PROJECT_TEMPLATE_NAME}" --print0 | xargs -0 sed -i '' "s/${CAPITALIZED_PROJECT_TEMPLATE_NAME}/${CAPITALIZED_NEW_APP_NAME}/g"
+OUTPUT="$(ack --literal ${CAPITALIZED_PROJECT_TEMPLATE_NAME})"
 done
 
 echo "Configure Swiftling"
@@ -169,6 +194,9 @@ mint run realm/swiftlint
 VERSION="$(swiftlint version)"
 echo "realm/swiftlint@${VERSION}" > Mintfile
 fi
+
+echo "Update bundle"
+bundler update
 
 #fastlane produce
 #fastlane match development
