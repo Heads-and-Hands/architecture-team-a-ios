@@ -2,50 +2,195 @@
 
 #git archive --remote=http://bittracker.org/someproject.git HEAD:<path/to/directory/or/file> <filename> | tar -x
 
+# Parameters
+
+NEW_APP_NAME="$1"
+
+if [ -z "${NEW_APP_NAME}" ]; then
 NEW_APP_NAME="NewAppName"
-OLD_APP_NAME="HHModule"
-XCODE_TEMPLATES_PATH="/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates/HHTemplates"
-
-echo "${OLD_APP_NAME}"
-echo "${NEW_APP_NAME}"
-
-rm -rf architecture-team-a-ios
-
-if ! [ -x "$(command -v git)" ]; then
-    echo "Error: the next dependency requred, but not installed: git."
-    exit 1
 fi
 
-git clone git@github.com:Heads-and-Hands/architecture-team-a-ios.git
+# Enviroments
 
-cd architecture-team-a-ios
+PROJECT_GIT_REPO_PATH="https://github.com/Heads-and-Hands/template-project-ios.git"
+PROGECT_TEMPLATE_NAME="templateProject"
+PROGECT_TEMPLATE_SUBPATH="branches/master"
+PROGECT_TEMPLATE_DIRECTORY="$(echo ${PROGECT_TEMPLATE_SUBPATH} | awk -F '/' '{print $NF}')"
+XCODE_TEMPLATES_PATH="/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates"
+XCODE_TEMPLATES_GIT_REPO_PATH="https://github.com/Heads-and-Hands/architecture-team-a-ios.git"
+XCODE_TEMPLATES_REMOTE_SUBPATH="branches/develop/HHTemplates"
+XCODE_TEMPLATES_REMOTE_NAME="$(echo ${XCODE_TEMPLATES_REMOTE_SUBPATH} | awk -F '/' '{print $NF}')"
+NEW_APP_NAME="$(echo ${NEW_APP_NAME} | awk '{print tolower($0)}')"
+PRODUCE_USERNAME="handh.ci@gmail.com"
+PRODUCE_APP_IDENTIFIRE="ru.handh.${NEW_APP_NAME}"
+MATCH_FILE_URL="git@github.com:Heads-and-Hands/certs-ios.git"
 
-rm -rf .git
+# Dependencies
 
-if ! [ -x "$(command -v ack)" ]; then
-    echo "Error: the next dependency requred, but not installed: ack. Use 'brew install rename ack' to install."
-    exit 1
+check_dependency() {
+RETVAL="True"
+local DEPENDENCY="$1"
+local DEPENDENCY_NAME="$2"
+local IS_BREW_DEPENDENCY="$3"
+
+if [ -z "${IS_BREW_DEPENDENCY}" ]; then
+local IS_BREW_DEPENDENCY=False
 fi
 
-OUTPUT="$(find . -name ${OLD_APP_NAME}*)"
+if [ -z "${DEPENDENCY_NAME}" ]; then
+local DEPENDENCY_NAME="${DEPENDENCY}"
+fi
+
+if ! [ -x "$(command -v ${DEPENDENCY})" ]; then
+echo "Error: the next dependency requred, but not installed: ${DEPENDENCY_NAME}."
+if $IS_BREW_DEPENDENCY; then
+echo "Use 'brew install ${DEPENDENCY_NAME}' to install."
+fi
+RETVAL="False"
+fi
+
+if [ "${RETVAL}" == 'True' ]; then
+echo "Find ${DEPENDENCY_NAME}"
+fi
+}
+
+check_dependency brew
+if [ "${RETVAL}" != "True" ]; then
+exit 1
+else
+echo "Update brew"
+brew update
+fi
+
+check_dependency bundler
+if [ "${RETVAL}" != "True" ]; then
+echon "Use 'gem install bundler' to install"
+exit 1
+fi
+
+check_dependency svn subversion True
+if [ "${RETVAL}" != "True" ]; then
+exit 1
+else
+echo "Update subversion"
+brew upgrade subversion
+fi
+
+check_dependency mint mint True
+if [ "${RETVAL}" != "True" ]; then
+exit 1
+else
+echo "Update mint"
+brew upgrade mint
+fi
+
+check_dependency ack ack True
+if [ "${RETVAL}" != "True" ]; then
+exit 1
+else
+echo "Update ack"
+brew upgrade ack
+fi
+
+check_dependency rename rename True
+if [ "${RETVAL}" != "True" ]; then
+exit 1
+else
+echo "Update rename"
+brew upgrade rename
+fi
+
+check_dependency fastlane
+if [ "${RETVAL}" != "True" ]; then
+exit 1
+fi
+
+check_dependency swiftgen swiftgen True
+if [ "${RETVAL}" != "True" ]; then
+exit 1
+else
+echo "Update swiftgen"
+brew upgrade swiftgen
+fi
+
+check_dependency swiftlint swiftlint True
+if [ "${RETVAL}" != "True" ]; then
+exit 1
+else
+echo "Update swiftgen"
+brew upgrade swiftlint
+fi
+
+check_dependency git
+if [ "${RETVAL}" != "True" ]; then
+exit 1
+fi
+
+echo "Remove porject directory if exists: ${NEW_APP_NAME}"
+rm -rf "${NEW_APP_NAME}"
+
+echo "Clone remote project template ${PROJECT_GIT_REPO_PATH}/${PROGECT_TEMPLATE_SUBPATH}"
+OUTPUT="$(svn ls ${PROJECT_GIT_REPO_PATH}/${PROGECT_TEMPLATE_SUBPATH})"
+echo ${OUTPUT}
+if [ ! -z "${OUTPUT}" ]; then
+svn export "${PROJECT_GIT_REPO_PATH}/${PROGECT_TEMPLATE_SUBPATH}"
+fi
+
+echo "Rename ${PROGECT_TEMPLATE_DIRECTORY} to ${NEW_APP_NAME}"
+mv "${PROGECT_TEMPLATE_DIRECTORY}" "${NEW_APP_NAME}"
+cd "${NEW_APP_NAME}"
+
+ecto "Remove 'git' if exists"
+rm -rf git
+
+echo "Rename project template files"
+OUTPUT="$(find . -name ${PROGECT_TEMPLATE_NAME}*)"
 echo "${OUTPUT}"
 
 while [ ! -z "${OUTPUT}" ]; do
-    find . -name "${OLD_APP_NAME}*" -print0 | xargs -0 rename --subst-all ${OLD_APP_NAME} ${NEW_APP_NAME}
-    OUTPUT="$(find . -name ${OLD_APP_NAME}*)"
+find . -name "${PROGECT_TEMPLATE_NAME}*" -print0 | xargs -0 rename --subst-all ${PROGECT_TEMPLATE_NAME} ${NEW_APP_NAME}
+OUTPUT="$(find . -name ${PROGECT_TEMPLATE_NAME}*)"
+echo "$(OUTPUT)"
 done
 
-OUTPUT="$(ack --literal ${OLD_APP_NAME})"
+echo "Rename project template files content"
+OUTPUT="$(ack --literal ${PROGECT_TEMPLATE_NAME})"
 echo "${OUTPUT}"
 
 while [ ! -z "${OUTPUT}" ]; do
-    ack --literal --files-with-matches "${OLD_APP_NAME}" --print0 | xargs -0 sed -i '' "s/${OLD_APP_NAME}/${NEW_APP_NAME}/g"
-    OUTPUT="$(ack --literal ${OLD_APP_NAME})"
+ack --literal --files-with-matches "${PROGECT_TEMPLATE_NAME}" --print0 | xargs -0 sed -i '' "s/${PROGECT_TEMPLATE_NAME}/${NEW_APP_NAME}/g"
+OUTPUT="$(ack --literal ${PROGECT_TEMPLATE_NAME})"
 done
+
+echo "Configure Swiftling"
+
+if which mint >/dev/null; then
+mint run realm/swiftlint
+VERSION="$(swiftlint version)"
+echo "realm/swiftlint@${VERSION}" > Mintfile
+fi
+
+#fastlane produce
+#fastlane match development
+#fastlane match appstore
 
 git init
 
-#fastlane produce
+cd ..
 
-#fastlane match development
-#fastlane match appstore
+rm -rf "${XCODE_TEMPLATES_REMOTE_NAME}"
+
+echo "Clone remote project template ${XCODE_TEMPLATES_GIT_REPO_PATH}/${XCODE_TEMPLATES_REMOTE_SUBPATH}"
+OUTPUT="$(svn ls ${XCODE_TEMPLATES_GIT_REPO_PATH}/${XCODE_TEMPLATES_REMOTE_SUBPATH})"
+echo ${OUTPUT}
+if [ ! -z "${OUTPUT}" ]; then
+svn export "${XCODE_TEMPLATES_GIT_REPO_PATH}/${XCODE_TEMPLATES_REMOTE_SUBPATH}"
+fi
+
+while true; do
+read -p "Do you want to copy remote XCode templates to XCodte templates directory (needs root privileges)? [Yes, No]: " yn
+case $yn in
+[Yy]* ) sudo cp -rf "${XCODE_TEMPLATES_REMOTE_NAME}" "${XCODE_TEMPLATES_PATH}/"; break;;
+[Nn]* ) break;;
+esac
+done
