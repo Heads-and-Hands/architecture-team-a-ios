@@ -30,71 +30,6 @@ PRODUCE_USERNAME="handh.ci@gmail.com"
 PRODUCE_APP_IDENTIFIRE="ru.handh.${NEW_APP_NAME}"
 MATCH_FILE_URL="git@github.com:Heads-and-Hands/certs-ios.git"
 
-echo "### FETCH REMOTE REPOSITORY TEMPLATE ###"
-
-echo "Remove porject directory if exists: ${NEW_APP_NAME}"
-rm -rf "${NEW_APP_NAME}"
-
-echo "Clone remote project template ${TEMPLATE_PROJECT_GIT_REPO_PATH}/${TEMPLATE_PROGECT_TEMPLATE_SUBPATH}"
-OUTPUT="$(svn ls ${TEMPLATE_PROJECT_GIT_REPO_PATH}/${TEMPLATE_PROGECT_TEMPLATE_SUBPATH})"
-echo ${OUTPUT}
-if [ ! -z "${OUTPUT}" ]; then
-    svn export "${TEMPLATE_PROJECT_GIT_REPO_PATH}/${TEMPLATE_PROGECT_TEMPLATE_SUBPATH}"
-fi
-
-echo "Rename ${TEMPLATE_PROJECT_DIRECTORY} to ${NEW_APP_NAME}"
-mv "${TEMPLATE_PROJECT_DIRECTORY}" "${NEW_APP_NAME}"
-cd "${NEW_APP_NAME}"
-
-echo "Remove 'git' if exists"
-rm -rf git
-
-while read fname; do
-    RESULT="$(echo "$fname" | awk -F'/' '{print $NF}' | awk -F'.' '{ s = ""; for (i = 1; i < NF; i++) s = s $i "."; print s }')"
-    PROJECT_TEMPLATE_NAME="$(echo "${RESULT}" | awk '{print substr($0, 1, length($0)-1)}')"
-    echo "INSIDE ${PROJECT_TEMPLATE_NAME}" 
-done < <(find . -name "*.xcodeproj")
-
-echo "OUTSIDE ${PROJECT_TEMPLATE_NAME}"
-
-if [ -z "${PROJECT_TEMPLATE_NAME}" ]; then
-    echo "Error: Project file does not found"
-    exit 1
-fi
-
-echo "### RENAME PROJECT TEMPLATES FILES ###"
-
-echo "Rename project template files"
-echo "${PROJECT_TEMPLATE_NAME}"
-OUTPUT="$(find . -name "${PROJECT_TEMPLATE_NAME}*")"
-echo "${OUTPUT}"
-
-while [ ! -z "${OUTPUT}" ]; do
-    find . -name "${PROJECT_TEMPLATE_NAME}*" -print0 | xargs -0 rename --subst-all "${PROJECT_TEMPLATE_NAME}" "${NEW_APP_NAME}"
-    OUTPUT="$(find . -name "${PROJECT_TEMPLATE_NAME}*")"
-    echo "$(OUTPUT)"
-done
-
-echo "Rename project template files content"
-OUTPUT="$(ack --literal ${PROJECT_TEMPLATE_NAME})"
-echo "${OUTPUT}"
-
-while [ ! -z "${OUTPUT}" ]; do
-    ack --literal --files-with-matches "${PROJECT_TEMPLATE_NAME}" --print0 | xargs -0 sed -i '' "s/${PROJECT_TEMPLATE_NAME}/${NEW_APP_NAME}/g"
-    OUTPUT="$(ack --literal ${PROJECT_TEMPLATE_NAME})"
-done
-
-CAPITALIZED_NEW_APP_NAME="$(echo ${NEW_APP_NAME} | awk '{print toupper(substr($1,1,1)) substr($1,2)}')"
-CAPITALIZED_PROJECT_TEMPLATE_NAME="$(echo ${PROJECT_TEMPLATE_NAME} | awk '{print toupper(substr($1,1,1)) substr($1,2)}')"
-
-OUTPUT="$(ack --literal ${CAPITALIZED_PROJECT_TEMPLATE_NAME})"
-echo "${OUTPUT}"
-
-while [ ! -z "${OUTPUT}" ]; do
-    ack --literal --files-with-matches "${CAPITALIZED_PROJECT_TEMPLATE_NAME}" --print0 | xargs -0 sed -i '' "s/${CAPITALIZED_PROJECT_TEMPLATE_NAME}/${CAPITALIZED_NEW_APP_NAME}/g"
-    OUTPUT="$(ack --literal ${CAPITALIZED_PROJECT_TEMPLATE_NAME})"
-done
-
 echo "### CHECK DEPENDENCIES ###"
 
 installation_pormpt() {
@@ -215,6 +150,71 @@ else
     echo "Update git-flow"
     brew upgrade git-flow
 fi
+
+echo "### FETCH REMOTE REPOSITORY TEMPLATE ###"
+
+echo "Remove porject directory if exists: ${NEW_APP_NAME}"
+rm -rf "${NEW_APP_NAME}"
+
+echo "Clone remote project template ${TEMPLATE_PROJECT_GIT_REPO_PATH}/${TEMPLATE_PROGECT_TEMPLATE_SUBPATH}"
+OUTPUT="$(svn ls ${TEMPLATE_PROJECT_GIT_REPO_PATH}/${TEMPLATE_PROGECT_TEMPLATE_SUBPATH})"
+echo ${OUTPUT}
+if [ ! -z "${OUTPUT}" ]; then
+    svn export "${TEMPLATE_PROJECT_GIT_REPO_PATH}/${TEMPLATE_PROGECT_TEMPLATE_SUBPATH}"
+fi
+
+echo "Rename ${TEMPLATE_PROJECT_DIRECTORY} to ${NEW_APP_NAME}"
+mv "${TEMPLATE_PROJECT_DIRECTORY}" "${NEW_APP_NAME}"
+cd "${NEW_APP_NAME}"
+
+echo "Remove 'git' if exists"
+rm -rf git
+
+while read fname; do
+    RESULT="$(echo "$fname" | awk -F'/' '{print $NF}' | awk -F'.' '{ s = ""; for (i = 1; i < NF; i++) s = s $i "."; print s }')"
+    PROJECT_TEMPLATE_NAME="$(echo "${RESULT}" | awk '{print substr($0, 1, length($0)-1)}')"
+    echo "INSIDE ${PROJECT_TEMPLATE_NAME}" 
+done < <(find . -name "*.xcodeproj")
+
+echo "OUTSIDE ${PROJECT_TEMPLATE_NAME}"
+
+if [ -z "${PROJECT_TEMPLATE_NAME}" ]; then
+    echo "Error: Project file does not found"
+    exit 1
+fi
+
+echo "### RENAME PROJECT TEMPLATES FILES ###"
+
+echo "Rename project template files"
+echo "${PROJECT_TEMPLATE_NAME}"
+OUTPUT="$(find . -name "${PROJECT_TEMPLATE_NAME}*")"
+echo "${OUTPUT}"
+
+while [ ! -z "${OUTPUT}" ]; do
+    find . -name "${PROJECT_TEMPLATE_NAME}*" -print0 | xargs -0 rename --subst-all "${PROJECT_TEMPLATE_NAME}" "${NEW_APP_NAME}"
+    OUTPUT="$(find . -name "${PROJECT_TEMPLATE_NAME}*")"
+    echo "$(OUTPUT)"
+done
+
+echo "Rename project template files content"
+OUTPUT="$(ack --literal ${PROJECT_TEMPLATE_NAME})"
+echo "${OUTPUT}"
+
+while [ ! -z "${OUTPUT}" ]; do
+    ack --literal --files-with-matches "${PROJECT_TEMPLATE_NAME}" --print0 | xargs -0 sed -i '' "s/${PROJECT_TEMPLATE_NAME}/${NEW_APP_NAME}/g"
+    OUTPUT="$(ack --literal ${PROJECT_TEMPLATE_NAME})"
+done
+
+CAPITALIZED_NEW_APP_NAME="$(echo ${NEW_APP_NAME} | awk '{print toupper(substr($1,1,1)) substr($1,2)}')"
+CAPITALIZED_PROJECT_TEMPLATE_NAME="$(echo ${PROJECT_TEMPLATE_NAME} | awk '{print toupper(substr($1,1,1)) substr($1,2)}')"
+
+OUTPUT="$(ack --literal ${CAPITALIZED_PROJECT_TEMPLATE_NAME})"
+echo "${OUTPUT}"
+
+while [ ! -z "${OUTPUT}" ]; do
+    ack --literal --files-with-matches "${CAPITALIZED_PROJECT_TEMPLATE_NAME}" --print0 | xargs -0 sed -i '' "s/${CAPITALIZED_PROJECT_TEMPLATE_NAME}/${CAPITALIZED_NEW_APP_NAME}/g"
+    OUTPUT="$(ack --literal ${CAPITALIZED_PROJECT_TEMPLATE_NAME})"
+done
 
 echo "### UPDATE BUNDLE ###"
 

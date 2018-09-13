@@ -13,3 +13,5 @@
 - [Индикация](Source/HHIndication/README.md)
 - Best practices
     - [Мультиделегирование](Source/HHBestPractice/Multidelegate.md)
+- [Скрипт для быстрого разворачивания проекта](Scripts/bootstrap.md)
+
