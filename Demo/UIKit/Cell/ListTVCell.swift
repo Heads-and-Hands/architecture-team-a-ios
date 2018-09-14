@@ -13,7 +13,6 @@ class ListTVCell: UITableViewCell, ARCHCell {
 
     let listButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor.black
         button.setTitleColor(UIColor.white, for: .normal)
         button.layer.cornerRadius = 5.0
 
@@ -48,7 +47,7 @@ class ListTVCell: UITableViewCell, ARCHCell {
     @objc
     func changeState(sender: UIButton) {
         if var vm = viewModel {
-            vm.changeActive(!vm.data.active)
+            vm.changeActive(true)
         }
 
         updateTitleButton()
@@ -57,8 +56,10 @@ class ListTVCell: UITableViewCell, ARCHCell {
     func updateTitleButton() {
         if viewModel?.data.active == true {
             listButton.setTitle("Active", for: .normal)
+            listButton.backgroundColor = .black
         } else {
             listButton.setTitle("Not active", for: .normal)
+            listButton.backgroundColor = .lightGray
         }
     }
 

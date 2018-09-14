@@ -248,7 +248,15 @@
 		EF488E94214BED8300A12FC7 /* ListTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF488E8E214BECA600A12FC7 /* ListTVCellViewModel.swift */; };
 		EF488E95214BED8300A12FC7 /* ListTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF488E8E214BECA600A12FC7 /* ListTVCellViewModel.swift */; };
 		EFB05681214C0FBF00A1413D /* ListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB0567F214C0F0000A1413D /* ListDataModel.swift */; };
-		EFB05682214C0FBF00A1413D /* ListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB0567F214C0F0000A1413D /* ListDataModel.swift */; };
+		EFB05683214C1BA700A1413D /* ListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF488E8C214BECA600A12FC7 /* ListTVCell.swift */; };
+		EFB05684214C1BA700A1413D /* ListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF488E8C214BECA600A12FC7 /* ListTVCell.swift */; };
+		EFB05685214C1BA700A1413D /* ListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF488E8C214BECA600A12FC7 /* ListTVCell.swift */; };
+		EFB05686214C1BA700A1413D /* ListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF488E8C214BECA600A12FC7 /* ListTVCell.swift */; };
+		EFB05687214C1BA700A1413D /* ListTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF488E8E214BECA600A12FC7 /* ListTVCellViewModel.swift */; };
+		EFB05688214C1BA700A1413D /* ListTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF488E8E214BECA600A12FC7 /* ListTVCellViewModel.swift */; };
+		EFB05689214C1BA700A1413D /* ListTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF488E8E214BECA600A12FC7 /* ListTVCellViewModel.swift */; };
+		EFB0568A214C1BA700A1413D /* ListTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF488E8E214BECA600A12FC7 /* ListTVCellViewModel.swift */; };
+		EFB0568B214C1C0E00A1413D /* ListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB0567F214C0F0000A1413D /* ListDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -945,6 +953,8 @@
 		50679792212572610034CDA2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				EF488E8C214BECA600A12FC7 /* ListTVCell.swift */,
+				EF488E8E214BECA600A12FC7 /* ListTVCellViewModel.swift */,
 				50679793212572610034CDA2 /* ExampleCellViewModel.swift */,
 				50679794212572610034CDA2 /* ExampleCell.swift */,
 				50679795212572610034CDA2 /* ExampleCell.xib */,
@@ -1399,7 +1409,6 @@
 		50FA81EF211AE45900ADA769 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				EF488E85214BE6FE00A12FC7 /* Cell */,
 				50FA81F3211AE47C00ADA769 /* ListConfigurator.swift */,
 				50FA81F2211AE47C00ADA769 /* ListViewController.swift */,
 				50FA81F1211AE47C00ADA769 /* ListEventHandler.swift */,
@@ -1407,15 +1416,6 @@
 				50FA81F4211AE47C00ADA769 /* ListState.swift */,
 			);
 			path = List;
-			sourceTree = "<group>";
-		};
-		EF488E85214BE6FE00A12FC7 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				EF488E8C214BECA600A12FC7 /* ListTVCell.swift */,
-				EF488E8E214BECA600A12FC7 /* ListTVCellViewModel.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2182,7 +2182,6 @@
 				503FD72B21402CC2008905ED /* AppDelegate.swift in Sources */,
 				503FD72C21402CC2008905ED /* ListEventHandler.swift in Sources */,
 				503FD72D21402CC2008905ED /* ExampleCellViewModel.swift in Sources */,
-				EFB05682214C0FBF00A1413D /* ListDataModel.swift in Sources */,
 				503FD72E21402CC2008905ED /* ListConfigurator.swift in Sources */,
 				503FD72F21402CC2008905ED /* ListModuleIO.swift in Sources */,
 				EF488E95214BED8300A12FC7 /* ListTVCellViewModel.swift in Sources */,
@@ -2238,8 +2237,11 @@
 				506797EA212576480034CDA2 /* ModulesUserStory.swift in Sources */,
 				506797E5212576400034CDA2 /* ListExtConfigurator.swift in Sources */,
 				506797E7212576400034CDA2 /* ListExtEventHandler.swift in Sources */,
+				EFB0568B214C1C0E00A1413D /* ListDataModel.swift in Sources */,
 				506797D32125761C0034CDA2 /* ExampleCellViewModel.swift in Sources */,
 				506797E9212576400034CDA2 /* ListExtModuleIO.swift in Sources */,
+				EFB05688214C1BA700A1413D /* ListTVCellViewModel.swift in Sources */,
+				EFB05684214C1BA700A1413D /* ListTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2322,7 +2324,9 @@
 				507F14DD2137EAE10087DCDB /* IndicationDemoModuleIO.swift in Sources */,
 				507F14B82137E99C0087DCDB /* ExampleCell.swift in Sources */,
 				507F14BA2137E99C0087DCDB /* SimpleEntity.swift in Sources */,
+				EFB05686214C1BA700A1413D /* ListTVCell.swift in Sources */,
 				508F84272139612200137D66 /* DefaultIndicationView.swift in Sources */,
+				EFB0568A214C1BA700A1413D /* ListTVCellViewModel.swift in Sources */,
 				507F14EF2137F0A20087DCDB /* RouterEmbedNaviVCOptions.swift in Sources */,
 				507F14BB2137E99C0087DCDB /* AppDelegate.swift in Sources */,
 				507F14BD2137E99C0087DCDB /* ExampleCellViewModel.swift in Sources */,
@@ -2376,12 +2380,14 @@
 				50C9858C212AEBFF0002EF4B /* ModulesUserStory.swift in Sources */,
 				50C985B3212AEE9B0002EF4B /* MainResponse.swift in Sources */,
 				50C985B0212AEE850002EF4B /* Dependency.swift in Sources */,
+				EFB05689214C1BA700A1413D /* ListTVCellViewModel.swift in Sources */,
 				50C9858D212AEBFF0002EF4B /* ListExtConfigurator.swift in Sources */,
 				50C985A3212AEC740002EF4B /* PaginationConfigurator.swift in Sources */,
 				50C985B5212AEE9E0002EF4B /* Token.swift in Sources */,
 				50C9858E212AEBFF0002EF4B /* ListExtEventHandler.swift in Sources */,
 				50C9858F212AEBFF0002EF4B /* ExampleCellViewModel.swift in Sources */,
 				50C98590212AEBFF0002EF4B /* ListExtModuleIO.swift in Sources */,
+				EFB05685214C1BA700A1413D /* ListTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2393,6 +2399,7 @@
 				50EA302F2134529A00A95512 /* ModulesUserStory.swift in Sources */,
 				50EA30302134529A00A95512 /* ExampleCell.swift in Sources */,
 				50EA30312134529A00A95512 /* SimpleEntity.swift in Sources */,
+				EFB05683214C1BA700A1413D /* ListTVCell.swift in Sources */,
 				50EA30322134529A00A95512 /* AppDelegate.swift in Sources */,
 				507F14E62137EB9E0087DCDB /* SkeletonListConfigurator.swift in Sources */,
 				507F14E82137EB9E0087DCDB /* SkeletonListEventHandler.swift in Sources */,
@@ -2400,6 +2407,7 @@
 				507F14EA2137EB9E0087DCDB /* SkeletonListState.swift in Sources */,
 				50EA30342134529A00A95512 /* ExampleCellViewModel.swift in Sources */,
 				507F14E92137EB9E0087DCDB /* SkeletonListModuleIO.swift in Sources */,
+				EFB05687214C1BA700A1413D /* ListTVCellViewModel.swift in Sources */,
 				50EA30362134529A00A95512 /* ListModuleIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

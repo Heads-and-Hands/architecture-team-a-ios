@@ -8,10 +8,21 @@
 
 import Foundation
 
-class ListDataModel {
+class ListDataModel: Hashable {
+    
+    let id: Int
     var active: Bool
+    
+    var hashValue: Int {
+        return id.hashValue
+    }
 
-    init(active: Bool) {
+    init(id: Int, active: Bool) {
+        self.id = id
         self.active = active
+    }
+    
+    static func == (lhs: ListDataModel, rhs: ListDataModel) -> Bool {
+        return lhs.id == rhs.id
     }
 }

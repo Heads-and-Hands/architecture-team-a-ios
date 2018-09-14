@@ -11,7 +11,7 @@ import HHListExtension
 
 final class ListExtViewController: ARCHViewController<ListExtState, ListExtEventHandler>, UITableViewDataSource {
 
-    typealias ListController = ARCHDiffTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>
+    typealias ListController = ARCHDiffTableViewController<ListDataModel, ListTVCellViewModel, ListTVCell>
 
     let listController = ListController()
     let button = UIButton()
