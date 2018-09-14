@@ -27,7 +27,7 @@ class ARCHSkeletonViewProvider: ARCHIndicationViewProvider, ARCHIndicationView {
 
     func showIn(container: UIView, layoutGuide: UILayoutGuide, animated: Bool) {
         views.forEach { view in
-            view.slide(to: .left, group: { animatedGroup in
+            view.slide(to: .left, group: { _ in
                 // TODO: Добавить смещение
             })
         }

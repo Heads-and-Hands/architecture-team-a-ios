@@ -54,7 +54,7 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
 
     private func debugDisplay(states: [Any]) {
         print("States >>>>>>>>>>>>>>>>>>>>>>>")
-        states.forEach({ print("\(type(of: $0))")})
+        states.forEach({ print("\(type(of: $0))") })
         print("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
     }
 

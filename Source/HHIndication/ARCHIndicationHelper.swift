@@ -78,7 +78,7 @@ open class ARCHIndicationHelper<T: ARCHIndicationState>: ARCHViewInput {
     }
 
     // MARK: - Private
-    
+
     private func providerBy(type: ARCHIndicationTypes) -> ARCHIndicationViewProvider? {
         if let key = providers.keys.first(where: { $0.contains(type) }) {
             return providers[key]

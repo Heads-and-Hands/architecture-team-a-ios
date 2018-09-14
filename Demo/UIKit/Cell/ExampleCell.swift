@@ -19,5 +19,12 @@ class ExampleCell: UITableViewCell, ARCHCell {
 }
 
 extension ExampleCell: ARCHSkeletonView {
-    
+
+    func update(state: Any) -> Bool {
+        return false
+    }
+
+    var gradientLayers: [CAGradientLayer] {
+        return []
+    }
 }

@@ -20,9 +20,7 @@ class HeaderView: UIView, ARCHSkeletonView, ARCHViewRenderable {
         super.init(frame: frame)
 
         let baseColor = UIColor(red: 0.56, green: 0.5, blue: 0.49, alpha: 1.0)
-        placeholderView.gradientLayer.colors = [baseColor.cgColor,
-                                                baseColor.brightened(by: 0.65).cgColor,
-                                                baseColor.cgColor]
+        placeholderView.gradientLayer.colors = UIColor.skeletonColors
         placeholderView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(placeholderView)
 
@@ -59,14 +57,5 @@ extension HeaderView: GradientsOwner {
 
     var gradientLayers: [CAGradientLayer] {
         return [placeholderView.gradientLayer]
-    }
-}
-
-extension UIColor {
-
-    func brightened(by factor: CGFloat) -> UIColor {
-        var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
-        getHue(&h, saturation: &s, brightness: &b, alpha: &a)
-        return UIColor(hue: h, saturation: s, brightness: b * factor, alpha: a)
     }
 }

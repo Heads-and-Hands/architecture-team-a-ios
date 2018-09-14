@@ -172,6 +172,7 @@
 		50B74A282142BA5A00F368A3 /* HHListExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DDE7211DE83200E08A92 /* HHListExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50B74A2B2142BA6000F368A3 /* HHIndication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F149B2137E6B50087DCDB /* HHIndication.framework */; };
 		50B74A2C2142BA6000F368A3 /* HHIndication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 507F149B2137E6B50087DCDB /* HHIndication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50B8951C214BF0DC00242372 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B89519214BF00900242372 /* UIColor+.swift */; };
 		50BC80AC211DFAC700D77262 /* ARCHModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232120FC8DA30032985E /* ARCHModuleConfigurator.swift */; };
 		50BC80AD211DFACA00D77262 /* ARCHModuleID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232220FC8DA30032985E /* ARCHModuleID.swift */; };
 		50BC80AE211DFACE00D77262 /* ARCHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232420FC8DA30032985E /* ARCHViewController.swift */; };
@@ -699,6 +700,7 @@
 		5093688220F683030044CA62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5093688520F683030044CA62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5093688720F683030044CA62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50B89519214BF00900242372 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		50BC80D02121748400D77262 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		50BC80D12121748400D77262 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		50BC80D22121748400D77262 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -960,6 +962,7 @@
 				50679792212572610034CDA2 /* Cell */,
 				50EA3025213421E800A95512 /* Label.swift */,
 				507C3FD12142AD4200A21073 /* HeaderView.swift */,
+				50B89519214BF00900242372 /* UIColor+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -2422,6 +2425,7 @@
 				50EA30302134529A00A95512 /* ExampleCell.swift in Sources */,
 				507C3FD52142AFA400A21073 /* IndicationDemoConfigurator.swift in Sources */,
 				507C3FD62142AFA400A21073 /* IndicationDemoEventHandler.swift in Sources */,
+				50B8951C214BF0DC00242372 /* UIColor+.swift in Sources */,
 				50EA30312134529A00A95512 /* SimpleEntity.swift in Sources */,
 				50EA30322134529A00A95512 /* AppDelegate.swift in Sources */,
 				507C3FDF2142B06900A21073 /* DefaultIndicationView.swift in Sources */,
