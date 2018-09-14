@@ -9,5 +9,5 @@
 import HHModule
 
 struct ListState: ARCHState {
-    var list: [SimpleEntity] = []
+    var list: [ListDataModel] = []
 }

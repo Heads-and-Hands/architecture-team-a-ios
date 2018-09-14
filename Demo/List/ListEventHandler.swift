@@ -13,9 +13,9 @@ final class ListEventHandler: ARCHEventHandler<ListState>, ListModuleInput {
     weak var moduleOutput: ListModuleOutput?
 
     func pressAddButton() {
-        var newData: [SimpleEntity] = []
-        for id in state.list.count..<state.list.count + 20 {
-            newData.append(SimpleEntity(id: id))
+        var newData: [ListDataModel] = []
+        for _ in 0..<20 {
+            newData.append(ListDataModel(active: false))
         }
 
         state.list += newData

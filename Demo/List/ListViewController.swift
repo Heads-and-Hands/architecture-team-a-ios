@@ -21,13 +21,13 @@ final class ListViewController: ARCHViewController<ListState, ListEventHandler>,
 
     lazy var dataSource: ARCHTableViewDataSource = {
         let dataSource = ARCHTableViewDataSource(view: tableView)
-        dataSource.register(cell: ExampleCell.self, for: ExampleCellViewModel.self)
+        dataSource.register(cell: ListTVCell.self, for: ListTVCellViewModel.self)
         dataSource.dataAdapter = dataAdapter
         dataSource.dataSource = self
         return dataSource
     }()
 
-    lazy var dataAdapter = ARCHEmptyListDataAdapter<SimpleEntity, ExampleCellViewModel>()
+    lazy var dataAdapter = ARCHEmptyListDataAdapter<ListDataModel, ListTVCellViewModel>()
 #endif
 
     let button = UIButton()
