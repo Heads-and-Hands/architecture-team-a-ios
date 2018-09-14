@@ -17,7 +17,7 @@ final class ListEventHandler: ARCHEventHandler<ListState>, ListModuleInput {
         for id in state.list.count..<state.list.count + 20 {
             newData.append(ListDataModel(id: id, active: false))
         }
-        
+
         state.list += newData
     }
 }

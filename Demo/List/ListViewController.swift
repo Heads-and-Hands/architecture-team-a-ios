@@ -10,7 +10,7 @@ import UIKit
 import HHModule
 import HHList
 
-final class ListViewController: ARCHViewController<ListState, ListEventHandler>, UITableViewDataSource {
+final class ListViewController: ARCHViewController<ListState, ListEventHandler>, UITableViewDataSource, UITableViewDelegate {
 
 #if CONTROLLER
     typealias ListController = ARCHTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>
@@ -55,6 +55,7 @@ final class ListViewController: ARCHViewController<ListState, ListEventHandler>,
 #else
     func configure(tableView: UITableView) {
         tableView.dataSource = dataSource
+        tableView.delegate = self
     }
 #endif
 
@@ -115,5 +116,13 @@ final class ListViewController: ARCHViewController<ListState, ListEventHandler>,
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+
+    // MARK: - UITableViewDelegate
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? ListTVCell {
+            cell.changeState(sender: nil)
+        }
     }
 }

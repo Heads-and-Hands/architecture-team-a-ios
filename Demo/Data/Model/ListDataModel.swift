@@ -9,10 +9,10 @@
 import Foundation
 
 class ListDataModel: Hashable {
-    
+
     let id: Int
     var active: Bool
-    
+
     var hashValue: Int {
         return id.hashValue
     }
@@ -21,7 +21,7 @@ class ListDataModel: Hashable {
         self.id = id
         self.active = active
     }
-    
+
     static func == (lhs: ListDataModel, rhs: ListDataModel) -> Bool {
         return lhs.id == rhs.id
     }

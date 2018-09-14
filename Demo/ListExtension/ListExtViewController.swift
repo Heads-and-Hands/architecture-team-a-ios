@@ -9,7 +9,7 @@
 import HHModule
 import HHListExtension
 
-final class ListExtViewController: ARCHViewController<ListExtState, ListExtEventHandler>, UITableViewDataSource {
+final class ListExtViewController: ARCHViewController<ListExtState, ListExtEventHandler>, UITableViewDataSource, UITableViewDelegate {
 
     typealias ListController = ARCHDiffTableViewController<ListDataModel, ListTVCellViewModel, ListTVCell>
 
@@ -30,6 +30,7 @@ final class ListExtViewController: ARCHViewController<ListExtState, ListExtEvent
 
     func configure(listController: ListController) {
         listController.dataSource = self
+        listController.tableView.delegate = self
     }
 
     func configure(button: UIButton) {
@@ -75,5 +76,13 @@ final class ListExtViewController: ARCHViewController<ListExtState, ListExtEvent
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+
+    // MARK: - UITableViewDelegate
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? ListTVCell {
+            cell.changeState(sender: nil)
+        }
     }
 }
