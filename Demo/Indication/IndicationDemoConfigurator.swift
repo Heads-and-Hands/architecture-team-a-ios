@@ -44,6 +44,7 @@ final class IndicationDemoConfigurator: ARCHModuleConfigurator {
 
             if old.indication == nil && new.indication != nil {
                 buffer.list = nil
+                buffer.header = nil
             }
 
             return buffer

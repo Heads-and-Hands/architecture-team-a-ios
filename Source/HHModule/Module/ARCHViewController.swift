@@ -19,29 +19,43 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
     }
 
     open func render(state: State) {
-        let viewMirror = Mirror(reflecting: self)
-        let stateMirror = Mirror(reflecting: state)
+        var views = autorenderViews
+        let substates = self.substates(state: state)
 
-        for (_, viewProperty) in viewMirror.children {
-            guard let view = viewProperty as? ARCHViewInput else {
-                continue
+        var index: Int = 0
+        while index < views.count {
+            let view = views[index]
+            var isVisible = false
+
+            for substate in substates where view.update(state: substate) {
+                isVisible = true
+                break
             }
 
-            if autorenderIgnoreViews.contains(where: { $0 === view }) {
-                continue
-            }
-
-            render(state: stateMirror, on: view)
+            view.set(visible: isVisible)
+            index += 1
         }
+
+        print("[ARCHViewController] end render(state:)")
     }
 
-    open func render(state: Mirror, on view: ARCHViewInput) {
-        for (_, value) in state.children {
-            if view.typeExist(state: value) {
-                view.update(state: value)
-                return
-            }
-        }
+    private func substates(state: State) -> [Any] {
+        return Mirror(reflecting: state).children.map({ $0.value })
+    }
+
+    private var autorenderViews: [ARCHViewInput] {
+        return Mirror(reflecting: self).children
+            .compactMap({ item -> ARCHViewInput? in
+                guard let value = item.value as? ARCHViewInput else {
+                    return nil
+                }
+
+                if autorenderIgnoreViews.contains(where: { $0 === value }) {
+                    return nil
+                } else {
+                    return value
+                }
+            })
     }
 
     override open func viewDidLoad() {

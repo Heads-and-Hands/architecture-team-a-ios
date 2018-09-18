@@ -16,17 +16,22 @@ public protocol ARCHState {
 }
 
 public protocol ARCHViewInput: class {
-    func update(state: Any?)
+
+    /**
+     Обновлеяем вьюху на основании переданных данных
+     @return true - если удалось обработать переданное состояние
+     */
+    @discardableResult
+    func update(state: Any) -> Bool
 
     func set(visible: Bool)
-
-    func typeExist(state: Any?) -> Bool
 }
 
 public extension ARCHViewInput where Self: UIView {
 
     func set(visible: Bool) {
-        isHidden = visible
+        print("[\(type(of: self))] set(visible: \(visible))")
+        isHidden = !visible
     }
 }
 
@@ -43,30 +48,13 @@ public protocol ARCHViewRenderable: ARCHViewInput {
 
 public extension ARCHViewRenderable where State: Any {
 
-    func update(state: Any?) {
+    func update(state: Any) -> Bool {
         if let state = state as? State {
-            set(visible: true)
             render(state: state)
+            return true
         } else {
-            set(visible: false)
-        }
-    }
-
-    func typeExist(state: Any?) -> Bool {
-        guard let state = state else {
             return false
         }
-
-        let stateType = Mirror(reflecting: type(of: state)).subjectType
-        return stateType == self.stateType || stateType == optionalStateType
-    }
-
-    private var stateType: Any.Type {
-        return Mirror(reflecting: State.self).subjectType
-    }
-
-    private var optionalStateType: Any.Type {
-        return Mirror(reflecting: State?.self).subjectType
     }
 }
 

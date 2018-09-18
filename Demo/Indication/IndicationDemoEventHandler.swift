@@ -22,7 +22,10 @@ final class IndicationDemoEventHandler: ARCHEventHandler<IndicationDemoState>, I
             newData.append(SimpleEntity(id: id))
         }
 
-        state.list = newData
+        updateState {
+            state.list = newData
+            state.header = HeaderViewState()
+        }
     }
 
     func finishLoadingWithEmptyData() {
