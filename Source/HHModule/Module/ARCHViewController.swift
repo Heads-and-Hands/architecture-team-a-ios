@@ -19,43 +19,24 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
     }
 
     open func render(state: State) {
-        print("[ARCHViewController] start render(state:)")
-
         var views = autorenderViews
         let substates = self.substates(state: state)
-
-//        debugDisplay(states: substates)
 
         var index: Int = 0
         while index < views.count {
             let view = views[index]
-            print("\(type(of: view))")
             var isVisible = false
 
-            for substate in substates {
-                if view.update(state: substate) {
-                    let ignoredViews = view.ignoredViews(by: substate)
-                    views = views.filter { item -> Bool in
-                        ignoredViews.contains(where: { $0 === item })
-                    }
-                    isVisible = true
-                    break
-                }
+            for substate in substates where view.update(state: substate) {
+                isVisible = true
+                break
             }
-
-            print("isVisible \(isVisible)")
 
             view.set(visible: isVisible)
             index += 1
         }
 
         print("[ARCHViewController] end render(state:)")
-    }
-
-    private func debugDisplay(states: [Any]) {
-        print("States >>>>>>>>>>>>>>>>>>>>>>>")
-        states.forEach({ print("\(type(of: $0))") })
-        print("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
     }
 
     private func substates(state: State) -> [Any] {
@@ -75,7 +56,6 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
                     return value
                 }
             })
-            .sorted(by: { $0.sortPriority > $1.sortPriority })
     }
 
     override open func viewDidLoad() {

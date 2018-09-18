@@ -10,6 +10,7 @@ import HHModule
 import HHList
 import HHListExtension
 import HHIndication
+import HHSkeleton
 
 enum ActionType: Int {
     case load = 0
@@ -43,15 +44,15 @@ final class IndicationDemoViewController: ARCHViewController<IndicationDemoState
 
 #if HHSkeleton
     let headerView = HeaderView()
-#endif
+    let tableView = UITableView()
 
-    let listController = ARCHDiffTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>()
-    let segmentControll = UISegmentedControl(items: ActionType.allTitles)
+    lazy var skeletonListController = ARCHSkeletonTableViewController<ExampleCell>(tableView: tableView)
+    lazy var listController = ARCHDiffTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>(tableView: tableView)
 
-#if HHSkeleton
     lazy var indicationHelper: IndicationHelper = {
         let skeletonProvider = ARCHSkeletonViewProvider(views: [
-            headerView
+            headerView,
+            skeletonListController
         ])
 
         let result = IndicationHelper()
@@ -59,8 +60,11 @@ final class IndicationDemoViewController: ARCHViewController<IndicationDemoState
         return result
     }()
 #else
+    let listController = ARCHDiffTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>()
     let indicationHelper = IndicationHelper()
 #endif
+
+    let segmentControll = UISegmentedControl(items: ActionType.allTitles)
 
     private struct Constants {
         static let segmentControlHeight: CGFloat = 40
@@ -69,6 +73,10 @@ final class IndicationDemoViewController: ARCHViewController<IndicationDemoState
     override func prepareRootView() {
         super.prepareRootView()
 
+#if HHSkeleton
+        skeletonListController.tableView.rowHeight = 45
+        skeletonListController.dataSource = listController.viewDataSource
+#endif
         indicationHelper.container = self
         layoutIndicationGuide.bottomConstraint?.constant = -Constants.segmentControlHeight
 
@@ -90,7 +98,6 @@ final class IndicationDemoViewController: ARCHViewController<IndicationDemoState
         headerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(headerView)
 #endif
-
         let tableView = listController.tableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
@@ -139,15 +146,5 @@ final class IndicationDemoViewController: ARCHViewController<IndicationDemoState
         case .error:
             output?.finishLoadingWithError()
         }
-    }
-
-    override func render(state: State) {
-        super.render(state: state)
-
-        print("[IndicationDemoViewController] render(state:)")
-// TODO: Объединияем все вьюхи и делаем у них смещение стартового времени анимации
-//        headerView.slide(to: .left) { group in
-//            group.beginTime = 0.5
-//        }
     }
 }

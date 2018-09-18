@@ -8,30 +8,58 @@
 
 import UIKit
 import HHModule
-import HHIndication
-import Skeleton
+import HHSkeleton
 
-class HeaderView: UIView, ARCHSkeletonView, ARCHViewRenderable {
-    typealias State = SkeletonData<String>
+struct HeaderViewState {
+    let title: String = "title"
+    let detail: String = "detail"
+}
 
-    let placeholderView = GradientContainerView()
+class HeaderView: UIView, ARCHViewRenderable, ARCHSkeletonView {
+    typealias State = HeaderViewState
+
+    let imageView = UIImageView()
+    let stackView = UIStackView()
+    let titleLabel = UILabel()
+    let detailLabel = UILabel()
+
+    private struct Constants {
+        static let indent: CGFloat = 20
+        static let imageSize: CGFloat = 100
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        let baseColor = UIColor(red: 0.56, green: 0.5, blue: 0.49, alpha: 1.0)
-        placeholderView.gradientLayer.colors = UIColor.skeletonColors
-        placeholderView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(placeholderView)
+        imageView.backgroundColor = .gray
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(imageView)
+
+        titleLabel.backgroundColor = .magenta
+        detailLabel.backgroundColor = .green
+
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.spacing = Constants.indent
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(detailLabel)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(stackView)
 
         NSLayoutConstraint.activate([
-            placeholderView.leftAnchor.constraint(equalTo: leftAnchor),
-            placeholderView.rightAnchor.constraint(equalTo: rightAnchor),
-            placeholderView.topAnchor.constraint(equalTo: topAnchor),
-            placeholderView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.indent),
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.indent),
+            imageView.widthAnchor.constraint(equalToConstant: Constants.imageSize),
+            imageView.heightAnchor.constraint(equalToConstant: Constants.imageSize)
         ])
 
-        backgroundColor = .green
+        NSLayoutConstraint.activate([
+            stackView.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: Constants.indent),
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.indent),
+            stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.indent),
+            stackView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -Constants.indent)
+        ])
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -39,23 +67,27 @@ class HeaderView: UIView, ARCHSkeletonView, ARCHViewRenderable {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIViewNoIntrinsicMetric, height: 200)
+        return CGSize(width: UIViewNoIntrinsicMetric, height: 120)
     }
 
     // MARK: - ARCHViewRenderable
 
     func render(state: State) {
-        if let indication = state.indication, indication.type == .loading {
-            slide(to: .right)
-        } else {
-            stopSliding()
-        }
+        titleLabel.text = state.title
+        detailLabel.text = state.detail
     }
-}
 
-extension HeaderView: GradientsOwner {
+    // MARK: - ARCHSkeletonView
 
-    var gradientLayers: [CAGradientLayer] {
-        return [placeholderView.gradientLayer]
+    var skeletonSubviews: [UIView]? {
+        return [imageView, titleLabel, detailLabel]
+    }
+
+    func set(isEnableSkeleton: Bool) {
+        if isEnableSkeleton {
+            titleLabel.text = "ARCHSkeletonView ARCHSkeletonView"
+            detailLabel.text = "ARCHSkeletonView ARCHSkeletonView"
+            layoutIfNeeded()
+        }
     }
 }

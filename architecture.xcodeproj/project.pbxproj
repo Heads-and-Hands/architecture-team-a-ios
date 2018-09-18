@@ -235,7 +235,19 @@
 		50C985C0212AF0D20002EF4B /* DeepDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5089230720FB77520032985E /* DeepDiff.framework */; };
 		50C985C1212AF5620002EF4B /* SimpleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506797A1212572AE0034CDA2 /* SimpleEntity.swift */; };
 		50CC5313214665BD008EF24A /* SkeletonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC531021466479008EF24A /* SkeletonData.swift */; };
-		50D0F3D32147A2010093E07F /* ARCHSkeletonViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D0F3D22147A2010093E07F /* ARCHSkeletonViewProvider.swift */; };
+		50D1DBB1215119F9005999F0 /* HHSkeleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D1DBAF215119F9005999F0 /* HHSkeleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50D1DBB4215119F9005999F0 /* HHSkeleton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D1DBAD215119F9005999F0 /* HHSkeleton.framework */; };
+		50D1DBB5215119F9005999F0 /* HHSkeleton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50D1DBAD215119F9005999F0 /* HHSkeleton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50D1DBB921511A13005999F0 /* HHIndication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F149B2137E6B50087DCDB /* HHIndication.framework */; };
+		50D1DBBB21511A13005999F0 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
+		50D1DBBC21511A5B005999F0 /* HHSkeleton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D1DBAD215119F9005999F0 /* HHSkeleton.framework */; };
+		50D1DBBD21511A5B005999F0 /* HHSkeleton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50D1DBAD215119F9005999F0 /* HHSkeleton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50D1DBC021511AAA005999F0 /* ARCHSkeletonViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D0F3D22147A2010093E07F /* ARCHSkeletonViewProvider.swift */; };
+		50D1DBC121511AB3005999F0 /* ARCHSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D1DB8B21511398005999F0 /* ARCHSkeletonView.swift */; };
+		50D1DBC221511AB3005999F0 /* ARCHSkeletonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D1DB882150E948005999F0 /* ARCHSkeletonTableViewController.swift */; };
+		50D1DBC321511B26005999F0 /* Skeleton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509013532146912C00C36247 /* Skeleton.framework */; };
+		50D1DBC621512021005999F0 /* UILabel+Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D1DBC521512021005999F0 /* UILabel+Skeleton.swift */; };
+		50D1DBC9215122B9005999F0 /* ARCHSkeletonCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D1DBC7215122B3005999F0 /* ARCHSkeletonCollectionViewController.swift */; };
 		50DF383A2125802B000EFCD3 /* HHList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; };
 		50EA3021213420B600A95512 /* EmptyModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3E2118342500158C1F /* EmptyModuleViewController.swift */; };
 		50EA3022213420B600A95512 /* EmptyModuleEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3D2118342500158C1F /* EmptyModuleEventHandler.swift */; };
@@ -455,6 +467,20 @@
 			remoteGlobalIDString = 50C9855D212AE9D20002EF4B;
 			remoteInfo = HHPagingManager;
 		};
+		50D1DBB2215119F9005999F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50D1DBAC215119F9005999F0;
+			remoteInfo = HHSkeleton;
+		};
+		50D1DBBE21511A5B005999F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50D1DBAC215119F9005999F0;
+			remoteInfo = HHSkeleton;
+		};
 		50EA30292134529A00A95512 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5093687020F683010044CA62 /* Project object */;
@@ -542,6 +568,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5072DD9D211D84B800E08A92 /* HHModule.framework in Embed Frameworks */,
+				50D1DBB5215119F9005999F0 /* HHSkeleton.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,6 +594,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				50D1DBBD21511A5B005999F0 /* HHSkeleton.framework in Embed Frameworks */,
 				50B74A2C2142BA6000F368A3 /* HHIndication.framework in Embed Frameworks */,
 				50EA303F2134529A00A95512 /* HHModule.framework in Embed Frameworks */,
 				50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */,
@@ -656,7 +684,6 @@
 		507ABCE421257D5A003DBDD7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		507C3FD12142AD4200A21073 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		507F14942137E6A60087DCDB /* ARCHIndicationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHIndicationHelper.swift; sourceTree = "<group>"; };
-		507F14952137E6A60087DCDB /* ARCHTableViewSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHTableViewSkeleton.swift; sourceTree = "<group>"; };
 		507F149B2137E6B50087DCDB /* HHIndication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHIndication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		507F149D2137E6B50087DCDB /* HHIndication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHIndication.h; sourceTree = "<group>"; };
 		507F149E2137E6B50087DCDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -724,6 +751,13 @@
 		50C985A1212AEBFF0002EF4B /* HHPaginationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHPaginationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CC531021466479008EF24A /* SkeletonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonData.swift; sourceTree = "<group>"; };
 		50D0F3D22147A2010093E07F /* ARCHSkeletonViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHSkeletonViewProvider.swift; sourceTree = "<group>"; };
+		50D1DB882150E948005999F0 /* ARCHSkeletonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHSkeletonTableViewController.swift; sourceTree = "<group>"; };
+		50D1DB8B21511398005999F0 /* ARCHSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHSkeletonView.swift; sourceTree = "<group>"; };
+		50D1DBAD215119F9005999F0 /* HHSkeleton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHSkeleton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50D1DBAF215119F9005999F0 /* HHSkeleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHSkeleton.h; sourceTree = "<group>"; };
+		50D1DBB0215119F9005999F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50D1DBC521512021005999F0 /* UILabel+Skeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Skeleton.swift"; sourceTree = "<group>"; };
+		50D1DBC7215122B3005999F0 /* ARCHSkeletonCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHSkeletonCollectionViewController.swift; sourceTree = "<group>"; };
 		50D26461212196B600E3B47A /* ARCHTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHTargetType.swift; sourceTree = "<group>"; };
 		50D264652121B03B00E3B47A /* ARCHAuthObserverMoyaPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHAuthObserverMoyaPlugin.swift; sourceTree = "<group>"; };
 		50D264782121FA1400E3B47A /* ARCHMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHMoyaProvider.swift; sourceTree = "<group>"; };
@@ -842,6 +876,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5072DD9C211D84B800E08A92 /* HHModule.framework in Frameworks */,
+				50D1DBB4215119F9005999F0 /* HHSkeleton.framework in Frameworks */,
 				509013542146912C00C36247 /* Skeleton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -870,10 +905,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50D1DBA9215119F9005999F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50D1DBC321511B26005999F0 /* Skeleton.framework in Frameworks */,
+				50D1DBB921511A13005999F0 /* HHIndication.framework in Frameworks */,
+				50D1DBBB21511A13005999F0 /* HHModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50EA30372134529A00A95512 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D1DBBC21511A5B005999F0 /* HHSkeleton.framework in Frameworks */,
 				50B74A2B2142BA6000F368A3 /* HHIndication.framework in Frameworks */,
 				50EA30382134529A00A95512 /* HHModule.framework in Frameworks */,
 				50EA30392134529A00A95512 /* HHList.framework in Frameworks */,
@@ -958,6 +1004,7 @@
 		50679791212572610034CDA2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				50D1DBC421511FF2005999F0 /* Skeleton */,
 				507F14F02138084A0087DCDB /* Indication */,
 				50679792212572610034CDA2 /* Cell */,
 				50EA3025213421E800A95512 /* Label.swift */,
@@ -1083,7 +1130,6 @@
 				508F841E21393DD200137D66 /* ARCHIndicationTypes.swift */,
 				508F842221393E3C00137D66 /* ARCHIndicationState.swift */,
 				508F842021393E0700137D66 /* ARCHIndicationProvider.swift */,
-				507F14952137E6A60087DCDB /* ARCHTableViewSkeleton.swift */,
 			);
 			path = HHIndication;
 			sourceTree = "<group>";
@@ -1274,6 +1320,7 @@
 				50679737212419970034CDA2 /* HHNetwork */,
 				50C9855F212AE9D20002EF4B /* HHPagingManager */,
 				507F149C2137E6B50087DCDB /* HHIndication */,
+				50D1DBAE215119F9005999F0 /* HHSkeleton */,
 				5093687920F683010044CA62 /* Products */,
 				5089230620FB77520032985E /* Frameworks */,
 			);
@@ -1296,6 +1343,7 @@
 				507F149B2137E6B50087DCDB /* HHIndication.framework */,
 				507F14CE2137E99C0087DCDB /* HHIndicationDemo.app */,
 				503FD73E21402CC2008905ED /* HHListControllerDemo.app */,
+				50D1DBAD215119F9005999F0 /* HHSkeleton.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1383,9 +1431,29 @@
 		50D0F3CF2146CE3E0093E07F /* HHSkeleton */ = {
 			isa = PBXGroup;
 			children = (
+				50D1DB8B21511398005999F0 /* ARCHSkeletonView.swift */,
 				50D0F3D22147A2010093E07F /* ARCHSkeletonViewProvider.swift */,
+				50D1DB882150E948005999F0 /* ARCHSkeletonTableViewController.swift */,
+				50D1DBC7215122B3005999F0 /* ARCHSkeletonCollectionViewController.swift */,
 			);
 			path = HHSkeleton;
+			sourceTree = "<group>";
+		};
+		50D1DBAE215119F9005999F0 /* HHSkeleton */ = {
+			isa = PBXGroup;
+			children = (
+				50D1DBAF215119F9005999F0 /* HHSkeleton.h */,
+				50D1DBB0215119F9005999F0 /* Info.plist */,
+			);
+			path = HHSkeleton;
+			sourceTree = "<group>";
+		};
+		50D1DBC421511FF2005999F0 /* Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				50D1DBC521512021005999F0 /* UILabel+Skeleton.swift */,
+			);
+			path = Skeleton;
 			sourceTree = "<group>";
 		};
 		50D264672121B43300E3B47A /* Network */ = {
@@ -1478,6 +1546,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C98562212AE9D20002EF4B /* HHPagingManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50D1DBAA215119F9005999F0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50D1DBB1215119F9005999F0 /* HHSkeleton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1706,6 +1782,7 @@
 				5067973C212419970034CDA2 /* PBXTargetDependency */,
 				50C98564212AE9D20002EF4B /* PBXTargetDependency */,
 				507F14A12137E6B50087DCDB /* PBXTargetDependency */,
+				50D1DBB3215119F9005999F0 /* PBXTargetDependency */,
 			);
 			name = HHModuleDemo;
 			productName = architecture;
@@ -1755,6 +1832,24 @@
 			productReference = 50C985A1212AEBFF0002EF4B /* HHPaginationDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		50D1DBAC215119F9005999F0 /* HHSkeleton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50D1DBB6215119F9005999F0 /* Build configuration list for PBXNativeTarget "HHSkeleton" */;
+			buildPhases = (
+				50D1DBA8215119F9005999F0 /* Sources */,
+				50D1DBA9215119F9005999F0 /* Frameworks */,
+				50D1DBAA215119F9005999F0 /* Headers */,
+				50D1DBAB215119F9005999F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHSkeleton;
+			productName = HHSkeleton;
+			productReference = 50D1DBAD215119F9005999F0 /* HHSkeleton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		50EA30272134529A00A95512 /* HHSkeletonDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50EA30412134529A00A95512 /* Build configuration list for PBXNativeTarget "HHSkeletonDemo" */;
@@ -1773,6 +1868,7 @@
 				50EA302A2134529A00A95512 /* PBXTargetDependency */,
 				50B74A2A2142BA5A00F368A3 /* PBXTargetDependency */,
 				50B74A2E2142BA6000F368A3 /* PBXTargetDependency */,
+				50D1DBBF21511A5B005999F0 /* PBXTargetDependency */,
 			);
 			name = HHSkeletonDemo;
 			productName = HHLitDemo;
@@ -1813,6 +1909,9 @@
 					50C9855D212AE9D20002EF4B = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					50D1DBAC215119F9005999F0 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 5093687320F683010044CA62 /* Build configuration list for PBXProject "architecture" */;
@@ -1842,6 +1941,7 @@
 				50679735212419970034CDA2 /* HHNetwork */,
 				50C9855D212AE9D20002EF4B /* HHPagingManager */,
 				507F149A2137E6B50087DCDB /* HHIndication */,
+				50D1DBAC215119F9005999F0 /* HHSkeleton */,
 			);
 		};
 /* End PBXProject section */
@@ -1960,6 +2060,13 @@
 				50C98596212AEBFF0002EF4B /* LaunchScreen.storyboard in Resources */,
 				50C98597212AEBFF0002EF4B /* ExampleCell.xib in Resources */,
 				50C98598212AEBFF0002EF4B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50D1DBAB215119F9005999F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2412,6 +2519,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50D1DBA8215119F9005999F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50D1DBC221511AB3005999F0 /* ARCHSkeletonTableViewController.swift in Sources */,
+				50D1DBC021511AAA005999F0 /* ARCHSkeletonViewProvider.swift in Sources */,
+				50D1DBC121511AB3005999F0 /* ARCHSkeletonView.swift in Sources */,
+				50D1DBC9215122B9005999F0 /* ARCHSkeletonCollectionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50EA302C2134529A00A95512 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2421,7 +2539,6 @@
 				50EA302D2134529A00A95512 /* ListState.swift in Sources */,
 				50EA302F2134529A00A95512 /* ModulesUserStory.swift in Sources */,
 				507C3FDE2142B06900A21073 /* IndicationState.swift in Sources */,
-				50D0F3D32147A2010093E07F /* ARCHSkeletonViewProvider.swift in Sources */,
 				50EA30302134529A00A95512 /* ExampleCell.swift in Sources */,
 				507C3FD52142AFA400A21073 /* IndicationDemoConfigurator.swift in Sources */,
 				507C3FD62142AFA400A21073 /* IndicationDemoEventHandler.swift in Sources */,
@@ -2432,6 +2549,7 @@
 				50EA30342134529A00A95512 /* ExampleCellViewModel.swift in Sources */,
 				507C3FD82142AFA400A21073 /* IndicationDemoState.swift in Sources */,
 				507C3FDD2142B06900A21073 /* IndicationViewProvider.swift in Sources */,
+				50D1DBC621512021005999F0 /* UILabel+Skeleton.swift in Sources */,
 				50EA30362134529A00A95512 /* ListModuleIO.swift in Sources */,
 				507C3FD32142AD4F00A21073 /* HeaderView.swift in Sources */,
 				507C3FD42142AF9E00A21073 /* IndicationDemoViewController.swift in Sources */,
@@ -2581,6 +2699,16 @@
 			isa = PBXTargetDependency;
 			target = 50C9855D212AE9D20002EF4B /* HHPagingManager */;
 			targetProxy = 50C985AE212AECDA0002EF4B /* PBXContainerItemProxy */;
+		};
+		50D1DBB3215119F9005999F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50D1DBAC215119F9005999F0 /* HHSkeleton */;
+			targetProxy = 50D1DBB2215119F9005999F0 /* PBXContainerItemProxy */;
+		};
+		50D1DBBF21511A5B005999F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50D1DBAC215119F9005999F0 /* HHSkeleton */;
+			targetProxy = 50D1DBBE21511A5B005999F0 /* PBXContainerItemProxy */;
 		};
 		50EA30282134529A00A95512 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3445,13 +3573,82 @@
 			};
 			name = Release;
 		};
+		50D1DBB7215119F9005999F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = HHSkeleton/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = handh.HHSkeleton;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		50D1DBB8215119F9005999F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = HHSkeleton/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = handh.HHSkeleton;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		50EA30422134529A00A95512 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X86NQK83T7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3476,8 +3673,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X86NQK83T7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3623,6 +3821,15 @@
 			buildConfigurations = (
 				50C9859F212AEBFF0002EF4B /* Debug */,
 				50C985A0212AEBFF0002EF4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50D1DBB6215119F9005999F0 /* Build configuration list for PBXNativeTarget "HHSkeleton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50D1DBB7215119F9005999F0 /* Debug */,
+				50D1DBB8215119F9005999F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

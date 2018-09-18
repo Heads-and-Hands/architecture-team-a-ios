@@ -36,10 +36,6 @@ open class ARCHIndicationHelper<T: ARCHIndicationState>: ARCHViewInput {
 
     // MARK: - ARCHViewInput
 
-    public var sortPriority: Int {
-        return Int.max
-    }
-
     public func update(state: Any) -> Bool {
         guard let state = state as? T, let container = container else {
             return false
@@ -65,16 +61,11 @@ open class ARCHIndicationHelper<T: ARCHIndicationState>: ARCHViewInput {
         return true
     }
 
-    public func ignoredViews(by state: Any) -> [ARCHViewInput] {
-        return currentView?.ignoredViews(by: state) ?? []
-    }
-
     public func set(visible: Bool) {
-        currentView?.set(visible: visible)
-//        if !visible, let container = container {
-//            // TODO: Анимация
-//            currentView?.removeFrom(container: container.contextView)
-//        }
+        if !visible, let container = container {
+            // TODO: Анимация
+            currentView?.removeFrom(container: container.contextView)
+        }
     }
 
     // MARK: - Private

@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let window = ARCHWindow()
         self.window = window
+
+//        window.rootViewController = SkeletonTestViewController()
+//        window.makeKeyAndVisible()
         launchOn(window: window)
 
         return true

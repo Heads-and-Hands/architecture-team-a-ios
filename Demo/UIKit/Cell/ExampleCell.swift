@@ -7,24 +7,56 @@
 //
 
 import HHList
+import HHSkeleton
 
 class ExampleCell: UITableViewCell, ARCHCell {
     typealias ViewModel = ExampleCellViewModel
 
     var viewModel: ViewModel?
 
+    let label = UILabel()
+
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    private func setup() {
+        label.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(label)
+
+        let hIndent: CGFloat = 20
+        let vIindent: CGFloat = 5
+
+        NSLayoutConstraint.activate([
+            label.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: hIndent),
+            label.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -hIndent),
+            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: vIindent),
+            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -vIindent)
+        ])
+    }
+
     func render(viewModel: ViewModel) {
-        textLabel?.text = viewModel.title
+        label.text = viewModel.title
     }
 }
 
 extension ExampleCell: ARCHSkeletonView {
 
-    func update(state: Any) -> Bool {
-        return false
+    /**
+     Дочерние вьюхи, которые нужно отображать в режиме скелетон
+     */
+    var skeletonSubviews: [UIView]? {
+        return [label]
     }
 
-    var gradientLayers: [CAGradientLayer] {
-        return []
+    func set(isEnableSkeleton: Bool) {
+        label.text = "ARCHSkeletonView ARCHSkeletonView ARCHSkeletonView"
     }
 }
