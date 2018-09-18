@@ -159,7 +159,6 @@
 		508F842121393E0700137D66 /* ARCHIndicationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F842021393E0700137D66 /* ARCHIndicationProvider.swift */; };
 		508F842321393E3C00137D66 /* ARCHIndicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F842221393E3C00137D66 /* ARCHIndicationState.swift */; };
 		508F84272139612200137D66 /* DefaultIndicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F84262139612200137D66 /* DefaultIndicationView.swift */; };
-		509013542146912C00C36247 /* Skeleton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509013532146912C00C36247 /* Skeleton.framework */; };
 		5093687C20F683010044CA62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5093687B20F683010044CA62 /* AppDelegate.swift */; };
 		5093688320F683030044CA62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093688220F683030044CA62 /* Assets.xcassets */; };
 		5093688620F683030044CA62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
@@ -235,8 +234,6 @@
 		50C985C1212AF5620002EF4B /* SimpleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506797A1212572AE0034CDA2 /* SimpleEntity.swift */; };
 		50CC5313214665BD008EF24A /* SkeletonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC531021466479008EF24A /* SkeletonData.swift */; };
 		50D1DBB1215119F9005999F0 /* HHSkeleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D1DBAF215119F9005999F0 /* HHSkeleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50D1DBB4215119F9005999F0 /* HHSkeleton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D1DBAD215119F9005999F0 /* HHSkeleton.framework */; };
-		50D1DBB5215119F9005999F0 /* HHSkeleton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50D1DBAD215119F9005999F0 /* HHSkeleton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50D1DBB921511A13005999F0 /* HHIndication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507F149B2137E6B50087DCDB /* HHIndication.framework */; };
 		50D1DBBB21511A13005999F0 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
 		50D1DBBC21511A5B005999F0 /* HHSkeleton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D1DBAD215119F9005999F0 /* HHSkeleton.framework */; };
@@ -466,13 +463,6 @@
 			remoteGlobalIDString = 50C9855D212AE9D20002EF4B;
 			remoteInfo = HHPagingManager;
 		};
-		50D1DBB2215119F9005999F0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5093687020F683010044CA62 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 50D1DBAC215119F9005999F0;
-			remoteInfo = HHSkeleton;
-		};
 		50D1DBBE21511A5B005999F0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5093687020F683010044CA62 /* Project object */;
@@ -567,7 +557,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5072DD9D211D84B800E08A92 /* HHModule.framework in Embed Frameworks */,
-				50D1DBB5215119F9005999F0 /* HHSkeleton.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -875,8 +864,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5072DD9C211D84B800E08A92 /* HHModule.framework in Frameworks */,
-				50D1DBB4215119F9005999F0 /* HHSkeleton.framework in Frameworks */,
-				509013542146912C00C36247 /* Skeleton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1781,7 +1768,6 @@
 				5067973C212419970034CDA2 /* PBXTargetDependency */,
 				50C98564212AE9D20002EF4B /* PBXTargetDependency */,
 				507F14A12137E6B50087DCDB /* PBXTargetDependency */,
-				50D1DBB3215119F9005999F0 /* PBXTargetDependency */,
 			);
 			name = HHModuleDemo;
 			productName = architecture;
@@ -2697,11 +2683,6 @@
 			isa = PBXTargetDependency;
 			target = 50C9855D212AE9D20002EF4B /* HHPagingManager */;
 			targetProxy = 50C985AE212AECDA0002EF4B /* PBXContainerItemProxy */;
-		};
-		50D1DBB3215119F9005999F0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 50D1DBAC215119F9005999F0 /* HHSkeleton */;
-			targetProxy = 50D1DBB2215119F9005999F0 /* PBXContainerItemProxy */;
 		};
 		50D1DBBF21511A5B005999F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

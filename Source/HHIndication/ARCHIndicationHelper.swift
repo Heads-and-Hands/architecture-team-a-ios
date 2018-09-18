@@ -21,17 +21,16 @@ open class ARCHIndicationHelper<T: ARCHIndicationState>: ARCHViewInput {
     public func set(provider: ARCHIndicationViewProvider, by key: ARCHIndicationTypes) {
         var buffer: [ARCHIndicationTypes: ARCHIndicationViewProvider] = [:]
 
-        for var (storedKey, value) in providers {
-            _ = storedKey.remove(key)
-            if storedKey != [] {
-                buffer[storedKey] = value
+        for (storedKey, value) in providers {
+            var changedStoredKey = storedKey
+            _ = changedStoredKey.remove(key)
+            if changedStoredKey != [] {
+                buffer[changedStoredKey] = value
             }
         }
 
         buffer[key] = provider
         providers = buffer
-
-        print("buffer \(buffer)")
     }
 
     // MARK: - ARCHViewInput

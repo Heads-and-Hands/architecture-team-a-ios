@@ -44,7 +44,9 @@ final class IndicationDemoConfigurator: ARCHModuleConfigurator {
 
             if old.indication == nil && new.indication != nil {
                 buffer.list = nil
+#if HHSkeleton
                 buffer.header = nil
+#endif
             }
 
             return buffer

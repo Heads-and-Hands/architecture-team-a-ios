@@ -10,7 +10,9 @@ import Foundation
 import HHModule
 
 struct IndicationDemoState: ARCHState {
+#if HHSkeleton
     var header: HeaderViewState?
+#endif
     var list: [SimpleEntity]?
     var indication: IndicationState?
 }

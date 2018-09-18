@@ -7,7 +7,9 @@
 //
 
 import HHList
+#if HHSkeleton
 import HHSkeleton
+#endif
 
 class ExampleCell: UITableViewCell, ARCHCell {
     typealias ViewModel = ExampleCellViewModel
@@ -47,6 +49,7 @@ class ExampleCell: UITableViewCell, ARCHCell {
     }
 }
 
+#if HHSkeleton
 extension ExampleCell: ARCHSkeletonView {
 
     /**
@@ -60,3 +63,4 @@ extension ExampleCell: ARCHSkeletonView {
         label.text = "ARCHSkeletonView ARCHSkeletonView ARCHSkeletonView"
     }
 }
+#endif
