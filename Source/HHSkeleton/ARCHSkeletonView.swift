@@ -35,9 +35,6 @@ public extension ARCHSkeletonView {
         return nil
     }
 
-    public func set(isEnableSkeleton: Bool) {
-    }
-
     public func contours(on rootView: UIView) -> [UIBezierPath] {
         guard let skeletonSubviews = skeletonSubviews else {
             return []
@@ -55,5 +52,20 @@ public extension ARCHSkeletonView {
             }
         }
         return mask
+    }
+}
+
+public extension ARCHSkeletonView where Self: UIView {
+
+    public func set(isEnableSkeleton: Bool) {
+        skeletonSubviews?.forEach({ view in
+            if let view = view as? ARCHSkeletonView {
+                view.set(isEnableSkeleton: isEnableSkeleton)
+            }
+        })
+
+        if isEnableSkeleton {
+            layoutIfNeeded()
+        }
     }
 }

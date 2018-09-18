@@ -11,6 +11,12 @@ import HHSkeleton
 
 extension UILabel: ARCHSkeletonView {
 
+    public func set(isEnableSkeleton: Bool) {
+        if isEnableSkeleton {
+            text = "ARCHSkeletonView ARCHSkeletonView ARCHSkeletonView"
+        }
+    }
+
     public func contours(on rootView: UIView) -> [UIBezierPath] {
         let frame = rootView.convert(bounds, from: self)
         let cornerRadius: CGFloat = 3.0

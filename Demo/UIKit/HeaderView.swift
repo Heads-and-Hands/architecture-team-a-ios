@@ -83,11 +83,11 @@ class HeaderView: UIView, ARCHViewRenderable, ARCHSkeletonView {
         return [imageView, titleLabel, detailLabel]
     }
 
-    func set(isEnableSkeleton: Bool) {
-        if isEnableSkeleton {
-            titleLabel.text = "ARCHSkeletonView ARCHSkeletonView"
-            detailLabel.text = "ARCHSkeletonView ARCHSkeletonView"
-            layoutIfNeeded()
-        }
-    }
+//    func set(isEnableSkeleton: Bool) {
+//        if isEnableSkeleton {
+//            titleLabel.text = "ARCHSkeletonView ARCHSkeletonView"
+//            detailLabel.text = "ARCHSkeletonView ARCHSkeletonView"
+//            layoutIfNeeded()
+//        }
+//    }
 }

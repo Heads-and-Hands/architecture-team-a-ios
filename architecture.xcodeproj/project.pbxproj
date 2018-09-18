@@ -159,7 +159,6 @@
 		508F842121393E0700137D66 /* ARCHIndicationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F842021393E0700137D66 /* ARCHIndicationProvider.swift */; };
 		508F842321393E3C00137D66 /* ARCHIndicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F842221393E3C00137D66 /* ARCHIndicationState.swift */; };
 		508F84272139612200137D66 /* DefaultIndicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F84262139612200137D66 /* DefaultIndicationView.swift */; };
-		508F842E21398AC700137D66 /* ARCHIndicationViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F14AD2137E8A10087DCDB /* ARCHIndicationViewProxy.swift */; };
 		509013542146912C00C36247 /* Skeleton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509013532146912C00C36247 /* Skeleton.framework */; };
 		5093687C20F683010044CA62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5093687B20F683010044CA62 /* AppDelegate.swift */; };
 		5093688320F683030044CA62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093688220F683030044CA62 /* Assets.xcassets */; };
@@ -689,7 +688,6 @@
 		507F149E2137E6B50087DCDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		507F14A82137E81F0087DCDB /* ARCHIndicationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHIndicationContainer.swift; sourceTree = "<group>"; };
 		507F14AB2137E8680087DCDB /* ARCHIndicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHIndicationView.swift; sourceTree = "<group>"; };
-		507F14AD2137E8A10087DCDB /* ARCHIndicationViewProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHIndicationViewProxy.swift; sourceTree = "<group>"; };
 		507F14CE2137E99C0087DCDB /* HHIndicationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHIndicationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		507F14D82137EAE10087DCDB /* IndicationDemoModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicationDemoModuleIO.swift; sourceTree = "<group>"; };
 		507F14D92137EAE10087DCDB /* IndicationDemoEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicationDemoEventHandler.swift; sourceTree = "<group>"; };
@@ -758,6 +756,7 @@
 		50D1DBB0215119F9005999F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50D1DBC521512021005999F0 /* UILabel+Skeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Skeleton.swift"; sourceTree = "<group>"; };
 		50D1DBC7215122B3005999F0 /* ARCHSkeletonCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHSkeletonCollectionViewController.swift; sourceTree = "<group>"; };
+		50D1DBCA21512550005999F0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		50D26461212196B600E3B47A /* ARCHTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHTargetType.swift; sourceTree = "<group>"; };
 		50D264652121B03B00E3B47A /* ARCHAuthObserverMoyaPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHAuthObserverMoyaPlugin.swift; sourceTree = "<group>"; };
 		50D264782121FA1400E3B47A /* ARCHMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHMoyaProvider.swift; sourceTree = "<group>"; };
@@ -1125,7 +1124,6 @@
 				503FD70C213EA914008905ED /* ARCHIndicationLayoutGuide.swift */,
 				507F14A82137E81F0087DCDB /* ARCHIndicationContainer.swift */,
 				507F14AB2137E8680087DCDB /* ARCHIndicationView.swift */,
-				507F14AD2137E8A10087DCDB /* ARCHIndicationViewProxy.swift */,
 				507F14942137E6A60087DCDB /* ARCHIndicationHelper.swift */,
 				508F841E21393DD200137D66 /* ARCHIndicationTypes.swift */,
 				508F842221393E3C00137D66 /* ARCHIndicationState.swift */,
@@ -1431,6 +1429,7 @@
 		50D0F3CF2146CE3E0093E07F /* HHSkeleton */ = {
 			isa = PBXGroup;
 			children = (
+				50D1DBCA21512550005999F0 /* README.md */,
 				50D1DB8B21511398005999F0 /* ARCHSkeletonView.swift */,
 				50D0F3D22147A2010093E07F /* ARCHSkeletonViewProvider.swift */,
 				50D1DB882150E948005999F0 /* ARCHSkeletonTableViewController.swift */,
@@ -2434,7 +2433,6 @@
 				507F14A72137E6E70087DCDB /* ARCHIndicationHelper.swift in Sources */,
 				508F842121393E0700137D66 /* ARCHIndicationProvider.swift in Sources */,
 				507F14AA2137E8270087DCDB /* ARCHIndicationContainer.swift in Sources */,
-				508F842E21398AC700137D66 /* ARCHIndicationViewProxy.swift in Sources */,
 				503FD70E213EA920008905ED /* ARCHIndicationLayoutGuide.swift in Sources */,
 				507F14E42137EB6F0087DCDB /* ARCHIndicationView.swift in Sources */,
 			);
