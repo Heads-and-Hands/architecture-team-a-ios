@@ -12,9 +12,9 @@ import DeepDiff
 // swiftlint:disable:next line_length
 public class ARCHDiffTableViewController<D: Hashable, VM: ARCHCellViewModel & ARCHModelInitilizable, C: UITableViewCell & ARCHCell>: ARCHTableViewController<D, VM, C> {
 
-    public var insertionAnimation: UITableViewRowAnimation = .automatic
-    public var deletionAnimation: UITableViewRowAnimation = .automatic
-    public var replacementAnimation: UITableViewRowAnimation = .automatic
+    public var insertionAnimation: UITableView.RowAnimation = .automatic
+    public var deletionAnimation: UITableView.RowAnimation = .automatic
+    public var replacementAnimation: UITableView.RowAnimation = .automatic
 
     override public func didSet(data: [D]) {
         if UIView.areAnimationsEnabled, !tableView.isHidden {

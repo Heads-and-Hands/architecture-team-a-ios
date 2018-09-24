@@ -67,7 +67,7 @@ class HeaderView: UIView, ARCHViewRenderable, ARCHSkeletonView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIViewNoIntrinsicMetric, height: 120)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 120)
     }
 
     // MARK: - ARCHViewRenderable
