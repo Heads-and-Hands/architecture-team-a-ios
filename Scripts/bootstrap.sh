@@ -2,7 +2,7 @@
 
 #git archive --remote=http://bittracker.org/someproject.git HEAD:<path/to/directory/or/file> <filename> | tar -x
 
-# Parameters
+# PARAMETERS
 
 NEW_APP_NAME="$1"
 PROJECT_GIT_REPO="$2"
@@ -11,7 +11,9 @@ if [ -z "${NEW_APP_NAME}" ]; then
     NEW_APP_NAME="NewAppName"
 fi
 
-### ENVIRONMENTS ###
+# ENVIRONMENTS
+
+LOG_FILE="bootstrap.log.txt"
 
 TEMPLATE_PROJECT_GIT_REPO_PATH="https://github.com/Heads-and-Hands/template-project-ios.git"
 TEMPLATE_PROGECT_TEMPLATE_SUBPATH="branches/master"
@@ -24,37 +26,43 @@ XCODE_TEMPLATES_REMOTE_NAME="$(echo ${XCODE_TEMPLATES_REMOTE_SUBPATH} | awk -F '
 
 NEW_APP_NAME="$(echo ${NEW_APP_NAME} | awk '{print tolower($0)}')"
 
-### FASTLANE ENVIRONMENTS ###
+BREW_DEPENDENCIES=("svn" "mint" "ack" "node" "rename" "swiftgen" "swiftlint" "git" "git-flow" "carthage" "gpg")
+
+# FASTLANE ENVIRONMENTS
 
 PRODUCE_USERNAME="handh.ci@gmail.com"
 PRODUCE_APP_IDENTIFIRE="ru.handh.${NEW_APP_NAME}"
 MATCH_FILE_URL="git@github.com:Heads-and-Hands/certs-ios.git"
 
-echo "### CHECK DEPENDENCIES ###"
-
-installation_pormpt() {
-    RETVAL='False'
-    local DEPENDENCY="$1"
-    if ! [ -z "${DEPENDENCY}" ]; then
-        while true; do 
-            read -p "Do you want to install ${DEPENDENCY}? [Yes, No]: " yn
-            case $yn in
-                [Yy]* ) RETVAL='True'; brew install "${DEPENDENCY}"; break;;
-                [Nn]* ) break;;
-            esac
-        done
-    fi
+title() {
+    local TEXT="$1"
+    echo ""
+    echo "$(tput setaf 2)"$TEXT"$(tput sgr 0)"
+    echo "$TEXT" >> "$LOG_FILE"
 }
+
+error() {
+    local TEXT="$1"
+    echo ""
+    echo "$(tput setaf 1)"$TEXT"$(tput sgr 0)"
+    echo "$TEXT" >> "$LOG_FILE"
+}
+
+message() {
+    local TEXT="$1"
+    echo "$(tput setaf 2)"$TEXT"$(tput sgr 0)"
+    echo "$TEXT" >> "$LOG_FILE"
+}
+
+echo "" > "$LOG_FILE"
+
+title "BOOTSTRAP.SH"
+title "CHECK DEPENDENCIES"
 
 check_dependency() {
     RETVAL="True"
     local DEPENDENCY="$1"
     local DEPENDENCY_NAME="$2"
-    local IS_BREW_DEPENDENCY="$3"
-
-    if [ -z "${IS_BREW_DEPENDENCY}" ]; then 
-        local IS_BREW_DEPENDENCY=False
-    fi
 
     if [ -z "${DEPENDENCY_NAME}" ]; then 
         local DEPENDENCY_NAME="${DEPENDENCY}"
@@ -62,15 +70,44 @@ check_dependency() {
     
     if ! [ -x "$(command -v ${DEPENDENCY})" ]; then
         RETVAL="False"
-        echo "Error: the next dependency requred, but not installed: ${DEPENDENCY_NAME}."
-        if $IS_BREW_DEPENDENCY; then
-            echo "Use 'brew install ${DEPENDENCY_NAME}' to install."
-            installation_pormpt "${DEPENDENCY_NAME}"
-        fi
+        echo "$(tput setaf 6)Error: the next dependency requred, but not installed:$(tput sgr 0) $(tput setaf 4)"${DEPENDENCY_NAME}"$(tput sgr 0)."
+        echo "Error: the next dependency requred, but not installed: "${DEPENDENCY_NAME}"." >> "$LOG_FILE"
     fi
 
     if [ "${RETVAL}" == 'True' ]; then 
-        echo "Find ${DEPENDENCY_NAME}"
+        echo "Find dependency $(tput setaf 4)"${DEPENDENCY_NAME}"$(tput sgr 0)"
+        echo "Find dependency "${DEPENDENCY_NAME}"" >> "$LOG_FILE"
+    fi
+}
+
+check_brew_dependency() {
+    local DEPENDENCY="$1"
+    local STATUS='ok'
+    echo -n "Check dependency $(tput setaf 2)"${DEPENDENCY}"$(tput sgr 0): "
+
+    if ! [ -x "$(command -v ${DEPENDENCY})" ]; then
+        local STATUS="empty"
+    fi
+
+    for item in $(brew outdated); do
+        if [ "${item}" == "${DEPENDENCY}" ]; then
+            local STATUS='outdated'
+        fi
+    done
+
+    if [ "${STATUS}" == 'outdated' ]; then 
+        echo "$(tput setaf 6)Needs update$(tput sgr 0)"
+        echo "Check dependency "${DEPENDENCY}": outdated" >> "$LOG_FILE"
+        message "Updating "${DEPENDENCY}"..."
+        brew upgrade "${DEPENDENCY}" >> "$LOG_FILE"
+    elif [ "${STATUS}" == 'empty' ]; then
+        echo "$(tput setaf 6)Not installed$(tput sgr 0)"
+        echo "Check dependency "${DEPENDENCY}": empty" >> "$LOG_FILE"
+        message "Installing "${DEPENDENCY}"..."
+        brew install "${DEPENDENCY}" >> "$LOG_FILE"
+    else 
+        echo "$(tput setaf 4)Ok$(tput sgr 0)"
+        echo "Check dependency "${DEPENDENCY}": Ok" >> "$LOG_FILE"
     fi
 }
 
@@ -78,130 +115,60 @@ check_dependency brew
 if [ "${RETVAL}" != "True" ]; then
      exit 1
 else
-    echo "Update brew"
+    message "Update brew..."
     brew update
 fi
 
-check_dependency svn subversion True
-if [ "${RETVAL}" != "True" ]; then
-     exit 1
-else
-    echo "Update subversion"
-    brew upgrade subversion
-fi
+for item in "${BREW_DEPENDENCIES[@]}"; do
+    check_brew_dependency "${item}"
+done
 
-check_dependency mint mint True
-if [ "${RETVAL}" != "True" ]; then
-    exit 1
-else
-    echo "Update mint"
-    brew upgrade mint
-fi
+title "FETCH REMOTE REPOSITORY TEMPLATE"
 
-check_dependency ack ack True
-if [ "${RETVAL}" != "True" ]; then
-    exit 1
-else
-    echo "Update ack"
-    brew upgrade ack
-fi
+message "Remove porject directory if exists: ${NEW_APP_NAME}"
+rm -rfv "${NEW_APP_NAME}" >> "$LOG_FILE"
 
-check_dependency rename rename True
-if [ "${RETVAL}" != "True" ]; then
-    exit 1
-else
-    echo "Update rename"
-    brew upgrade rename
-fi
-
-check_dependency swiftgen swiftgen True
-if [ "${RETVAL}" != "True" ]; then
-    exit 1
-else
-    echo "Update swiftgen"
-    brew upgrade swiftgen
-fi
-
-check_dependency swiftlint swiftlint True
-if [ "${RETVAL}" != "True" ]; then
-    exit 1
-else
-    echo "Update swiftgen"
-    brew upgrade swiftlint
-fi
-
-check_dependency git
-if [ "${RETVAL}" != "True" ]; then
-    exit 1
-fi
-
-check_dependency carthage carthage True
-if [ "${RETVAL}" != "True" ]; then
-    exit 1
-else
-    echo "Update carthate"
-    brew upgrade carthage
-fi
-
-check_dependency git-flow git-flow True
-if [ "${RETVAL}" != "True" ]; then
-    exit 1
-else
-    echo "Update git-flow"
-    brew upgrade git-flow
-fi
-
-echo "### FETCH REMOTE REPOSITORY TEMPLATE ###"
-
-echo "Remove porject directory if exists: ${NEW_APP_NAME}"
-rm -rf "${NEW_APP_NAME}"
-
-echo "Clone remote project template ${TEMPLATE_PROJECT_GIT_REPO_PATH}/${TEMPLATE_PROGECT_TEMPLATE_SUBPATH}"
+message "Clone remote project template ${TEMPLATE_PROJECT_GIT_REPO_PATH}/${TEMPLATE_PROGECT_TEMPLATE_SUBPATH} ..."
 OUTPUT="$(svn ls ${TEMPLATE_PROJECT_GIT_REPO_PATH}/${TEMPLATE_PROGECT_TEMPLATE_SUBPATH})"
-echo ${OUTPUT}
+
 if [ ! -z "${OUTPUT}" ]; then
-    svn export "${TEMPLATE_PROJECT_GIT_REPO_PATH}/${TEMPLATE_PROGECT_TEMPLATE_SUBPATH}"
+    svn export "${TEMPLATE_PROJECT_GIT_REPO_PATH}/${TEMPLATE_PROGECT_TEMPLATE_SUBPATH}" >> "$LOG_FILE"
 fi
 
-echo "Rename ${TEMPLATE_PROJECT_DIRECTORY} to ${NEW_APP_NAME}"
-mv "${TEMPLATE_PROJECT_DIRECTORY}" "${NEW_APP_NAME}"
+message "Rename ${TEMPLATE_PROJECT_DIRECTORY} to ${NEW_APP_NAME}"
+mv -v "${TEMPLATE_PROJECT_DIRECTORY}" "${NEW_APP_NAME}" >> "$LOG_FILE" 
 cd "${NEW_APP_NAME}"
 
-echo "Remove 'git' if exists"
-rm -rf git
+message "Remove 'git' if exists"
+rm -rfv git >> "$LOG_FILE"
 
 while read fname; do
     RESULT="$(echo "$fname" | awk -F'/' '{print $NF}' | awk -F'.' '{ s = ""; for (i = 1; i < NF; i++) s = s $i "."; print s }')"
     PROJECT_TEMPLATE_NAME="$(echo "${RESULT}" | awk '{print substr($0, 1, length($0)-1)}')"
-    echo "INSIDE ${PROJECT_TEMPLATE_NAME}" 
 done < <(find . -name "*.xcodeproj")
 
-echo "OUTSIDE ${PROJECT_TEMPLATE_NAME}"
-
 if [ -z "${PROJECT_TEMPLATE_NAME}" ]; then
-    echo "Error: Project file does not found"
+    error "Error: Project file does not found"
     exit 1
 fi
 
-echo "### RENAME PROJECT TEMPLATES FILES ###"
+title "RENAME PROJECT TEMPLATES FILES"
 
-echo "Rename project template files"
-echo "${PROJECT_TEMPLATE_NAME}"
+message "Rename project template files..."
+
 OUTPUT="$(find . -name "${PROJECT_TEMPLATE_NAME}*")"
-echo "${OUTPUT}"
 
 while [ ! -z "${OUTPUT}" ]; do
-    find . -name "${PROJECT_TEMPLATE_NAME}*" -print0 | xargs -0 rename --subst-all "${PROJECT_TEMPLATE_NAME}" "${NEW_APP_NAME}"
+    echo "$OUTPUT" >> "${LOG_FILE}"
+    find . -name "${PROJECT_TEMPLATE_NAME}*" -print0 | xargs -0 rename --subst-all "${PROJECT_TEMPLATE_NAME}" "${NEW_APP_NAME}" >> "${LOG_FILE}"
     OUTPUT="$(find . -name "${PROJECT_TEMPLATE_NAME}*")"
-    echo "$(OUTPUT)"
 done
 
-echo "Rename project template files content"
+message "Rename project template files content..."
 OUTPUT="$(ack --literal ${PROJECT_TEMPLATE_NAME})"
-echo "${OUTPUT}"
 
 while [ ! -z "${OUTPUT}" ]; do
-    ack --literal --files-with-matches "${PROJECT_TEMPLATE_NAME}" --print0 | xargs -0 sed -i '' "s/${PROJECT_TEMPLATE_NAME}/${NEW_APP_NAME}/g"
+    ack --literal --files-with-matches "${PROJECT_TEMPLATE_NAME}" --print0 | xargs -0 sed -i '' "s/${PROJECT_TEMPLATE_NAME}/${NEW_APP_NAME}/g" >> "${LOG_FILE}"
     OUTPUT="$(ack --literal ${PROJECT_TEMPLATE_NAME})"
 done
 
@@ -209,32 +176,35 @@ CAPITALIZED_NEW_APP_NAME="$(echo ${NEW_APP_NAME} | awk '{print toupper(substr($1
 CAPITALIZED_PROJECT_TEMPLATE_NAME="$(echo ${PROJECT_TEMPLATE_NAME} | awk '{print toupper(substr($1,1,1)) substr($1,2)}')"
 
 OUTPUT="$(ack --literal ${CAPITALIZED_PROJECT_TEMPLATE_NAME})"
-echo "${OUTPUT}"
 
 while [ ! -z "${OUTPUT}" ]; do
-    ack --literal --files-with-matches "${CAPITALIZED_PROJECT_TEMPLATE_NAME}" --print0 | xargs -0 sed -i '' "s/${CAPITALIZED_PROJECT_TEMPLATE_NAME}/${CAPITALIZED_NEW_APP_NAME}/g"
+    ack --literal --files-with-matches "${CAPITALIZED_PROJECT_TEMPLATE_NAME}" --print0 | xargs -0 sed -i '' "s/${CAPITALIZED_PROJECT_TEMPLATE_NAME}/${CAPITALIZED_NEW_APP_NAME}/g" >> "${LOG_FILE}"
     OUTPUT="$(ack --literal ${CAPITALIZED_PROJECT_TEMPLATE_NAME})"
 done
 
-echo "### UPDATE BUNDLE ###"
+title "UPDATE BUNDLE"
 
 check_dependency bundler
 if [ "${RETVAL}" != "True" ]; then
-    echo "Use 'gem install bundler' to install"
+    error "Use 'gem install bundler' to install"
     exit 1
 fi
 
-bundler update
+message "Bundler update..."
 
-echo "### SWIFTLINT CONFIGURATION ###"
+bundler update >> "${LOG_FILE}"
+
+title "SWIFTLINT CONFIGURATION"
 
 if which mint >/dev/null; then
-    mint run realm/swiftlint
+    message "Mint install 'swiftlint'..."
+    mint run realm/swiftlint >> "$LOG_FILE"
     VERSION="$(swiftlint version)"
+    message "Writing 'Mintfile'"
     echo "realm/swiftlint@${VERSION}" > Mintfile
 fi
 
-echo "### FASTLANE CONFIGURATION ###"
+title "FASTLANE CONFIGURATION"
 
 fastlane produce
 
@@ -242,7 +212,9 @@ fastlane match development
 
 fastlane match appstore
 
-echo "### GIT CONFIGURATION ###"
+title "GIT CONFIGURATION"
+
+message "Initializing 'git' repository..."
 
 git init
 
@@ -250,8 +222,9 @@ git add .
 
 git commit -S -m "Initial commit"
 
+message "Initializing 'git-flow'..."
 if which git-flow >/dev/null; then
-    git-flow init
+   git-flow init -fd >> "$LOG_FILE"
 fi
 
 if ! [ -z "${PROJECT_GIT_REPO}" ]; then
@@ -263,21 +236,14 @@ fi
 
 cd ..
 
-echo "### FETCH XCODE TEMPLATES ###"
+title "FETCH XCODE TEMPLATES"
 
 rm -rf "${XCODE_TEMPLATES_REMOTE_NAME}"
 
-echo "Clone remote project template ${XCODE_TEMPLATES_GIT_REPO_PATH}/${XCODE_TEMPLATES_REMOTE_SUBPATH}"
+message "Clone remote project template ${XCODE_TEMPLATES_GIT_REPO_PATH}/${XCODE_TEMPLATES_REMOTE_SUBPATH}"
 OUTPUT="$(svn ls ${XCODE_TEMPLATES_GIT_REPO_PATH}/${XCODE_TEMPLATES_REMOTE_SUBPATH})"
-echo ${OUTPUT}
 if [ ! -z "${OUTPUT}" ]; then
-    svn export "${XCODE_TEMPLATES_GIT_REPO_PATH}/${XCODE_TEMPLATES_REMOTE_SUBPATH}"
+    svn export "${XCODE_TEMPLATES_GIT_REPO_PATH}/${XCODE_TEMPLATES_REMOTE_SUBPATH}" >> "${LOG_FILE}"
 fi
 
-while true; do 
-    read -p "Do you want to copy remote XCode templates to XCodte templates directory (needs root privileges)? [Yes, No]: " yn
-    case $yn in
-        [Yy]* ) sudo cp -rf "${XCODE_TEMPLATES_REMOTE_NAME}" "${XCODE_TEMPLATES_PATH}/"; break;;
-        [Nn]* ) break;;
-    esac
-done
+cp -rfv "${XCODE_TEMPLATES_REMOTE_NAME}" ""${NEW_APP_NAME}"/" >> "${LOG_FILE}"
