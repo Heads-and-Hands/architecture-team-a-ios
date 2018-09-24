@@ -15,7 +15,7 @@ import HHNetwork
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    typealias LaunchOptions = [UIApplicationLaunchOptionsKey: Any]
+    typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
 
     var window: UIWindow?
     var authBufferedController: UIViewController?

@@ -12,7 +12,7 @@ import HHIndication
 
 class DefaultIndicationView: UIView, ARCHIndicationView {
     private let titleLabel = UILabel()
-    private let indicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    private let indicatorView = UIActivityIndicatorView(style: .gray)
 
     // MARK: - Life cycle
 
