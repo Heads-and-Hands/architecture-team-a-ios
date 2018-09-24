@@ -32,6 +32,7 @@ BREW_DEPENDENCIES=("svn" "mint" "ack" "node" "rename" "swiftgen" "swiftlint" "gi
 
 PRODUCE_USERNAME="handh.ci@gmail.com"
 PRODUCE_APP_IDENTIFIRE="ru.handh.${NEW_APP_NAME}"
+PRODUCE_APP_NAME="${NEW_APP_NAME}"
 MATCH_FILE_URL="git@github.com:Heads-and-Hands/certs-ios.git"
 
 title() {
@@ -206,11 +207,11 @@ fi
 
 title "FASTLANE CONFIGURATION"
 
-fastlane produce
+fastlane produce # --skip_itc
 
-fastlane match development
+fastlane match development # --readonly
 
-fastlane match appstore
+fastlane match appstore # --readonly
 
 title "GIT CONFIGURATION"
 
@@ -246,4 +247,4 @@ if [ ! -z "${OUTPUT}" ]; then
     svn export "${XCODE_TEMPLATES_GIT_REPO_PATH}/${XCODE_TEMPLATES_REMOTE_SUBPATH}" >> "${LOG_FILE}"
 fi
 
-cp -rfv "${XCODE_TEMPLATES_REMOTE_NAME}" ""${NEW_APP_NAME}"/" >> "${LOG_FILE}"
+mv -fv "${XCODE_TEMPLATES_REMOTE_NAME}" ""${NEW_APP_NAME}"/" >> "${LOG_FILE}"
