@@ -35,6 +35,16 @@ PRODUCE_APP_IDENTIFIRE="ru.handh.${NEW_APP_NAME}"
 PRODUCE_APP_NAME="${NEW_APP_NAME}"
 MATCH_FILE_URL="git@github.com:Heads-and-Hands/certs-ios.git"
 
+# ENVIRONMENT FOR PROVISION PROFICLE COPY
+
+DEBUG_PROFILE_SPECIFIER="match Development ru.handh.${NEW_APP_NAME}"
+RELEASE_PROFILE_SPECIFIER="match AppStore ru.handh.${NEW_APP_NAME}"
+INTERNAL_PROFILE_SPECIFIER="match Development ru.handh.${NEW_APP_NAME}"
+
+DEVELOPMENT_TEAM="X86NQK83T7"
+
+CODE_SIGN_IDENTITY="iPhone Distribution"
+
 title() {
     local TEXT="$1"
     echo ""
@@ -140,6 +150,9 @@ message "Rename ${TEMPLATE_PROJECT_DIRECTORY} to ${NEW_APP_NAME}"
 mv -v "${TEMPLATE_PROJECT_DIRECTORY}" "${NEW_APP_NAME}" >> "$LOG_FILE" 
 cd "${NEW_APP_NAME}"
 
+OLD_LOG="${LOG_FILE}"
+LOG_FILE="../${LOG_FILE}"
+
 message "Remove 'git' if exists"
 rm -rfv git >> "$LOG_FILE"
 
@@ -235,7 +248,62 @@ if ! [ -z "${PROJECT_GIT_REPO}" ]; then
     git push --set-upstream origin develop
 fi
 
+title "COPY PROVISION PROFILE"
+
+cd "${NEW_APP_NAME}.xcodeproj"
+
+python <( echo "
+import re
+
+team_key = 'DEVELOPMENT_TEAM'
+profile_key = 'PROVISIONING_PROFILE_SPECIFIER'
+code_key = 'CODE_SIGN_STYLE = Manual;'
+
+team = team_key + ' = ${DEVELOPMENT_TEAM}'
+
+code_identity = 'CODE_SIGN_IDENTITY' + ' = \"${CODE_SIGN_IDENTITY}\";'
+
+profiles = {
+    'Debug': profile_key + ' = \"${DEBUG_PROFILE_SPECIFIER}\"',
+    'Release': profile_key + ' = \"${RELEASE_PROFILE_SPECIFIER}\"',
+    'Internal': profile_key + ' = \"${DEBUG_PROFILE_SPECIFIER}\"'
+}
+
+def build_pattern(name):
+    return r'[\t]*.*' + name + '[^;]* = {\n[\s\S]*?name = ' + name + ';\n[\s\S]*?};'
+
+def parameter_pattern(name):
+    return name + ' = \".*\"'
+
+def replace(pattern, subst, data):
+    return re.sub(pattern, subst, data)
+
+filename = 'project.pbxproj'
+fp = open(filename, 'r+')
+data = fp.read()
+
+for name, profile in profiles.items():
+    matches = re.findall(build_pattern(name), data)
+    for match in matches:
+        result = replace(parameter_pattern(team_key), team, match)
+        result = replace(parameter_pattern(profile_key), profile, result)
+        
+        if name == 'Release':
+            result = result.replace(code_key, code_key + '\n\t\t\t\t' + code_identity)
+        
+        data = data.replace(match, result)
+
+fp.seek(0)
+fp.write(data)
+fp.truncate()
+fp.close()
+")
+
 cd ..
+
+cd ..
+
+LOG_FILE="${OLD_LOG}"
 
 title "FETCH XCODE TEMPLATES"
 
