@@ -4,9 +4,15 @@
 # architecture-team-a-ios
 
 - [Архитектура модуля](Source/HHModule/README.md)
-- [Хелпер для UITableView/UICollectionView](Source/HHList/README.md)
-- [Хелпер для хелпера для UITableView/UICollectionView](Source/HHListExtension/README.md)
+    - [Авторендеринг состояния модуля](Source/HHModule/AUTORENDERING.md)
+    - [Препроцессинг состояния модуля](Source/HHModule/PREPROCESSING.md)
+- [Работа с UITableView/UICollectionView](Source/HHList/README.md)
+    - [Расширения](Source/HHListExtension/README.md)
 - [Взаимодействие с сетью](Source/HHNetwork/README.md)
     - [Постраничная загрузка данных](Source/HHPagingManager/README.md)
+- [Индикация](Source/HHIndication/README.md)
+    - [Скелетная загрузка](Source/HHSkeleton/README.md)
 - Best practices
     - [Мультиделегирование](Source/HHBestPractice/Multidelegate.md)
+- [Скрипт для быстрого разворачивания проекта](Scripts/bootstrap.md)
+

@@ -9,24 +9,28 @@
 import HHModule
 import HHListExtension
 
-final class ListExtViewController: ARCHViewController<ListExtState, ListExtEventHandler> {
+final class ListExtViewController: ARCHViewController<ListExtState, ListExtEventHandler>, UITableViewDataSource {
 
+    typealias ListController = ARCHDiffTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>
+
+    let listController = ListController()
     let button = UIButton()
-    let listController = ARCHTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>()
-//    let delegateProxy = ARCHTableViewDelegate<UITableViewDelegate>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
 
-//        listController.tableView.delegate = delegateProxy
-
+        configure(listController: listController)
         configure(button: button)
         setupLayout()
     }
 
     // MARK: - Configure
+
+    func configure(listController: ListController) {
+        listController.dataSource = self
+    }
 
     func configure(button: UIButton) {
         button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
@@ -38,23 +42,14 @@ final class ListExtViewController: ARCHViewController<ListExtState, ListExtEvent
     func setupLayout() {
         let buttonHeight: CGFloat = 50
 
-        addChildViewController(listController)
-        listController.view.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - buttonHeight)
-        listController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(listController.view)
-        listController.didMove(toParentViewController: self)
+        let tableView = listController.tableView
+        tableView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - buttonHeight)
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(tableView)
 
         button.frame = CGRect(x: 0, y: view.bounds.maxY - buttonHeight, width: view.bounds.width, height: buttonHeight)
         button.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
         view.addSubview(button)
-    }
-
-    // MARK: - Render
-
-    override func render(state: State) {
-        super.render(state: state)
-
-        listController.data = state.list
     }
 
     // MARK: - Actions
@@ -65,6 +60,14 @@ final class ListExtViewController: ARCHViewController<ListExtState, ListExtEvent
     }
 
     // MARK: - UITableViewDataSource
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        fatalError("Realizated in ARCHTableViewDataSource")
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        fatalError("Realizated in ARCHTableViewDataSource")
+    }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Section title"

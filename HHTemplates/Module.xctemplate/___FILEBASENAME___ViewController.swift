@@ -10,14 +10,12 @@ import HHModule
 
 final class ___VARIABLE_HandHModuleName___ViewController: ARCHViewController<___VARIABLE_HandHModuleName___State, ___VARIABLE_HandHModuleName___EventHandler> {
 
-    override var childViews: [ARCHViewInput] {
-        return []
-    }
-
     // MARK: - View life cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func prepareRootView() {
+        super.prepareRootView()
+
+        // TODO: Some code setting UI
     }
 
     // MARK: - Render

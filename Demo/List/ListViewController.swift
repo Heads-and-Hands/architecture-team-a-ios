@@ -6,13 +6,18 @@
 //  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
+import UIKit
 import HHModule
 import HHList
 
 final class ListViewController: ARCHViewController<ListState, ListEventHandler>, UITableViewDataSource {
 
+#if CONTROLLER
+    typealias ListController = ARCHTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>
+
+    let listController = ListController()
+#else
     let tableView = UITableView()
-    let button = UIButton()
 
     lazy var dataSource: ARCHTableViewDataSource = {
         let dataSource = ARCHTableViewDataSource(view: tableView)
@@ -23,22 +28,35 @@ final class ListViewController: ARCHViewController<ListState, ListEventHandler>,
     }()
 
     lazy var dataAdapter = ARCHEmptyListDataAdapter<SimpleEntity, ExampleCellViewModel>()
+#endif
+
+    let button = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
 
+#if CONTROLLER
+        configure(listController: listController)
+#else
         configure(tableView: tableView)
+#endif
         configure(button: button)
         setupLayout()
     }
 
     // MARK: - Configure
 
+#if CONTROLLER
+    func configure(listController: ListController) {
+        listController.dataSource = self
+    }
+#else
     func configure(tableView: UITableView) {
         tableView.dataSource = dataSource
     }
+#endif
 
     func configure(button: UIButton) {
         button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
@@ -49,7 +67,9 @@ final class ListViewController: ARCHViewController<ListState, ListEventHandler>,
 
     func setupLayout() {
         let buttonHeight: CGFloat = 50
-
+#if CONTROLLER
+        let tableView = listController.tableView
+#endif
         tableView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - buttonHeight)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(tableView)
@@ -64,8 +84,12 @@ final class ListViewController: ARCHViewController<ListState, ListEventHandler>,
     override func render(state: State) {
         super.render(state: state)
 
+#if CONTROLLER
+        listController.data = state.list
+#else
         dataAdapter.data = state.list
         tableView.reloadData()
+#endif
     }
 
     // MARK: - Actions
@@ -76,6 +100,14 @@ final class ListViewController: ARCHViewController<ListState, ListEventHandler>,
     }
 
     // MARK: - UITableViewDataSource
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        fatalError("Realizated in ARCHTableViewDataSource")
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        fatalError("Realizated in ARCHTableViewDataSource")
+    }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Section title"

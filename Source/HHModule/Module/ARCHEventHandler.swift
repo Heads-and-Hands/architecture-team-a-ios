@@ -8,15 +8,37 @@
 
 import Foundation
 
+open class ARCHStateHandler<T> {
+    public let block: (T, T) -> T?
+    public var currentState: T?
+
+    public init(block: @escaping (T, T) -> T?) {
+        self.block = block
+    }
+
+    open func willUpdate(state: T, newState: T) {
+        currentState = block(state, newState)
+    }
+}
+
 open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
     public weak var router: ARCHRouter?
     public weak var viewInput: ARCHViewInput?
+    public var stateHandler: ARCHStateHandler<State>?
+
     private var ignoreStateChanges: Bool = false
 
     public init() {}
 
     public var state: State = State() {
+        willSet {
+            stateHandler?.willUpdate(state: state, newState: newValue)
+        }
         didSet {
+            if let state = stateHandler?.currentState {
+                self.state = state
+            }
+
             viewSetNeedsRedraw()
         }
     }

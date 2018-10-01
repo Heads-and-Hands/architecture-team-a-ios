@@ -1,12 +1,7 @@
-# Контроллер для работы со списками
+# Расширения для работы с UITableView/UICollectionView
 
-Упрощает работу над списками состоящими из одной секции и одного типа ячейки.
-Изменения данных вычисляется через сторонюю библиотеку **DeepDiff**
-
-### Готовые реализации
-
-- **ARCHTableViewController**
-- **ARCHCollectionViewController**
+1. Добавлена поддержка авторендеринга в ARCHTableViewController/ARCHCollectionViewController
+2. Автоанимируемые списки с использованием стороней  библиотеки **DeepDiff**, для рассчета разницы коллекций 
 
 ## Установка
 
@@ -32,26 +27,27 @@ github "Heads-and-Hands/architecture-team-a-ios"
 
 ## Использование
 
-1. Создай объект
+1. Создай модель данных. В ней реализуй ``protocol Hashable``
+2. Создай ячейку и вьюмодель для неё
+3. Создай контроллер
 
 ```
-let listController = ARCHTableViewController<Data, CellViewModel, Cell>()
+let listController = ARCHDiffTableViewController<Data, CellViewModel, Cell>()
 
 // Опционально
 //listController.delegate = self
 //listController.dataSource = self
 ```
 
-2. Добавь объект на экран:
+4. Добавь UITableView/UICollectionView на экран:
 
 ```
-addChildViewController(listController)
-listController.view.frame = view.bounds
-listController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-view.addSubview(listController.view)
-listController.didMove(toParentViewController: self)
+let tableView = listController.tableView
+tableView.frame = view.bounds
+tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+view.addSubview(tableView)
 ```
-3. Обновление данных:
+5. Поддерживается авторендеринг, для ручного обновления используй:
 
 ```
 listController.data = ...

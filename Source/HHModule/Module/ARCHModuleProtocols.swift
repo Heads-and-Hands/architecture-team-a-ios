@@ -6,7 +6,7 @@
 //  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /**
  Родительский протокол, описывающий состояние модуля
@@ -16,7 +16,29 @@ public protocol ARCHState {
 }
 
 public protocol ARCHViewInput: class {
-    func update(state: Any)
+
+    /**
+     Обновлеяем вьюху на основании переданных данных
+     @return true - если удалось обработать переданное состояние
+     */
+    @discardableResult
+    func update(state: Any) -> Bool
+
+    func set(visible: Bool)
+}
+
+public extension ARCHViewInput where Self: UIView {
+
+    func set(visible: Bool) {
+        print("[\(type(of: self))] set(visible: \(visible))")
+        isHidden = !visible
+    }
+}
+
+public extension ARCHViewInput {
+
+    func set(visible: Bool) {
+    }
 }
 
 public protocol ARCHViewRenderable: ARCHViewInput {
@@ -26,9 +48,12 @@ public protocol ARCHViewRenderable: ARCHViewInput {
 
 public extension ARCHViewRenderable where State: Any {
 
-    func update(state: Any) {
+    func update(state: Any) -> Bool {
         if let state = state as? State {
             render(state: state)
+            return true
+        } else {
+            return false
         }
     }
 }

@@ -23,17 +23,6 @@ open class ARCHTableViewDataSource: ARCHListDataSource<UITableView>, UITableView
     }
 }
 
-public extension UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        fatalError("Realizated in ARCHTableViewDataSource")
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("Realizated in ARCHTableViewDataSource")
-    }
-}
-
 extension UITableView: ARCHListView {
     public typealias CellType = UITableViewCell
     public typealias DataSourceType = UITableViewDataSource
