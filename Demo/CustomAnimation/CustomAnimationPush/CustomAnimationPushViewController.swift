@@ -37,4 +37,23 @@ final class CustomAnimationPushViewController<Out: CustomAnimationPushViewOutput
 
         view.layoutIfNeeded()
     }
+
+    // ARCHInteractiveTransitionDelegate
+
+    override var closeGestureRecognizer: UIGestureRecognizer? {
+        return UIPanGestureRecognizer()
+    }
+
+    override func progress(for recognizer: UIGestureRecognizer) -> CGFloat {
+        guard let recognizer = recognizer as? UIPanGestureRecognizer else {
+            return 0.0
+        }
+
+        let maxTranslation: CGFloat = 200.0
+        let verticalTranslation = Double(recognizer.translation(in: recognizer.view?.superview).y)
+        let horizontalTranslation = Double(recognizer.translation(in: recognizer.view?.superview).x)
+        let translation = CGFloat(sqrt(pow(verticalTranslation, 2.0) + pow(horizontalTranslation, 2.0)))
+
+        return min(translation / maxTranslation, 1.0)
+    }
 }

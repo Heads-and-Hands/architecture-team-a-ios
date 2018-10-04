@@ -9,7 +9,7 @@
 import HHModule
 import UIKit
 
-class CustomPresentAnimator: NSObject, ARCHAnimatedTransitioning {
+class CustomPresentAnimator: NSObject, ARCHTransitionAnimator {
 
     var isPresented: Bool = false
     var transitionDuration: TimeInterval

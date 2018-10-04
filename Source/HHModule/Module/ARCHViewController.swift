@@ -9,7 +9,7 @@
 import UIKit
 
 open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>:
-UIViewController, ARCHRouter, ARCHViewRenderable, ARCHRouterTransitioning {
+UIViewController, ARCHRouter, ARCHViewRenderable, ARCHRouterTransitioning, ARCHInteractiveTransitionDelegate {
 
     public typealias State = S
 
@@ -73,5 +73,15 @@ UIViewController, ARCHRouter, ARCHViewRenderable, ARCHRouterTransitioning {
     }
 
     open func prepareRootView() {
+    }
+
+    // ARCHInteractiveTransitionDelegate
+
+    open var closeGestureRecognizer: UIGestureRecognizer? {
+        return nil
+    }
+
+    open func progress(for recognizer: UIGestureRecognizer) -> CGFloat {
+        return 0.0
     }
 }

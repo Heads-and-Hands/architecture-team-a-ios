@@ -23,8 +23,7 @@ final class CustomAnimationMainEventHandler: ARCHEventHandler<CustomAnimationMai
             return
         }
 
-        let animationsOption = ARCHRouterPresentCustomAnimationOptions(
-            animatedTransitioning: CustomPresentAnimator(), interactiveTransition: CustomPresentInteractor())
+        let animationsOption = ARCHRouterPresentAnimationOptions(transitionAnimator: CustomPresentAnimator())
 
         CustomAnimationPresentConfigurator(
             moduleIO: { (input: CustomAnimationPresentModuleInput) -> CustomAnimationPresentModuleOutput? in
@@ -39,7 +38,7 @@ final class CustomAnimationMainEventHandler: ARCHEventHandler<CustomAnimationMai
             return
         }
 
-        let animationOption = ARCHRouterPushCustomAnimationOptions(animatedTransitioning: CustomPushAnimator(), interactiveTransition: CustomPushInteractor())
+        let animationOption = ARCHRouterPushAnimationOptions(transitionAnimator: CustomPushAnimator())
 
         CustomAnimationPushConfigurator(moduleIO: { (input: CustomAnimationPushModuleInput) -> CustomAnimationPushModuleOutput? in
             var moduleInput = input

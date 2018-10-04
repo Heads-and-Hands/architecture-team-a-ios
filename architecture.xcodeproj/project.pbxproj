@@ -266,10 +266,8 @@
 		50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C0F756A214253FE00B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F7563214252B700B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift */; };
 		9C0F756B214253FE00B3FDE2 /* ARCHRouterDismissOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F75652142538100B3FDE2 /* ARCHRouterDismissOptions.swift */; };
-		9C0F756E21425BC300B3FDE2 /* CustomPresentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F756C2142587700B3FDE2 /* CustomPresentInteractor.swift */; };
-		9C0F75712142A12300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F756F21429D0300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift */; };
-		9C807DA32143BC2D00D2F20B /* ARCHRouterPushCustomAnimationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C807DA12143BB2D00D2F20B /* ARCHRouterPushCustomAnimationOptions.swift */; };
-		9C807DA82143CB1600D2F20B /* CustomPushInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C807DA62143CA4E00D2F20B /* CustomPushInteractor.swift */; };
+		9C0F75712142A12300B3FDE2 /* ARCHRouterPresentAnimationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F756F21429D0300B3FDE2 /* ARCHRouterPresentAnimationOptions.swift */; };
+		9C807DA32143BC2D00D2F20B /* ARCHRouterPushAnimationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C807DA12143BB2D00D2F20B /* ARCHRouterPushAnimationOptions.swift */; };
 		9C807DA92143CB1D00D2F20B /* CustomPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C807DA42143CA3C00D2F20B /* CustomPushAnimator.swift */; };
 		9CC586FB214141DE00C33874 /* ModulesCustomAnimationStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */; };
 		9CC586FC214141E900C33874 /* CustomAnimationMainEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F0214141A400C33874 /* CustomAnimationMainEventHandler.swift */; };
@@ -279,6 +277,8 @@
 		9CC58700214141E900C33874 /* CustomAnimationMainState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC586F4214141A400C33874 /* CustomAnimationMainState.swift */; };
 		9CC58704214143C900C33874 /* CustomAnimationAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC587022141433C00C33874 /* CustomAnimationAppDelegate.swift */; };
 		9CC587052141443800C33874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093688220F683030044CA62 /* Assets.xcassets */; };
+		9CCC6428216636AA001171A9 /* ARCHTransitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC6426216636A5001171A9 /* ARCHTransitionInteractor.swift */; };
+		9CCC642C21663D4F001171A9 /* ARCHRouterTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC642A21663CA1001171A9 /* ARCHRouterTransitioning.swift */; };
 		9CE1C6B32141467500C4C5C1 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CE1C6CA21414C1800C4C5C1 /* CustomAnimationPushEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B421414B9A00C4C5C1 /* CustomAnimationPushEventHandler.swift */; };
 		9CE1C6CB21414C1800C4C5C1 /* CustomAnimationPushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B521414B9A00C4C5C1 /* CustomAnimationPushViewController.swift */; };
@@ -804,11 +804,9 @@
 		50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHCellViewModel.swift; sourceTree = "<group>"; };
 		9C0F7563214252B700B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterEmbedInNavigationOptions.swift; sourceTree = "<group>"; };
 		9C0F75652142538100B3FDE2 /* ARCHRouterDismissOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterDismissOptions.swift; sourceTree = "<group>"; };
-		9C0F756C2142587700B3FDE2 /* CustomPresentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentInteractor.swift; sourceTree = "<group>"; };
-		9C0F756F21429D0300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterPresentCustomAnimationOptions.swift; sourceTree = "<group>"; };
-		9C807DA12143BB2D00D2F20B /* ARCHRouterPushCustomAnimationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterPushCustomAnimationOptions.swift; sourceTree = "<group>"; };
+		9C0F756F21429D0300B3FDE2 /* ARCHRouterPresentAnimationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterPresentAnimationOptions.swift; sourceTree = "<group>"; };
+		9C807DA12143BB2D00D2F20B /* ARCHRouterPushAnimationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterPushAnimationOptions.swift; sourceTree = "<group>"; };
 		9C807DA42143CA3C00D2F20B /* CustomPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushAnimator.swift; sourceTree = "<group>"; };
-		9C807DA62143CA4E00D2F20B /* CustomPushInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushInteractor.swift; sourceTree = "<group>"; };
 		9CC586D52141400400C33874 /* HHCustomAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHCustomAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesCustomAnimationStory.swift; sourceTree = "<group>"; };
 		9CC586F0214141A400C33874 /* CustomAnimationMainEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationMainEventHandler.swift; sourceTree = "<group>"; };
@@ -817,6 +815,8 @@
 		9CC586F3214141A400C33874 /* CustomAnimationMainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationMainConfigurator.swift; sourceTree = "<group>"; };
 		9CC586F4214141A400C33874 /* CustomAnimationMainState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationMainState.swift; sourceTree = "<group>"; };
 		9CC587022141433C00C33874 /* CustomAnimationAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationAppDelegate.swift; sourceTree = "<group>"; };
+		9CCC6426216636A5001171A9 /* ARCHTransitionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHTransitionInteractor.swift; sourceTree = "<group>"; };
+		9CCC642A21663CA1001171A9 /* ARCHRouterTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterTransitioning.swift; sourceTree = "<group>"; };
 		9CE1C6B421414B9A00C4C5C1 /* CustomAnimationPushEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPushEventHandler.swift; sourceTree = "<group>"; };
 		9CE1C6B521414B9A00C4C5C1 /* CustomAnimationPushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPushViewController.swift; sourceTree = "<group>"; };
 		9CE1C6B621414B9A00C4C5C1 /* CustomAnimationPushProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPushProtocols.swift; sourceTree = "<group>"; };
@@ -1297,6 +1297,7 @@
 		5089232720FC8DA30032985E /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				9CCC6429216636AD001171A9 /* Animation */,
 				5089232820FC8DA30032985E /* Options */,
 				5089232C20FC8DA30032985E /* ARCHWindow.swift */,
 				5089232D20FC8DA30032985E /* ARCHRouter.swift */,
@@ -1309,8 +1310,8 @@
 			children = (
 				5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */,
 				5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */,
-				9C0F756F21429D0300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift */,
-				9C807DA12143BB2D00D2F20B /* ARCHRouterPushCustomAnimationOptions.swift */,
+				9C0F756F21429D0300B3FDE2 /* ARCHRouterPresentAnimationOptions.swift */,
+				9C807DA12143BB2D00D2F20B /* ARCHRouterPushAnimationOptions.swift */,
 				5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */,
 				9C0F7563214252B700B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift */,
 				9C0F75652142538100B3FDE2 /* ARCHRouterDismissOptions.swift */,
@@ -1422,7 +1423,6 @@
 				5010AA3B2118341300158C1F /* EmptyModule */,
 				50C98574212AEB670002EF4B /* Pagination */,
 				507F14D72137EAC80087DCDB /* Indication */,
-				50EA3046213452EF00A95512 /* SkeletonDemo */,
 				9CC586EF2141410100C33874 /* CustomAnimation */,
 				5089235E20FC8E7B0032985E /* ModulesUserStory.swift */,
 				5093687B20F683010044CA62 /* AppDelegate.swift */,
@@ -1569,8 +1569,6 @@
 				9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */,
 				9CE1C6D42141595F00C4C5C1 /* CustomPresentAnimator.swift */,
 				9C807DA42143CA3C00D2F20B /* CustomPushAnimator.swift */,
-				9C0F756C2142587700B3FDE2 /* CustomPresentInteractor.swift */,
-				9C807DA62143CA4E00D2F20B /* CustomPushInteractor.swift */,
 				9CC586FA214141AF00C33874 /* CustomAnimationMain */,
 				9CE1C6BE21414B9F00C4C5C1 /* CustomAnimationPush */,
 				9CE1C6C921414BC800C4C5C1 /* CustomAnimationPresent */,
@@ -1588,6 +1586,15 @@
 				9CC586F4214141A400C33874 /* CustomAnimationMainState.swift */,
 			);
 			path = CustomAnimationMain;
+			sourceTree = "<group>";
+		};
+		9CCC6429216636AD001171A9 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				9CCC642A21663CA1001171A9 /* ARCHRouterTransitioning.swift */,
+				9CCC6426216636A5001171A9 /* ARCHTransitionInteractor.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		9CE1C6BE21414B9F00C4C5C1 /* CustomAnimationPush */ = {
@@ -2042,10 +2049,10 @@
 					50C9855D212AE9D20002EF4B = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					9CC586D42141400400C33874 = {
-                        CreatedOnToolsVersion = 9.4.1;
-                    };
 					50D1DBAC215119F9005999F0 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					9CC586D42141400400C33874 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
@@ -2526,10 +2533,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CCC642C21663D4F001171A9 /* ARCHRouterTransitioning.swift in Sources */,
+				9CCC6428216636AA001171A9 /* ARCHTransitionInteractor.swift in Sources */,
 				9C0F756B214253FE00B3FDE2 /* ARCHRouterDismissOptions.swift in Sources */,
 				50BC80AE211DFACE00D77262 /* ARCHViewController.swift in Sources */,
 				50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */,
-				9C807DA32143BC2D00D2F20B /* ARCHRouterPushCustomAnimationOptions.swift in Sources */,
+				9C807DA32143BC2D00D2F20B /* ARCHRouterPushAnimationOptions.swift in Sources */,
 				9C0F756A214253FE00B3FDE2 /* ARCHRouterEmbedInNavigationOptions.swift in Sources */,
 				50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */,
 				50BC80B1211DFAD700D77262 /* ARCHWindow.swift in Sources */,
@@ -2537,7 +2546,7 @@
 				50BC80AF211DFAD100D77262 /* ARCHModuleProtocols.swift in Sources */,
 				50BC80AD211DFACA00D77262 /* ARCHModuleID.swift in Sources */,
 				50BC80B3211DFAE200D77262 /* ARCHRouterPresentOptions.swift in Sources */,
-				9C0F75712142A12300B3FDE2 /* ARCHRouterPresentCustomAnimationOptions.swift in Sources */,
+				9C0F75712142A12300B3FDE2 /* ARCHRouterPresentAnimationOptions.swift in Sources */,
 				50BC80AC211DFAC700D77262 /* ARCHModuleConfigurator.swift in Sources */,
 				50BC80B0211DFAD300D77262 /* ARCHEventHandler.swift in Sources */,
 			);
@@ -2712,7 +2721,6 @@
 				9CC586FD214141E900C33874 /* CustomAnimationMainViewController.swift in Sources */,
 				9CC586FF214141E900C33874 /* CustomAnimationMainConfigurator.swift in Sources */,
 				9CE1C6D221414C1F00C4C5C1 /* CustomAnimationPresentConfigurator.swift in Sources */,
-				9C807DA82143CB1600D2F20B /* CustomPushInteractor.swift in Sources */,
 				9CC586FC214141E900C33874 /* CustomAnimationMainEventHandler.swift in Sources */,
 				9CE1C6D321414C1F00C4C5C1 /* CustomAnimationPresentState.swift in Sources */,
 				9CE1C6CD21414C1800C4C5C1 /* CustomAnimationPushConfigurator.swift in Sources */,
@@ -2725,7 +2733,6 @@
 				9CE1C6D72141613D00C4C5C1 /* CustomPresentAnimator.swift in Sources */,
 				9CE1C6CB21414C1800C4C5C1 /* CustomAnimationPushViewController.swift in Sources */,
 				9CE1C6CE21414C1800C4C5C1 /* CustomAnimationPushState.swift in Sources */,
-				9C0F756E21425BC300B3FDE2 /* CustomPresentInteractor.swift in Sources */,
 				9CE1C6CF21414C1F00C4C5C1 /* CustomAnimationPresentEventHandler.swift in Sources */,
 				9CC586FB214141DE00C33874 /* ModulesCustomAnimationStory.swift in Sources */,
 				9CE1C6D121414C1F00C4C5C1 /* CustomAnimationPresentProtocols.swift in Sources */,

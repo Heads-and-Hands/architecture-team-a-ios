@@ -1,5 +1,5 @@
 //
-//  ARCHRouterPresentCustomAnimationOptions.swift
+//  ARCHRouterPushAnimationOptions.swift
 //  architectureTeamA
 //
 //  Created by Eugene Sorokin on 08/09/2018.
@@ -8,19 +8,21 @@
 
 import UIKit
 
-public class ARCHRouterPushCustomAnimationOptions: ARCHRouterOptions {
+public class ARCHRouterPushAnimationOptions: ARCHRouterOptions {
 
-    let animatedTransitioning: ARCHAnimatedTransitioning?
+    let transitionAnimator: ARCHTransitionAnimator?
 
     let interactiveTransition: ARCHInteractiveTransition?
 
-    public init(animatedTransitioning: ARCHAnimatedTransitioning?, interactiveTransition: ARCHInteractiveTransition?) {
-        self.animatedTransitioning = animatedTransitioning
-        self.interactiveTransition = interactiveTransition
+    public init(transitionAnimator: ARCHTransitionAnimator?, interactiveTransition: ARCHInteractiveTransition? = nil) {
+        self.transitionAnimator = transitionAnimator
+        self.interactiveTransition = interactiveTransition ?? ARCHTransitionInteractor()
     }
 
     public func proccess(transition: Transition, animated: Bool) -> Transition {
-        let transitioningRepresentative = ARCHPushTransitioningRepresentative(animatedTransitioning: self.animatedTransitioning, interactiveTransition: self.interactiveTransition)
+        let transitioningRepresentative = ARCHPushTransitioningRepresentative(transitionAnimator: self.transitionAnimator, interactiveTransition: self.interactiveTransition)
+
+        interactiveTransition?.delegate = transition.to as? ARCHInteractiveTransitionDelegate
 
         if let navigationController = (transition.from as? UIViewController)?.navigationController {
             navigationController.delegate = transitioningRepresentative
@@ -41,12 +43,12 @@ public class ARCHRouterPushCustomAnimationOptions: ARCHRouterOptions {
 
 public class ARCHPushTransitioningRepresentative: NSObject, ARCHPushRepresentativeProtocol {
 
-    public var animatedTransitioning: ARCHAnimatedTransitioning?
+    public var transitionAnimator: ARCHTransitionAnimator?
 
     public var interactiveTransition: ARCHInteractiveTransition?
 
-    init(animatedTransitioning: ARCHAnimatedTransitioning?, interactiveTransition: ARCHInteractiveTransition?) {
-        self.animatedTransitioning = animatedTransitioning
+    init(transitionAnimator: ARCHTransitionAnimator?, interactiveTransition: ARCHInteractiveTransition?) {
+        self.transitionAnimator = transitionAnimator
         self.interactiveTransition = interactiveTransition
     }
 
@@ -59,11 +61,11 @@ public class ARCHPushTransitioningRepresentative: NSObject, ARCHPushRepresentati
 
         switch operation {
         case .push:
-            animatedTransitioning?.isPresented = false
-            return animatedTransitioning
+            transitionAnimator?.isPresented = false
+            return transitionAnimator
         default:
-            animatedTransitioning?.isPresented = true
-            return animatedTransitioning
+            transitionAnimator?.isPresented = true
+            return transitionAnimator
         }
     }
 }
