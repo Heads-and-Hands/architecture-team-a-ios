@@ -27,7 +27,7 @@ public class ARCHRouterPushCustomAnimationOptions: ARCHRouterOptions {
         }
 
         if let to = transition.to as? ARCHRouterTransitioning {
-            to.pushTransitioningRepresentative = transitioningRepresentative
+            to.pushRepresentative = transitioningRepresentative
             to.interactiveTransition = interactiveTransition
         }
 
@@ -39,7 +39,7 @@ public class ARCHRouterPushCustomAnimationOptions: ARCHRouterOptions {
     }
 }
 
-public class ARCHPushTransitioningRepresentative: NSObject, ARCHPushTransitioningRepresentativeProtocol {
+public class ARCHPushTransitioningRepresentative: NSObject, ARCHPushRepresentativeProtocol {
 
     public var animatedTransitioning: ARCHAnimatedTransitioning?
 
@@ -55,7 +55,7 @@ public class ARCHPushTransitioningRepresentative: NSObject, ARCHPushTransitionin
         return interactiveTransition.isTransitionInProgress ? interactiveTransition : nil
     }
 
-    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
         switch operation {
         case .push:

@@ -23,7 +23,7 @@ public class ARCHRouterPresentCustomAnimationOptions: ARCHRouterOptions {
         let transitioningRepresentative = ARCHPresentTransitioningRepresentative(animatedTransitioning: self.animatedTransitioning, interactiveTransition: self.interactiveTransition)
 
         if let to = transition.to as? ARCHRouterTransitioning {
-            to.presentTransitioningRepresentative = transitioningRepresentative
+            to.presentRepresentative = transitioningRepresentative
             to.interactiveTransition = interactiveTransition
         }
 
@@ -37,7 +37,7 @@ public class ARCHRouterPresentCustomAnimationOptions: ARCHRouterOptions {
     }
 }
 
-public class ARCHPresentTransitioningRepresentative: NSObject, ARCHPresentTransitioningRepresentativeProtocol {
+public class ARCHPresentTransitioningRepresentative: NSObject, ARCHPresentRepresentativeProtocol {
 
     public var animatedTransitioning: ARCHAnimatedTransitioning?
 

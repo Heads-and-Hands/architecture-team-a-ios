@@ -6,7 +6,7 @@
 //  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public protocol ARCHRouterOptions {
     typealias Transition = (from: AnyObject, to: AnyObject)
@@ -27,15 +27,15 @@ public extension ARCHRouter {
 
 public typealias ARCHInteractiveTransition = (ARCHInteractiveTransitionProtocol & UIPercentDrivenInteractiveTransition)
 
-public typealias ARCHPresentTransitioningRepresentativeProtocol = (ARCHTransitioningRepresentative & UIViewControllerTransitioningDelegate)
+public typealias ARCHPresentRepresentativeProtocol = (ARCHTransitioningRepresentative & UIViewControllerTransitioningDelegate)
 
-public typealias ARCHPushTransitioningRepresentativeProtocol = (ARCHTransitioningRepresentative & UINavigationControllerDelegate)
+public typealias ARCHPushRepresentativeProtocol = (ARCHTransitioningRepresentative & UINavigationControllerDelegate)
 
 public protocol ARCHRouterTransitioning: class {
 
-    var presentTransitioningRepresentative: ARCHPresentTransitioningRepresentativeProtocol? { get set }
+    var presentRepresentative: ARCHPresentRepresentativeProtocol? { get set }
 
-    var pushTransitioningRepresentative: ARCHPushTransitioningRepresentativeProtocol? { get set }
+    var pushRepresentative: ARCHPushRepresentativeProtocol? { get set }
 
     var interactiveTransition: ARCHInteractiveTransition? { get set }
 }
