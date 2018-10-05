@@ -293,6 +293,15 @@
 		9CF48BB12167A73B0040AE49 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAA2167A73A0040AE49 /* UIButton.swift */; };
 		9CF48BB32167A73B0040AE49 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAC2167A73A0040AE49 /* UIEdgeInsets.swift */; };
 		9CF48BB42167A73B0040AE49 /* UITraitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAD2167A73B0040AE49 /* UITraitCollection.swift */; };
+		9CF48BBE2167BB510040AE49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BBD2167BB510040AE49 /* AppDelegate.swift */; };
+		9CF48BC02167BB510040AE49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BBF2167BB510040AE49 /* ViewController.swift */; };
+		9CF48BC32167BB510040AE49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF48BC12167BB510040AE49 /* Main.storyboard */; };
+		9CF48BC52167BB530040AE49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF48BC42167BB530040AE49 /* Assets.xcassets */; };
+		9CF48BC82167BB530040AE49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF48BC62167BB530040AE49 /* LaunchScreen.storyboard */; };
+		9CF48BCF2167BE0A0040AE49 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BCE2167BE0A0040AE49 /* UIButton.swift */; };
+		9CF48BD62167BF030040AE49 /* HHLens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF48AE82167A3F60040AE49 /* HHLens.framework */; };
+		9CF48BD72167BF030040AE49 /* HHLens.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF48AE82167A3F60040AE49 /* HHLens.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CF48BDC2167C13B0040AE49 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BDB2167C13B0040AE49 /* UILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -520,6 +529,13 @@
 			remoteGlobalIDString = 9CF48AE72167A3F60040AE49;
 			remoteInfo = HHLens;
 		};
+		9CF48BD82167BF030040AE49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CF48AE72167A3F60040AE49;
+			remoteInfo = HHLens;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -624,6 +640,17 @@
 				50EA303F2134529A00A95512 /* HHModule.framework in Embed Frameworks */,
 				50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */,
 				50B74A282142BA5A00F368A3 /* HHListExtension.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF48BDA2167BF030040AE49 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9CF48BD72167BF030040AE49 /* HHLens.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -830,6 +857,15 @@
 		9CF48BAA2167A73A0040AE49 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		9CF48BAC2167A73A0040AE49 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		9CF48BAD2167A73B0040AE49 /* UITraitCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITraitCollection.swift; sourceTree = "<group>"; };
+		9CF48BBB2167BB510040AE49 /* HHLensDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHLensDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF48BBD2167BB510040AE49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9CF48BBF2167BB510040AE49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9CF48BC22167BB510040AE49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9CF48BC42167BB530040AE49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9CF48BC72167BB530040AE49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9CF48BC92167BB530040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CF48BCE2167BE0A0040AE49 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		9CF48BDB2167C13B0040AE49 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -987,6 +1023,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9CF48BB82167BB510040AE49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF48BD62167BF030040AE49 /* HHLens.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1064,6 +1108,7 @@
 		50679791212572610034CDA2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				9CF48BCD2167BDE70040AE49 /* UIButton */,
 				50D1DBC421511FF2005999F0 /* Skeleton */,
 				507F14F02138084A0087DCDB /* Indication */,
 				50679792212572610034CDA2 /* Cell */,
@@ -1382,6 +1427,7 @@
 				507F149C2137E6B50087DCDB /* HHIndication */,
 				50D1DBAE215119F9005999F0 /* HHSkeleton */,
 				9CF48AE92167A3F60040AE49 /* HHLens */,
+				9CF48BBC2167BB510040AE49 /* HHLensDemo */,
 				5093687920F683010044CA62 /* Products */,
 				5089230620FB77520032985E /* Frameworks */,
 			);
@@ -1406,6 +1452,7 @@
 				503FD73E21402CC2008905ED /* HHListControllerDemo.app */,
 				50D1DBAD215119F9005999F0 /* HHSkeleton.framework */,
 				9CF48AE82167A3F60040AE49 /* HHLens.framework */,
+				9CF48BBB2167BB510040AE49 /* HHLensDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1625,6 +1672,28 @@
 				9CF48B6D2167A70D0040AE49 /* UIViewLenses.swift */,
 			);
 			path = Lens;
+			sourceTree = "<group>";
+		};
+		9CF48BBC2167BB510040AE49 /* HHLensDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9CF48BBD2167BB510040AE49 /* AppDelegate.swift */,
+				9CF48BBF2167BB510040AE49 /* ViewController.swift */,
+				9CF48BC12167BB510040AE49 /* Main.storyboard */,
+				9CF48BC42167BB530040AE49 /* Assets.xcassets */,
+				9CF48BC62167BB530040AE49 /* LaunchScreen.storyboard */,
+				9CF48BC92167BB530040AE49 /* Info.plist */,
+			);
+			path = HHLensDemo;
+			sourceTree = "<group>";
+		};
+		9CF48BCD2167BDE70040AE49 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				9CF48BCE2167BE0A0040AE49 /* UIButton.swift */,
+				9CF48BDB2167C13B0040AE49 /* UILabel.swift */,
+			);
+			path = UIButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2030,6 +2099,25 @@
 			productReference = 9CF48AE82167A3F60040AE49 /* HHLens.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		9CF48BBA2167BB510040AE49 /* HHLensDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CF48BCA2167BB530040AE49 /* Build configuration list for PBXNativeTarget "HHLensDemo" */;
+			buildPhases = (
+				9CF48BB72167BB510040AE49 /* Sources */,
+				9CF48BB82167BB510040AE49 /* Frameworks */,
+				9CF48BB92167BB510040AE49 /* Resources */,
+				9CF48BDA2167BF030040AE49 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CF48BD92167BF030040AE49 /* PBXTargetDependency */,
+			);
+			name = HHLensDemo;
+			productName = HHLensDemo;
+			productReference = 9CF48BBB2167BB510040AE49 /* HHLensDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2070,6 +2158,9 @@
 					9CF48AE72167A3F60040AE49 = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					9CF48BBA2167BB510040AE49 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 				};
 			};
 			buildConfigurationList = 5093687320F683010044CA62 /* Build configuration list for PBXProject "architecture" */;
@@ -2093,6 +2184,7 @@
 				50C9857F212AEBFF0002EF4B /* HHPaginationDemo */,
 				50EA30272134529A00A95512 /* HHSkeletonDemo */,
 				507F14AF2137E99C0087DCDB /* HHIndicationDemo */,
+				9CF48BBA2167BB510040AE49 /* HHLensDemo */,
 				501AA647211C6C4A002D3264 /* HHList */,
 				5072DD94211D84B800E08A92 /* HHModule */,
 				5072DDE6211DE83200E08A92 /* HHListExtension */,
@@ -2243,6 +2335,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF48BB92167BB510040AE49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF48BC82167BB530040AE49 /* LaunchScreen.storyboard in Resources */,
+				9CF48BC52167BB530040AE49 /* Assets.xcassets in Resources */,
+				9CF48BC32167BB510040AE49 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2755,6 +2857,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9CF48BB72167BB510040AE49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF48BC02167BB510040AE49 /* ViewController.swift in Sources */,
+				9CF48BBE2167BB510040AE49 /* AppDelegate.swift in Sources */,
+				9CF48BDC2167C13B0040AE49 /* UILabel.swift in Sources */,
+				9CF48BCF2167BE0A0040AE49 /* UIButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -2918,6 +3031,11 @@
 			target = 9CF48AE72167A3F60040AE49 /* HHLens */;
 			targetProxy = 9CF48AFB2167A3F70040AE49 /* PBXContainerItemProxy */;
 		};
+		9CF48BD92167BF030040AE49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CF48AE72167A3F60040AE49 /* HHLens */;
+			targetProxy = 9CF48BD82167BF030040AE49 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -2925,6 +3043,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				5093688520F683030044CA62 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9CF48BC12167BB510040AE49 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CF48BC22167BB510040AE49 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9CF48BC62167BB530040AE49 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CF48BC72167BB530040AE49 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -3901,7 +4035,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X86NQK83T7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3932,7 +4066,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X86NQK83T7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3952,6 +4086,49 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9CF48BCB2167BB530040AE49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X86NQK83T7;
+				INFOPLIST_FILE = HHLensDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.handh.ios.HHLensDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9CF48BCC2167BB530040AE49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X86NQK83T7;
+				INFOPLIST_FILE = HHLensDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.handh.ios.HHLensDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -4107,6 +4284,15 @@
 			buildConfigurations = (
 				9CF48AFF2167A3F70040AE49 /* Debug */,
 				9CF48B002167A3F70040AE49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CF48BCA2167BB530040AE49 /* Build configuration list for PBXNativeTarget "HHLensDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CF48BCB2167BB530040AE49 /* Debug */,
+				9CF48BCC2167BB530040AE49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
