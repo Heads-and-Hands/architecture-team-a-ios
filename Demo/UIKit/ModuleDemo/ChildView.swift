@@ -52,7 +52,7 @@ class ChildView: UIView, ARCHViewRenderable {
             button.leadingAnchor.constraint(equalTo: leadingAnchor),
             button.trailingAnchor.constraint(equalTo: trailingAnchor),
             button.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
+        ])
     }
 
     required init(coder: NSCoder) {
