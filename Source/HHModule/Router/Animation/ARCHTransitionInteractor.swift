@@ -8,30 +8,27 @@
 
 import Foundation
 
-class ARCHTransitionInteractor: ARCHInteractiveTransition {
+open class ARCHTransitionInteractor: ARCHInteractiveTransition {
 
-    weak var delegate: ARCHInteractiveTransitionDelegate?
+    weak public var delegate: ARCHInteractiveTransitionDelegate?
 
-    var isTransitionInProgress: Bool = false
+    public var isTransitionInProgress: Bool = false
 
-    private var viewController: UIViewController?
+    public var viewController: UIViewController?
 
-    func attach(to viewController: UIViewController) {
-
+    public func attach(to viewController: UIViewController) {
         self.viewController = viewController
-
         self.configureCloseGesture(for: viewController.view)
     }
 
-    private func configureCloseGesture(for view: UIView) {
-
+    public func configureCloseGesture(for view: UIView) {
         if let gestureRecognizer = delegate?.closeGestureRecognizer {
-
             gestureRecognizer.addTarget(self, action: #selector(self.closeGestureHandler(_:)))
-
             view.addGestureRecognizer(gestureRecognizer)
         }
     }
+
+    // MARK: - Actions
 
     @objc
     private func closeGestureHandler(_ recognizer: UIPanGestureRecognizer) {

@@ -69,6 +69,69 @@ final class CustomAnimationPresentViewController<Out: CustomAnimationPresentView
         return min(translation / maxTranslation, 1.0)
     }
 
+    // ARCHTransitionAnimatorDelegate
+
+    var contextImageView: UIImageView?
+
+    override func willAnimateAppearance(context: UIViewControllerContextTransitioning, fromViewController:  UIViewController & ARCHTransitionAnimatorDelegate) {
+        contextImageView?.frame = imageView.frame
+    }
+
+    override func didAnimateAppearance(context: UIViewControllerContextTransitioning, fromViewController:  UIViewController & ARCHTransitionAnimatorDelegate) {
+        imageView.alpha = 1.0
+        contextImageView?.removeFromSuperview()
+    }
+
+    override func willAnimateDisappearance(context: UIViewControllerContextTransitioning, toViewController:  UIViewController & ARCHTransitionAnimatorDelegate) {
+        guard let (_, frame) = toViewController.getContextData() as? (UIImage?, CGRect?) else {
+            return
+        }
+
+        contextImageView?.frame = frame ?? .zero
+    }
+
+    override func didAnimateDisappearance(context: UIViewControllerContextTransitioning, toViewController:  UIViewController & ARCHTransitionAnimatorDelegate) {
+        contextImageView?.removeFromSuperview()
+    }
+
+    override func prepareForAppearance(context: UIViewControllerContextTransitioning, fromViewController:  UIViewController & ARCHTransitionAnimatorDelegate) {
+
+        guard let (image, frame) = fromViewController.getContextData() as? (UIImage?, CGRect?) else {
+            return
+        }
+
+        imageView.alpha = 0.0
+
+        let contextImageView = UIImageView(image: image)
+        contextImageView.contentMode = .scaleAspectFill
+        contextImageView.clipsToBounds = true
+        contextImageView.frame = frame ?? .zero
+
+        let container = context.containerView
+        container.addSubview(contextImageView)
+
+        self.contextImageView = contextImageView
+    }
+
+    override func didDisappearanceAnimationCanceled(context: UIViewControllerContextTransitioning, toViewController: UIViewController & ARCHTransitionAnimatorDelegate) {
+        imageView.alpha = 1.0
+    }
+
+    override func prepareForDisappearance(context: UIViewControllerContextTransitioning, toViewController:  UIViewController & ARCHTransitionAnimatorDelegate) {
+
+        let contextImageView = UIImageView(image: imageView.image)
+        contextImageView.contentMode = .scaleAspectFill
+        contextImageView.clipsToBounds = true
+        contextImageView.frame = imageView.frame
+
+        let container = context.containerView
+        container.addSubview(contextImageView)
+
+        imageView.alpha = 0.0
+
+        self.contextImageView = contextImageView
+    }
+
     // MARK: - Private
 
     @objc

@@ -74,7 +74,7 @@ final class CustomAnimationMainViewController<Out: CustomAnimationMainViewOutput
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        view.bringSubview(toFront: stackView)
+        view.bringSubviewToFront(stackView)
     }
 
     override func render(state: State) {
@@ -94,6 +94,12 @@ final class CustomAnimationMainViewController<Out: CustomAnimationMainViewOutput
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(cell: CustomAnimatorCell.self, cellID: CustomAnimatorCell.reuseID)
 
+    }
+
+    // ARCHTransitionAnimatorDelegate
+
+    override func getContextData() -> Any? {
+        return (currentImage, currentFrame)
     }
 
     // MARK: - Actions

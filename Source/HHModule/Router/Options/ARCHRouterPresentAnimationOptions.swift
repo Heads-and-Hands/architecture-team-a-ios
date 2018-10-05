@@ -10,12 +10,12 @@ import UIKit
 
 public class ARCHRouterPresentAnimationOptions: ARCHRouterOptions {
 
-    let transitionAnimator: ARCHTransitionAnimator?
+    let transitionAnimator: ARCHTransitionAnimatorProtocol?
 
     let interactiveTransition: ARCHInteractiveTransition?
 
-    public init(transitionAnimator: ARCHTransitionAnimator?, interactiveTransition: ARCHInteractiveTransition? = nil) {
-        self.transitionAnimator = transitionAnimator
+    public init(transitionAnimator: ARCHTransitionAnimatorProtocol? = nil, interactiveTransition: ARCHInteractiveTransition? = nil) {
+        self.transitionAnimator = transitionAnimator ?? ARCHTransitionAnimator()
         self.interactiveTransition = interactiveTransition ?? ARCHTransitionInteractor()
     }
 
@@ -23,6 +23,7 @@ public class ARCHRouterPresentAnimationOptions: ARCHRouterOptions {
         let transitioningRepresentative = ARCHPresentTransitioningRepresentative(transitionAnimator: self.transitionAnimator, interactiveTransition: self.interactiveTransition)
 
         interactiveTransition?.delegate = transition.to as? ARCHInteractiveTransitionDelegate
+        transitionAnimator?.delegate = transition.to as? ARCHTransitionAnimatorDelegate
 
         if let to = transition.to as? ARCHRouterTransitioning {
             to.presentRepresentative = transitioningRepresentative
@@ -41,11 +42,11 @@ public class ARCHRouterPresentAnimationOptions: ARCHRouterOptions {
 
 public class ARCHPresentTransitioningRepresentative: NSObject, ARCHPresentRepresentativeProtocol {
 
-    public var transitionAnimator: ARCHTransitionAnimator?
+    public var transitionAnimator: ARCHTransitionAnimatorProtocol?
 
     public var interactiveTransition: ARCHInteractiveTransition?
 
-    init(transitionAnimator: ARCHTransitionAnimator?, interactiveTransition: ARCHInteractiveTransition?) {
+    init(transitionAnimator: ARCHTransitionAnimatorProtocol?, interactiveTransition: ARCHInteractiveTransition?) {
         self.transitionAnimator = transitionAnimator
         self.interactiveTransition = interactiveTransition
     }

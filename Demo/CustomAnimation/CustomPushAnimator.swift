@@ -9,24 +9,9 @@
 import HHModule
 import UIKit
 
-class CustomPushAnimator: NSObject, ARCHTransitionAnimator {
+class CustomPushAnimator: ARCHTransitionAnimator {
 
-    var isPresented: Bool = false
-    var transitionDuration: TimeInterval
-
-    init(transitionDuration: TimeInterval = 1.0) {
-        self.transitionDuration = transitionDuration
-    }
-
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        if isPresented {
-            animateDisappearance(using: transitionContext)
-        } else {
-            animateAppearance(using: transitionContext)
-        }
-    }
-
-    func animateAppearance(using transitionContext: UIViewControllerContextTransitioning) {
+    override func animateAppearance(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromVC = viewController(from: transitionContext, for: .from) as? CustomAnimationMainViewController<CustomAnimationMainEventHandler>,
             let toVC = viewController(from: transitionContext, for: .to) as? CustomAnimationPushViewController<CustomAnimationPushEventHandler> else {
                 return
@@ -57,7 +42,7 @@ class CustomPushAnimator: NSObject, ARCHTransitionAnimator {
         })
     }
 
-    func animateDisappearance(using transitionContext: UIViewControllerContextTransitioning) {
+    override func animateDisappearance(using transitionContext: UIViewControllerContextTransitioning) {
         guard let toVC = viewController(from: transitionContext, for: .to) as? CustomAnimationMainViewController<CustomAnimationMainEventHandler>,
             let fromVC = viewController(from: transitionContext, for: .from) as? CustomAnimationPushViewController<CustomAnimationPushEventHandler> else {
                 return
@@ -88,22 +73,5 @@ class CustomPushAnimator: NSObject, ARCHTransitionAnimator {
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled && isFinished)
             imageView.removeFromSuperview()
         })
-    }
-
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return transitionDuration
-    }
-
-    // MARK: - Private
-
-    private func viewController(from transitionContext: UIViewControllerContextTransitioning, for key: UITransitionContextViewControllerKey) -> UIViewController? {
-        guard let viewController = transitionContext.viewController(forKey: key) else {
-            return nil
-        }
-
-        if let navigationController = viewController as? UINavigationController {
-            return navigationController.topViewController
-        }
-        return viewController
     }
 }

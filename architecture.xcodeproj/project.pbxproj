@@ -279,7 +279,9 @@
 		9CC587052141443800C33874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093688220F683030044CA62 /* Assets.xcassets */; };
 		9CCC6428216636AA001171A9 /* ARCHTransitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC6426216636A5001171A9 /* ARCHTransitionInteractor.swift */; };
 		9CCC642C21663D4F001171A9 /* ARCHRouterTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC642A21663CA1001171A9 /* ARCHRouterTransitioning.swift */; };
-		9CE1C6B32141467500C4C5C1 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CCC642E21664819001171A9 /* ARCHInteractiveTransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC642D21664819001171A9 /* ARCHInteractiveTransitionProtocol.swift */; };
+		9CCC643121665187001171A9 /* ARCHTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC642F21665167001171A9 /* ARCHTransitionAnimator.swift */; };
+		9CCC64332166534B001171A9 /* ARCHTransitionAnimatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC64322166534B001171A9 /* ARCHTransitionAnimatorProtocol.swift */; };
 		9CE1C6CA21414C1800C4C5C1 /* CustomAnimationPushEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B421414B9A00C4C5C1 /* CustomAnimationPushEventHandler.swift */; };
 		9CE1C6CB21414C1800C4C5C1 /* CustomAnimationPushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B521414B9A00C4C5C1 /* CustomAnimationPushViewController.swift */; };
 		9CE1C6CC21414C1800C4C5C1 /* CustomAnimationPushProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6B621414B9A00C4C5C1 /* CustomAnimationPushProtocols.swift */; };
@@ -290,7 +292,10 @@
 		9CE1C6D121414C1F00C4C5C1 /* CustomAnimationPresentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6C121414BBE00C4C5C1 /* CustomAnimationPresentProtocols.swift */; };
 		9CE1C6D221414C1F00C4C5C1 /* CustomAnimationPresentConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6C221414BBE00C4C5C1 /* CustomAnimationPresentConfigurator.swift */; };
 		9CE1C6D321414C1F00C4C5C1 /* CustomAnimationPresentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6C321414BBE00C4C5C1 /* CustomAnimationPresentState.swift */; };
-		9CE1C6D72141613D00C4C5C1 /* CustomPresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C6D42141595F00C4C5C1 /* CustomPresentAnimator.swift */; };
+		9CF6A53921674E7D00347371 /* HHList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; };
+		9CF6A53A21674E7D00347371 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CF6A53D21674E9D00347371 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
+		9CF6A53E21674E9D00347371 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -511,6 +516,20 @@
 			remoteGlobalIDString = 5072DD94211D84B800E08A92;
 			remoteInfo = HHModule;
 		};
+		9CF6A53B21674E7D00347371 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 501AA647211C6C4A002D3264;
+			remoteInfo = HHList;
+		};
+		9CF6A53F21674E9D00347371 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5072DD94211D84B800E08A92;
+			remoteInfo = HHModule;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -624,7 +643,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9CE1C6B32141467500C4C5C1 /* HHModule.framework in Embed Frameworks */,
+				9CF6A53E21674E9D00347371 /* HHModule.framework in Embed Frameworks */,
+				9CF6A53A21674E7D00347371 /* HHList.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -817,6 +837,9 @@
 		9CC587022141433C00C33874 /* CustomAnimationAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationAppDelegate.swift; sourceTree = "<group>"; };
 		9CCC6426216636A5001171A9 /* ARCHTransitionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHTransitionInteractor.swift; sourceTree = "<group>"; };
 		9CCC642A21663CA1001171A9 /* ARCHRouterTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterTransitioning.swift; sourceTree = "<group>"; };
+		9CCC642D21664819001171A9 /* ARCHInteractiveTransitionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHInteractiveTransitionProtocol.swift; sourceTree = "<group>"; };
+		9CCC642F21665167001171A9 /* ARCHTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHTransitionAnimator.swift; sourceTree = "<group>"; };
+		9CCC64322166534B001171A9 /* ARCHTransitionAnimatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHTransitionAnimatorProtocol.swift; sourceTree = "<group>"; };
 		9CE1C6B421414B9A00C4C5C1 /* CustomAnimationPushEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPushEventHandler.swift; sourceTree = "<group>"; };
 		9CE1C6B521414B9A00C4C5C1 /* CustomAnimationPushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPushViewController.swift; sourceTree = "<group>"; };
 		9CE1C6B621414B9A00C4C5C1 /* CustomAnimationPushProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPushProtocols.swift; sourceTree = "<group>"; };
@@ -827,7 +850,6 @@
 		9CE1C6C121414BBE00C4C5C1 /* CustomAnimationPresentProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPresentProtocols.swift; sourceTree = "<group>"; };
 		9CE1C6C221414BBE00C4C5C1 /* CustomAnimationPresentConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPresentConfigurator.swift; sourceTree = "<group>"; };
 		9CE1C6C321414BBE00C4C5C1 /* CustomAnimationPresentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPresentState.swift; sourceTree = "<group>"; };
-		9CE1C6D42141595F00C4C5C1 /* CustomPresentAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -981,6 +1003,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CF6A53D21674E9D00347371 /* HHModule.framework in Frameworks */,
+				9CF6A53921674E7D00347371 /* HHList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1567,7 +1591,6 @@
 			isa = PBXGroup;
 			children = (
 				9CC586E7214140D700C33874 /* ModulesCustomAnimationStory.swift */,
-				9CE1C6D42141595F00C4C5C1 /* CustomPresentAnimator.swift */,
 				9C807DA42143CA3C00D2F20B /* CustomPushAnimator.swift */,
 				9CC586FA214141AF00C33874 /* CustomAnimationMain */,
 				9CE1C6BE21414B9F00C4C5C1 /* CustomAnimationPush */,
@@ -1592,7 +1615,10 @@
 			isa = PBXGroup;
 			children = (
 				9CCC642A21663CA1001171A9 /* ARCHRouterTransitioning.swift */,
+				9CCC642D21664819001171A9 /* ARCHInteractiveTransitionProtocol.swift */,
 				9CCC6426216636A5001171A9 /* ARCHTransitionInteractor.swift */,
+				9CCC64322166534B001171A9 /* ARCHTransitionAnimatorProtocol.swift */,
+				9CCC642F21665167001171A9 /* ARCHTransitionAnimator.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -2009,6 +2035,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				9CF6A53C21674E7D00347371 /* PBXTargetDependency */,
+				9CF6A54021674E9D00347371 /* PBXTargetDependency */,
 			);
 			name = HHCustomAnimationDemo;
 			productName = HHCustomAnimationDemo;
@@ -2054,6 +2082,7 @@
 					};
 					9CC586D42141400400C33874 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -2546,7 +2575,10 @@
 				50BC80AF211DFAD100D77262 /* ARCHModuleProtocols.swift in Sources */,
 				50BC80AD211DFACA00D77262 /* ARCHModuleID.swift in Sources */,
 				50BC80B3211DFAE200D77262 /* ARCHRouterPresentOptions.swift in Sources */,
+				9CCC642E21664819001171A9 /* ARCHInteractiveTransitionProtocol.swift in Sources */,
 				9C0F75712142A12300B3FDE2 /* ARCHRouterPresentAnimationOptions.swift in Sources */,
+				9CCC643121665187001171A9 /* ARCHTransitionAnimator.swift in Sources */,
+				9CCC64332166534B001171A9 /* ARCHTransitionAnimatorProtocol.swift in Sources */,
 				50BC80AC211DFAC700D77262 /* ARCHModuleConfigurator.swift in Sources */,
 				50BC80B0211DFAD300D77262 /* ARCHEventHandler.swift in Sources */,
 			);
@@ -2730,7 +2762,6 @@
 				9CC586FE214141E900C33874 /* CustomAnimationMainProtocols.swift in Sources */,
 				9CC58700214141E900C33874 /* CustomAnimationMainState.swift in Sources */,
 				9C807DA92143CB1D00D2F20B /* CustomPushAnimator.swift in Sources */,
-				9CE1C6D72141613D00C4C5C1 /* CustomPresentAnimator.swift in Sources */,
 				9CE1C6CB21414C1800C4C5C1 /* CustomAnimationPushViewController.swift in Sources */,
 				9CE1C6CE21414C1800C4C5C1 /* CustomAnimationPushState.swift in Sources */,
 				9CE1C6CF21414C1F00C4C5C1 /* CustomAnimationPresentEventHandler.swift in Sources */,
@@ -2898,6 +2929,16 @@
 			target = 5072DD94211D84B800E08A92 /* HHModule */;
 			targetProxy = 50EA302B2134529A00A95512 /* PBXContainerItemProxy */;
 		};
+		9CF6A53C21674E7D00347371 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 501AA647211C6C4A002D3264 /* HHList */;
+			targetProxy = 9CF6A53B21674E7D00347371 /* PBXContainerItemProxy */;
+		};
+		9CF6A54021674E9D00347371 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5072DD94211D84B800E08A92 /* HHModule */;
+			targetProxy = 9CF6A53F21674E9D00347371 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -2919,7 +2960,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H7PJVL5L8D;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2949,7 +2990,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H7PJVL5L8D;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3187,7 +3228,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H7PJVL5L8D;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3217,7 +3258,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H7PJVL5L8D;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3877,6 +3918,7 @@
 		9CC586E42141400500C33874 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7PJVL5L8D;
@@ -3887,7 +3929,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = evssar.HHCustomAnimationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -3895,6 +3937,7 @@
 		9CC586E52141400500C33874 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7PJVL5L8D;
@@ -3905,7 +3948,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = evssar.HHCustomAnimationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -9,7 +9,7 @@
 import UIKit
 
 open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>:
-UIViewController, ARCHRouter, ARCHViewRenderable, ARCHRouterTransitioning, ARCHInteractiveTransitionDelegate {
+UIViewController, ARCHRouter, ARCHViewRenderable, ARCHRouterTransitioning, ARCHInteractiveTransitionDelegate, ARCHTransitionAnimatorDelegate {
 
     public typealias State = S
 
@@ -84,4 +84,22 @@ UIViewController, ARCHRouter, ARCHViewRenderable, ARCHRouterTransitioning, ARCHI
     open func progress(for recognizer: UIGestureRecognizer) -> CGFloat {
         return 0.0
     }
+
+    // ARCHTransitionAnimatorDelegate
+
+    open func willAnimateAppearance(context: UIViewControllerContextTransitioning, fromViewController:  UIViewController & ARCHTransitionAnimatorDelegate) {}
+
+    open func didAnimateAppearance(context: UIViewControllerContextTransitioning, fromViewController:  UIViewController & ARCHTransitionAnimatorDelegate){}
+
+    open func willAnimateDisappearance(context: UIViewControllerContextTransitioning, toViewController:  UIViewController & ARCHTransitionAnimatorDelegate) {}
+
+    open func didDisappearanceAnimationCanceled(context: UIViewControllerContextTransitioning, toViewController:  UIViewController & ARCHTransitionAnimatorDelegate) {}
+
+    open func didAnimateDisappearance(context: UIViewControllerContextTransitioning, toViewController:  UIViewController & ARCHTransitionAnimatorDelegate) {}
+
+    open func prepareForAppearance(context: UIViewControllerContextTransitioning, fromViewController:  UIViewController & ARCHTransitionAnimatorDelegate) {}
+
+    open func prepareForDisappearance(context: UIViewControllerContextTransitioning, toViewController:  UIViewController & ARCHTransitionAnimatorDelegate) {}
+
+    open func getContextData() -> Any? { return nil }
 }
