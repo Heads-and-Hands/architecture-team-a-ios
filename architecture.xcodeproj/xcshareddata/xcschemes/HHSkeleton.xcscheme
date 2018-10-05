@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5072DDE6211DE83200E08A92"
-               BuildableName = "HHListExtension.framework"
-               BlueprintName = "HHListExtension"
+               BlueprintIdentifier = "50D1DBAC215119F9005999F0"
+               BuildableName = "HHSkeleton.framework"
+               BlueprintName = "HHSkeleton"
                ReferencedContainer = "container:architecture.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5072DDE6211DE83200E08A92"
-            BuildableName = "HHListExtension.framework"
-            BlueprintName = "HHListExtension"
+            BlueprintIdentifier = "50D1DBAC215119F9005999F0"
+            BuildableName = "HHSkeleton.framework"
+            BlueprintName = "HHSkeleton"
             ReferencedContainer = "container:architecture.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5072DDE6211DE83200E08A92"
-            BuildableName = "HHListExtension.framework"
-            BlueprintName = "HHListExtension"
+            BlueprintIdentifier = "50D1DBAC215119F9005999F0"
+            BuildableName = "HHSkeleton.framework"
+            BlueprintName = "HHSkeleton"
             ReferencedContainer = "container:architecture.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

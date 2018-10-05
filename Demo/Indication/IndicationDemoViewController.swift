@@ -10,6 +10,7 @@ import HHModule
 import HHList
 import HHListExtension
 import HHIndication
+import HHSkeleton
 
 enum ActionType: Int {
     case load = 0
@@ -41,16 +42,43 @@ enum ActionType: Int {
 
 final class IndicationDemoViewController: ARCHViewController<IndicationDemoState, IndicationDemoEventHandler>, ARCHIndicationContainer {
 
+#if HHSkeleton
+    let headerView = HeaderView()
+    let tableView = UITableView()
+
+    lazy var skeletonListController = ARCHSkeletonTableViewController<ExampleCell>(tableView: tableView)
+    lazy var listController = ARCHDiffTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>(tableView: tableView)
+
+    lazy var indicationHelper: IndicationHelper = {
+        let skeletonProvider = ARCHSkeletonViewProvider(views: [
+            headerView,
+            skeletonListController
+        ])
+
+        let result = IndicationHelper()
+        result.set(provider: skeletonProvider, by: .loading)
+        return result
+    }()
+#else
+    let listController = ARCHDiffTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>()
+    let indicationHelper = IndicationHelper()
+#endif
+
     let segmentControll = UISegmentedControl(items: ActionType.allTitles)
 
-    let listController = ARCHTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>()
-    let indicationHelper = IndicationHelper()
+    private struct Constants {
+        static let segmentControlHeight: CGFloat = 40
+    }
 
     override func prepareRootView() {
         super.prepareRootView()
 
+#if HHSkeleton
+        skeletonListController.tableView.rowHeight = 45
+        skeletonListController.dataSource = listController.viewDataSource
+#endif
         indicationHelper.container = self
-        layoutIndicationGuide.topConstraint?.constant = 64
+        layoutIndicationGuide.bottomConstraint?.constant = -Constants.segmentControlHeight
 
         view.backgroundColor = .white
 
@@ -66,21 +94,37 @@ final class IndicationDemoViewController: ARCHViewController<IndicationDemoState
     }
 
     func setupLayout() {
-        segmentControll.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(segmentControll)
-
+#if HHSkeleton
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(headerView)
+#endif
         let tableView = listController.tableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
 
+        segmentControll.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(segmentControll)
+
+#if HHSkeleton
         NSLayoutConstraint.activate([
-            segmentControll.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
-            segmentControll.leftAnchor.constraint(equalTo: view.leftAnchor),
-            segmentControll.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.topAnchor.constraint(equalTo: segmentControll.bottomAnchor),
+            headerView.topAnchor.constraint(equalTo: view.topAnchor),
+            headerView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            headerView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor)
+        ])
+#else
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor)
+        ])
+#endif
+        NSLayoutConstraint.activate([
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: segmentControll.topAnchor),
+            segmentControll.leftAnchor.constraint(equalTo: view.leftAnchor),
+            segmentControll.rightAnchor.constraint(equalTo: view.rightAnchor),
+            segmentControll.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            segmentControll.heightAnchor.constraint(equalToConstant: Constants.segmentControlHeight)
         ])
     }
 

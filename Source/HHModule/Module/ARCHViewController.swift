@@ -19,54 +19,77 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
     }
 
     open func render(state: State) {
-        var viewMirrors: [Mirror] = []
+        var views = autorenderViews
+        let substates = self.substates(state: state)
 
-        var mirror: Mirror = Mirror(reflecting: self)
+        var index: Int = 0
+        while index < views.count {
+            let view = views[index]
+            var isVisible = false
 
-        viewMirrors.append(mirror)
+            for substate in substates where view.update(state: substate) {
+                isVisible = true
+                break
+            }
 
-        while let superclassMirror = mirror.superclassMirror,
-            String(describing: mirror.subjectType) != String(describing: UIViewController.self) {
-                viewMirrors.append(superclassMirror)
+            view.set(visible: isVisible)
+            index += 1
+        }
+
+        print("[ARCHViewController] end render(state:)")
+    }
+
+    private func substates(state: State) -> [Any] {
+
+        var mirrors: [Mirror] = []
+        var mirror: Mirror = Mirror(reflecting: state)
+
+        mirrors.append(mirror)
+
+        while let superclassMirror = mirror.superclassMirror {
+                mirrors.append(superclassMirror)
                 mirror = superclassMirror
         }
 
-        let stateMirror = Mirror(reflecting: state)
-
-        viewMirrors.forEach({ viewMirror in
-
-            for (_, viewProperty) in viewMirror.children {
-                guard let view = viewProperty as? ARCHViewInput else {
-                    continue
-                }
-
-                if self.autorenderIgnoreViews.contains(where: { $0 === view }) {
-                    continue
-                }
-
-                self.render(state: stateMirror, on: view)
-            }
+        let children = mirrors.reduce([], { (result: [Mirror.Child], mirror: Mirror) -> [Mirror.Child] in
+            var result = result
+            result.append(contentsOf: mirror.children)
+            return result
         })
+
+        return children.map({ $0.value })
     }
 
-    open func render(state: Mirror, on view: ARCHViewInput) {
+    private var autorenderViews: [ARCHViewInput] {
+        var mirrors: [Mirror] = []
+        var mirror: Mirror = Mirror(reflecting: self)
 
-        var currentState = state
-        var states: [Mirror] = [state]
+        mirrors.append(mirror)
 
-        while let superclassState = currentState.superclassMirror {
-            states.append(superclassState)
-            currentState = superclassState
+        while let superclassMirror = mirror.superclassMirror,
+            String(describing: mirror.subjectType) != String(describing: UIViewController.self) {
+                mirrors.append(superclassMirror)
+                mirror = superclassMirror
         }
 
-        states.forEach({ state in
-            for (_, value) in state.children {
-                if view.typeExist(state: value) {
-                    view.update(state: value)
-                    return
-                }
-            }
+        let children = mirrors.reduce([], { (result: [Mirror.Child], mirror: Mirror) -> [Mirror.Child] in
+            var result = result
+            result.append(contentsOf: mirror.children)
+            return result
         })
+
+        return children
+            .compactMap({ item -> ARCHViewInput? in
+                guard let value = item.value as? ARCHViewInput else {
+                    return nil
+                }
+
+                if autorenderIgnoreViews.contains(where: { $0 === value }) {
+                    return nil
+                } else {
+                    return value
+                }
+            })
     }
 
     override open func viewDidLoad() {

@@ -21,8 +21,14 @@ final class IndicationDemoEventHandler: ARCHEventHandler<IndicationDemoState>, I
         for id in 0..<20 {
             newData.append(SimpleEntity(id: id))
         }
-
+#if HHSkeleton
+        updateState {
+            state.list = newData
+            state.header = HeaderViewState()
+        }
+#else
         state.list = newData
+#endif
     }
 
     func finishLoadingWithEmptyData() {

@@ -12,7 +12,7 @@ import HHPagingManager
 
 final class PaginationViewController: ARCHViewController<PaginationState, PaginationEventHandler>, UITableViewDelegate {
 
-    let listController = ARCHTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>()
+    let listController = ARCHDiffTableViewController<SimpleEntity, ExampleCellViewModel, ExampleCell>()
     var pagingManager: ARCHTableViewPagingManager?
 
     override func viewDidLoad() {
@@ -31,11 +31,10 @@ final class PaginationViewController: ARCHViewController<PaginationState, Pagina
     // MARK: - Configure
 
     func setupLayout() {
-        addChildViewController(listController)
-        listController.view.frame = view.bounds
-        listController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(listController.view)
-        listController.didMove(toParentViewController: self)
+        let tableView = listController.tableView
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.frame = view.bounds
+        view.addSubview(tableView)
     }
 
     // MARK: - Render

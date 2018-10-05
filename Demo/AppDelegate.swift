@@ -15,7 +15,7 @@ import HHNetwork
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    typealias LaunchOptions = [UIApplicationLaunchOptionsKey: Any]
+    typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
 
     var window: UIWindow?
     var authBufferedController: UIViewController?
@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let window = ARCHWindow()
         self.window = window
+
+//        window.rootViewController = SkeletonTestViewController()
+//        window.makeKeyAndVisible()
         launchOn(window: window)
 
         return true
