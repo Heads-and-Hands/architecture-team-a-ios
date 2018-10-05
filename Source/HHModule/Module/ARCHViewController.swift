@@ -40,24 +40,7 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
     }
 
     private func substates(state: State) -> [Any] {
-
-        var mirrors: [Mirror] = []
-        var mirror: Mirror = Mirror(reflecting: state)
-
-        mirrors.append(mirror)
-
-        while let superclassMirror = mirror.superclassMirror {
-                mirrors.append(superclassMirror)
-                mirror = superclassMirror
-        }
-
-        let children = mirrors.reduce([], { (result: [Mirror.Child], mirror: Mirror) -> [Mirror.Child] in
-            var result = result
-            result.append(contentsOf: mirror.children)
-            return result
-        })
-
-        return children.map({ $0.value })
+        return Mirror(reflecting: state).children.map { $0.value }
     }
 
     private var autorenderViews: [ARCHViewInput] {
