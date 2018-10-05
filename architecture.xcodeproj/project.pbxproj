@@ -264,6 +264,35 @@
 		50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
 		50EA303F2134529A00A95512 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CF48AFD2167A3F70040AE49 /* HHLens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF48AE82167A3F60040AE49 /* HHLens.framework */; };
+		9CF48AFE2167A3F70040AE49 /* HHLens.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF48AE82167A3F60040AE49 /* HHLens.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
+		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
+		9CF48B3F2167A4650040AE49 /* Semigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B152167A4590040AE49 /* Semigroup.swift */; };
+		9CF48B462167A4650040AE49 /* LensHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B1C2167A45C0040AE49 /* LensHolder.swift */; };
+		9CF48B4D2167A4650040AE49 /* Monoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B232167A4600040AE49 /* Monoid.swift */; };
+		9CF48B512167A4650040AE49 /* Ordering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B272167A4610040AE49 /* Ordering.swift */; };
+		9CF48B562167A4650040AE49 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B2C2167A4630040AE49 /* Lens.swift */; };
+		9CF48B582167A4650040AE49 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B2E2167A4640040AE49 /* Function.swift */; };
+		9CF48B862167A7120040AE49 /* UILabelLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B622167A70B0040AE49 /* UILabelLenses.swift */; };
+		9CF48B872167A7120040AE49 /* UIButtonLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B632167A70B0040AE49 /* UIButtonLenses.swift */; };
+		9CF48B8A2167A7120040AE49 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B662167A70B0040AE49 /* NSObject.swift */; };
+		9CF48B8B2167A7120040AE49 /* UIImageViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B672167A70C0040AE49 /* UIImageViewLenses.swift */; };
+		9CF48B8C2167A7120040AE49 /* CGRectLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B682167A70C0040AE49 /* CGRectLenses.swift */; };
+		9CF48B8D2167A7120040AE49 /* UITraitEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B692167A70C0040AE49 /* UITraitEnvironment.swift */; };
+		9CF48B8F2167A7120040AE49 /* UIEdgeInsetsLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B6B2167A70C0040AE49 /* UIEdgeInsetsLenses.swift */; };
+		9CF48B912167A7120040AE49 /* UIViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B6D2167A70D0040AE49 /* UIViewLenses.swift */; };
+		9CF48B922167A7120040AE49 /* UITextInputTraitsLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B6E2167A70D0040AE49 /* UITextInputTraitsLenses.swift */; };
+		9CF48B942167A7120040AE49 /* UIControlLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B702167A70D0040AE49 /* UIControlLenses.swift */; };
+		9CF48B962167A7120040AE49 /* UITextFieldLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B722167A70D0040AE49 /* UITextFieldLenses.swift */; };
+		9CF48B992167A7120040AE49 /* CALayerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B752167A70E0040AE49 /* CALayerLenses.swift */; };
+		9CF48BA02167A7120040AE49 /* CGPointLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B7C2167A7110040AE49 /* CGPointLenses.swift */; };
+		9CF48BA72167A7120040AE49 /* CGSizeLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B832167A7120040AE49 /* CGSizeLenses.swift */; };
+		9CF48BB02167A73B0040AE49 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BA92167A73A0040AE49 /* UIImage.swift */; };
+		9CF48BB12167A73B0040AE49 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAA2167A73A0040AE49 /* UIButton.swift */; };
+		9CF48BB32167A73B0040AE49 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAC2167A73A0040AE49 /* UIEdgeInsets.swift */; };
+		9CF48BB42167A73B0040AE49 /* UITraitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAD2167A73B0040AE49 /* UITraitCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -484,6 +513,13 @@
 			remoteGlobalIDString = 5072DD94211D84B800E08A92;
 			remoteInfo = HHModule;
 		};
+		9CF48AFB2167A3F70040AE49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CF48AE72167A3F60040AE49;
+			remoteInfo = HHLens;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -556,6 +592,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9CF48AFE2167A3F70040AE49 /* HHLens.framework in Embed Frameworks */,
 				5072DD9D211D84B800E08A92 /* HHModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -764,6 +801,35 @@
 		50FA81F3211AE47C00ADA769 /* ListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListConfigurator.swift; sourceTree = "<group>"; };
 		50FA81F4211AE47C00ADA769 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHCellViewModel.swift; sourceTree = "<group>"; };
+		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
+		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CF48B082167A4520040AE49 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		9CF48B0B2167A4530040AE49 /* Comparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comparator.swift; sourceTree = "<group>"; };
+		9CF48B152167A4590040AE49 /* Semigroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semigroup.swift; sourceTree = "<group>"; };
+		9CF48B1C2167A45C0040AE49 /* LensHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensHolder.swift; sourceTree = "<group>"; };
+		9CF48B232167A4600040AE49 /* Monoid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monoid.swift; sourceTree = "<group>"; };
+		9CF48B272167A4610040AE49 /* Ordering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ordering.swift; sourceTree = "<group>"; };
+		9CF48B2C2167A4630040AE49 /* Lens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; };
+		9CF48B2E2167A4640040AE49 /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		9CF48B622167A70B0040AE49 /* UILabelLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelLenses.swift; sourceTree = "<group>"; };
+		9CF48B632167A70B0040AE49 /* UIButtonLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLenses.swift; sourceTree = "<group>"; };
+		9CF48B662167A70B0040AE49 /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		9CF48B672167A70C0040AE49 /* UIImageViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewLenses.swift; sourceTree = "<group>"; };
+		9CF48B682167A70C0040AE49 /* CGRectLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectLenses.swift; sourceTree = "<group>"; };
+		9CF48B692167A70C0040AE49 /* UITraitEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITraitEnvironment.swift; sourceTree = "<group>"; };
+		9CF48B6B2167A70C0040AE49 /* UIEdgeInsetsLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsLenses.swift; sourceTree = "<group>"; };
+		9CF48B6D2167A70D0040AE49 /* UIViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewLenses.swift; sourceTree = "<group>"; };
+		9CF48B6E2167A70D0040AE49 /* UITextInputTraitsLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextInputTraitsLenses.swift; sourceTree = "<group>"; };
+		9CF48B702167A70D0040AE49 /* UIControlLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlLenses.swift; sourceTree = "<group>"; };
+		9CF48B722167A70D0040AE49 /* UITextFieldLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldLenses.swift; sourceTree = "<group>"; };
+		9CF48B752167A70E0040AE49 /* CALayerLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerLenses.swift; sourceTree = "<group>"; };
+		9CF48B7C2167A7110040AE49 /* CGPointLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointLenses.swift; sourceTree = "<group>"; };
+		9CF48B832167A7120040AE49 /* CGSizeLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeLenses.swift; sourceTree = "<group>"; };
+		9CF48BA92167A73A0040AE49 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		9CF48BAA2167A73A0040AE49 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		9CF48BAC2167A73A0040AE49 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
+		9CF48BAD2167A73B0040AE49 /* UITraitCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITraitCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -863,6 +929,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CF48AFD2167A3F70040AE49 /* HHLens.framework in Frameworks */,
 				5072DD9C211D84B800E08A92 /* HHModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -910,6 +977,13 @@
 				50EA30382134529A00A95512 /* HHModule.framework in Frameworks */,
 				50EA30392134529A00A95512 /* HHList.framework in Frameworks */,
 				50B74A272142BA5A00F368A3 /* HHListExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF48AE52167A3F60040AE49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1187,6 +1261,7 @@
 				50C98545212AAFA20002EF4B /* HHPagingManager */,
 				507F14932137E67F0087DCDB /* HHIndication */,
 				50D0F3CF2146CE3E0093E07F /* HHSkeleton */,
+				9CF48B5C2167A6860040AE49 /* HHLens */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1306,6 +1381,7 @@
 				50C9855F212AE9D20002EF4B /* HHPagingManager */,
 				507F149C2137E6B50087DCDB /* HHIndication */,
 				50D1DBAE215119F9005999F0 /* HHSkeleton */,
+				9CF48AE92167A3F60040AE49 /* HHLens */,
 				5093687920F683010044CA62 /* Products */,
 				5089230620FB77520032985E /* Frameworks */,
 			);
@@ -1329,6 +1405,7 @@
 				507F14CE2137E99C0087DCDB /* HHIndicationDemo.app */,
 				503FD73E21402CC2008905ED /* HHListControllerDemo.app */,
 				50D1DBAD215119F9005999F0 /* HHSkeleton.framework */,
+				9CF48AE82167A3F60040AE49 /* HHLens.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1484,6 +1561,72 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		9CF48AE92167A3F60040AE49 /* HHLens */ = {
+			isa = PBXGroup;
+			children = (
+				9CF48AEA2167A3F60040AE49 /* HHLens.h */,
+				9CF48AEB2167A3F60040AE49 /* Info.plist */,
+			);
+			path = HHLens;
+			sourceTree = "<group>";
+		};
+		9CF48B5C2167A6860040AE49 /* HHLens */ = {
+			isa = PBXGroup;
+			children = (
+				9CF48B5E2167A6D00040AE49 /* PreludeUI */,
+				9CF48B5D2167A6B40040AE49 /* Prelude */,
+			);
+			path = HHLens;
+			sourceTree = "<group>";
+		};
+		9CF48B5D2167A6B40040AE49 /* Prelude */ = {
+			isa = PBXGroup;
+			children = (
+				9CF48B0B2167A4530040AE49 /* Comparator.swift */,
+				9CF48B2E2167A4640040AE49 /* Function.swift */,
+				9CF48B2C2167A4630040AE49 /* Lens.swift */,
+				9CF48B1C2167A45C0040AE49 /* LensHolder.swift */,
+				9CF48B232167A4600040AE49 /* Monoid.swift */,
+				9CF48B082167A4520040AE49 /* Operators.swift */,
+				9CF48B272167A4610040AE49 /* Ordering.swift */,
+				9CF48B152167A4590040AE49 /* Semigroup.swift */,
+			);
+			path = Prelude;
+			sourceTree = "<group>";
+		};
+		9CF48B5E2167A6D00040AE49 /* PreludeUI */ = {
+			isa = PBXGroup;
+			children = (
+				9CF48BAA2167A73A0040AE49 /* UIButton.swift */,
+				9CF48BAC2167A73A0040AE49 /* UIEdgeInsets.swift */,
+				9CF48BA92167A73A0040AE49 /* UIImage.swift */,
+				9CF48BAD2167A73B0040AE49 /* UITraitCollection.swift */,
+				9CF48B5F2167A6EF0040AE49 /* Lens */,
+			);
+			path = PreludeUI;
+			sourceTree = "<group>";
+		};
+		9CF48B5F2167A6EF0040AE49 /* Lens */ = {
+			isa = PBXGroup;
+			children = (
+				9CF48B752167A70E0040AE49 /* CALayerLenses.swift */,
+				9CF48B7C2167A7110040AE49 /* CGPointLenses.swift */,
+				9CF48B682167A70C0040AE49 /* CGRectLenses.swift */,
+				9CF48B832167A7120040AE49 /* CGSizeLenses.swift */,
+				9CF48B662167A70B0040AE49 /* NSObject.swift */,
+				9CF48B632167A70B0040AE49 /* UIButtonLenses.swift */,
+				9CF48B702167A70D0040AE49 /* UIControlLenses.swift */,
+				9CF48B6B2167A70C0040AE49 /* UIEdgeInsetsLenses.swift */,
+				9CF48B672167A70C0040AE49 /* UIImageViewLenses.swift */,
+				9CF48B622167A70B0040AE49 /* UILabelLenses.swift */,
+				9CF48B722167A70D0040AE49 /* UITextFieldLenses.swift */,
+				9CF48B6E2167A70D0040AE49 /* UITextInputTraitsLenses.swift */,
+				9CF48B692167A70C0040AE49 /* UITraitEnvironment.swift */,
+				9CF48B6D2167A70D0040AE49 /* UIViewLenses.swift */,
+			);
+			path = Lens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1540,6 +1683,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				50D1DBB1215119F9005999F0 /* HHSkeleton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF48AE32167A3F60040AE49 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1768,6 +1919,7 @@
 				5067973C212419970034CDA2 /* PBXTargetDependency */,
 				50C98564212AE9D20002EF4B /* PBXTargetDependency */,
 				507F14A12137E6B50087DCDB /* PBXTargetDependency */,
+				9CF48AFC2167A3F70040AE49 /* PBXTargetDependency */,
 			);
 			name = HHModuleDemo;
 			productName = architecture;
@@ -1860,13 +2012,31 @@
 			productReference = 50EA30442134529A00A95512 /* HHSkeletonDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9CF48AE72167A3F60040AE49 /* HHLens */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CF48B032167A3F70040AE49 /* Build configuration list for PBXNativeTarget "HHLens" */;
+			buildPhases = (
+				9CF48AE32167A3F60040AE49 /* Headers */,
+				9CF48AE42167A3F60040AE49 /* Sources */,
+				9CF48AE52167A3F60040AE49 /* Frameworks */,
+				9CF48AE62167A3F60040AE49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHLens;
+			productName = HHLens;
+			productReference = 9CF48AE82167A3F60040AE49 /* HHLens.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		5093687020F683010044CA62 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = HandH;
 				TargetAttributes = {
@@ -1896,6 +2066,9 @@
 					};
 					50D1DBAC215119F9005999F0 = {
 						CreatedOnToolsVersion = 9.4.1;
+					};
+					9CF48AE72167A3F60040AE49 = {
+						CreatedOnToolsVersion = 10.0;
 					};
 				};
 			};
@@ -1927,6 +2100,7 @@
 				50C9855D212AE9D20002EF4B /* HHPagingManager */,
 				507F149A2137E6B50087DCDB /* HHIndication */,
 				50D1DBAC215119F9005999F0 /* HHSkeleton */,
+				9CF48AE72167A3F60040AE49 /* HHLens */,
 			);
 		};
 /* End PBXProject section */
@@ -2062,6 +2236,13 @@
 				50EA303B2134529A00A95512 /* Assets.xcassets in Resources */,
 				50EA303C2134529A00A95512 /* ExampleCell.xib in Resources */,
 				50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF48AE62167A3F60040AE49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2541,6 +2722,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9CF48AE42167A3F60040AE49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF48B912167A7120040AE49 /* UIViewLenses.swift in Sources */,
+				9CF48BB12167A73B0040AE49 /* UIButton.swift in Sources */,
+				9CF48B862167A7120040AE49 /* UILabelLenses.swift in Sources */,
+				9CF48B962167A7120040AE49 /* UITextFieldLenses.swift in Sources */,
+				9CF48BA02167A7120040AE49 /* CGPointLenses.swift in Sources */,
+				9CF48B992167A7120040AE49 /* CALayerLenses.swift in Sources */,
+				9CF48B4D2167A4650040AE49 /* Monoid.swift in Sources */,
+				9CF48B3F2167A4650040AE49 /* Semigroup.swift in Sources */,
+				9CF48B562167A4650040AE49 /* Lens.swift in Sources */,
+				9CF48B872167A7120040AE49 /* UIButtonLenses.swift in Sources */,
+				9CF48BB32167A73B0040AE49 /* UIEdgeInsets.swift in Sources */,
+				9CF48BA72167A7120040AE49 /* CGSizeLenses.swift in Sources */,
+				9CF48B512167A4650040AE49 /* Ordering.swift in Sources */,
+				9CF48B942167A7120040AE49 /* UIControlLenses.swift in Sources */,
+				9CF48B8D2167A7120040AE49 /* UITraitEnvironment.swift in Sources */,
+				9CF48B8F2167A7120040AE49 /* UIEdgeInsetsLenses.swift in Sources */,
+				9CF48B462167A4650040AE49 /* LensHolder.swift in Sources */,
+				9CF48B8C2167A7120040AE49 /* CGRectLenses.swift in Sources */,
+				9CF48B322167A4650040AE49 /* Operators.swift in Sources */,
+				9CF48B922167A7120040AE49 /* UITextInputTraitsLenses.swift in Sources */,
+				9CF48B8B2167A7120040AE49 /* UIImageViewLenses.swift in Sources */,
+				9CF48B8A2167A7120040AE49 /* NSObject.swift in Sources */,
+				9CF48B352167A4650040AE49 /* Comparator.swift in Sources */,
+				9CF48B582167A4650040AE49 /* Function.swift in Sources */,
+				9CF48BB02167A73B0040AE49 /* UIImage.swift in Sources */,
+				9CF48BB42167A73B0040AE49 /* UITraitCollection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -2698,6 +2912,11 @@
 			isa = PBXTargetDependency;
 			target = 5072DD94211D84B800E08A92 /* HHModule */;
 			targetProxy = 50EA302B2134529A00A95512 /* PBXContainerItemProxy */;
+		};
+		9CF48AFC2167A3F70040AE49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CF48AE72167A3F60040AE49 /* HHLens */;
+			targetProxy = 9CF48AFB2167A3F70040AE49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3675,6 +3894,67 @@
 			};
 			name = Release;
 		};
+		9CF48AFF2167A3F70040AE49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HHLens/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.handh.ios.HHLens;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9CF48B002167A3F70040AE49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HHLens/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.handh.ios.HHLens;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3818,6 +4098,15 @@
 			buildConfigurations = (
 				50EA30422134529A00A95512 /* Debug */,
 				50EA30432134529A00A95512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CF48B032167A3F70040AE49 /* Build configuration list for PBXNativeTarget "HHLens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CF48AFF2167A3F70040AE49 /* Debug */,
+				9CF48B002167A3F70040AE49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
