@@ -1,4 +1,3 @@
-
 import UIKit
 
 public protocol UIButtonProtocol: UIControlProtocol {
@@ -9,7 +8,7 @@ public protocol UIButtonProtocol: UIControlProtocol {
     var imageView: UIImageView? { get }
     var titleEdgeInsets: UIEdgeInsets { get set }
     var titleLabel: UILabel? { get }
-    
+
     func attributedTitle(for state: UIControl.State) -> NSAttributedString?
     func backgroundImage(for state: UIControl.State) -> UIImage?
     func image(for state: UIControl.State) -> UIImage?
@@ -33,84 +32,84 @@ public extension LensHolder where Object: UIButtonProtocol {
             set: { $1.adjustsImageWhenDisabled = $0; return $1 }
         )
     }
-    
+
     public var adjustsImageWhenHighlighted: Lens<Object, Bool> {
         return Lens(
             view: { $0.adjustsImageWhenHighlighted },
             set: { $1.adjustsImageWhenHighlighted = $0; return $1 }
         )
     }
-    
+
     public func attributedTitle(for state: UIControl.State) -> Lens<Object, NSAttributedString> {
         return Lens(
             view: { $0.attributedTitle(for: state) ?? NSAttributedString(string: "") },
             set: { $1.setAttributedTitle($0, for: state); return $1 }
         )
     }
-    
+
     public func backgroundColor(for state: UIControl.State) -> Lens<Object, UIColor> {
         return Lens(
             view: { _ in .clear },
             set: { $1.setBackgroundColor($0, for: state); return $1 }
         )
     }
-    
+
     public func backgroundImage(for state: UIControl.State) -> Lens<Object, UIImage?> {
         return Lens(
             view: { $0.backgroundImage(for: state) },
             set: { $1.setBackgroundImage($0, for: state); return $1 }
         )
     }
-    
+
     public var contentEdgeInsets: Lens<Object, UIEdgeInsets> {
         return Lens(
             view: { $0.contentEdgeInsets },
             set: { $1.contentEdgeInsets = $0; return $1 }
         )
     }
-    
+
     public var imageEdgeInsets: Lens<Object, UIEdgeInsets> {
         return Lens(
             view: { $0.imageEdgeInsets },
             set: { $1.imageEdgeInsets = $0; return $1 }
         )
     }
-    
+
     public func image(for state: UIControl.State) -> Lens<Object, UIImage?> {
         return Lens(
             view: { $0.image(for: state) },
             set: { $1.setImage($0, for: state); return $1 }
         )
     }
-    
+
     public var imageView: Lens<Object, UIImageView?> {
         return Lens(
             view: { $0.imageView },
             set: { $1 }
         )
     }
-    
+
     public func titleColor(for state: UIControl.State) -> Lens<Object, UIColor> {
         return Lens(
             view: { $0.titleColor(for: state) ?? .clear },
             set: { $1.setTitleColor($0, for: state); return $1 }
         )
     }
-    
+
     public var titleEdgeInsets: Lens<Object, UIEdgeInsets> {
         return Lens(
             view: { $0.titleEdgeInsets },
             set: { $1.titleEdgeInsets = $0; return $1 }
         )
     }
-    
+
     public var titleLabel: Lens<Object, UILabel> {
         return Lens(
             view: { $0.titleLabel! },
             set: { $1 }
         )
     }
-    
+
     public func title(for state: UIControl.State) -> Lens<Object, String?> {
         return Lens(
             view: { $0.title(for: state) },
@@ -123,7 +122,7 @@ extension Lens where Whole: UIButtonProtocol, Part == UILabel {
     public var font: Lens<Whole, UIFont> {
         return Whole.lens.titleLabel..Part.lens.font
     }
-    
+
     public var textAlignment: Lens<Whole, NSTextAlignment> {
         return Whole.lens.titleLabel..Part.lens.textAlignment
     }

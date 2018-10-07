@@ -1,4 +1,3 @@
-
 import UIKit
 
 public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, LensObject {
@@ -60,7 +59,7 @@ public extension LensHolder where Object: UIViewProtocol {
                 $1.removeConstraints($1.constraints)
                 $1.addConstraints($0)
                 return $1
-        }
+            }
         )
     }
 

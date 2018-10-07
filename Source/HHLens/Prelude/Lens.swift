@@ -36,7 +36,7 @@ public struct Lens <Whole, Part> {
                 let part = self.view(whole)
                 let newPart = rhs.set(subPart, part)
                 return self.set(newPart, whole)
-        })
+            })
     }
 }
 
@@ -112,7 +112,7 @@ public func .. <A, B, C> (lhs: Lens<A, B>, rhs: Lens<B, C>) -> Lens<A, C> {
 public func >•> <A, B, C> (lhs: Lens<A, B?>, rhs: Lens<B, C?>) -> Lens<A, C?> {
     return Lens(
         view: { a in lhs.view(a).flatMap(rhs.view) },
-        set: { (c, a) in lhs.set(lhs.view(a).map { rhs.set(c, $0) }, a) }
+        set: { c, a in lhs.set(lhs.view(a).map { rhs.set(c, $0) }, a) }
     )
 }
 
@@ -166,7 +166,7 @@ public func lens<Whole, Part>(_ keyPath: WritableKeyPath<Whole, Part>) -> Lens<W
             var copy = whole
             copy[keyPath: keyPath] = part
             return copy
-    }
+        }
     )
 }
 

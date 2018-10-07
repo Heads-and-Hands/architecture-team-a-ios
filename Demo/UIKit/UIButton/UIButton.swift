@@ -8,7 +8,7 @@
 
 import HHLens
 
-let roundedGreyButtonStyle =
+let kRoundedGreyButtonStyle =
     UIButton.lens.titleLabel.font .~ UIFont.boldSystemFont(ofSize: 24.0)
         <> UIButton.lens.titleColor(for: .normal) .~ .red
         <> UIButton.lens.backgroundColor .~ .gray

@@ -1,4 +1,3 @@
-
 import UIKit
 
 public protocol UITraitEnvironmentProtocol: NSObjectProtocol {

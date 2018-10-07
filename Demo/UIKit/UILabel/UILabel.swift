@@ -8,9 +8,7 @@
 
 import HHLens
 
-let greenLabelStyle =
+let kGreenLabelStyle =
     UILabel.lens.font .~ UIFont.boldSystemFont(ofSize: 24.0)
         <> UILabel.lens.textColor .~ .green
         <> UILabel.lens.textAlignment .~ .center
-
-
