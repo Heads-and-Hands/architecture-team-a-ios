@@ -16,7 +16,9 @@ enum ModulesUserStory: ARCHModuleID {
         switch self {
         case .main:
 #if HHModule
-            return EmptyModuleConfigurator(moduleIO: nil)
+            return ChildModuleConfigurator(moduleIO: nil)
+            //return ParentModuleConfigurator(moduleIO: nil)
+            //return EmptyModuleConfigurator(moduleIO: nil)
 #elseif HHList
             return ListConfigurator(moduleIO: nil)
 #elseif HHListExtDemo
@@ -29,6 +31,8 @@ enum ModulesUserStory: ARCHModuleID {
             return IndicationDemoConfigurator(moduleIO: nil)
 #elseif HHSkeleton
             return IndicationDemoConfigurator(moduleIO: nil)
+#elseif HHLens
+            return EmptyModuleConfigurator(moduleIO: nil)
 #endif
         }
     }
