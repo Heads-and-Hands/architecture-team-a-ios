@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol ARCHRouterOptions {
-    typealias Transition = (from: AnyObject, to: AnyObject)
+    typealias Transition = (from: AnyObject?, to: AnyObject)
     func proccess(transition: Transition, animated: Bool) -> Transition
 }
 
@@ -20,7 +20,7 @@ public protocol ARCHRouter: class {
 public extension ARCHRouter {
 
     func transit(from: ARCHRouter?, options: [ARCHRouterOptions], animated: Bool) {
-        let transition = (from as AnyObject, self as AnyObject)
+        let transition = (from as AnyObject?, self as AnyObject)
         _ = options.reduce(transition) { $1.proccess(transition: $0, animated: animated) }
     }
 }
