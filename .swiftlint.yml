@@ -3,6 +3,7 @@
 excluded:
   - Carthage
   - HHTemplates
+  - Source/HHLens
 
 opt_in_rules:
   - array_init
