@@ -34,13 +34,13 @@ public extension ARCHModuleID {
 
 public extension ARCHModuleID {
 
-    func push(from: ARCHRouter, animated: Bool) {
+    func push(from: ARCHRouter?, animated: Bool) {
         configurator.router.transit(from: from,
                                     options: [ARCHRouterPushOptions()],
                                     animated: animated)
     }
 
-    func present(from: ARCHRouter, animated: Bool) {
+    func present(from: ARCHRouter?, animated: Bool) {
         configurator.router.transit(from: from,
                                     options: [ARCHRouterPresentOptions()],
                                     animated: animated)
