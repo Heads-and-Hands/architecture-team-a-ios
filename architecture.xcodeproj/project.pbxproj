@@ -294,7 +294,16 @@
 		9C1418072146B57C009F1073 /* ChildModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */; };
 		9C1418082146B57C009F1073 /* ChildModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418032146B57C009F1073 /* ChildModuleState.swift */; };
 		9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14180A2146B6EC009F1073 /* ParentView.swift */; };
-		9CF7224A2147BB0500DE0915 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF722492147BB0500DE0915 /* ChildView.swift */; };
+		9C1E4FC1216CECFE0087E043 /* HHInputField.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C1E4FBF216CECFE0087E043 /* HHInputField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C1E4FC4216CECFE0087E043 /* HHInputField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1E4FBD216CECFE0087E043 /* HHInputField.framework */; };
+		9C1E4FC5216CECFE0087E043 /* HHInputField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1E4FBD216CECFE0087E043 /* HHInputField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C1E4FC9216CED0B0087E043 /* ARCHInputFieldConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E4FAE216CEADB0087E043 /* ARCHInputFieldConfigurator.swift */; };
+		9C1E4FCA216CED0B0087E043 /* ARCHInputFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E4FB0216CEB050087E043 /* ARCHInputFieldViewController.swift */; };
+		9C1E4FCB216CED0B0087E043 /* ARCHInputFieldEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E4FB2216CEB150087E043 /* ARCHInputFieldEventHandler.swift */; };
+		9C1E4FCC216CED0B0087E043 /* ARCHInputFieldModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E4FB4216CEB300087E043 /* ARCHInputFieldModuleIO.swift */; };
+		9C1E4FCD216CED0B0087E043 /* ARCHInputFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E4FB6216CEB400087E043 /* ARCHInputFieldState.swift */; };
+		9C1E4FCE216CEF400087E043 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
+		9C1E4FD1216CF7010087E043 /* ARCHRouterBuildInOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E4FCF216CF6E60087E043 /* ARCHRouterBuildInOptions.swift */; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
 		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
@@ -322,6 +331,7 @@
 		9CF48BB12167A73B0040AE49 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAA2167A73A0040AE49 /* UIButton.swift */; };
 		9CF48BB32167A73B0040AE49 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAC2167A73A0040AE49 /* UIEdgeInsets.swift */; };
 		9CF48BB42167A73B0040AE49 /* UITraitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAD2167A73B0040AE49 /* UITraitCollection.swift */; };
+		9CF7224A2147BB0500DE0915 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF722492147BB0500DE0915 /* ChildView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -591,6 +601,13 @@
 			remoteGlobalIDString = 5072DD94211D84B800E08A92;
 			remoteInfo = HHModule;
 		};
+		9C1E4FC2216CECFE0087E043 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C1E4FBC216CECFE0087E043;
+			remoteInfo = HHInputField;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -663,6 +680,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9C1E4FC5216CECFE0087E043 /* HHInputField.framework in Embed Frameworks */,
 				5072DD9D211D84B800E08A92 /* HHModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -896,8 +914,15 @@
 		9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleConfigurator.swift; sourceTree = "<group>"; };
 		9C1418032146B57C009F1073 /* ChildModuleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleState.swift; sourceTree = "<group>"; };
 		9C14180A2146B6EC009F1073 /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
-		9CF722492147BB0500DE0915 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
-		9CF7224B2147E92100DE0915 /* INHERITANCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = INHERITANCE.md; sourceTree = "<group>"; };
+		9C1E4FAE216CEADB0087E043 /* ARCHInputFieldConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHInputFieldConfigurator.swift; sourceTree = "<group>"; };
+		9C1E4FB0216CEB050087E043 /* ARCHInputFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHInputFieldViewController.swift; sourceTree = "<group>"; };
+		9C1E4FB2216CEB150087E043 /* ARCHInputFieldEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHInputFieldEventHandler.swift; sourceTree = "<group>"; };
+		9C1E4FB4216CEB300087E043 /* ARCHInputFieldModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHInputFieldModuleIO.swift; sourceTree = "<group>"; };
+		9C1E4FB6216CEB400087E043 /* ARCHInputFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHInputFieldState.swift; sourceTree = "<group>"; };
+		9C1E4FBD216CECFE0087E043 /* HHInputField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHInputField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C1E4FBF216CECFE0087E043 /* HHInputField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHInputField.h; sourceTree = "<group>"; };
+		9C1E4FC0216CECFE0087E043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C1E4FCF216CF6E60087E043 /* ARCHRouterBuildInOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterBuildInOptions.swift; sourceTree = "<group>"; };
 		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
 		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -928,6 +953,8 @@
 		9CF48BAC2167A73A0040AE49 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		9CF48BAD2167A73B0040AE49 /* UITraitCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITraitCollection.swift; sourceTree = "<group>"; };
 		9CF48BCE2167BE0A0040AE49 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		9CF722492147BB0500DE0915 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
+		9CF7224B2147E92100DE0915 /* INHERITANCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = INHERITANCE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1027,6 +1054,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1E4FC4216CECFE0087E043 /* HHInputField.framework in Frameworks */,
 				5072DD9C211D84B800E08A92 /* HHModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1083,6 +1111,14 @@
 				50EA30382134529A00A95512 /* HHModule.framework in Frameworks */,
 				50EA30392134529A00A95512 /* HHList.framework in Frameworks */,
 				50B74A272142BA5A00F368A3 /* HHListExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1E4FBA216CECFE0087E043 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1E4FCE216CEF400087E043 /* HHModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1379,6 +1415,7 @@
 				507F14932137E67F0087DCDB /* HHIndication */,
 				50D0F3CF2146CE3E0093E07F /* HHSkeleton */,
 				9CF48B5C2167A6860040AE49 /* HHLens */,
+				9C1E4FAD216CE9D30087E043 /* HHInputField */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1432,6 +1469,7 @@
 				5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */,
 				5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */,
 				5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */,
+				9C1E4FCF216CF6E60087E043 /* ARCHRouterBuildInOptions.swift */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -1500,6 +1538,7 @@
 				507F149C2137E6B50087DCDB /* HHIndication */,
 				50D1DBAE215119F9005999F0 /* HHSkeleton */,
 				9CF48AE92167A3F60040AE49 /* HHLens */,
+				9C1E4FBE216CECFE0087E043 /* HHInputField */,
 				5093687920F683010044CA62 /* Products */,
 				5089230620FB77520032985E /* Frameworks */,
 			);
@@ -1525,6 +1564,7 @@
 				50D1DBAD215119F9005999F0 /* HHSkeleton.framework */,
 				9CF48AE82167A3F60040AE49 /* HHLens.framework */,
 				50CD79A3216A5CDC005C11A6 /* HHLensDemo.app */,
+				9C1E4FBD216CECFE0087E043 /* HHInputField.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1713,8 +1753,29 @@
 				9CF722492147BB0500DE0915 /* ChildView.swift */,
 			);
 			path = ModuleDemo;
-            sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
+		9C1E4FAD216CE9D30087E043 /* HHInputField */ = {
+			isa = PBXGroup;
+			children = (
+				9C1E4FAE216CEADB0087E043 /* ARCHInputFieldConfigurator.swift */,
+				9C1E4FB0216CEB050087E043 /* ARCHInputFieldViewController.swift */,
+				9C1E4FB2216CEB150087E043 /* ARCHInputFieldEventHandler.swift */,
+				9C1E4FB4216CEB300087E043 /* ARCHInputFieldModuleIO.swift */,
+				9C1E4FB6216CEB400087E043 /* ARCHInputFieldState.swift */,
+			);
+			path = HHInputField;
+			sourceTree = "<group>";
+		};
+		9C1E4FBE216CECFE0087E043 /* HHInputField */ = {
+			isa = PBXGroup;
+			children = (
+				9C1E4FBF216CECFE0087E043 /* HHInputField.h */,
+				9C1E4FC0216CECFE0087E043 /* Info.plist */,
+			);
+			path = HHInputField;
+			sourceTree = "<group>";
+		};
 		9CF48AE92167A3F60040AE49 /* HHLens */ = {
 			isa = PBXGroup;
 			children = (
@@ -1845,6 +1906,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				50D1DBB1215119F9005999F0 /* HHSkeleton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1E4FB8216CECFE0087E043 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1E4FC1216CECFE0087E043 /* HHInputField.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2081,6 +2150,7 @@
 				5067973C212419970034CDA2 /* PBXTargetDependency */,
 				50C98564212AE9D20002EF4B /* PBXTargetDependency */,
 				507F14A12137E6B50087DCDB /* PBXTargetDependency */,
+				9C1E4FC3216CECFE0087E043 /* PBXTargetDependency */,
 			);
 			name = HHModuleDemo;
 			productName = architecture;
@@ -2199,6 +2269,24 @@
 			productReference = 50EA30442134529A00A95512 /* HHSkeletonDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9C1E4FBC216CECFE0087E043 /* HHInputField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C1E4FC6216CECFE0087E043 /* Build configuration list for PBXNativeTarget "HHInputField" */;
+			buildPhases = (
+				9C1E4FB8216CECFE0087E043 /* Headers */,
+				9C1E4FB9216CECFE0087E043 /* Sources */,
+				9C1E4FBA216CECFE0087E043 /* Frameworks */,
+				9C1E4FBB216CECFE0087E043 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHInputField;
+			productName = HHInputField;
+			productReference = 9C1E4FBD216CECFE0087E043 /* HHInputField.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		9CF48AE72167A3F60040AE49 /* HHLens */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CF48B032167A3F70040AE49 /* Build configuration list for PBXNativeTarget "HHLens" */;
@@ -2254,6 +2342,9 @@
 					50D1DBAC215119F9005999F0 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					9C1E4FBC216CECFE0087E043 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					9CF48AE72167A3F60040AE49 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -2289,6 +2380,7 @@
 				507F149A2137E6B50087DCDB /* HHIndication */,
 				50D1DBAC215119F9005999F0 /* HHSkeleton */,
 				9CF48AE72167A3F60040AE49 /* HHLens */,
+				9C1E4FBC216CECFE0087E043 /* HHInputField */,
 			);
 		};
 /* End PBXProject section */
@@ -2436,6 +2528,13 @@
 				50EA303B2134529A00A95512 /* Assets.xcassets in Resources */,
 				50EA303C2134529A00A95512 /* ExampleCell.xib in Resources */,
 				50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1E4FBB216CECFE0087E043 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2762,6 +2861,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50BC80AE211DFACE00D77262 /* ARCHViewController.swift in Sources */,
+				9C1E4FD1216CF7010087E043 /* ARCHRouterBuildInOptions.swift in Sources */,
 				50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */,
 				50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */,
 				50BC80B1211DFAD700D77262 /* ARCHWindow.swift in Sources */,
@@ -2962,6 +3062,18 @@
 				507C3FD32142AD4F00A21073 /* HeaderView.swift in Sources */,
 				507C3FD42142AF9E00A21073 /* IndicationDemoViewController.swift in Sources */,
 				507C3FD72142AFA400A21073 /* IndicationDemoModuleIO.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1E4FB9216CECFE0087E043 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1E4FCA216CED0B0087E043 /* ARCHInputFieldViewController.swift in Sources */,
+				9C1E4FCB216CED0B0087E043 /* ARCHInputFieldEventHandler.swift in Sources */,
+				9C1E4FCD216CED0B0087E043 /* ARCHInputFieldState.swift in Sources */,
+				9C1E4FC9216CED0B0087E043 /* ARCHInputFieldConfigurator.swift in Sources */,
+				9C1E4FCC216CED0B0087E043 /* ARCHInputFieldModuleIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3190,6 +3302,11 @@
 			isa = PBXTargetDependency;
 			target = 5072DD94211D84B800E08A92 /* HHModule */;
 			targetProxy = 50EA302B2134529A00A95512 /* PBXContainerItemProxy */;
+		};
+		9C1E4FC3216CECFE0087E043 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C1E4FBC216CECFE0087E043 /* HHInputField */;
+			targetProxy = 9C1E4FC2216CECFE0087E043 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4219,6 +4336,67 @@
 			};
 			name = Release;
 		};
+		9C1E4FC7216CECFE0087E043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HHInputField/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.handh.ios.HHInputField;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9C1E4FC8216CECFE0087E043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HHInputField/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.handh.ios.HHInputField;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		9CF48AFF2167A3F70040AE49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -4434,6 +4612,15 @@
 			buildConfigurations = (
 				50EA30422134529A00A95512 /* Debug */,
 				50EA30432134529A00A95512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C1E4FC6216CECFE0087E043 /* Build configuration list for PBXNativeTarget "HHInputField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C1E4FC7216CECFE0087E043 /* Debug */,
+				9C1E4FC8216CECFE0087E043 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

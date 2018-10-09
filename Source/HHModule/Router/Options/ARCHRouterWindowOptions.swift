@@ -8,17 +8,29 @@
 
 import UIKit
 
-public class ARCHRouterWindowOptions: ARCHRouterOptions {
+public class ARCHRouterBuildInOptions: ARCHRouterOptions {
 
-    public init() {}
+    private let container: UIView
+
+    public init(container: UIView) {
+        self.container = container
+    }
 
     public func proccess(transition: Transition, animated: Bool) -> Transition {
-        if let from = transition.from as? UIWindow, let to = transition.to as? UIViewController {
+        if let from = transition.from as? UIViewController, let to = transition.to as? UIViewController {
 
-            // TODO: Добавить поддержку анимации
+            to.view.translatesAutoresizingMaskIntoConstraints = false
 
-            from.rootViewController = to
-            from.makeKeyAndVisible()
+            container.addSubview(to.view)
+
+            NSLayoutConstraint.activate([
+                to.view.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+                to.view.topAnchor.constraint(equalTo: container.topAnchor),
+                to.view.rightAnchor.constraint(equalTo: container.rightAnchor),
+                to.view.bottomAnchor.constraint(equalTo: container.bottomAnchor)
+            ])
+
+            to.didMove(toParent: from)
         }
 
         return transition

@@ -7,6 +7,7 @@
 //
 
 import HHModule
+import HHInputField
 
 final class EmptyModuleConfigurator: ARCHModuleConfigurator {
     typealias ModuleIO = (EmptyModuleModuleInput) -> EmptyModuleModuleOutput?
@@ -29,6 +30,11 @@ final class EmptyModuleConfigurator: ARCHModuleConfigurator {
         }
 
         controller.output = eventHandler
+
+        ARCHInputFieldConfigurator(moduleIO: nil).router.transit(
+            from: controller,
+            options: [ARCHRouterBuildInOptions(container: controller.textFieldContainer)],
+            animated: false)
 
         return controller
     }
