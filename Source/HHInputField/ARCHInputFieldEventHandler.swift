@@ -8,7 +8,7 @@
 
 import HHModule
 
-open class ARCHInputFieldEventHandler<S: ARCHInputFieldStateProtocol>: ARCHEventHandler<S>, ARCHInputFieldViewOutput, ARCHInputFieldInput {
+open class ARCHInputFieldEventHandler: ARCHEventHandler<ARCHInputFieldState>, ARCHInputFieldViewOutput, ARCHInputFieldInput {
 
     private weak var internalModuleOutput: ARCHInputFieldOutput?
     open var moduleOutput: AnyObject? {
@@ -20,7 +20,27 @@ open class ARCHInputFieldEventHandler<S: ARCHInputFieldStateProtocol>: ARCHEvent
         }
     }
 
+    public var validator: ARCHValidatorProtocol?
+    public var formatter: ARCHTextFormatterProtocol?
+
     override open func viewIsReady() {
         super.viewIsReady()
+    }
+
+    // MARK: - ARCHInputFieldInput
+
+    public func set(state: ARCHInputFieldState) {
+        self.viewInput?.update(state: state)
+    }
+
+    // MARK: - ARCHInputFieldViewOutput
+
+    public func shouldChange(text: String) {
+
+        self.beginStateChanges()
+        self.state.value = formatter?.format(text: text) ?? text
+        self.state.validationResult = validator?
+            .validate(text: self.state.value) ?? ARCHValidationResult(isValid: true, errorDescription: "")
+        self.commitStateChanges()
     }
 }

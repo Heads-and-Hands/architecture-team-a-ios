@@ -10,10 +10,23 @@ import Foundation
 
 import HHModule
 
-public protocol ARCHInputFieldStateProtocol: ARCHState {
-}
+public class ARCHInputFieldState: ARCHState {
 
-public struct ARCHInputFieldState: ARCHInputFieldStateProtocol {
+    public var validationResult: ARCHValidationResult = ARCHValidationResult(isValid: true, errorDescription: "")
+    public var value: String = "Value"
+    public var placeholder: String = "Placeholder"
+    public var label: String = "Label"
 
-    public init() {}
+    // MARK: - Initializer
+
+    required public init() {}
+
+    // MARK: - Public
+
+    public func update(with state: ARCHInputFieldState) {
+        self.validationResult = state.validationResult
+        self.value = state.label
+        self.placeholder = state.placeholder
+        self.label = state.label
+    }
 }

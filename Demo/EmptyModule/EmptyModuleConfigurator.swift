@@ -31,7 +31,7 @@ final class EmptyModuleConfigurator: ARCHModuleConfigurator {
 
         controller.output = eventHandler
 
-        ARCHInputFieldConfigurator(moduleIO: nil).router.transit(
+        ARCHInputFieldConfigurator(moduleIO: nil, viewController: nil).router.transit(
             from: controller,
             options: [ARCHRouterBuildInOptions(container: controller.textFieldContainer)],
             animated: false)

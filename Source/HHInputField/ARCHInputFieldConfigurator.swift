@@ -12,14 +12,17 @@ open class ARCHInputFieldConfigurator: ARCHModuleConfigurator {
     public typealias ModuleIO = (ARCHInputFieldInput) -> ARCHInputFieldOutput?
 
     let moduleIO: ModuleIO?
+    let viewController: ARCHInputFieldViewController<ARCHInputFieldEventHandler>?
 
-    public init(moduleIO: ModuleIO?) {
+    public init(moduleIO: ModuleIO?,
+                viewController: ARCHInputFieldViewController<ARCHInputFieldEventHandler>?) {
         self.moduleIO = moduleIO
+        self.viewController = viewController
     }
 
     public var router: ARCHRouter {
-        let controller = ARCHInputFieldViewController<ARCHInputFieldEventHandler<ARCHInputFieldState>, ARCHInputFieldState >()
-        let eventHandler = ARCHInputFieldEventHandler<ARCHInputFieldState>()
+        let controller = viewController ?? ARCHInputFieldViewController<ARCHInputFieldEventHandler>()
+        let eventHandler = ARCHInputFieldEventHandler()
         eventHandler.viewInput = controller
 
         if let moduleIO = moduleIO {

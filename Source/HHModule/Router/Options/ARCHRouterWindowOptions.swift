@@ -1,36 +1,24 @@
 //
-//  ARCHRouterWindowOptions.swift
-//  architectureTeamA
+//  ARCHRouterBuildInOptions.swift
+//  HHModuleDemo
 //
-//  Created by basalaev on 11.07.2018.
-//  Copyright © 2018 Heads and Hands. All rights reserved.
+//  Created by Eugene Sorokin on 09/10/2018.
+//  Copyright © 2018 HandH. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-public class ARCHRouterBuildInOptions: ARCHRouterOptions {
+public class ARCHRouterWindowOptions: ARCHRouterOptions {
 
-    private let container: UIView
-
-    public init(container: UIView) {
-        self.container = container
-    }
+    public init() {}
 
     public func proccess(transition: Transition, animated: Bool) -> Transition {
-        if let from = transition.from as? UIViewController, let to = transition.to as? UIViewController {
+        if let from = transition.from as? UIWindow, let to = transition.to as? UIViewController {
 
-            to.view.translatesAutoresizingMaskIntoConstraints = false
+            // TODO: Добавить поддержку анимации
 
-            container.addSubview(to.view)
-
-            NSLayoutConstraint.activate([
-                to.view.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-                to.view.topAnchor.constraint(equalTo: container.topAnchor),
-                to.view.rightAnchor.constraint(equalTo: container.rightAnchor),
-                to.view.bottomAnchor.constraint(equalTo: container.bottomAnchor)
-            ])
-
-            to.didMove(toParent: from)
+            from.rootViewController = to
+            from.makeKeyAndVisible()
         }
 
         return transition

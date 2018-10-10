@@ -11,9 +11,13 @@ import Foundation
 import HHModule
 
 public protocol ARCHInputFieldViewOutput: ACRHViewOutput {
+
+    func shouldChange(text: String)
 }
 
 public protocol ARCHInputFieldInput {
+
+    func set(state: ARCHInputFieldState)
 }
 
 public protocol ARCHInputFieldOutput: class {
