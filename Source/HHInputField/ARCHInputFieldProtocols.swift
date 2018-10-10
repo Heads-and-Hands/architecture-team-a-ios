@@ -8,15 +8,20 @@
 
 import Foundation
 
-public struct ARCHValidationResult {
+public struct ARCHTextValidationResult {
 
-    var isValid: Bool
-    var errorDescription: String
+    public var isValid: Bool
+    public var errorDescription: String
+
+    public init(isValid: Bool, error: String) {
+        self.isValid = isValid
+        self.errorDescription = error
+    }
 }
 
-public protocol ARCHValidatorProtocol {
+public protocol ARCHTextValidatorProtocol {
 
-    func validate(text: String) -> ARCHValidationResult
+    func validate(text: String) -> ARCHTextValidationResult
 }
 
 public protocol ARCHTextFormatterProtocol {

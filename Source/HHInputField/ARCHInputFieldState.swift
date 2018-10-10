@@ -12,10 +12,10 @@ import HHModule
 
 public class ARCHInputFieldState: ARCHState {
 
-    public var validationResult: ARCHValidationResult = ARCHValidationResult(isValid: true, errorDescription: "")
-    public var value: String = "Value"
-    public var placeholder: String = "Placeholder"
-    public var label: String = "Label"
+    public var validationResult: ARCHTextValidationResult = ARCHTextValidationResult(isValid: true, error: "")
+    public var value: String = ""
+    public var placeholder: String = ""
+    public var label: String = ""
 
     // MARK: - Initializer
 
@@ -25,7 +25,7 @@ public class ARCHInputFieldState: ARCHState {
 
     public func update(with state: ARCHInputFieldState) {
         self.validationResult = state.validationResult
-        self.value = state.label
+        self.value = state.value
         self.placeholder = state.placeholder
         self.label = state.label
     }

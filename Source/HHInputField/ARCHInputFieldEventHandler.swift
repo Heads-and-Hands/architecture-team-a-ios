@@ -10,17 +10,10 @@ import HHModule
 
 open class ARCHInputFieldEventHandler: ARCHEventHandler<ARCHInputFieldState>, ARCHInputFieldViewOutput, ARCHInputFieldInput {
 
-    private weak var internalModuleOutput: ARCHInputFieldOutput?
-    open var moduleOutput: AnyObject? {
-        set {
-            internalModuleOutput = newValue as? ARCHInputFieldOutput
-        }
-        get {
-            return internalModuleOutput
-        }
-    }
+    public weak var moduleOutput: ARCHInputFieldOutput?
 
-    public var validator: ARCHValidatorProtocol?
+    public var id = UUID().uuidString
+    public var validator: ARCHTextValidatorProtocol?
     public var formatter: ARCHTextFormatterProtocol?
 
     override open func viewIsReady() {
@@ -30,17 +23,21 @@ open class ARCHInputFieldEventHandler: ARCHEventHandler<ARCHInputFieldState>, AR
     // MARK: - ARCHInputFieldInput
 
     public func set(state: ARCHInputFieldState) {
-        self.viewInput?.update(state: state)
+        self.state.update(with: state)
     }
 
     // MARK: - ARCHInputFieldViewOutput
 
     public func shouldChange(text: String) {
 
+        let result = formatter?.format(text: text) ?? text
+        let validationResult = validator?.validate(text: self.state.value) ?? ARCHTextValidationResult(isValid: true, error: "")
+
         self.beginStateChanges()
-        self.state.value = formatter?.format(text: text) ?? text
-        self.state.validationResult = validator?
-            .validate(text: self.state.value) ?? ARCHValidationResult(isValid: true, errorDescription: "")
+        self.state.value = result
+        self.state.validationResult = validationResult
         self.commitStateChanges()
+
+        moduleOutput?.didChangeValue(result, isValid: validationResult.isValid, for: id)
     }
 }

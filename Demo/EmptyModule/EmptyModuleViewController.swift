@@ -13,7 +13,9 @@ import HHLens
 
 final class EmptyModuleViewController: ARCHViewController<EmptyModuleState, EmptyModuleEventHandler> {
 
-    let textFieldContainer = UIView()
+    let nameFieldContainer = UIView()
+    let emailFieldContainer = UIView()
+    let phoneFieldContainer = UIView()
 
     private let stackView = UIStackView()
     private let label = Label()
@@ -47,7 +49,7 @@ final class EmptyModuleViewController: ARCHViewController<EmptyModuleState, Empt
 
         var views: [UIView] = []
 
-        views = [button, label, textFieldContainer]
+        views = [button, label, nameFieldContainer, emailFieldContainer, phoneFieldContainer]
 
         views.forEach {
             self.stackView.addArrangedSubview($0)

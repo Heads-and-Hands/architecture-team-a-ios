@@ -8,6 +8,10 @@
 
 import HHModule
 
+enum FieldTag: Int {
+    case name, email, phone
+}
+
 struct EmptyModuleState: ARCHState {
     var text: String = ""
 }

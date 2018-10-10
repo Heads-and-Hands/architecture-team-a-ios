@@ -285,6 +285,10 @@
 		50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C0455AF216DD36A007F5D4D /* ARCHInputFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E4FB0216CEB050087E043 /* ARCHInputFieldViewController.swift */; };
 		9C0455B2216DF61F007F5D4D /* ARCHInputFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0455B0216DF3A4007F5D4D /* ARCHInputFieldProtocols.swift */; };
+		9C0455B5216E2872007F5D4D /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0455B4216E2872007F5D4D /* EmailViewController.swift */; };
+		9C0455BA216E3540007F5D4D /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0455B9216E3540007F5D4D /* EmailValidator.swift */; };
+		9C0455BC216E47C9007F5D4D /* PhoneValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0455BB216E47C9007F5D4D /* PhoneValidator.swift */; };
+		9C0455BE216E488C007F5D4D /* EmptyTextValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0455BD216E488C007F5D4D /* EmptyTextValidator.swift */; };
 		9C1417F42146B23C009F1073 /* ParentModuleEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417EF2146B23B009F1073 /* ParentModuleEventHandler.swift */; };
 		9C1417F52146B23C009F1073 /* ParentModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F02146B23B009F1073 /* ParentModuleProtocols.swift */; };
 		9C1417F62146B23C009F1073 /* ParentModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F12146B23C009F1073 /* ParentModuleViewController.swift */; };
@@ -905,6 +909,10 @@
 		50FA81F4211AE47C00ADA769 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHCellViewModel.swift; sourceTree = "<group>"; };
 		9C0455B0216DF3A4007F5D4D /* ARCHInputFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHInputFieldProtocols.swift; sourceTree = "<group>"; };
+		9C0455B4216E2872007F5D4D /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		9C0455B9216E3540007F5D4D /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		9C0455BB216E47C9007F5D4D /* PhoneValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneValidator.swift; sourceTree = "<group>"; };
+		9C0455BD216E488C007F5D4D /* EmptyTextValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTextValidator.swift; sourceTree = "<group>"; };
 		9C1417EF2146B23B009F1073 /* ParentModuleEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentModuleEventHandler.swift; sourceTree = "<group>"; };
 		9C1417F02146B23B009F1073 /* ParentModuleProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentModuleProtocols.swift; sourceTree = "<group>"; };
 		9C1417F12146B23C009F1073 /* ParentModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentModuleViewController.swift; sourceTree = "<group>"; };
@@ -1724,6 +1732,24 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		9C0455B3216E2846007F5D4D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C0455B4216E2872007F5D4D /* EmailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9C0455B8216E3525007F5D4D /* TextValidators */ = {
+			isa = PBXGroup;
+			children = (
+				9C0455B9216E3540007F5D4D /* EmailValidator.swift */,
+				9C0455BB216E47C9007F5D4D /* PhoneValidator.swift */,
+				9C0455BD216E488C007F5D4D /* EmptyTextValidator.swift */,
+			);
+			path = TextValidators;
+			sourceTree = "<group>";
+		};
 		9C1417EE2146B1EF009F1073 /* ParentModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -1751,6 +1777,8 @@
 		9C1418092146B6A3009F1073 /* ModuleDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9C0455B8216E3525007F5D4D /* TextValidators */,
+				9C0455B3216E2846007F5D4D /* ViewControllers */,
 				9C14180A2146B6EC009F1073 /* ParentView.swift */,
 				9CF722492147BB0500DE0915 /* ChildView.swift */,
 			);
@@ -2957,11 +2985,14 @@
 				9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */,
 				9C1417F42146B23C009F1073 /* ParentModuleEventHandler.swift in Sources */,
 				9C1418082146B57C009F1073 /* ChildModuleState.swift in Sources */,
+				9C0455BC216E47C9007F5D4D /* PhoneValidator.swift in Sources */,
 				5093687C20F683010044CA62 /* AppDelegate.swift in Sources */,
 				9C1417F62146B23C009F1073 /* ParentModuleViewController.swift in Sources */,
 				50EA3021213420B600A95512 /* EmptyModuleViewController.swift in Sources */,
+				9C0455BA216E3540007F5D4D /* EmailValidator.swift in Sources */,
 				9CF7224A2147BB0500DE0915 /* ChildView.swift in Sources */,
 				5089236720FC8E7B0032985E /* ModulesUserStory.swift in Sources */,
+				9C0455BE216E488C007F5D4D /* EmptyTextValidator.swift in Sources */,
 				50EA3023213420B600A95512 /* EmptyModuleModuleIO.swift in Sources */,
 				9C1418062146B57C009F1073 /* ChildModuleProtocols.swift in Sources */,
 				9C1418042146B57C009F1073 /* ChildModuleEventHandler.swift in Sources */,
@@ -2970,6 +3001,7 @@
 				9C1418052146B57C009F1073 /* ChildModuleViewController.swift in Sources */,
 				9C1417F52146B23C009F1073 /* ParentModuleProtocols.swift in Sources */,
 				50EA3026213421E800A95512 /* Label.swift in Sources */,
+				9C0455B5216E2872007F5D4D /* EmailViewController.swift in Sources */,
 				50EA3024213420B600A95512 /* EmptyModuleState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

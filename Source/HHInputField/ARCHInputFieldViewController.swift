@@ -12,34 +12,35 @@ import UIKit
 open class ARCHInputFieldViewController<Out: ARCHInputFieldViewOutput>:
 ARCHViewController<ARCHInputFieldState, Out>, UITextFieldDelegate {
 
+    public let textFieldContainer = UIView()
     public let textField = UITextField()
     public let label = UILabel()
 
+    public var textFieldInsets = UIEdgeInsets() {
+        didSet {
+            configure(textField: textField)
+        }
+    }
+
     private var currentRange: NSRange?
     private var oldLength: Int = 0
-
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     override open func prepareRootView() {
         super.prepareRootView()
 
         configure(textField: textField)
         configure(label: label)
-        configureLayout(label: label, textField: textField)
+        configureLayout(label: label, textFieldContainer: textFieldContainer)
     }
 
     open override func render(state: ARCHInputFieldState) {
         super.render(state: state)
 
         textField.text = state.value
-        textField.placeholder = state.placeholder
-
         label.text = state.label
 
-        render(validationResult: state.validationResult)
-
+        configure(placeholder: state.placeholder)
+        configure(for: state.validationResult)
         moveCursorIfNeeded()
     }
 
@@ -47,14 +48,33 @@ ARCHViewController<ARCHInputFieldState, Out>, UITextFieldDelegate {
 
     open func configure(textField: UITextField) {
         textField.delegate = self
+
+        textField.translatesAutoresizingMaskIntoConstraints = false
+
+        textField.removeFromSuperview()
+
+        textFieldContainer.addSubview(textField)
+
+        NSLayoutConstraint.activate([
+            textField.leadingAnchor.constraint(equalTo: textFieldContainer.leadingAnchor, constant: textFieldInsets.left),
+            textField.trailingAnchor.constraint(equalTo: textFieldContainer.trailingAnchor, constant: -textFieldInsets.right),
+            textField.topAnchor.constraint(equalTo: textFieldContainer.topAnchor, constant: textFieldInsets.top),
+            textField.bottomAnchor.constraint(equalTo: textFieldContainer.bottomAnchor, constant: -textFieldInsets.bottom)
+        ])
+
+        textFieldContainer.setNeedsLayout()
     }
 
     open func configure(label: UILabel) {
     }
 
-    open func configureLayout(label: UILabel, textField: UITextField) {
+    open func configure(placeholder: String) {
+        textField.placeholder = placeholder
+    }
 
-        [label, textField].forEach({
+    open func configureLayout(label: UILabel, textFieldContainer: UIView) {
+
+        [label, textFieldContainer].forEach({
             $0.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview($0)
         })
@@ -64,16 +84,16 @@ ARCHViewController<ARCHInputFieldState, Out>, UITextFieldDelegate {
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             label.trailingAnchor.constraint(equalTo: view.trailingAnchor),
 
-            textField.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 8.0),
-            textField.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            textField.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            textField.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            textFieldContainer.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 8.0),
+            textFieldContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            textFieldContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            textFieldContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
         view.layoutIfNeeded()
     }
 
-    open func render(validationResult: ARCHValidationResult) {
+    open func configure(for validationResult: ARCHTextValidationResult) {
     }
 
     // MARK: - Private

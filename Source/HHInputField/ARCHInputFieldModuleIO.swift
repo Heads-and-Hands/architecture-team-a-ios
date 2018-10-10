@@ -17,8 +17,14 @@ public protocol ARCHInputFieldViewOutput: ACRHViewOutput {
 
 public protocol ARCHInputFieldInput {
 
+    var id: String { get set }
+    var validator: ARCHTextValidatorProtocol? { get set }
+    var formatter: ARCHTextFormatterProtocol? { get set }
+
     func set(state: ARCHInputFieldState)
 }
 
 public protocol ARCHInputFieldOutput: class {
+
+    func didChangeValue(_ value: String, isValid: Bool, for id: String)
 }

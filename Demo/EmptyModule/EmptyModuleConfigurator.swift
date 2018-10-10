@@ -31,9 +31,46 @@ final class EmptyModuleConfigurator: ARCHModuleConfigurator {
 
         controller.output = eventHandler
 
-        ARCHInputFieldConfigurator(moduleIO: nil, viewController: nil).router.transit(
+        ARCHInputFieldConfigurator(moduleIO: { (moduleInput: ARCHInputFieldInput) -> ARCHInputFieldOutput? in
+            var input = moduleInput
+            let state = ARCHInputFieldState()
+            state.label = "Email"
+            state.placeholder = "Enter your email"
+            input.set(state: state)
+            input.validator = EmailTextValidator()
+            eventHandler.register(fieldId: input.id, as: .email)
+            return eventHandler
+        }, viewController: TextFieldController()).router.transit(
             from: controller,
-            options: [ARCHRouterBuildInOptions(container: controller.textFieldContainer)],
+            options: [ARCHRouterBuildInOptions(container: controller.emailFieldContainer)],
+            animated: false)
+
+        ARCHInputFieldConfigurator(moduleIO: { (moduleInput: ARCHInputFieldInput) -> ARCHInputFieldOutput? in
+            var input = moduleInput
+            let state = ARCHInputFieldState()
+            state.label = "Name"
+            state.placeholder = "Enter your name"
+            input.set(state: state)
+            input.validator = EmptyTextValidator()
+            eventHandler.register(fieldId: input.id, as: .name)
+            return eventHandler
+        }, viewController: TextFieldController()).router.transit(
+            from: controller,
+            options: [ARCHRouterBuildInOptions(container: controller.nameFieldContainer)],
+            animated: false)
+
+        ARCHInputFieldConfigurator(moduleIO: { (moduleInput: ARCHInputFieldInput) -> ARCHInputFieldOutput? in
+            var input = moduleInput
+            let state = ARCHInputFieldState()
+            state.label = "Phone"
+            state.placeholder = "Enter your phone"
+            input.set(state: state)
+            input.validator = PhoneTextValidator()
+            eventHandler.register(fieldId: input.id, as: .name)
+            return eventHandler
+        }, viewController: TextFieldController()).router.transit(
+            from: controller,
+            options: [ARCHRouterBuildInOptions(container: controller.phoneFieldContainer)],
             animated: false)
 
         return controller
