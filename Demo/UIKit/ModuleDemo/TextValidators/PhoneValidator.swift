@@ -17,7 +17,7 @@ class PhoneTextValidator: ARCHTextValidatorProtocol {
         }
 
         let phoneRegexp = """
-^\\s*(?:\\+?(\\d{1}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$
+^\\s*(?:\\+?(\\d{1}))?[-. (]*(\\d{3})[-. )]*(\\d{4})[-. ]*[-. )]*(\\d{2})[-. ]*[-. )]*(\\d{2})[-. ]*\\s*$
 """
         let phonePredicate = NSPredicate(format: "SELF MATCHES %@", phoneRegexp)
 

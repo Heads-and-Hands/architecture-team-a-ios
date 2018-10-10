@@ -289,6 +289,7 @@
 		9C0455BA216E3540007F5D4D /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0455B9216E3540007F5D4D /* EmailValidator.swift */; };
 		9C0455BC216E47C9007F5D4D /* PhoneValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0455BB216E47C9007F5D4D /* PhoneValidator.swift */; };
 		9C0455BE216E488C007F5D4D /* EmptyTextValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0455BD216E488C007F5D4D /* EmptyTextValidator.swift */; };
+		9C0455C1216E4D7F007F5D4D /* PhoneTextFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0455C0216E4D7F007F5D4D /* PhoneTextFormatter.swift */; };
 		9C1417F42146B23C009F1073 /* ParentModuleEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417EF2146B23B009F1073 /* ParentModuleEventHandler.swift */; };
 		9C1417F52146B23C009F1073 /* ParentModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F02146B23B009F1073 /* ParentModuleProtocols.swift */; };
 		9C1417F62146B23C009F1073 /* ParentModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F12146B23C009F1073 /* ParentModuleViewController.swift */; };
@@ -913,6 +914,7 @@
 		9C0455B9216E3540007F5D4D /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		9C0455BB216E47C9007F5D4D /* PhoneValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneValidator.swift; sourceTree = "<group>"; };
 		9C0455BD216E488C007F5D4D /* EmptyTextValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTextValidator.swift; sourceTree = "<group>"; };
+		9C0455C0216E4D7F007F5D4D /* PhoneTextFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextFormatter.swift; sourceTree = "<group>"; };
 		9C1417EF2146B23B009F1073 /* ParentModuleEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentModuleEventHandler.swift; sourceTree = "<group>"; };
 		9C1417F02146B23B009F1073 /* ParentModuleProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentModuleProtocols.swift; sourceTree = "<group>"; };
 		9C1417F12146B23C009F1073 /* ParentModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentModuleViewController.swift; sourceTree = "<group>"; };
@@ -1750,6 +1752,14 @@
 			path = TextValidators;
 			sourceTree = "<group>";
 		};
+		9C0455BF216E4D62007F5D4D /* TextFormatters */ = {
+			isa = PBXGroup;
+			children = (
+				9C0455C0216E4D7F007F5D4D /* PhoneTextFormatter.swift */,
+			);
+			path = TextFormatters;
+			sourceTree = "<group>";
+		};
 		9C1417EE2146B1EF009F1073 /* ParentModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -1777,6 +1787,7 @@
 		9C1418092146B6A3009F1073 /* ModuleDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9C0455BF216E4D62007F5D4D /* TextFormatters */,
 				9C0455B8216E3525007F5D4D /* TextValidators */,
 				9C0455B3216E2846007F5D4D /* ViewControllers */,
 				9C14180A2146B6EC009F1073 /* ParentView.swift */,
@@ -3003,6 +3014,7 @@
 				50EA3026213421E800A95512 /* Label.swift in Sources */,
 				9C0455B5216E2872007F5D4D /* EmailViewController.swift in Sources */,
 				50EA3024213420B600A95512 /* EmptyModuleState.swift in Sources */,
+				9C0455C1216E4D7F007F5D4D /* PhoneTextFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

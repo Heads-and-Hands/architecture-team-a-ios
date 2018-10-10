@@ -66,6 +66,7 @@ final class EmptyModuleConfigurator: ARCHModuleConfigurator {
             state.placeholder = "Enter your phone"
             input.set(state: state)
             input.validator = PhoneTextValidator()
+            input.formatter = PhoneTextFormatter()
             eventHandler.register(fieldId: input.id, as: .name)
             return eventHandler
         }, viewController: TextFieldController()).router.transit(

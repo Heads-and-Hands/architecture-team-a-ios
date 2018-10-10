@@ -31,7 +31,7 @@ open class ARCHInputFieldEventHandler: ARCHEventHandler<ARCHInputFieldState>, AR
     public func shouldChange(text: String) {
 
         let result = formatter?.format(text: text) ?? text
-        let validationResult = validator?.validate(text: self.state.value) ?? ARCHTextValidationResult(isValid: true, error: "")
+        let validationResult = validator?.validate(text: result) ?? ARCHTextValidationResult(isValid: true, error: "")
 
         self.beginStateChanges()
         self.state.value = result
