@@ -22,6 +22,8 @@ public protocol ARCHInputFieldInput {
     var formatter: ARCHTextFormatterProtocol? { get set }
 
     func set(state: ARCHInputFieldState)
+
+    func set(value: String)
 }
 
 public protocol ARCHInputFieldOutput: class {

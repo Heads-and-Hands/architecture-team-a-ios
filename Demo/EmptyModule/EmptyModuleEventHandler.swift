@@ -13,28 +13,34 @@ final class EmptyModuleEventHandler: ARCHEventHandler<EmptyModuleState>, EmptyMo
 
     weak var moduleOutput: EmptyModuleModuleOutput?
 
-    var fieldsTags: [String: FieldTag] = [:]
-
-    private var fields: [FieldTag: (String, Bool)] = [:]
+    private var fields: [FieldTag: Field] = [:]
 
     override func viewIsReady() {
         super.viewIsReady()
 
         state.text = "Hello world"
+
+        set(value: "Some Name", for: .name)
     }
 
     // MARK: - Public
 
-    public func register(fieldId id: String, as field: FieldTag) {
-        fieldsTags[id] = field
+    public func register(field: FieldTag, id: String, input: ARCHInputFieldInput?) {
+        fields[field] = Field(id: id, input: input, value: ("", true))
     }
 
     // MARK: - ARCHInputFieldOutput
 
     func didChangeValue(_ value: String, isValid: Bool, for id: String) {
-        guard let tag = fieldsTags[id] else {
+        guard let tag = fields.first(where: { $1.id == id })?.key else {
             return
         }
-        fields[tag] = (value, isValid)
+        fields[tag]?.value = (value, isValid)
+    }
+
+    // MARK: - Private
+
+    private func set(value: String, for field: FieldTag) {
+        fields[field]?.input?.set(value: value)
     }
 }

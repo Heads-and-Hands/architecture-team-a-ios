@@ -38,7 +38,7 @@ final class EmptyModuleConfigurator: ARCHModuleConfigurator {
             state.placeholder = "Enter your email"
             input.set(state: state)
             input.validator = EmailTextValidator()
-            eventHandler.register(fieldId: input.id, as: .email)
+            eventHandler.register(field: .name, id: input.id, input: input)
             return eventHandler
         }, viewController: TextFieldController()).router.transit(
             from: controller,
@@ -52,7 +52,7 @@ final class EmptyModuleConfigurator: ARCHModuleConfigurator {
             state.placeholder = "Enter your name"
             input.set(state: state)
             input.validator = EmptyTextValidator()
-            eventHandler.register(fieldId: input.id, as: .name)
+            eventHandler.register(field: .email, id: input.id, input: input)
             return eventHandler
         }, viewController: TextFieldController()).router.transit(
             from: controller,
@@ -67,7 +67,7 @@ final class EmptyModuleConfigurator: ARCHModuleConfigurator {
             input.set(state: state)
             input.validator = PhoneTextValidator()
             input.formatter = PhoneTextFormatter()
-            eventHandler.register(fieldId: input.id, as: .name)
+            eventHandler.register(field: .phone, id: input.id, input: input)
             return eventHandler
         }, viewController: TextFieldController()).router.transit(
             from: controller,

@@ -24,6 +24,12 @@ open class ARCHInputFieldEventHandler: ARCHEventHandler<ARCHInputFieldState>, AR
 
     public func set(state: ARCHInputFieldState) {
         self.state.update(with: state)
+        self.viewInput?.update(state: self.state)
+    }
+
+    public func set(value: String) {
+        self.state.value = value
+        self.viewInput?.update(state: self.state)
     }
 
     // MARK: - ARCHInputFieldViewOutput
