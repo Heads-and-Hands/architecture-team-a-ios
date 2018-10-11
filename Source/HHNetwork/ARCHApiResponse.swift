@@ -9,8 +9,8 @@
 import Foundation
 
 public struct ARCHApiResponse<T: Codable>: Codable {
-    public var code: Int
-    public var name: String
-    public var message: String
+    public var code: Int?
+    public var name: String?
+    public var message: String?
     public var data: T?
 }
