@@ -294,7 +294,18 @@
 		9C1418072146B57C009F1073 /* ChildModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */; };
 		9C1418082146B57C009F1073 /* ChildModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418032146B57C009F1073 /* ChildModuleState.swift */; };
 		9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14180A2146B6EC009F1073 /* ParentView.swift */; };
-		9CF7224A2147BB0500DE0915 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF722492147BB0500DE0915 /* ChildView.swift */; };
+		9C1B9AD1216F60ED00DB35A4 /* HHRequestStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C1B9ACF216F60ED00DB35A4 /* HHRequestStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C1B9AD4216F60ED00DB35A4 /* HHRequestStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */; };
+		9C1B9AD5216F60ED00DB35A4 /* HHRequestStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C1B9AD9216F60F800DB35A4 /* ARCHRequestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AB4216F5FDD00DB35A4 /* ARCHRequestStorage.swift */; };
+		9C1B9ADA216F60F800DB35A4 /* ARCHStorageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AB6216F5FE200DB35A4 /* ARCHStorageRequest.swift */; };
+		9C1B9ADB216F60F800DB35A4 /* ARCHStorageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AB7216F5FE200DB35A4 /* ARCHStorageResponse.swift */; };
+		9C1B9ADC216F60F800DB35A4 /* ARCHRequestStorageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABC216F5FE700DB35A4 /* ARCHRequestStorageConfigurator.swift */; };
+		9C1B9ADD216F60F800DB35A4 /* ARCHRequestStorageEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABE216F5FE700DB35A4 /* ARCHRequestStorageEventHandler.swift */; };
+		9C1B9ADE216F60F800DB35A4 /* ARCHRequestStorageModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABB216F5FE600DB35A4 /* ARCHRequestStorageModuleIO.swift */; };
+		9C1B9ADF216F60F800DB35A4 /* ARCHRequestStorageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABD216F5FE700DB35A4 /* ARCHRequestStorageState.swift */; };
+		9C1B9AE0216F60F800DB35A4 /* ARCHRequestStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABA216F5FE600DB35A4 /* ARCHRequestStorageViewController.swift */; };
+		9C1B9AE1216F60FC00DB35A4 /* ARCHRequestStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AC4216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodeld */; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
 		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
@@ -322,6 +333,7 @@
 		9CF48BB12167A73B0040AE49 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAA2167A73A0040AE49 /* UIButton.swift */; };
 		9CF48BB32167A73B0040AE49 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAC2167A73A0040AE49 /* UIEdgeInsets.swift */; };
 		9CF48BB42167A73B0040AE49 /* UITraitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAD2167A73B0040AE49 /* UITraitCollection.swift */; };
+		9CF7224A2147BB0500DE0915 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF722492147BB0500DE0915 /* ChildView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -591,6 +603,13 @@
 			remoteGlobalIDString = 5072DD94211D84B800E08A92;
 			remoteInfo = HHModule;
 		};
+		9C1B9AD2216F60ED00DB35A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C1B9ACC216F60ED00DB35A4;
+			remoteInfo = HHRequestStorage;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -663,6 +682,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9C1B9AD5216F60ED00DB35A4 /* HHRequestStorage.framework in Embed Frameworks */,
 				5072DD9D211D84B800E08A92 /* HHModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -896,8 +916,18 @@
 		9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleConfigurator.swift; sourceTree = "<group>"; };
 		9C1418032146B57C009F1073 /* ChildModuleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleState.swift; sourceTree = "<group>"; };
 		9C14180A2146B6EC009F1073 /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
-		9CF722492147BB0500DE0915 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
-		9CF7224B2147E92100DE0915 /* INHERITANCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = INHERITANCE.md; sourceTree = "<group>"; };
+		9C1B9AB4216F5FDD00DB35A4 /* ARCHRequestStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorage.swift; sourceTree = "<group>"; };
+		9C1B9AB6216F5FE200DB35A4 /* ARCHStorageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStorageRequest.swift; sourceTree = "<group>"; };
+		9C1B9AB7216F5FE200DB35A4 /* ARCHStorageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStorageResponse.swift; sourceTree = "<group>"; };
+		9C1B9ABA216F5FE600DB35A4 /* ARCHRequestStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageViewController.swift; sourceTree = "<group>"; };
+		9C1B9ABB216F5FE600DB35A4 /* ARCHRequestStorageModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageModuleIO.swift; sourceTree = "<group>"; };
+		9C1B9ABC216F5FE700DB35A4 /* ARCHRequestStorageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageConfigurator.swift; sourceTree = "<group>"; };
+		9C1B9ABD216F5FE700DB35A4 /* ARCHRequestStorageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageState.swift; sourceTree = "<group>"; };
+		9C1B9ABE216F5FE700DB35A4 /* ARCHRequestStorageEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageEventHandler.swift; sourceTree = "<group>"; };
+		9C1B9AC5216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ARCHRequestStorage.xcdatamodel; sourceTree = "<group>"; };
+		9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHRequestStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C1B9ACF216F60ED00DB35A4 /* HHRequestStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHRequestStorage.h; sourceTree = "<group>"; };
+		9C1B9AD0216F60ED00DB35A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
 		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -928,6 +958,8 @@
 		9CF48BAC2167A73A0040AE49 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		9CF48BAD2167A73B0040AE49 /* UITraitCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITraitCollection.swift; sourceTree = "<group>"; };
 		9CF48BCE2167BE0A0040AE49 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		9CF722492147BB0500DE0915 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
+		9CF7224B2147E92100DE0915 /* INHERITANCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = INHERITANCE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1027,6 +1059,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1B9AD4216F60ED00DB35A4 /* HHRequestStorage.framework in Frameworks */,
 				5072DD9C211D84B800E08A92 /* HHModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1083,6 +1116,13 @@
 				50EA30382134529A00A95512 /* HHModule.framework in Frameworks */,
 				50EA30392134529A00A95512 /* HHList.framework in Frameworks */,
 				50B74A272142BA5A00F368A3 /* HHListExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1B9ACA216F60ED00DB35A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1379,6 +1419,7 @@
 				507F14932137E67F0087DCDB /* HHIndication */,
 				50D0F3CF2146CE3E0093E07F /* HHSkeleton */,
 				9CF48B5C2167A6860040AE49 /* HHLens */,
+				9C1B9AE2216F617500DB35A4 /* HHRequestStorage */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1500,6 +1541,7 @@
 				507F149C2137E6B50087DCDB /* HHIndication */,
 				50D1DBAE215119F9005999F0 /* HHSkeleton */,
 				9CF48AE92167A3F60040AE49 /* HHLens */,
+				9C1B9ACE216F60ED00DB35A4 /* HHRequestStorage */,
 				5093687920F683010044CA62 /* Products */,
 				5089230620FB77520032985E /* Frameworks */,
 			);
@@ -1525,6 +1567,7 @@
 				50D1DBAD215119F9005999F0 /* HHSkeleton.framework */,
 				9CF48AE82167A3F60040AE49 /* HHLens.framework */,
 				50CD79A3216A5CDC005C11A6 /* HHLensDemo.app */,
+				9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1713,8 +1756,65 @@
 				9CF722492147BB0500DE0915 /* ChildView.swift */,
 			);
 			path = ModuleDemo;
-            sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
+		9C1B9ACE216F60ED00DB35A4 /* HHRequestStorage */ = {
+			isa = PBXGroup;
+			children = (
+				9C1B9ACF216F60ED00DB35A4 /* HHRequestStorage.h */,
+				9C1B9AD0216F60ED00DB35A4 /* Info.plist */,
+			);
+			path = HHRequestStorage;
+			sourceTree = "<group>";
+		};
+		9C1B9AE2216F617500DB35A4 /* HHRequestStorage */ = {
+			isa = PBXGroup;
+			children = (
+				9C1B9AE6216F61D900DB35A4 /* Business */,
+				9C1B9AE3216F61AB00DB35A4 /* Model */,
+				9C1B9AE4216F61C800DB35A4 /* Module */,
+				9C1B9AE5216F61D000DB35A4 /* Resources */,
+			);
+			path = HHRequestStorage;
+			sourceTree = "<group>";
+		};
+		9C1B9AE3216F61AB00DB35A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C1B9AB6216F5FE200DB35A4 /* ARCHStorageRequest.swift */,
+				9C1B9AB7216F5FE200DB35A4 /* ARCHStorageResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C1B9AE4216F61C800DB35A4 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				9C1B9ABC216F5FE700DB35A4 /* ARCHRequestStorageConfigurator.swift */,
+				9C1B9ABE216F5FE700DB35A4 /* ARCHRequestStorageEventHandler.swift */,
+				9C1B9ABB216F5FE600DB35A4 /* ARCHRequestStorageModuleIO.swift */,
+				9C1B9ABD216F5FE700DB35A4 /* ARCHRequestStorageState.swift */,
+				9C1B9ABA216F5FE600DB35A4 /* ARCHRequestStorageViewController.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		9C1B9AE5216F61D000DB35A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C1B9AC4216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9C1B9AE6216F61D900DB35A4 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				9C1B9AB4216F5FDD00DB35A4 /* ARCHRequestStorage.swift */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
 		9CF48AE92167A3F60040AE49 /* HHLens */ = {
 			isa = PBXGroup;
 			children = (
@@ -1845,6 +1945,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				50D1DBB1215119F9005999F0 /* HHSkeleton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1B9AC8216F60ED00DB35A4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1B9AD1216F60ED00DB35A4 /* HHRequestStorage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2081,6 +2189,7 @@
 				5067973C212419970034CDA2 /* PBXTargetDependency */,
 				50C98564212AE9D20002EF4B /* PBXTargetDependency */,
 				507F14A12137E6B50087DCDB /* PBXTargetDependency */,
+				9C1B9AD3216F60ED00DB35A4 /* PBXTargetDependency */,
 			);
 			name = HHModuleDemo;
 			productName = architecture;
@@ -2199,6 +2308,24 @@
 			productReference = 50EA30442134529A00A95512 /* HHSkeletonDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9C1B9ACC216F60ED00DB35A4 /* HHRequestStorage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C1B9AD6216F60ED00DB35A4 /* Build configuration list for PBXNativeTarget "HHRequestStorage" */;
+			buildPhases = (
+				9C1B9AC8216F60ED00DB35A4 /* Headers */,
+				9C1B9AC9216F60ED00DB35A4 /* Sources */,
+				9C1B9ACA216F60ED00DB35A4 /* Frameworks */,
+				9C1B9ACB216F60ED00DB35A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHRequestStorage;
+			productName = HHRequestStorage;
+			productReference = 9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		9CF48AE72167A3F60040AE49 /* HHLens */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CF48B032167A3F70040AE49 /* Build configuration list for PBXNativeTarget "HHLens" */;
@@ -2254,6 +2381,9 @@
 					50D1DBAC215119F9005999F0 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					9C1B9ACC216F60ED00DB35A4 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					9CF48AE72167A3F60040AE49 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -2289,6 +2419,7 @@
 				507F149A2137E6B50087DCDB /* HHIndication */,
 				50D1DBAC215119F9005999F0 /* HHSkeleton */,
 				9CF48AE72167A3F60040AE49 /* HHLens */,
+				9C1B9ACC216F60ED00DB35A4 /* HHRequestStorage */,
 			);
 		};
 /* End PBXProject section */
@@ -2436,6 +2567,13 @@
 				50EA303B2134529A00A95512 /* Assets.xcassets in Resources */,
 				50EA303C2134529A00A95512 /* ExampleCell.xib in Resources */,
 				50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1B9ACB216F60ED00DB35A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2965,6 +3103,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9C1B9AC9216F60ED00DB35A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1B9AD9216F60F800DB35A4 /* ARCHRequestStorage.swift in Sources */,
+				9C1B9ADA216F60F800DB35A4 /* ARCHStorageRequest.swift in Sources */,
+				9C1B9ADF216F60F800DB35A4 /* ARCHRequestStorageState.swift in Sources */,
+				9C1B9AE1216F60FC00DB35A4 /* ARCHRequestStorage.xcdatamodeld in Sources */,
+				9C1B9ADE216F60F800DB35A4 /* ARCHRequestStorageModuleIO.swift in Sources */,
+				9C1B9AE0216F60F800DB35A4 /* ARCHRequestStorageViewController.swift in Sources */,
+				9C1B9ADC216F60F800DB35A4 /* ARCHRequestStorageConfigurator.swift in Sources */,
+				9C1B9ADB216F60F800DB35A4 /* ARCHStorageResponse.swift in Sources */,
+				9C1B9ADD216F60F800DB35A4 /* ARCHRequestStorageEventHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CF48AE42167A3F60040AE49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3190,6 +3344,11 @@
 			isa = PBXTargetDependency;
 			target = 5072DD94211D84B800E08A92 /* HHModule */;
 			targetProxy = 50EA302B2134529A00A95512 /* PBXContainerItemProxy */;
+		};
+		9C1B9AD3216F60ED00DB35A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C1B9ACC216F60ED00DB35A4 /* HHRequestStorage */;
+			targetProxy = 9C1B9AD2216F60ED00DB35A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4219,6 +4378,67 @@
 			};
 			name = Release;
 		};
+		9C1B9AD7216F60ED00DB35A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HHRequestStorage/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.handh.ios.HHRequestStorage;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9C1B9AD8216F60ED00DB35A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HHRequestStorage/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.handh.ios.HHRequestStorage;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		9CF48AFF2167A3F70040AE49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -4438,6 +4658,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		9C1B9AD6216F60ED00DB35A4 /* Build configuration list for PBXNativeTarget "HHRequestStorage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C1B9AD7216F60ED00DB35A4 /* Debug */,
+				9C1B9AD8216F60ED00DB35A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9CF48B032167A3F70040AE49 /* Build configuration list for PBXNativeTarget "HHLens" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -4448,6 +4677,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9C1B9AC4216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C1B9AC5216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodel */,
+			);
+			currentVersion = 9C1B9AC5216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodel */;
+			path = ARCHRequestStorage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5093687020F683010044CA62 /* Project object */;
 }
