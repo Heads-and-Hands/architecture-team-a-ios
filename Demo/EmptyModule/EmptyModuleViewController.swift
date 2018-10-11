@@ -13,6 +13,11 @@ import HHLens
 
 final class EmptyModuleViewController: ARCHViewController<EmptyModuleState, EmptyModuleEventHandler> {
 
+    let nameFieldContainer = UIView()
+    let emailFieldContainer = UIView()
+    let phoneFieldContainer = UIView()
+
+    private let stackView = UIStackView()
     private let label = Label()
     private let button = UIButton()
 
@@ -20,26 +25,39 @@ final class EmptyModuleViewController: ARCHViewController<EmptyModuleState, Empt
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func prepareRootView() {
+        super.prepareRootView()
 
         view.backgroundColor = .white
 
-        button.setTitle("BUTTON", for: .normal)
-        label.text = "LABEL"
+        stackView.axis = .vertical
+        stackView.spacing = 10.0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
 
-        [button, label].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            self.view.addSubview($0)
-        }
+        view.addSubview(stackView)
 
         NSLayoutConstraint.activate([
-            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15.0),
-            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15.0),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0),
+            stackView.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: 15.0),
+            stackView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -15.0),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100.0)
 
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15.0),
-            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0),
-            label.bottomAnchor.constraint(equalTo: button.topAnchor)
         ])
+
+        var views: [UIView] = [label]
+
+        #if HHLens
+            views = [label, button]
+        #elseif HHInputField
+            views = [nameFieldContainer, emailFieldContainer, phoneFieldContainer]
+        #endif
+
+        views.forEach {
+            self.stackView.addArrangedSubview($0)
+        }
 
         configure()
     }
@@ -48,8 +66,8 @@ final class EmptyModuleViewController: ARCHViewController<EmptyModuleState, Empt
 
     private func configure() {
 #if HHLens
-        _ = button |> kRoundedGreyButtonStyle
-        _ = label |> kGreenLabelStyle
+        _ = button |> kRoundedGreyButtonStyle <> UIButton.lens.title(for: .normal) .~ "BUTTON CUSTOMIZED WITH LENS"
+        _ = label |> kGreenLabelStyle <> UILabel.lens.text .~ "LABEL CUSTOMIZED WITH LENS"
 #endif
     }
 }

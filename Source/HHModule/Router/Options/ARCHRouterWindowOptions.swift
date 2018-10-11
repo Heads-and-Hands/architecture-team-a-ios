@@ -1,12 +1,12 @@
 //
-//  ARCHRouterWindowOptions.swift
-//  architectureTeamA
+//  ARCHRouterBuildInOptions.swift
+//  HHModuleDemo
 //
-//  Created by basalaev on 11.07.2018.
-//  Copyright © 2018 Heads and Hands. All rights reserved.
+//  Created by Eugene Sorokin on 09/10/2018.
+//  Copyright © 2018 HandH. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public class ARCHRouterWindowOptions: ARCHRouterOptions {
 

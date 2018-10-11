@@ -7,6 +7,17 @@
 //
 
 import HHModule
+import HHInputField
+
+enum FieldTag: Int {
+    case name, email, phone
+}
+
+struct Field {
+    var id: String
+    var input: ARCHInputFieldInput?
+    var value: (text: String, isValid: Bool)
+}
 
 struct EmptyModuleState: ARCHState {
     var text: String = ""
