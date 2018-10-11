@@ -16,8 +16,8 @@ enum ModulesUserStory: ARCHModuleID {
         switch self {
         case .main:
 #if HHModule
-            //return ChildModuleConfigurator(moduleIO: nil)
-            //return ParentModuleConfigurator(moduleIO: nil)
+//            return ChildModuleConfigurator(moduleIO: nil)
+//            return ParentModuleConfigurator(moduleIO: nil)
             return EmptyModuleConfigurator(moduleIO: nil)
 #elseif HHList
             return ListConfigurator(moduleIO: nil)
