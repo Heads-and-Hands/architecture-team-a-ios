@@ -306,6 +306,10 @@
 		9C1B9ADF216F60F800DB35A4 /* ARCHRequestStorageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABD216F5FE700DB35A4 /* ARCHRequestStorageState.swift */; };
 		9C1B9AE0216F60F800DB35A4 /* ARCHRequestStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABA216F5FE600DB35A4 /* ARCHRequestStorageViewController.swift */; };
 		9C1B9AE1216F60FC00DB35A4 /* ARCHRequestStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AC4216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodeld */; };
+		9C1B9AED216F659400DB35A4 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
+		9C1B9AEE216F65C900DB35A4 /* ARCHStorageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AE8216F640D00DB35A4 /* ARCHStorageTVCell.swift */; };
+		9C1B9AEF216F65C900DB35A4 /* ARCHStrorageTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AEB216F646100DB35A4 /* ARCHStrorageTVCellViewModel.swift */; };
+		9C1B9AF0216F65E200DB35A4 /* HHList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
 		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
@@ -928,6 +932,8 @@
 		9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHRequestStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1B9ACF216F60ED00DB35A4 /* HHRequestStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHRequestStorage.h; sourceTree = "<group>"; };
 		9C1B9AD0216F60ED00DB35A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C1B9AE8216F640D00DB35A4 /* ARCHStorageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStorageTVCell.swift; sourceTree = "<group>"; };
+		9C1B9AEB216F646100DB35A4 /* ARCHStrorageTVCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStrorageTVCellViewModel.swift; sourceTree = "<group>"; };
 		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
 		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1123,6 +1129,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1B9AF0216F65E200DB35A4 /* HHList.framework in Frameworks */,
+				9C1B9AED216F659400DB35A4 /* HHModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1420,6 +1428,7 @@
 				50D0F3CF2146CE3E0093E07F /* HHSkeleton */,
 				9CF48B5C2167A6860040AE49 /* HHLens */,
 				9C1B9AE2216F617500DB35A4 /* HHRequestStorage */,
+				9C1B9AE7216F63E700DB35A4 /* UIKit */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1813,6 +1822,23 @@
 				9C1B9AB4216F5FDD00DB35A4 /* ARCHRequestStorage.swift */,
 			);
 			path = Business;
+			sourceTree = "<group>";
+		};
+		9C1B9AE7216F63E700DB35A4 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				9C1B9AEA216F642200DB35A4 /* TableViewCells */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		9C1B9AEA216F642200DB35A4 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				9C1B9AE8216F640D00DB35A4 /* ARCHStorageTVCell.swift */,
+				9C1B9AEB216F646100DB35A4 /* ARCHStrorageTVCellViewModel.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		9CF48AE92167A3F60040AE49 /* HHLens */ = {
@@ -3114,6 +3140,8 @@
 				9C1B9ADE216F60F800DB35A4 /* ARCHRequestStorageModuleIO.swift in Sources */,
 				9C1B9AE0216F60F800DB35A4 /* ARCHRequestStorageViewController.swift in Sources */,
 				9C1B9ADC216F60F800DB35A4 /* ARCHRequestStorageConfigurator.swift in Sources */,
+				9C1B9AEF216F65C900DB35A4 /* ARCHStrorageTVCellViewModel.swift in Sources */,
+				9C1B9AEE216F65C900DB35A4 /* ARCHStorageTVCell.swift in Sources */,
 				9C1B9ADB216F60F800DB35A4 /* ARCHStorageResponse.swift in Sources */,
 				9C1B9ADD216F60F800DB35A4 /* ARCHRequestStorageEventHandler.swift in Sources */,
 			);
@@ -4045,7 +4073,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X86NQK83T7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -4059,7 +4087,7 @@
 				OTHER_SWIFT_FLAGS = "-D HHModule";
 				PRODUCT_BUNDLE_IDENTIFIER = handh.HHModuleDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Wildcard-Develop";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -4391,7 +4419,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = HHRequestStorage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4422,7 +4450,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = HHRequestStorage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

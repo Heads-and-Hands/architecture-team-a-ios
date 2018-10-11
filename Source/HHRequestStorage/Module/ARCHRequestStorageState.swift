@@ -9,4 +9,6 @@
 import HHModule
 
 struct ARCHRequestStorageState: ARCHState {
+
+    var list: [String] = ["String", "String", "String", "String",]
 }

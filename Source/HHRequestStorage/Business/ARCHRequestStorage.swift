@@ -6,30 +6,45 @@
 //  Copyright © 2018 HandH. All rights reserved.
 //
 
+import HHModule
 import CoreData
 
 public protocol ARCHRequestStorageProtocol {
 
     func getRequests() -> [Any]
 
-    func setRequest()
+    func addRequest()
+
+    func setResponse()
+
+    func presentRequests(from viewController: UIViewController)
 }
 
 public class ARCHRequestStorage {
 
     // MARK: - Singleton
 
-    static let shared = ARCHRequestStorage()
+    static public let shared = ARCHRequestStorage()
 
     private init() {}
 
+    // MARK: - Public
+
+    public func presentRequests(from viewController: UIViewController) {
+        guard let vc = ARCHRequestStorageConfigurator(moduleIO: nil).router as? UIViewController else {
+            return
+        }
+
+        viewController.present(vc, animated: true, completion: nil)
+    }
+
     // MARK: - Core Data
 
-    static var persistentContainer: NSPersistentContainer {
+    static public var persistentContainer: NSPersistentContainer {
         return ARCHRequestStorage.shared.persistentContainer
     }
 
-    static var viewContext: NSManagedObjectContext {
+    static public var viewContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import HHModule
+import HHRequestStorage
 
 #if HHNetwork || HHPaginationDemo
 import HHNetwork
@@ -25,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: LaunchOptions?
         ) -> Bool {
 
-        let window = ARCHWindow()
+        let window = CustomARCHWindow()
         self.window = window
 
 //        window.rootViewController = SkeletonTestViewController()
@@ -84,3 +85,18 @@ extension AppDelegate: ARCHUserStorageDelegate {
     }
 }
 #endif
+
+class CustomARCHWindow: ARCHWindow {
+
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        guard let rootController = self.rootViewController else {
+            return
+        }
+
+        let vc = rootController.navigationController?.topViewController ?? rootController
+
+        if motion == UIEvent.EventSubtype.motionShake {
+            ARCHRequestStorage.shared.presentRequests(from: vc)
+        }
+    }
+}
