@@ -305,11 +305,14 @@
 		9C1B9ADE216F60F800DB35A4 /* ARCHRequestStorageModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABB216F5FE600DB35A4 /* ARCHRequestStorageModuleIO.swift */; };
 		9C1B9ADF216F60F800DB35A4 /* ARCHRequestStorageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABD216F5FE700DB35A4 /* ARCHRequestStorageState.swift */; };
 		9C1B9AE0216F60F800DB35A4 /* ARCHRequestStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABA216F5FE600DB35A4 /* ARCHRequestStorageViewController.swift */; };
-		9C1B9AE1216F60FC00DB35A4 /* ARCHRequestStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AC4216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodeld */; };
 		9C1B9AED216F659400DB35A4 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
 		9C1B9AEE216F65C900DB35A4 /* ARCHStorageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AE8216F640D00DB35A4 /* ARCHStorageTVCell.swift */; };
 		9C1B9AEF216F65C900DB35A4 /* ARCHStrorageTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AEB216F646100DB35A4 /* ARCHStrorageTVCellViewModel.swift */; };
 		9C1B9AF0216F65E200DB35A4 /* HHList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; };
+		9C1B9AF6216F89B300DB35A4 /* ARCHRequestStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AF4216F89B300DB35A4 /* ARCHRequestStorage.xcdatamodeld */; };
+		9C1B9AF8216F90AF00DB35A4 /* ARCHStorageMoyaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AF7216F90AF00DB35A4 /* ARCHStorageMoyaPlugin.swift */; };
+		9C1B9AFB216F9E6000DB35A4 /* HHRequestStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */; };
+		9C1B9AFC216F9E6000DB35A4 /* HHRequestStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
 		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
@@ -614,6 +617,13 @@
 			remoteGlobalIDString = 9C1B9ACC216F60ED00DB35A4;
 			remoteInfo = HHRequestStorage;
 		};
+		9C1B9AFD216F9E6000DB35A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C1B9ACC216F60ED00DB35A4;
+			remoteInfo = HHRequestStorage;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -662,6 +672,7 @@
 			files = (
 				507ABCC921257C64003DBDD7 /* HHModule.framework in Embed Frameworks */,
 				507ABCE821257E34003DBDD7 /* HHNetwork.framework in Embed Frameworks */,
+				9C1B9AFC216F9E6000DB35A4 /* HHRequestStorage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -928,12 +939,13 @@
 		9C1B9ABC216F5FE700DB35A4 /* ARCHRequestStorageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageConfigurator.swift; sourceTree = "<group>"; };
 		9C1B9ABD216F5FE700DB35A4 /* ARCHRequestStorageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageState.swift; sourceTree = "<group>"; };
 		9C1B9ABE216F5FE700DB35A4 /* ARCHRequestStorageEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageEventHandler.swift; sourceTree = "<group>"; };
-		9C1B9AC5216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ARCHRequestStorage.xcdatamodel; sourceTree = "<group>"; };
 		9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHRequestStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1B9ACF216F60ED00DB35A4 /* HHRequestStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHRequestStorage.h; sourceTree = "<group>"; };
 		9C1B9AD0216F60ED00DB35A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C1B9AE8216F640D00DB35A4 /* ARCHStorageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStorageTVCell.swift; sourceTree = "<group>"; };
 		9C1B9AEB216F646100DB35A4 /* ARCHStrorageTVCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStrorageTVCellViewModel.swift; sourceTree = "<group>"; };
+		9C1B9AF5216F89B300DB35A4 /* ARCHRequestStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ARCHRequestStorage.xcdatamodel; sourceTree = "<group>"; };
+		9C1B9AF7216F90AF00DB35A4 /* ARCHStorageMoyaPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStorageMoyaPlugin.swift; sourceTree = "<group>"; };
 		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
 		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1035,6 +1047,7 @@
 				50C985BC212AF0C00002EF4B /* Alamofire.framework in Frameworks */,
 				50C985BD212AF0C00002EF4B /* KeychainAccess.framework in Frameworks */,
 				50C985BE212AF0C00002EF4B /* Moya.framework in Frameworks */,
+				9C1B9AFB216F9E6000DB35A4 /* HHRequestStorage.framework in Frameworks */,
 				50C985BF212AF0C00002EF4B /* Result.framework in Frameworks */,
 				507ABCC121257C64003DBDD7 /* HHModule.framework in Frameworks */,
 				507ABCE721257E34003DBDD7 /* HHNetwork.framework in Frameworks */,
@@ -1428,7 +1441,6 @@
 				50D0F3CF2146CE3E0093E07F /* HHSkeleton */,
 				9CF48B5C2167A6860040AE49 /* HHLens */,
 				9C1B9AE2216F617500DB35A4 /* HHRequestStorage */,
-				9C1B9AE7216F63E700DB35A4 /* UIKit */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1783,6 +1795,8 @@
 				9C1B9AE3216F61AB00DB35A4 /* Model */,
 				9C1B9AE4216F61C800DB35A4 /* Module */,
 				9C1B9AE5216F61D000DB35A4 /* Resources */,
+				9C1B9AF9216F90B400DB35A4 /* Plugin */,
+				9C1B9AE7216F63E700DB35A4 /* UIKit */,
 			);
 			path = HHRequestStorage;
 			sourceTree = "<group>";
@@ -1811,7 +1825,7 @@
 		9C1B9AE5216F61D000DB35A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9C1B9AC4216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodeld */,
+				9C1B9AF4216F89B300DB35A4 /* ARCHRequestStorage.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1839,6 +1853,14 @@
 				9C1B9AEB216F646100DB35A4 /* ARCHStrorageTVCellViewModel.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		9C1B9AF9216F90B400DB35A4 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				9C1B9AF7216F90AF00DB35A4 /* ARCHStorageMoyaPlugin.swift */,
+			);
+			path = Plugin;
 			sourceTree = "<group>";
 		};
 		9CF48AE92167A3F60040AE49 /* HHLens */ = {
@@ -2148,6 +2170,7 @@
 				507ABCB221257C64003DBDD7 /* PBXTargetDependency */,
 				507ABCB421257C64003DBDD7 /* PBXTargetDependency */,
 				507ABCB621257C64003DBDD7 /* PBXTargetDependency */,
+				9C1B9AFE216F9E6000DB35A4 /* PBXTargetDependency */,
 			);
 			name = HHNetworkDemo;
 			productName = architecture;
@@ -3136,13 +3159,14 @@
 				9C1B9AD9216F60F800DB35A4 /* ARCHRequestStorage.swift in Sources */,
 				9C1B9ADA216F60F800DB35A4 /* ARCHStorageRequest.swift in Sources */,
 				9C1B9ADF216F60F800DB35A4 /* ARCHRequestStorageState.swift in Sources */,
-				9C1B9AE1216F60FC00DB35A4 /* ARCHRequestStorage.xcdatamodeld in Sources */,
 				9C1B9ADE216F60F800DB35A4 /* ARCHRequestStorageModuleIO.swift in Sources */,
 				9C1B9AE0216F60F800DB35A4 /* ARCHRequestStorageViewController.swift in Sources */,
 				9C1B9ADC216F60F800DB35A4 /* ARCHRequestStorageConfigurator.swift in Sources */,
+				9C1B9AF8216F90AF00DB35A4 /* ARCHStorageMoyaPlugin.swift in Sources */,
 				9C1B9AEF216F65C900DB35A4 /* ARCHStrorageTVCellViewModel.swift in Sources */,
 				9C1B9AEE216F65C900DB35A4 /* ARCHStorageTVCell.swift in Sources */,
 				9C1B9ADB216F60F800DB35A4 /* ARCHStorageResponse.swift in Sources */,
+				9C1B9AF6216F89B300DB35A4 /* ARCHRequestStorage.xcdatamodeld in Sources */,
 				9C1B9ADD216F60F800DB35A4 /* ARCHRequestStorageEventHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3377,6 +3401,11 @@
 			isa = PBXTargetDependency;
 			target = 9C1B9ACC216F60ED00DB35A4 /* HHRequestStorage */;
 			targetProxy = 9C1B9AD2216F60ED00DB35A4 /* PBXContainerItemProxy */;
+		};
+		9C1B9AFE216F9E6000DB35A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C1B9ACC216F60ED00DB35A4 /* HHRequestStorage */;
+			targetProxy = 9C1B9AFD216F9E6000DB35A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4417,6 +4446,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HHRequestStorage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -4427,7 +4460,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.handh.ios.HHRequestStorage;
+				PRODUCT_BUNDLE_IDENTIFIER = handh.HHRequestStorage;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -4448,6 +4481,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HHRequestStorage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -4457,7 +4494,7 @@
 					"@loader_path/Frameworks",
 				);
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.handh.ios.HHRequestStorage;
+				PRODUCT_BUNDLE_IDENTIFIER = handh.HHRequestStorage;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -4707,12 +4744,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9C1B9AC4216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodeld */ = {
+		9C1B9AF4216F89B300DB35A4 /* ARCHRequestStorage.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9C1B9AC5216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodel */,
+				9C1B9AF5216F89B300DB35A4 /* ARCHRequestStorage.xcdatamodel */,
 			);
-			currentVersion = 9C1B9AC5216F5FED00DB35A4 /* ARCHRequestStorage.xcdatamodel */;
+			currentVersion = 9C1B9AF5216F89B300DB35A4 /* ARCHRequestStorage.xcdatamodel */;
 			path = ARCHRequestStorage.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -12,7 +12,7 @@ import HHModule
 final class ARCHRequestStorageViewController:
 ARCHViewController<ARCHRequestStorageState, ARCHRequestStorageEventHandler>, UITableViewDataSource {
 
-    typealias ListController = ARCHTableViewController<String, ARCHStrorageTVCellViewModel, ARCHStorageTVCell>
+    typealias ListController = ARCHTableViewController<ARCHStorageRequest, ARCHStrorageTVCellViewModel, ARCHStorageTVCell>
 
     private let listController = ListController()
     private let closeButton = UIButton()

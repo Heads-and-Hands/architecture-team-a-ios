@@ -12,9 +12,15 @@ class ARCHStrorageTVCellViewModel: ARCHCellViewModel, ARCHModelInitilizable {
 
     private var object: Data
 
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd hh:mm:ss"
+        return formatter
+    }()
+
     // MARK: - ARCHModelInitilizable
 
-    typealias Data = String
+    typealias Data = ARCHStorageRequest
 
     required init(data: Data) {
         self.object = data
@@ -23,6 +29,6 @@ class ARCHStrorageTVCellViewModel: ARCHCellViewModel, ARCHModelInitilizable {
     // MARK: - Public
 
     var title: String {
-        return object
+        return dateFormatter.string(from: object.createdAt ?? Date())
     }
 }
