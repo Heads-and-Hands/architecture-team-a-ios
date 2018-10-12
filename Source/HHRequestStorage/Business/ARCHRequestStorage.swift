@@ -129,7 +129,7 @@ extension ARCHRequestStorage: ARCHRequestStorageProtocol {
     }
 
     public func presentRequests(from viewController: UIViewController) {
-        guard let vc = ARCHRequestStorageConfigurator(moduleIO: nil, storage: self).router as? UIViewController else {
+        guard let vc = ARCHRequestsListConfigurator(moduleIO: nil, storage: self).router as? UIViewController else {
             return
         }
 

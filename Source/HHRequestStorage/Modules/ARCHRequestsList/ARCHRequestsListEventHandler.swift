@@ -1,5 +1,5 @@
 //
-//  ARCHRequestStorageEventHandler.swift
+//  ARCHRequestsListEventHandler.swift
 //  architecture
 //
 //  Created by Eugene Sorokin on 11/10/2018.
@@ -8,9 +8,9 @@
 
 import HHModule
 
-final class ARCHRequestStorageEventHandler: ARCHEventHandler<ARCHRequestStorageState>, ARCHRequestStorageModuleInput {
+final class ARCHRequestsListEventHandler: ARCHEventHandler<ARCHRequestsListState>, ARCHRequestsListModuleInput {
 
-    weak var moduleOutput: ARCHRequestStorageModuleOutput?
+    weak var moduleOutput: ARCHRequestsListModuleOutput?
 
     var storage: ARCHRequestStorageProtocol?
 

@@ -1,5 +1,5 @@
 //
-//  ARCHRequestStorageState.swift
+//  ARCHRequestsListState.swift
 //  architecture
 //
 //  Created by Eugene Sorokin on 11/10/2018.
@@ -8,7 +8,7 @@
 
 import HHModule
 
-struct ARCHRequestStorageState: ARCHState {
+struct ARCHRequestsListState: ARCHState {
 
     var list: [ARCHStorageRequest] = []
 }

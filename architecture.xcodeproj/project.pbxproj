@@ -300,11 +300,11 @@
 		9C1B9AD9216F60F800DB35A4 /* ARCHRequestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AB4216F5FDD00DB35A4 /* ARCHRequestStorage.swift */; };
 		9C1B9ADA216F60F800DB35A4 /* ARCHStorageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AB6216F5FE200DB35A4 /* ARCHStorageRequest.swift */; };
 		9C1B9ADB216F60F800DB35A4 /* ARCHStorageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AB7216F5FE200DB35A4 /* ARCHStorageResponse.swift */; };
-		9C1B9ADC216F60F800DB35A4 /* ARCHRequestStorageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABC216F5FE700DB35A4 /* ARCHRequestStorageConfigurator.swift */; };
-		9C1B9ADD216F60F800DB35A4 /* ARCHRequestStorageEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABE216F5FE700DB35A4 /* ARCHRequestStorageEventHandler.swift */; };
-		9C1B9ADE216F60F800DB35A4 /* ARCHRequestStorageModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABB216F5FE600DB35A4 /* ARCHRequestStorageModuleIO.swift */; };
-		9C1B9ADF216F60F800DB35A4 /* ARCHRequestStorageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABD216F5FE700DB35A4 /* ARCHRequestStorageState.swift */; };
-		9C1B9AE0216F60F800DB35A4 /* ARCHRequestStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABA216F5FE600DB35A4 /* ARCHRequestStorageViewController.swift */; };
+		9C1B9ADC216F60F800DB35A4 /* ARCHRequestsListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABC216F5FE700DB35A4 /* ARCHRequestsListConfigurator.swift */; };
+		9C1B9ADD216F60F800DB35A4 /* ARCHRequestsListEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABE216F5FE700DB35A4 /* ARCHRequestsListEventHandler.swift */; };
+		9C1B9ADE216F60F800DB35A4 /* ARCHRequestsListModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABB216F5FE600DB35A4 /* ARCHRequestsListModuleIO.swift */; };
+		9C1B9ADF216F60F800DB35A4 /* ARCHRequestsListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABD216F5FE700DB35A4 /* ARCHRequestsListState.swift */; };
+		9C1B9AE0216F60F800DB35A4 /* ARCHRequestsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9ABA216F5FE600DB35A4 /* ARCHRequestsListViewController.swift */; };
 		9C1B9AED216F659400DB35A4 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
 		9C1B9AEE216F65C900DB35A4 /* ARCHStorageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AE8216F640D00DB35A4 /* ARCHStorageTVCell.swift */; };
 		9C1B9AEF216F65C900DB35A4 /* ARCHStrorageTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AEB216F646100DB35A4 /* ARCHStrorageTVCellViewModel.swift */; };
@@ -314,6 +314,11 @@
 		9C1B9AFB216F9E6000DB35A4 /* HHRequestStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */; };
 		9C1B9AFC216F9E6000DB35A4 /* HHRequestStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C2E50522170C5E100F249A2 /* ARCHStorageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E504F2170BABF00F249A2 /* ARCHStorageCellView.swift */; };
+		9C57A48B2170FB7E00C8B046 /* ARCHRequestsInfoModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4862170FB7E00C8B046 /* ARCHRequestsInfoModuleIO.swift */; };
+		9C57A48C2170FB7E00C8B046 /* ARCHRequestsInfoEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4872170FB7E00C8B046 /* ARCHRequestsInfoEventHandler.swift */; };
+		9C57A48D2170FB7E00C8B046 /* ARCHRequestsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4882170FB7E00C8B046 /* ARCHRequestsInfoViewController.swift */; };
+		9C57A48E2170FB7E00C8B046 /* ARCHRequestsInfoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4892170FB7E00C8B046 /* ARCHRequestsInfoConfigurator.swift */; };
+		9C57A4902170FB8400C8B046 /* ARCHRequestsInfoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A48A2170FB7E00C8B046 /* ARCHRequestsInfoState.swift */; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
 		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
@@ -935,11 +940,11 @@
 		9C1B9AB4216F5FDD00DB35A4 /* ARCHRequestStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorage.swift; sourceTree = "<group>"; };
 		9C1B9AB6216F5FE200DB35A4 /* ARCHStorageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStorageRequest.swift; sourceTree = "<group>"; };
 		9C1B9AB7216F5FE200DB35A4 /* ARCHStorageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStorageResponse.swift; sourceTree = "<group>"; };
-		9C1B9ABA216F5FE600DB35A4 /* ARCHRequestStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageViewController.swift; sourceTree = "<group>"; };
-		9C1B9ABB216F5FE600DB35A4 /* ARCHRequestStorageModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageModuleIO.swift; sourceTree = "<group>"; };
-		9C1B9ABC216F5FE700DB35A4 /* ARCHRequestStorageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageConfigurator.swift; sourceTree = "<group>"; };
-		9C1B9ABD216F5FE700DB35A4 /* ARCHRequestStorageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageState.swift; sourceTree = "<group>"; };
-		9C1B9ABE216F5FE700DB35A4 /* ARCHRequestStorageEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestStorageEventHandler.swift; sourceTree = "<group>"; };
+		9C1B9ABA216F5FE600DB35A4 /* ARCHRequestsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsListViewController.swift; sourceTree = "<group>"; };
+		9C1B9ABB216F5FE600DB35A4 /* ARCHRequestsListModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsListModuleIO.swift; sourceTree = "<group>"; };
+		9C1B9ABC216F5FE700DB35A4 /* ARCHRequestsListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsListConfigurator.swift; sourceTree = "<group>"; };
+		9C1B9ABD216F5FE700DB35A4 /* ARCHRequestsListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsListState.swift; sourceTree = "<group>"; };
+		9C1B9ABE216F5FE700DB35A4 /* ARCHRequestsListEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsListEventHandler.swift; sourceTree = "<group>"; };
 		9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHRequestStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1B9ACF216F60ED00DB35A4 /* HHRequestStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHRequestStorage.h; sourceTree = "<group>"; };
 		9C1B9AD0216F60ED00DB35A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -948,6 +953,11 @@
 		9C1B9AF5216F89B300DB35A4 /* ARCHRequestStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ARCHRequestStorage.xcdatamodel; sourceTree = "<group>"; };
 		9C1B9AF7216F90AF00DB35A4 /* ARCHStorageMoyaPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStorageMoyaPlugin.swift; sourceTree = "<group>"; };
 		9C2E504F2170BABF00F249A2 /* ARCHStorageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStorageCellView.swift; sourceTree = "<group>"; };
+		9C57A4862170FB7E00C8B046 /* ARCHRequestsInfoModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsInfoModuleIO.swift; sourceTree = "<group>"; };
+		9C57A4872170FB7E00C8B046 /* ARCHRequestsInfoEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsInfoEventHandler.swift; sourceTree = "<group>"; };
+		9C57A4882170FB7E00C8B046 /* ARCHRequestsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsInfoViewController.swift; sourceTree = "<group>"; };
+		9C57A4892170FB7E00C8B046 /* ARCHRequestsInfoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsInfoConfigurator.swift; sourceTree = "<group>"; };
+		9C57A48A2170FB7E00C8B046 /* ARCHRequestsInfoState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsInfoState.swift; sourceTree = "<group>"; };
 		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
 		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1795,7 +1805,7 @@
 			children = (
 				9C1B9AE6216F61D900DB35A4 /* Business */,
 				9C1B9AE3216F61AB00DB35A4 /* Model */,
-				9C1B9AE4216F61C800DB35A4 /* Module */,
+				9C57A4842170F9D000C8B046 /* Modules */,
 				9C1B9AE5216F61D000DB35A4 /* Resources */,
 				9C1B9AF9216F90B400DB35A4 /* Plugin */,
 				9C1B9AE7216F63E700DB35A4 /* UIKit */,
@@ -1812,16 +1822,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		9C1B9AE4216F61C800DB35A4 /* Module */ = {
+		9C1B9AE4216F61C800DB35A4 /* ARCHRequestsList */ = {
 			isa = PBXGroup;
 			children = (
-				9C1B9ABC216F5FE700DB35A4 /* ARCHRequestStorageConfigurator.swift */,
-				9C1B9ABE216F5FE700DB35A4 /* ARCHRequestStorageEventHandler.swift */,
-				9C1B9ABB216F5FE600DB35A4 /* ARCHRequestStorageModuleIO.swift */,
-				9C1B9ABD216F5FE700DB35A4 /* ARCHRequestStorageState.swift */,
-				9C1B9ABA216F5FE600DB35A4 /* ARCHRequestStorageViewController.swift */,
+				9C1B9ABC216F5FE700DB35A4 /* ARCHRequestsListConfigurator.swift */,
+				9C1B9ABE216F5FE700DB35A4 /* ARCHRequestsListEventHandler.swift */,
+				9C1B9ABB216F5FE600DB35A4 /* ARCHRequestsListModuleIO.swift */,
+				9C1B9ABD216F5FE700DB35A4 /* ARCHRequestsListState.swift */,
+				9C1B9ABA216F5FE600DB35A4 /* ARCHRequestsListViewController.swift */,
 			);
-			path = Module;
+			path = ARCHRequestsList;
 			sourceTree = "<group>";
 		};
 		9C1B9AE5216F61D000DB35A4 /* Resources */ = {
@@ -1872,6 +1882,27 @@
 				9C2E504F2170BABF00F249A2 /* ARCHStorageCellView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9C57A4842170F9D000C8B046 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9C57A4852170FB4C00C8B046 /* ARCHRequestsInfo */,
+				9C1B9AE4216F61C800DB35A4 /* ARCHRequestsList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9C57A4852170FB4C00C8B046 /* ARCHRequestsInfo */ = {
+			isa = PBXGroup;
+			children = (
+				9C57A4862170FB7E00C8B046 /* ARCHRequestsInfoModuleIO.swift */,
+				9C57A4872170FB7E00C8B046 /* ARCHRequestsInfoEventHandler.swift */,
+				9C57A4882170FB7E00C8B046 /* ARCHRequestsInfoViewController.swift */,
+				9C57A4892170FB7E00C8B046 /* ARCHRequestsInfoConfigurator.swift */,
+				9C57A48A2170FB7E00C8B046 /* ARCHRequestsInfoState.swift */,
+			);
+			path = ARCHRequestsInfo;
 			sourceTree = "<group>";
 		};
 		9CF48AE92167A3F60040AE49 /* HHLens */ = {
@@ -3051,6 +3082,9 @@
 				507ABCCF21257C97003DBDD7 /* EmptyModuleConfigurator.swift in Sources */,
 				9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */,
 				9C1417F42146B23C009F1073 /* ParentModuleEventHandler.swift in Sources */,
+				9C57A48D2170FB7E00C8B046 /* ARCHRequestsInfoViewController.swift in Sources */,
+				9C57A48E2170FB7E00C8B046 /* ARCHRequestsInfoConfigurator.swift in Sources */,
+				9C57A48C2170FB7E00C8B046 /* ARCHRequestsInfoEventHandler.swift in Sources */,
 				9C1418082146B57C009F1073 /* ChildModuleState.swift in Sources */,
 				5093687C20F683010044CA62 /* AppDelegate.swift in Sources */,
 				9C1417F62146B23C009F1073 /* ParentModuleViewController.swift in Sources */,
@@ -3064,6 +3098,7 @@
 				9C1417F72146B23C009F1073 /* ParentModuleConfigurator.swift in Sources */,
 				9C1418052146B57C009F1073 /* ChildModuleViewController.swift in Sources */,
 				9C1417F52146B23C009F1073 /* ParentModuleProtocols.swift in Sources */,
+				9C57A48B2170FB7E00C8B046 /* ARCHRequestsInfoModuleIO.swift in Sources */,
 				50EA3026213421E800A95512 /* Label.swift in Sources */,
 				50EA3024213420B600A95512 /* EmptyModuleState.swift in Sources */,
 			);
@@ -3170,16 +3205,17 @@
 				9C1B9AD9216F60F800DB35A4 /* ARCHRequestStorage.swift in Sources */,
 				9C2E50522170C5E100F249A2 /* ARCHStorageCellView.swift in Sources */,
 				9C1B9ADA216F60F800DB35A4 /* ARCHStorageRequest.swift in Sources */,
-				9C1B9ADF216F60F800DB35A4 /* ARCHRequestStorageState.swift in Sources */,
-				9C1B9ADE216F60F800DB35A4 /* ARCHRequestStorageModuleIO.swift in Sources */,
-				9C1B9AE0216F60F800DB35A4 /* ARCHRequestStorageViewController.swift in Sources */,
-				9C1B9ADC216F60F800DB35A4 /* ARCHRequestStorageConfigurator.swift in Sources */,
+				9C1B9ADF216F60F800DB35A4 /* ARCHRequestsListState.swift in Sources */,
+				9C1B9ADE216F60F800DB35A4 /* ARCHRequestsListModuleIO.swift in Sources */,
+				9C1B9AE0216F60F800DB35A4 /* ARCHRequestsListViewController.swift in Sources */,
+				9C1B9ADC216F60F800DB35A4 /* ARCHRequestsListConfigurator.swift in Sources */,
+				9C57A4902170FB8400C8B046 /* ARCHRequestsInfoState.swift in Sources */,
 				9C1B9AF8216F90AF00DB35A4 /* ARCHStorageMoyaPlugin.swift in Sources */,
 				9C1B9AEF216F65C900DB35A4 /* ARCHStrorageTVCellViewModel.swift in Sources */,
 				9C1B9AEE216F65C900DB35A4 /* ARCHStorageTVCell.swift in Sources */,
 				9C1B9ADB216F60F800DB35A4 /* ARCHStorageResponse.swift in Sources */,
 				9C1B9AF6216F89B300DB35A4 /* ARCHRequestStorage.xcdatamodeld in Sources */,
-				9C1B9ADD216F60F800DB35A4 /* ARCHRequestStorageEventHandler.swift in Sources */,
+				9C1B9ADD216F60F800DB35A4 /* ARCHRequestsListEventHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol ARCHRequestStorageModuleInput {
+protocol ARCHRequestsListModuleInput {
 }
 
-protocol ARCHRequestStorageModuleOutput: class {
+protocol ARCHRequestsListModuleOutput: class {
 }

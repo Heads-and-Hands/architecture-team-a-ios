@@ -1,5 +1,5 @@
 //
-//  ARCHRequestStorageConfigurator.swift
+//  ARCHRequestsListConfigurator.swift
 //  architecture
 //
 //  Created by Eugene Sorokin on 11/10/2018.
@@ -8,8 +8,8 @@
 
 import HHModule
 
-final class ARCHRequestStorageConfigurator: ARCHModuleConfigurator {
-    typealias ModuleIO = (ARCHRequestStorageModuleInput) -> ARCHRequestStorageModuleOutput?
+final class ARCHRequestsListConfigurator: ARCHModuleConfigurator {
+    typealias ModuleIO = (ARCHRequestsListModuleInput) -> ARCHRequestsListModuleOutput?
 
     let moduleIO: ModuleIO?
     let storage: ARCHRequestStorageProtocol?
@@ -20,9 +20,9 @@ final class ARCHRequestStorageConfigurator: ARCHModuleConfigurator {
     }
 
     var router: ARCHRouter {
-        let controller = ARCHRequestStorageViewController()
+        let controller = ARCHRequestsListViewController()
 
-        let eventHandler = ARCHRequestStorageEventHandler()
+        let eventHandler = ARCHRequestsListEventHandler()
         eventHandler.router = controller
         eventHandler.viewInput = controller
         eventHandler.storage = storage

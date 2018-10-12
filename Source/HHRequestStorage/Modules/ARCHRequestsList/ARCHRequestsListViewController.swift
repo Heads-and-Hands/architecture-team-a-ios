@@ -1,5 +1,5 @@
 //
-//  ARCHRequestStorageViewController.swift
+//  ARCHRequestsListViewController.swift
 //  architecture
 //
 //  Created by Eugene Sorokin on 11/10/2018.
@@ -9,8 +9,8 @@
 import HHList
 import HHModule
 
-final class ARCHRequestStorageViewController:
-ARCHViewController<ARCHRequestStorageState, ARCHRequestStorageEventHandler>, UITableViewDataSource, UITableViewDelegate {
+final class ARCHRequestsListViewController:
+ARCHViewController<ARCHRequestsListState, ARCHRequestsListEventHandler>, UITableViewDataSource, UITableViewDelegate {
 
     typealias ListController = ARCHTableViewController<ARCHStorageRequest, ARCHStorageTVCellViewModel, ARCHStorageTVCell>
 
