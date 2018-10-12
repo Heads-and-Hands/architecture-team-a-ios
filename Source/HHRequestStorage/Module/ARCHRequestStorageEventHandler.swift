@@ -19,6 +19,8 @@ final class ARCHRequestStorageEventHandler: ARCHEventHandler<ARCHRequestStorageS
     override func viewIsReady() {
         super.viewIsReady()
 
-        state.list = storage?.requests ?? []
+        let requests = storage?.requests ?? []
+
+        state.list = requests.sorted(by: { ($0.createdAt ?? Date()) > ($1.createdAt ?? Date()) })
     }
 }

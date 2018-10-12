@@ -10,9 +10,9 @@ import HHList
 import HHModule
 
 final class ARCHRequestStorageViewController:
-ARCHViewController<ARCHRequestStorageState, ARCHRequestStorageEventHandler>, UITableViewDataSource {
+ARCHViewController<ARCHRequestStorageState, ARCHRequestStorageEventHandler>, UITableViewDataSource, UITableViewDelegate {
 
-    typealias ListController = ARCHTableViewController<ARCHStorageRequest, ARCHStrorageTVCellViewModel, ARCHStorageTVCell>
+    typealias ListController = ARCHTableViewController<ARCHStorageRequest, ARCHStorageTVCellViewModel, ARCHStorageTVCell>
 
     private let listController = ListController()
     private let closeButton = UIButton()
@@ -42,7 +42,7 @@ ARCHViewController<ARCHRequestStorageState, ARCHRequestStorageEventHandler>, UIT
         closeButton.setTitleColor(.white, for: .normal)
         closeButton.setTitleColor(UIColor.darkGray.withAlphaComponent(0.6), for: .selected)
         closeButton.setTitleColor(UIColor.darkGray.withAlphaComponent(0.6), for: .highlighted)
-        closeButton.backgroundColor = .lightGray
+        closeButton.backgroundColor = .gray
         closeButton.clipsToBounds = true
         closeButton.layer.cornerRadius = 6.0
 
@@ -53,6 +53,12 @@ ARCHViewController<ARCHRequestStorageState, ARCHRequestStorageEventHandler>, UIT
 
         let tableView = listController.tableView
         tableView.clipsToBounds = true
+        tableView.separatorStyle = .singleLine
+        tableView.separatorColor = .gray
+        tableView.separatorInset = UIEdgeInsets.zero
+        tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.delegate = self
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
@@ -108,10 +114,21 @@ ARCHViewController<ARCHRequestStorageState, ARCHRequestStorageEventHandler>, UIT
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section title"
+        return "Debug Request"
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+
+    // MARK: - UITableViewDelegate
+
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let view = view as? UITableViewHeaderFooterView else {
+            return
+        }
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .white
+        view.backgroundView = backgroundView
     }
 }

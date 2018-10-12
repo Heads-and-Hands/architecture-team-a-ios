@@ -10,24 +10,28 @@ import HHList
 
 class ARCHStorageTVCell: UITableViewCell, ARCHCell {
 
-    private let titleLabel = UILabel()
-    private let valueLabel = UILabel()
+    private let requestView = ARCHStorageCellView(title: "Request")
+    private let responseView = ARCHStorageCellView(title: "Response")
 
     // MARK: - Initialization
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        titleLabel.numberOfLines = 0
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        selectionStyle = .none
 
-        contentView.addSubview(titleLabel)
+        let container = UIStackView(arrangedSubviews: [requestView, responseView])
+        container.axis = .vertical
+        container.spacing = 8.0
+        container.translatesAutoresizingMaskIntoConstraints = false
+
+        contentView.addSubview(container)
 
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            container.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8.0),
+            container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8.0)
         ])
     }
 
@@ -37,9 +41,10 @@ class ARCHStorageTVCell: UITableViewCell, ARCHCell {
 
     // MARK: - ARCHCell
 
-    var viewModel: ARCHStrorageTVCellViewModel?
+    var viewModel: ARCHStorageTVCellViewModel?
 
-    func render(viewModel: ARCHStrorageTVCellViewModel) {
-        titleLabel.text = viewModel.title
+    func render(viewModel: ARCHStorageTVCellViewModel) {
+        requestView.update(date: viewModel.requestDate, values: viewModel.requestParameters)
+        responseView.update(date: viewModel.responseDate, values: viewModel.responseParameters)
     }
 }

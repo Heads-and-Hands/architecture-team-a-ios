@@ -89,7 +89,7 @@ extension ARCHRequestStorage: ARCHRequestStorageProtocol {
         model.path = request.url?.absoluteString
         model.desc = request.description
         model.method = request.httpMethod
-        model.headers = request.allHTTPHeaderFields?.description
+        model.headers = request.allHTTPHeaderFields?.debugDescription
         model.body = String(data: request.httpBody ?? Data(), encoding: .utf8)
         model.createdAt = Date()
         model.tempID = tempID
@@ -115,6 +115,7 @@ extension ARCHRequestStorage: ARCHRequestStorageProtocol {
 
         switch  result {
         case let .success(response):
+            responseModel.desc = response.description
             responseModel.statusCode = Int16(response.statusCode)
             responseModel.headers = response.response?.allHeaderFields.debugDescription
             responseModel.body = String(data: response.data, encoding: .utf8)

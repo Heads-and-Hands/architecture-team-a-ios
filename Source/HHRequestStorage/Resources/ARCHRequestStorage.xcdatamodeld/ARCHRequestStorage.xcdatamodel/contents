@@ -12,6 +12,7 @@
     </entity>
     <entity name="ARCHStorageResponse" representedClassName=".ARCHStorageResponse" syncable="YES" codeGenerationType="category">
         <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="error" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="headers" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="receivedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -20,6 +21,6 @@
     </entity>
     <elements>
         <element name="ARCHStorageRequest" positionX="-217.55859375" positionY="48.68359375" width="128" height="165"/>
-        <element name="ARCHStorageResponse" positionX="-9" positionY="90" width="128" height="135"/>
+        <element name="ARCHStorageResponse" positionX="-9" positionY="90" width="128" height="150"/>
     </elements>
 </model>
