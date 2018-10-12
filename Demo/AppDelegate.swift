@@ -95,8 +95,12 @@ class CustomARCHWindow: ARCHWindow {
 
         let vc = rootController.navigationController?.topViewController ?? rootController
 
+        guard let router = vc as? ARCHRouter else {
+            return
+        }
+
         if motion == UIEvent.EventSubtype.motionShake {
-            ARCHRequestStorage.shared.presentRequests(from: vc)
+            ARCHRequestStorage.shared.presentRequests(from: router)
         }
     }
 }

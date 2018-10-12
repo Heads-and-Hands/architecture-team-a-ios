@@ -25,6 +25,7 @@ final class ARCHRequestsListConfigurator: ARCHModuleConfigurator {
         let eventHandler = ARCHRequestsListEventHandler()
         eventHandler.router = controller
         eventHandler.viewInput = controller
+        eventHandler.router = controller
         eventHandler.storage = storage
 
         if let moduleIO = moduleIO {

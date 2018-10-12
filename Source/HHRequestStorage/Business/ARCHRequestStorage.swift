@@ -19,7 +19,7 @@ public protocol ARCHRequestStorageProtocol {
 
     func log(result: Result<Response, MoyaError>)
 
-    func presentRequests(from viewController: UIViewController)
+    func presentRequests(from viewController: ARCHRouter)
 }
 
 private final class PersistentContainer: NSPersistentContainer { }
@@ -128,11 +128,8 @@ extension ARCHRequestStorage: ARCHRequestStorageProtocol {
         saveContext()
     }
 
-    public func presentRequests(from viewController: UIViewController) {
-        guard let vc = ARCHRequestsListConfigurator(moduleIO: nil, storage: self).router as? UIViewController else {
-            return
-        }
-
-        viewController.present(vc, animated: true, completion: nil)
+    public func presentRequests(from viewController: ARCHRouter) {
+        ARCHRequestsListConfigurator(moduleIO: nil, storage: self)
+            .router.transit(from: viewController, options: [ARCHRouterEmbedInNavigationOptions(), ARCHRouterPresentOptions()], animated: true)
     }
 }

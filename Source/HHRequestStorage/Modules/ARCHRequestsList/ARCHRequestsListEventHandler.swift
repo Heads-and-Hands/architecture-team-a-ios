@@ -8,7 +8,7 @@
 
 import HHModule
 
-final class ARCHRequestsListEventHandler: ARCHEventHandler<ARCHRequestsListState>, ARCHRequestsListModuleInput {
+final class ARCHRequestsListEventHandler: ARCHEventHandler<ARCHRequestsListState>, ARCHRequestsListModuleInput, ARCHRequestsListModuleViewOutput {
 
     weak var moduleOutput: ARCHRequestsListModuleOutput?
 
@@ -22,5 +22,12 @@ final class ARCHRequestsListEventHandler: ARCHEventHandler<ARCHRequestsListState
         let requests = storage?.requests ?? []
 
         state.list = requests.sorted(by: { ($0.createdAt ?? Date()) > ($1.createdAt ?? Date()) })
+    }
+
+    // MARK - ARCHRequestsListModuleViewOutput
+
+    func didSelectCell(with row: Int) {
+        ARCHRequestsInfoConfigurator(moduleIO: nil)
+            .router.transit(from: router, options: [ARCHRouterPushOptions()], animated: true)
     }
 }

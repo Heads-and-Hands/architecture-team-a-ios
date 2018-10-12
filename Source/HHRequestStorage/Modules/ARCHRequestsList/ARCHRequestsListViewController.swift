@@ -20,6 +20,8 @@ ARCHViewController<ARCHRequestsListState, ARCHRequestsListEventHandler>, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Debug Request"
+
         view.backgroundColor = .white
 
         configure(listController: listController)
@@ -58,10 +60,10 @@ ARCHViewController<ARCHRequestsListState, ARCHRequestsListEventHandler>, UITable
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.showsVerticalScrollIndicator = false
         tableView.showsHorizontalScrollIndicator = false
-        tableView.delegate = self
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
+        tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
 
@@ -79,9 +81,10 @@ ARCHViewController<ARCHRequestsListState, ARCHRequestsListEventHandler>, UITable
         ])
 
         if #available(iOS 11.0, *) {
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10.0).isActive = true
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
             closeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15).isActive = true
         } else {
+            tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
             closeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15).isActive = true
         }
 
@@ -114,7 +117,7 @@ ARCHViewController<ARCHRequestsListState, ARCHRequestsListEventHandler>, UITable
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Debug Request"
+        return nil
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -123,12 +126,7 @@ ARCHViewController<ARCHRequestsListState, ARCHRequestsListEventHandler>, UITable
 
     // MARK: - UITableViewDelegate
 
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        guard let view = view as? UITableViewHeaderFooterView else {
-            return
-        }
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = .white
-        view.backgroundView = backgroundView
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        output?.didSelectCell(with: indexPath.row)
     }
 }

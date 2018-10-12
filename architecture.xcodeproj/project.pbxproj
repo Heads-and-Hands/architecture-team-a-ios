@@ -314,11 +314,13 @@
 		9C1B9AFB216F9E6000DB35A4 /* HHRequestStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */; };
 		9C1B9AFC216F9E6000DB35A4 /* HHRequestStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C2E50522170C5E100F249A2 /* ARCHStorageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E504F2170BABF00F249A2 /* ARCHStorageCellView.swift */; };
-		9C57A48B2170FB7E00C8B046 /* ARCHRequestsInfoModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4862170FB7E00C8B046 /* ARCHRequestsInfoModuleIO.swift */; };
-		9C57A48C2170FB7E00C8B046 /* ARCHRequestsInfoEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4872170FB7E00C8B046 /* ARCHRequestsInfoEventHandler.swift */; };
-		9C57A48D2170FB7E00C8B046 /* ARCHRequestsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4882170FB7E00C8B046 /* ARCHRequestsInfoViewController.swift */; };
-		9C57A48E2170FB7E00C8B046 /* ARCHRequestsInfoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4892170FB7E00C8B046 /* ARCHRequestsInfoConfigurator.swift */; };
 		9C57A4902170FB8400C8B046 /* ARCHRequestsInfoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A48A2170FB7E00C8B046 /* ARCHRequestsInfoState.swift */; };
+		9C57A4922170FDF000C8B046 /* ARCHRouterEmbedInNavigationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4912170FDF000C8B046 /* ARCHRouterEmbedInNavigationOptions.swift */; };
+		9C57A4942170FE1D00C8B046 /* ARCHRouterDismissOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4932170FE1D00C8B046 /* ARCHRouterDismissOptions.swift */; };
+		9C57A4962171049C00C8B046 /* ARCHRequestsInfoModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4862170FB7E00C8B046 /* ARCHRequestsInfoModuleIO.swift */; };
+		9C57A4972171049C00C8B046 /* ARCHRequestsInfoEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4872170FB7E00C8B046 /* ARCHRequestsInfoEventHandler.swift */; };
+		9C57A4982171049C00C8B046 /* ARCHRequestsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4882170FB7E00C8B046 /* ARCHRequestsInfoViewController.swift */; };
+		9C57A4992171049C00C8B046 /* ARCHRequestsInfoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4892170FB7E00C8B046 /* ARCHRequestsInfoConfigurator.swift */; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
 		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
@@ -958,6 +960,8 @@
 		9C57A4882170FB7E00C8B046 /* ARCHRequestsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsInfoViewController.swift; sourceTree = "<group>"; };
 		9C57A4892170FB7E00C8B046 /* ARCHRequestsInfoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsInfoConfigurator.swift; sourceTree = "<group>"; };
 		9C57A48A2170FB7E00C8B046 /* ARCHRequestsInfoState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsInfoState.swift; sourceTree = "<group>"; };
+		9C57A4912170FDF000C8B046 /* ARCHRouterEmbedInNavigationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterEmbedInNavigationOptions.swift; sourceTree = "<group>"; };
+		9C57A4932170FE1D00C8B046 /* ARCHRouterDismissOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterDismissOptions.swift; sourceTree = "<group>"; };
 		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
 		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1506,6 +1510,8 @@
 				5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */,
 				5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */,
 				5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */,
+				9C57A4912170FDF000C8B046 /* ARCHRouterEmbedInNavigationOptions.swift */,
+				9C57A4932170FE1D00C8B046 /* ARCHRouterDismissOptions.swift */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -2990,8 +2996,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C57A4942170FE1D00C8B046 /* ARCHRouterDismissOptions.swift in Sources */,
 				50BC80AE211DFACE00D77262 /* ARCHViewController.swift in Sources */,
 				50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */,
+				9C57A4922170FDF000C8B046 /* ARCHRouterEmbedInNavigationOptions.swift in Sources */,
 				50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */,
 				50BC80B1211DFAD700D77262 /* ARCHWindow.swift in Sources */,
 				50BC80B5211DFAE900D77262 /* ARCHRouter.swift in Sources */,
@@ -3082,9 +3090,6 @@
 				507ABCCF21257C97003DBDD7 /* EmptyModuleConfigurator.swift in Sources */,
 				9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */,
 				9C1417F42146B23C009F1073 /* ParentModuleEventHandler.swift in Sources */,
-				9C57A48D2170FB7E00C8B046 /* ARCHRequestsInfoViewController.swift in Sources */,
-				9C57A48E2170FB7E00C8B046 /* ARCHRequestsInfoConfigurator.swift in Sources */,
-				9C57A48C2170FB7E00C8B046 /* ARCHRequestsInfoEventHandler.swift in Sources */,
 				9C1418082146B57C009F1073 /* ChildModuleState.swift in Sources */,
 				5093687C20F683010044CA62 /* AppDelegate.swift in Sources */,
 				9C1417F62146B23C009F1073 /* ParentModuleViewController.swift in Sources */,
@@ -3098,7 +3103,6 @@
 				9C1417F72146B23C009F1073 /* ParentModuleConfigurator.swift in Sources */,
 				9C1418052146B57C009F1073 /* ChildModuleViewController.swift in Sources */,
 				9C1417F52146B23C009F1073 /* ParentModuleProtocols.swift in Sources */,
-				9C57A48B2170FB7E00C8B046 /* ARCHRequestsInfoModuleIO.swift in Sources */,
 				50EA3026213421E800A95512 /* Label.swift in Sources */,
 				50EA3024213420B600A95512 /* EmptyModuleState.swift in Sources */,
 			);
@@ -3208,14 +3212,18 @@
 				9C1B9ADF216F60F800DB35A4 /* ARCHRequestsListState.swift in Sources */,
 				9C1B9ADE216F60F800DB35A4 /* ARCHRequestsListModuleIO.swift in Sources */,
 				9C1B9AE0216F60F800DB35A4 /* ARCHRequestsListViewController.swift in Sources */,
+				9C57A4992171049C00C8B046 /* ARCHRequestsInfoConfigurator.swift in Sources */,
+				9C57A4982171049C00C8B046 /* ARCHRequestsInfoViewController.swift in Sources */,
 				9C1B9ADC216F60F800DB35A4 /* ARCHRequestsListConfigurator.swift in Sources */,
 				9C57A4902170FB8400C8B046 /* ARCHRequestsInfoState.swift in Sources */,
 				9C1B9AF8216F90AF00DB35A4 /* ARCHStorageMoyaPlugin.swift in Sources */,
 				9C1B9AEF216F65C900DB35A4 /* ARCHStrorageTVCellViewModel.swift in Sources */,
 				9C1B9AEE216F65C900DB35A4 /* ARCHStorageTVCell.swift in Sources */,
 				9C1B9ADB216F60F800DB35A4 /* ARCHStorageResponse.swift in Sources */,
+				9C57A4962171049C00C8B046 /* ARCHRequestsInfoModuleIO.swift in Sources */,
 				9C1B9AF6216F89B300DB35A4 /* ARCHRequestStorage.xcdatamodeld in Sources */,
 				9C1B9ADD216F60F800DB35A4 /* ARCHRequestsListEventHandler.swift in Sources */,
+				9C57A4972171049C00C8B046 /* ARCHRequestsInfoEventHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

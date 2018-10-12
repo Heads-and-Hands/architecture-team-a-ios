@@ -15,7 +15,9 @@ final class ARCHRequestsInfoViewController: ARCHViewController<ARCHRequestsInfoS
     override func prepareRootView() {
         super.prepareRootView()
 
-        // TODO: Some code setting UI
+        view.backgroundColor = .white
+
+        title = "Request Info"
     }
 
     // MARK: - Render
