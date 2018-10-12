@@ -29,6 +29,6 @@ class ARCHStrorageTVCellViewModel: ARCHCellViewModel, ARCHModelInitilizable {
     // MARK: - Public
 
     var title: String {
-        return dateFormatter.string(from: object.createdAt ?? Date())
+        return object.objectID.description
     }
 }

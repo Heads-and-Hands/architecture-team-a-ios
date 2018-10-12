@@ -10,7 +10,7 @@ import Foundation
 import Moya
 import enum Result.Result
 
-final public class ARCHStorageMoyaPlugin: PluginType {
+public final class ARCHStorageMoyaPlugin: PluginType {
 
     private var storage: ARCHRequestStorageProtocol?
 

@@ -8,4 +8,4 @@
 
 import CoreData
 
-class ARCHStorageResponse: NSManagedObject {}
+public class ARCHStorageResponse: NSManagedObject {}

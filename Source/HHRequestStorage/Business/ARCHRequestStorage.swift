@@ -13,6 +13,8 @@ import enum Result.Result
 
 public protocol ARCHRequestStorageProtocol {
 
+    var requests: [ARCHStorageRequest] { get }
+
     func log(request: URLRequest)
 
     func log(result: Result<Response, MoyaError>)
@@ -66,11 +68,23 @@ public class ARCHRequestStorage {
             }
         }
     }
+
+    // MARK: - Temporaty container
+
+    private var temporaryStorage: [String: URLRequest] = [:]
 }
 
 extension ARCHRequestStorage: ARCHRequestStorageProtocol {
 
+    public var requests: [ARCHStorageRequest] {
+        let requst: NSFetchRequest<ARCHStorageRequest> = ARCHStorageRequest.fetchRequest()
+        return (try? persistentContainer.viewContext.fetch(requst)) ?? []
+    }
+
     public func log(request: URLRequest) {
+
+        let tempID = UUID().uuidString
+
         let model = ARCHStorageRequest(context: persistentContainer.viewContext)
         model.path = request.url?.absoluteString
         model.desc = request.description
@@ -78,15 +92,43 @@ extension ARCHRequestStorage: ARCHRequestStorageProtocol {
         model.headers = request.allHTTPHeaderFields?.description
         model.body = String(data: request.httpBody ?? Data(), encoding: .utf8)
         model.createdAt = Date()
+        model.tempID = tempID
+
+        temporaryStorage[tempID] = request
 
         saveContext()
     }
 
     public func log(result: Result<Response, MoyaError>) {
+        guard let request = result.value?.request,
+            let tempID = temporaryStorage.first(where: { row in
+                let (_, value) = row
+                return value == request })?.key,
+            let requestModel = requests.first(where: {
+                ($0.tempID ?? "") == tempID }) else {
+                    return
+        }
+
+        requestModel.tempID = nil
+
+        let responseModel = ARCHStorageResponse(context: persistentContainer.viewContext)
+
+        switch  result {
+        case let .success(response):
+            responseModel.statusCode = Int16(response.statusCode)
+            responseModel.headers = response.response?.allHeaderFields.debugDescription
+            responseModel.body = String(data: response.data, encoding: .utf8)
+        case let .failure(error):
+            responseModel.error = error.errorDescription
+        }
+
+        requestModel.response = responseModel
+
+        saveContext()
     }
 
     public func presentRequests(from viewController: UIViewController) {
-        guard let vc = ARCHRequestStorageConfigurator(moduleIO: nil).router as? UIViewController else {
+        guard let vc = ARCHRequestStorageConfigurator(moduleIO: nil, storage: self).router as? UIViewController else {
             return
         }
 

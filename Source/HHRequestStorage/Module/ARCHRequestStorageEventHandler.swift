@@ -12,11 +12,13 @@ final class ARCHRequestStorageEventHandler: ARCHEventHandler<ARCHRequestStorageS
 
     weak var moduleOutput: ARCHRequestStorageModuleOutput?
 
+    var storage: ARCHRequestStorageProtocol?
+
     private var context = ARCHRequestStorage.viewContext
 
     override func viewIsReady() {
         super.viewIsReady()
 
-        state.list = Array(repeating: ARCHStorageRequest(context: context), count: 100)
+        state.list = storage?.requests ?? []
     }
 }

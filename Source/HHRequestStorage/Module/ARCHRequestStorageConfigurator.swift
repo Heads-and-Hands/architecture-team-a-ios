@@ -12,9 +12,11 @@ final class ARCHRequestStorageConfigurator: ARCHModuleConfigurator {
     typealias ModuleIO = (ARCHRequestStorageModuleInput) -> ARCHRequestStorageModuleOutput?
 
     let moduleIO: ModuleIO?
+    let storage: ARCHRequestStorageProtocol?
 
-    init(moduleIO: ModuleIO?) {
+    init(moduleIO: ModuleIO?, storage: ARCHRequestStorageProtocol) {
         self.moduleIO = moduleIO
+        self.storage = storage
     }
 
     var router: ARCHRouter {
@@ -23,6 +25,7 @@ final class ARCHRequestStorageConfigurator: ARCHModuleConfigurator {
         let eventHandler = ARCHRequestStorageEventHandler()
         eventHandler.router = controller
         eventHandler.viewInput = controller
+        eventHandler.storage = storage
 
         if let moduleIO = moduleIO {
             eventHandler.moduleOutput = moduleIO(eventHandler)

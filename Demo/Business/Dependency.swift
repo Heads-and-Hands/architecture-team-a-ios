@@ -24,7 +24,13 @@ class Dependency {
 
     var apiProvider: ApiProvider {
         let provider = ApiProvider(
-            plugins: [signMoyaPlugin, loggerMoyaPlugin, activityMoyaPlugin, authObserverPlugin, requestStorageMoyaPlugin]
+            plugins: [
+                signMoyaPlugin,
+                loggerMoyaPlugin,
+                activityMoyaPlugin,
+                authObserverPlugin,
+                requestStorageMoyaPlugin
+            ]
         )
         userStorage.add(delegate: provider)
         return provider
