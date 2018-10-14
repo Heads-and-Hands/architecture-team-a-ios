@@ -15,6 +15,11 @@
 		501AA65A211C6C8B002D3264 /* ARCHListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089233620FC8DA30032985E /* ARCHListDataSource.swift */; };
 		501AA65B211C6C8E002D3264 /* ARCHCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */; };
 		501AA65C211C6C9A002D3264 /* ARCHEmptyListDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81EB211ACF8D00ADA769 /* ARCHEmptyListDataAdapter.swift */; };
+		502A7B58217387F900C6A2E8 /* ARCHListDataSourceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B56217387EC00C6A2E8 /* ARCHListDataSourceAdapter.swift */; };
+		502A7B5D2173894C00C6A2E8 /* ARCHHeaderFooterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B5B2173893700C6A2E8 /* ARCHHeaderFooterViewModel.swift */; };
+		502A7B5E217389FA00C6A2E8 /* ARCHSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B592173883000C6A2E8 /* ARCHSectionViewModel.swift */; };
+		502A7B6021738C5D00C6A2E8 /* ARCHSectionDataSourceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B5F21738C5D00C6A2E8 /* ARCHSectionDataSourceAdapter.swift */; };
+		502A7B6221739BB800C6A2E8 /* ARCHHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B6121739BB800C6A2E8 /* ARCHHeaderFooterView.swift */; };
 		503B4266216A608200CD641D /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503B4265216A608200CD641D /* UILabel.swift */; };
 		503FD70E213EA920008905ED /* ARCHIndicationLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD70C213EA914008905ED /* ARCHIndicationLayoutGuide.swift */; };
 		503FD713213FF4E2008905ED /* IndicationViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD712213FF4E2008905ED /* IndicationViewProvider.swift */; };
@@ -729,6 +734,11 @@
 		501AA648211C6C4A002D3264 /* HHList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		501AA64A211C6C4B002D3264 /* HHList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHList.h; sourceTree = "<group>"; };
 		501AA64B211C6C4B002D3264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		502A7B56217387EC00C6A2E8 /* ARCHListDataSourceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHListDataSourceAdapter.swift; sourceTree = "<group>"; };
+		502A7B592173883000C6A2E8 /* ARCHSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHSectionViewModel.swift; sourceTree = "<group>"; };
+		502A7B5B2173893700C6A2E8 /* ARCHHeaderFooterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHHeaderFooterViewModel.swift; sourceTree = "<group>"; };
+		502A7B5F21738C5D00C6A2E8 /* ARCHSectionDataSourceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHSectionDataSourceAdapter.swift; sourceTree = "<group>"; };
+		502A7B6121739BB800C6A2E8 /* ARCHHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHHeaderFooterView.swift; sourceTree = "<group>"; };
 		5032B7F421186C4600271A1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5032B7F621186C4D00271A1D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		503B4265216A608200CD641D /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -1454,8 +1464,13 @@
 				5089233220FC8DA30032985E /* CollectionView */,
 				5089233420FC8DA30032985E /* ARCHListView.swift */,
 				5089233520FC8DA30032985E /* ARCHCell.swift */,
+				502A7B6121739BB800C6A2E8 /* ARCHHeaderFooterView.swift */,
 				5089233620FC8DA30032985E /* ARCHListDataSource.swift */,
+				502A7B56217387EC00C6A2E8 /* ARCHListDataSourceAdapter.swift */,
+				502A7B5F21738C5D00C6A2E8 /* ARCHSectionDataSourceAdapter.swift */,
+				502A7B592173883000C6A2E8 /* ARCHSectionViewModel.swift */,
 				50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */,
+				502A7B5B2173893700C6A2E8 /* ARCHHeaderFooterViewModel.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -2680,9 +2695,14 @@
 			files = (
 				501AA65A211C6C8B002D3264 /* ARCHListDataSource.swift in Sources */,
 				503FD71921400D0E008905ED /* ARCHCollectionViewController.swift in Sources */,
+				502A7B5D2173894C00C6A2E8 /* ARCHHeaderFooterViewModel.swift in Sources */,
+				502A7B58217387F900C6A2E8 /* ARCHListDataSourceAdapter.swift in Sources */,
+				502A7B5E217389FA00C6A2E8 /* ARCHSectionViewModel.swift in Sources */,
 				501AA656211C6C7E002D3264 /* ARCHTableViewDataSource.swift in Sources */,
 				501AA65B211C6C8E002D3264 /* ARCHCellViewModel.swift in Sources */,
 				501AA657211C6C83002D3264 /* ARCHCollectionViewDataSource.swift in Sources */,
+				502A7B6221739BB800C6A2E8 /* ARCHHeaderFooterView.swift in Sources */,
+				502A7B6021738C5D00C6A2E8 /* ARCHSectionDataSourceAdapter.swift in Sources */,
 				501AA65C211C6C9A002D3264 /* ARCHEmptyListDataAdapter.swift in Sources */,
 				503FD71821400D0E008905ED /* ARCHTableViewController.swift in Sources */,
 				501AA658211C6C85002D3264 /* ARCHListView.swift in Sources */,

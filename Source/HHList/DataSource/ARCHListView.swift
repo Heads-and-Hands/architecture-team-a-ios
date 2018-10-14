@@ -10,6 +10,8 @@ import UIKit
 
 public protocol ARCHListView {
     associatedtype CellType
+    associatedtype HeaderFooterType
+
     associatedtype DataSourceType: NSObjectProtocol
 
     func reloadDataSource()
@@ -17,6 +19,10 @@ public protocol ARCHListView {
     func set(dataSource: DataSourceType?)
 
     func register(cell: CellType.Type, cellID: String)
+    func register(header: HeaderFooterType.Type, headerID: String)
+    func register(footer: HeaderFooterType.Type, footerID: String)
 
     func reusableCellWith(id: String, indexPath: IndexPath) -> CellType?
+    func reusableHeaderWith(id: String, indexPath: IndexPath) -> HeaderFooterType?
+    func reusableFooterWith(id: String, indexPath: IndexPath) -> HeaderFooterType?
 }
