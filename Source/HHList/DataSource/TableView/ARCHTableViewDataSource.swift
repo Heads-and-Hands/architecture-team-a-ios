@@ -65,7 +65,7 @@ extension UITableView: ARCHListView {
     public func register(footer: HeaderFooterType.Type, footerID: String) {
         register(reusableView: footer, viewID: footerID)
     }
-    
+
     public func reusableCellWith(id: String, indexPath: IndexPath) -> CellType? {
         return dequeueReusableCell(withIdentifier: id)
     }

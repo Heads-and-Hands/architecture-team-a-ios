@@ -14,5 +14,5 @@ public protocol ARCHSectionViewModel {
     var footerViewModel: ARCHHeaderFooterViewModel? { get }
     var numberOfItems: Int { get }
 
-    func cellViewModel(at item: Int) -> ARCHCellViewModel
+    func cellViewModel(at index: Int) -> ARCHCellViewModel
 }
