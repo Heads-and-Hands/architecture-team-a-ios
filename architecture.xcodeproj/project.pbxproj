@@ -294,7 +294,6 @@
 		9C1418072146B57C009F1073 /* ChildModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */; };
 		9C1418082146B57C009F1073 /* ChildModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418032146B57C009F1073 /* ChildModuleState.swift */; };
 		9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14180A2146B6EC009F1073 /* ParentView.swift */; };
-		9CF7224A2147BB0500DE0915 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF722492147BB0500DE0915 /* ChildView.swift */; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
 		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
@@ -322,6 +321,7 @@
 		9CF48BB12167A73B0040AE49 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAA2167A73A0040AE49 /* UIButton.swift */; };
 		9CF48BB32167A73B0040AE49 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAC2167A73A0040AE49 /* UIEdgeInsets.swift */; };
 		9CF48BB42167A73B0040AE49 /* UITraitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48BAD2167A73B0040AE49 /* UITraitCollection.swift */; };
+		9CF7224A2147BB0500DE0915 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF722492147BB0500DE0915 /* ChildView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -896,8 +896,6 @@
 		9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleConfigurator.swift; sourceTree = "<group>"; };
 		9C1418032146B57C009F1073 /* ChildModuleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleState.swift; sourceTree = "<group>"; };
 		9C14180A2146B6EC009F1073 /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
-		9CF722492147BB0500DE0915 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
-		9CF7224B2147E92100DE0915 /* INHERITANCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = INHERITANCE.md; sourceTree = "<group>"; };
 		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
 		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -928,6 +926,8 @@
 		9CF48BAC2167A73A0040AE49 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		9CF48BAD2167A73B0040AE49 /* UITraitCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITraitCollection.swift; sourceTree = "<group>"; };
 		9CF48BCE2167BE0A0040AE49 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		9CF722492147BB0500DE0915 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
+		9CF7224B2147E92100DE0915 /* INHERITANCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = INHERITANCE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1713,8 +1713,8 @@
 				9CF722492147BB0500DE0915 /* ChildView.swift */,
 			);
 			path = ModuleDemo;
-            sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
 		9CF48AE92167A3F60040AE49 /* HHLens */ = {
 			isa = PBXGroup;
 			children = (
