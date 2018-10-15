@@ -12,7 +12,11 @@ final class ARCHRequestsInfoEventHandler: ARCHEventHandler<ARCHRequestsInfoState
 
     weak var moduleOutput: ARCHRequestsInfoModuleOutput?
 
+    var requesModel: ARCHStorageRequest?
+
     override func viewIsReady() {
         super.viewIsReady()
+
+        state.requestModel = requesModel
     }
 }

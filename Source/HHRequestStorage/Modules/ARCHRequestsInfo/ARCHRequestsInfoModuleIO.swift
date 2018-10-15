@@ -9,6 +9,8 @@
 import Foundation
 
 protocol ARCHRequestsInfoModuleInput {
+
+    var requesModel: ARCHStorageRequest? { get set }
 }
 
 protocol ARCHRequestsInfoModuleOutput: class {

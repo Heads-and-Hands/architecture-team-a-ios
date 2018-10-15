@@ -313,7 +313,7 @@
 		9C1B9AF8216F90AF00DB35A4 /* ARCHStorageMoyaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B9AF7216F90AF00DB35A4 /* ARCHStorageMoyaPlugin.swift */; };
 		9C1B9AFB216F9E6000DB35A4 /* HHRequestStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */; };
 		9C1B9AFC216F9E6000DB35A4 /* HHRequestStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1B9ACD216F60ED00DB35A4 /* HHRequestStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9C2E50522170C5E100F249A2 /* ARCHStorageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E504F2170BABF00F249A2 /* ARCHStorageCellView.swift */; };
+		9C2E50522170C5E100F249A2 /* ARCHStorageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E504F2170BABF00F249A2 /* ARCHStorageInfoView.swift */; };
 		9C57A4902170FB8400C8B046 /* ARCHRequestsInfoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A48A2170FB7E00C8B046 /* ARCHRequestsInfoState.swift */; };
 		9C57A4922170FDF000C8B046 /* ARCHRouterEmbedInNavigationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4912170FDF000C8B046 /* ARCHRouterEmbedInNavigationOptions.swift */; };
 		9C57A4942170FE1D00C8B046 /* ARCHRouterDismissOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57A4932170FE1D00C8B046 /* ARCHRouterDismissOptions.swift */; };
@@ -954,7 +954,7 @@
 		9C1B9AEB216F646100DB35A4 /* ARCHStrorageTVCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStrorageTVCellViewModel.swift; sourceTree = "<group>"; };
 		9C1B9AF5216F89B300DB35A4 /* ARCHRequestStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ARCHRequestStorage.xcdatamodel; sourceTree = "<group>"; };
 		9C1B9AF7216F90AF00DB35A4 /* ARCHStorageMoyaPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStorageMoyaPlugin.swift; sourceTree = "<group>"; };
-		9C2E504F2170BABF00F249A2 /* ARCHStorageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStorageCellView.swift; sourceTree = "<group>"; };
+		9C2E504F2170BABF00F249A2 /* ARCHStorageInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStorageInfoView.swift; sourceTree = "<group>"; };
 		9C57A4862170FB7E00C8B046 /* ARCHRequestsInfoModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsInfoModuleIO.swift; sourceTree = "<group>"; };
 		9C57A4872170FB7E00C8B046 /* ARCHRequestsInfoEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsInfoEventHandler.swift; sourceTree = "<group>"; };
 		9C57A4882170FB7E00C8B046 /* ARCHRequestsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRequestsInfoViewController.swift; sourceTree = "<group>"; };
@@ -1885,7 +1885,7 @@
 		9C2E50512170BAD700F249A2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9C2E504F2170BABF00F249A2 /* ARCHStorageCellView.swift */,
+				9C2E504F2170BABF00F249A2 /* ARCHStorageInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3207,7 +3207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C1B9AD9216F60F800DB35A4 /* ARCHRequestStorage.swift in Sources */,
-				9C2E50522170C5E100F249A2 /* ARCHStorageCellView.swift in Sources */,
+				9C2E50522170C5E100F249A2 /* ARCHStorageInfoView.swift in Sources */,
 				9C1B9ADA216F60F800DB35A4 /* ARCHStorageRequest.swift in Sources */,
 				9C1B9ADF216F60F800DB35A4 /* ARCHRequestsListState.swift in Sources */,
 				9C1B9ADE216F60F800DB35A4 /* ARCHRequestsListModuleIO.swift in Sources */,

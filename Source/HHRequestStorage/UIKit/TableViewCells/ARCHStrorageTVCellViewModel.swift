@@ -32,42 +32,27 @@ class ARCHStorageTVCellViewModel: ARCHCellViewModel, ARCHModelInitilizable {
         return dateFormatter.string(from: object.createdAt ?? Date())
     }
 
-    var requestParameters: [String: String] {
-        return [
-            "Method": object.method ?? "",
-            "Path": object.path ?? "",
-            "Description": object.desc ?? "",
-            "Headers": prettyPrint(string: object.headers ?? ""),
-            "Parameters": prettyPrint(string: object.body ?? "")
-        ]
-    }
-
     var responseDate: String {
-        return dateFormatter.string(from: object.response?.receivedAt ?? Date())
-    }
-
-    var responseParameters: [String: String] {
         guard let response = object.response else {
-            return [:]
+            return "-"
         }
-        return [
-            "Status code": String(response.statusCode),
-            "Headers": prettyPrint(string: response.headers ?? ""),
-            "Body": prettyPrint(string: response.body ?? ""),
-            "Description": response.desc ?? "",
-            "Error": response.error ?? ""
-        ]
+
+        return dateFormatter.string(from: response.receivedAt ?? Date())
     }
 
-    // MARK: - Private
+    var path: String {
+        return object.path ?? ""
+    }
 
-    private func prettyPrint(string: String) -> String {
-        guard let data = string.data(using: .utf8, allowLossyConversion: false),
-            let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers),
-            let prettyData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted]),
-            let result = String(data: prettyData, encoding: .utf8) else {
-                return string
+    var method: String {
+        return object.method ?? ""
+    }
+
+    var statusCode: String {
+        guard let response = object.response else {
+            return "-"
         }
-        return result
+
+        return String(response.statusCode)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ARCHStorageCellView: UIView {
+class ARCHStorageInfoView: UIView {
 
     private let titleLabel = UILabel()
     private let dateLabel = UILabel()
@@ -64,7 +64,7 @@ class ARCHStorageCellView: UIView {
 
     // MARK: - Public
 
-    public func update(date: String, values: [String: String]) {
+    public func update(date: String, values: [(key: String, value: String)]) {
         dateLabel.text = date
 
         stackView.arrangedSubviews.forEach {
@@ -73,8 +73,7 @@ class ARCHStorageCellView: UIView {
         }
 
         values.forEach { arg in
-            let (key, value) = arg
-            let view = ARCHRowView(title: key, content: value)
+            let view = ARCHRowView(title: arg.key, content: arg.value)
             self.stackView.addArrangedSubview(view)
         }
     }
