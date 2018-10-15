@@ -8,6 +8,7 @@
 
 import Moya
 import HHNetwork
+import HHRequestStorage
 
 typealias ApiProvider = ARCHMoyaProvider<ApiTarget>
 
@@ -23,7 +24,13 @@ class Dependency {
 
     var apiProvider: ApiProvider {
         let provider = ApiProvider(
-            plugins: [signMoyaPlugin, loggerMoyaPlugin, activityMoyaPlugin, authObserverPlugin]
+            plugins: [
+                signMoyaPlugin,
+                loggerMoyaPlugin,
+                activityMoyaPlugin,
+                authObserverPlugin,
+                requestStorageMoyaPlugin
+            ]
         )
         userStorage.add(delegate: provider)
         return provider
@@ -60,6 +67,10 @@ class Dependency {
                 self.application.isNetworkActivityIndicatorVisible = false
             }
         })
+    }
+
+    private var requestStorageMoyaPlugin: PluginType {
+        return ARCHStorageMoyaPlugin()
     }
 
     private var signMoyaPlugin: PluginType {

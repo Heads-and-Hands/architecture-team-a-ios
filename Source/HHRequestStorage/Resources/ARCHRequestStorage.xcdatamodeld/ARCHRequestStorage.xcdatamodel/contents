@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ARCHStorageRequest" representedClassName=".ARCHStorageRequest" syncable="YES" codeGenerationType="category">
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="headers" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="method" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tempID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ARCHStorageResponse" inverseName="request" inverseEntity="ARCHStorageResponse" syncable="YES"/>
+    </entity>
+    <entity name="ARCHStorageResponse" representedClassName=".ARCHStorageResponse" syncable="YES" codeGenerationType="category">
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="error" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="headers" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receivedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="statusCode" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ARCHStorageRequest" inverseName="response" inverseEntity="ARCHStorageRequest" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ARCHStorageRequest" positionX="-217.55859375" positionY="48.68359375" width="128" height="165"/>
+        <element name="ARCHStorageResponse" positionX="-9" positionY="90" width="128" height="150"/>
+    </elements>
+</model>

@@ -6,6 +6,7 @@
 //  Copyright © 2018 Heads and Hands. All rights reserved.
 //
 
+import HHRequestStorage
 import HHModule
 #if HHLens
 import HHLens
