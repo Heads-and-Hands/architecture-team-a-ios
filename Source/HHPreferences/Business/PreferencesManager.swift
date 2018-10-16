@@ -51,7 +51,7 @@ open class PreferencesManager: PreferencesProtocol {
     // MARK: - PreferencesProtocol
 
     public func setPreferences(key: String, preferences: [Preference]) {
-        if let jsonData = try? JSONEncoder().encode(preferences) {
+        if let jsonData = try? JSONEncoder().encode(makeUnique(preferences: preferences)) {
             storage.set(jsonData, forKey: key)
         }
     }
@@ -89,5 +89,36 @@ open class PreferencesManager: PreferencesProtocol {
         }
 
         viewController.present(vc, animated: true, completion: nil)
+    }
+
+    // MARK: - Private
+
+    private func makeUnique(preferences: [Preference]) -> [Preference] {
+
+        var preferences = preferences
+
+        for index in 0 ..< preferences.count where preferences[index].name.isEmpty {
+            preferences[index].name = "Default"
+        }
+
+        let index = preferences.lastIndex(where: { $0.isSelected }) ?? 0
+
+        for indexI in 0 ..< preferences.count {
+            preferences[indexI].isSelected = false
+
+            let item = preferences[indexI]
+            var counter = 1
+
+            for indexJ in (indexI + 1) ..< preferences.count where item.name == preferences[indexJ].name {
+                counter += 1
+                preferences[indexJ].name = "\(item.name)_\(counter)"
+            }
+        }
+
+        if !preferences.isEmpty {
+            preferences[index].isSelected = true
+        }
+
+        return preferences
     }
 }
