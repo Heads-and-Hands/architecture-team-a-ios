@@ -14,7 +14,25 @@ final class PreferencesViewController: ARCHViewController<PreferencesState, Pref
     private let titleLable = UILabel()
     private let closeButton = UIButton()
 
+    private var bottomConstraint: NSLayoutConstraint?
+
+    // MARK: - Initialization/Deinitialization
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     // MARK: - View life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.keyboardNotificationHandler(_:)),
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil)
+    }
 
     override func prepareRootView() {
         super.prepareRootView()
@@ -39,7 +57,8 @@ final class PreferencesViewController: ARCHViewController<PreferencesState, Pref
 
         if #available(iOS 11.0, *) {
             titleLable.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8.0).isActive = true
-            closeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8.0).isActive = true
+            bottomConstraint = closeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8.0)
+            bottomConstraint?.isActive = true
         }
 
         NSLayoutConstraint.activate([
@@ -58,7 +77,8 @@ final class PreferencesViewController: ARCHViewController<PreferencesState, Pref
 
     private func configureScrollView() {
         let scrollView = UIScrollView()
-        scrollView.clipsToBounds = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
         scrollView.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(scrollView)
@@ -70,7 +90,6 @@ final class PreferencesViewController: ARCHViewController<PreferencesState, Pref
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0)
         ])
 
-        stackView.clipsToBounds = false
         stackView.axis = .vertical
         stackView.spacing = 4.0
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -103,6 +122,23 @@ final class PreferencesViewController: ARCHViewController<PreferencesState, Pref
     @objc
     private func closeButtonTapHandler(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+
+    @objc
+    private func keyboardNotificationHandler(_ notification: NSNotification) {
+        guard let userInfo = notification.userInfo,
+            let duration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue,
+            let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+                return
+        }
+
+        let constant: CGFloat = endFrame.minY < closeButton.frame.maxY ? endFrame.height + 8.0 : 8.0
+
+        bottomConstraint?.constant = -constant
+
+        UIView.animate(withDuration: duration, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
 
     // MARK: - Private

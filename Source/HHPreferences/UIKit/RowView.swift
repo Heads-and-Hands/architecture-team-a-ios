@@ -44,6 +44,7 @@ class RowView: UIView {
         textField.clipsToBounds = true
         textField.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
         textField.layer.cornerRadius = 4.0
+        textField.delegate = self
         textField.addTarget(self, action: #selector(self.textFieldHandler(_:)), for: .editingChanged)
 
         switchControll.addTarget(self, action: #selector(self.switchControllHandler(_:)), for: .valueChanged)
@@ -88,7 +89,7 @@ class RowView: UIView {
 
             switchControll.topAnchor.constraint(greaterThanOrEqualTo: separator.bottomAnchor, constant: 4.0),
             switchControll.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor),
-            switchControll.trailingAnchor.constraint(equalTo: trailingAnchor)
+            switchControll.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4.0)
         ])
 
         switchControll.setContentHuggingPriority(.defaultHigh, for: .horizontal)
@@ -117,7 +118,10 @@ class RowView: UIView {
 
         textField.isHidden = preference.type == .constant
         textField.text = preference.value
-        textField.isEnabled = preference.isSelected
+
+        if !preference.isSelected {
+            textField.resignFirstResponder()
+        }
 
         valueLabel.isHidden = preference.type == .custom
         valueLabel.text = preference.value
@@ -127,5 +131,13 @@ class RowView: UIView {
         titleLabel.textColor = preference.isSelected ? .black : .gray
 
         switchControll.setOn(preference.isSelected, animated: true)
+    }
+}
+
+extension RowView: UITextFieldDelegate {
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switchControll.setOn(true, animated: true)
+        output?.didSelectItem(name)
     }
 }

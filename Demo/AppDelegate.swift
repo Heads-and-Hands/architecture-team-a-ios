@@ -26,13 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: LaunchOptions?
         ) -> Bool {
 
-        let preferences: [Preference] = [
-            Preference(name: "Release", value: "https://yandex.ru", type: .constant, isSelected: false),
-            Preference(name: "Debug", value: "https://mail.ru", type: .constant, isSelected: true),
-            Preference(name: "Custom", value: "", type: .custom, isSelected: false)
-        ]
-
-        PreferencesManager.shared.setPreferences(key: "NETWORK_BASE_PATH", preferences: preferences)
+        if !PreferencesManager.shared.isSet(for: Preferences.networkBasePath.rawValue) {
+            PreferencesManager.shared.setPreferences(
+                key: Preferences.networkBasePath.rawValue,
+                preferences: Preferences.networkBasePath.preferences())
+        }
 
         let window = CustomARCHWindow()
         self.window = window

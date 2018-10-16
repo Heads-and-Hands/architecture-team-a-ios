@@ -12,9 +12,11 @@ public protocol PreferencesProtocol: class {
 
     func setPreferences(key: String, preferences: [Preference])
 
-    func getPreference(for key: String) -> String?
+    func preference(for key: String) -> String?
 
     func presentPreferences(for key: String, in viewController: UIViewController)
+
+    func isSet(for key: String) -> Bool
 }
 
 public enum PreferenceType: Int, Codable {
@@ -54,13 +56,21 @@ open class PreferencesManager: PreferencesProtocol {
         }
     }
 
-    public func getPreference(for key: String) -> String? {
+    public func preference(for key: String) -> String? {
         guard let data = storage.data(forKey: key),
             let preferences = try? JSONDecoder().decode(Array<Preference>.self, from: data) else {
                 return nil
         }
 
         return preferences.first(where: { $0.isSelected })?.value
+    }
+
+    public func isSet(for key: String) -> Bool {
+        guard let data = storage.data(forKey: key),
+            (try? JSONDecoder().decode(Array<Preference>.self, from: data)) != nil else {
+                return false
+        }
+        return true
     }
 
     public func presentPreferences(for key: String, in viewController: UIViewController) {
