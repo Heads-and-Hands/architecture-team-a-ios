@@ -9,6 +9,7 @@
 import Alamofire
 import Moya
 import HHNetwork
+import HHPreferences
 
 enum ApiTarget {
     case main
@@ -17,7 +18,7 @@ enum ApiTarget {
 extension ApiTarget: ARCHTargetType {
 
     var baseURL: URL {
-        guard let url = URL(string: "http://gdemost.handh.ru/api/v1/") else {
+        guard let url = URL(string: PreferencesManager.shared.preference(for: Preferences.networkBasePath.rawValue) ?? "") else {
             fatalError("Wrong debug api base url")
         }
         return url

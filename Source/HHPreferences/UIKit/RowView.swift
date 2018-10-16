@@ -39,6 +39,8 @@ class RowView: UIView {
         valueLabel.textColor = .black
 
         textField.font = .systemFont(ofSize: 18.0, weight: .regular)
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
         textField.tintColor = .black
         textField.textColor = .black
         textField.clipsToBounds = true

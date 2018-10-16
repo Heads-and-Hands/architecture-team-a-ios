@@ -15,17 +15,8 @@ enum Preferences: String {
         switch self {
         case .networkBasePath:
             return [
-                Preference(name: "Release", value: "https://yandex.ru", type: .constant, isSelected: false),
-                Preference(name: "Custom", value: "https://mail.ru", type: .constant, isSelected: true),
-                Preference(name: "Release", value: "", type: .custom, isSelected: false),
-                Preference(name: "Custom", value: "https://yandex.ru", type: .constant, isSelected: false),
-                Preference(name: "Release", value: "https://mail.ru", type: .constant, isSelected: true),
-                Preference(name: "Release", value: "", type: .custom, isSelected: false),
-                Preference(name: "Release", value: "https://yandex.ru", type: .constant, isSelected: false),
-                Preference(name: "Release", value: "https://mail.ru", type: .constant, isSelected: true),
-                Preference(name: "Custom", value: "", type: .custom, isSelected: false),
-                Preference(name: "Custom", value: "https://yandex.ru", type: .constant, isSelected: false),
-                Preference(name: "Debug", value: "https://mail.ru", type: .constant, isSelected: true),
+                Preference(name: "Debug", value: "http://gdemost.handh.ru/api/v1/", type: .constant, isSelected: false),
+                Preference(name: "Release", value: "https://yandex.ru", type: .constant, isSelected: true),
                 Preference(name: "Custom", value: "", type: .custom, isSelected: false)
             ]
         }

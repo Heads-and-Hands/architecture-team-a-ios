@@ -18,6 +18,12 @@ final class NetworkViewController: ARCHViewController<NetworkState, NetworkEvent
         view.backgroundColor = .white
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        output?.viewIsReady()
+    }
+
     // MARK: - Render
 
     override func render(state: State) {
