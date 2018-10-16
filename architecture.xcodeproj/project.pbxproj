@@ -302,8 +302,10 @@
 		9C196A1E2175F1740023E532 /* PreferencesModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C196A0F2175F1320023E532 /* PreferencesModuleIO.swift */; };
 		9C196A1F2175F1740023E532 /* PreferencesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C196A102175F1320023E532 /* PreferencesState.swift */; };
 		9C196A202175F1740023E532 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C196A0C2175F1310023E532 /* PreferencesViewController.swift */; };
-		9C196A212175F1790023E532 /* NetworkPreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C196A0A2175F12B0023E532 /* NetworkPreferencesManager.swift */; };
+		9C196A212175F1790023E532 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C196A0A2175F12B0023E532 /* PreferencesManager.swift */; };
 		9C196A222175F17E0023E532 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C196A162175F1360023E532 /* RowView.swift */; };
+		9C196A232175F8000023E532 /* HHPreferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1969FC2175F0E90023E532 /* HHPreferences.framework */; };
+		9C196A242175F8000023E532 /* HHPreferences.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1969FC2175F0E90023E532 /* HHPreferences.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
 		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
@@ -608,6 +610,13 @@
 			remoteGlobalIDString = 9C1969FB2175F0E90023E532;
 			remoteInfo = HHPreferences;
 		};
+		9C196A252175F8000023E532 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C1969FB2175F0E90023E532;
+			remoteInfo = HHPreferences;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -655,6 +664,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				507ABCC921257C64003DBDD7 /* HHModule.framework in Embed Frameworks */,
+				9C196A242175F8000023E532 /* HHPreferences.framework in Embed Frameworks */,
 				507ABCE821257E34003DBDD7 /* HHNetwork.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -917,7 +927,7 @@
 		9C1969FC2175F0E90023E532 /* HHPreferences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHPreferences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1969FE2175F0E90023E532 /* HHPreferences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHPreferences.h; sourceTree = "<group>"; };
 		9C1969FF2175F0E90023E532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C196A0A2175F12B0023E532 /* NetworkPreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPreferencesManager.swift; sourceTree = "<group>"; };
+		9C196A0A2175F12B0023E532 /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 		9C196A0C2175F1310023E532 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		9C196A0D2175F1310023E532 /* PreferencesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesConfigurator.swift; sourceTree = "<group>"; };
 		9C196A0E2175F1320023E532 /* PreferencesEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesEventHandler.swift; sourceTree = "<group>"; };
@@ -1024,6 +1034,7 @@
 			files = (
 				50C985BC212AF0C00002EF4B /* Alamofire.framework in Frameworks */,
 				50C985BD212AF0C00002EF4B /* KeychainAccess.framework in Frameworks */,
+				9C196A232175F8000023E532 /* HHPreferences.framework in Frameworks */,
 				50C985BE212AF0C00002EF4B /* Moya.framework in Frameworks */,
 				50C985BF212AF0C00002EF4B /* Result.framework in Frameworks */,
 				507ABCC121257C64003DBDD7 /* HHModule.framework in Frameworks */,
@@ -1776,7 +1787,7 @@
 		9C196A192175F1510023E532 /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				9C196A0A2175F12B0023E532 /* NetworkPreferencesManager.swift */,
+				9C196A0A2175F12B0023E532 /* PreferencesManager.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -2108,6 +2119,7 @@
 				507ABCB221257C64003DBDD7 /* PBXTargetDependency */,
 				507ABCB421257C64003DBDD7 /* PBXTargetDependency */,
 				507ABCB621257C64003DBDD7 /* PBXTargetDependency */,
+				9C196A262175F8000023E532 /* PBXTargetDependency */,
 			);
 			name = HHNetworkDemo;
 			productName = architecture;
@@ -3099,7 +3111,7 @@
 				9C196A1D2175F1740023E532 /* PreferencesEventHandler.swift in Sources */,
 				9C196A1C2175F1740023E532 /* PreferencesConfigurator.swift in Sources */,
 				9C196A1E2175F1740023E532 /* PreferencesModuleIO.swift in Sources */,
-				9C196A212175F1790023E532 /* NetworkPreferencesManager.swift in Sources */,
+				9C196A212175F1790023E532 /* PreferencesManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3333,6 +3345,11 @@
 			isa = PBXTargetDependency;
 			target = 9C1969FB2175F0E90023E532 /* HHPreferences */;
 			targetProxy = 9C196A012175F0E90023E532 /* PBXContainerItemProxy */;
+		};
+		9C196A262175F8000023E532 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C1969FB2175F0E90023E532 /* HHPreferences */;
+			targetProxy = 9C196A252175F8000023E532 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

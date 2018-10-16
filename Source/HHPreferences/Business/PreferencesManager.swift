@@ -14,7 +14,7 @@ public protocol PreferencesProtocol: class {
 
     func getPreference(for key: String) -> String?
 
-    func showPreferences(for key: String, in viewController: UIViewController)
+    func presentPreferences(for key: String, in viewController: UIViewController)
 }
 
 public enum PreferenceType: Int, Codable {
@@ -27,6 +27,13 @@ public struct Preference: Codable {
     var name: String
     var value: String
     var isSelected: Bool
+
+    public init(name: String, value: String, type: PreferenceType, isSelected: Bool) {
+        self.type = type
+        self.name = name
+        self.value = value
+        self.isSelected = isSelected
+    }
 }
 
 open class PreferencesManager: PreferencesProtocol {
@@ -56,10 +63,21 @@ open class PreferencesManager: PreferencesProtocol {
         return preferences.first(where: { $0.isSelected })?.value
     }
 
-    public func showPreferences(for key: String, in viewController: UIViewController) {
+    public func presentPreferences(for key: String, in viewController: UIViewController) {
         guard let data = storage.data(forKey: key),
             let preferences = try? JSONDecoder().decode(Array<Preference>.self, from: data) else {
                 return
         }
+
+        guard let vc = PreferencesConfigurator(moduleIO: { (moduleInput: PreferencesModuleInput) -> PreferencesModuleOutput? in
+            var input = moduleInput
+            input.preferences = preferences
+            input.preferencesKey = key
+            return nil
+        }).router as? UIViewController else {
+            return
+        }
+
+        viewController.present(vc, animated: true, completion: nil)
     }
 }

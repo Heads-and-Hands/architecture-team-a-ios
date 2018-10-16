@@ -6,14 +6,23 @@
 //  Copyright © 2018 HandH. All rights reserved.
 //
 
-import Foundation
+import HHModule
 
-public protocol PreferencesModuleInput {
+protocol PreferencesModuleInput {
 
     var preferences: [Preference] { get set }
+
+    var preferencesKey: String { get set }
 }
 
-public protocol PreferencesModuleOutput: class {
+protocol PreferencesModuleOutput: class {
 
     func didChange(_ preference: Preference)
+}
+
+protocol PreferencesViewOutput: ACRHViewOutput {
+
+    func didChange(_ value: String, for name: String)
+
+    func didSelectItem(_ name: String)
 }

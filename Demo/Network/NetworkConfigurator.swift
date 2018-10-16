@@ -7,6 +7,7 @@
 //
 
 import HHModule
+import HHPreferences
 
 final class NetworkConfigurator: ARCHModuleConfigurator {
     typealias ModuleIO = (NetworkModuleInput) -> NetworkModuleOutput?
@@ -24,6 +25,7 @@ final class NetworkConfigurator: ARCHModuleConfigurator {
         eventHandler.router = controller
         eventHandler.viewInput = controller
         eventHandler.apiProvider = Dependency.shared.apiProvider
+        eventHandler.preferencesManager = PreferencesManager.shared
 
         if let moduleIO = moduleIO {
             eventHandler.moduleOutput = moduleIO(eventHandler)

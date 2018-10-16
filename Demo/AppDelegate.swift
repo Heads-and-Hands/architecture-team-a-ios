@@ -8,6 +8,7 @@
 
 import UIKit
 import HHModule
+import HHPreferences
 
 #if HHNetwork || HHPaginationDemo
 import HHNetwork
@@ -25,7 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: LaunchOptions?
         ) -> Bool {
 
-        let window = ARCHWindow()
+        let preferences: [Preference] = [
+            Preference(name: "Release", value: "https://yandex.ru", type: .constant, isSelected: false),
+            Preference(name: "Debug", value: "https://mail.ru", type: .constant, isSelected: true),
+            Preference(name: "Custom", value: "", type: .custom, isSelected: false)
+        ]
+
+        PreferencesManager.shared.setPreferences(key: "NETWORK_BASE_PATH", preferences: preferences)
+
+        let window = CustomARCHWindow()
         self.window = window
 
 //        window.rootViewController = SkeletonTestViewController()
@@ -52,6 +61,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
+    }
+}
+
+class CustomARCHWindow: ARCHWindow {
+
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        guard let rootController = self.rootViewController else {
+            return
+        }
+
+        let vc = rootController.navigationController?.topViewController ?? rootController
+
+        if motion == UIEvent.EventSubtype.motionShake {
+            PreferencesManager.shared.presentPreferences(for: "NETWORK_BASE_PATH", in: vc)
+        }
     }
 }
 

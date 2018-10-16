@@ -27,23 +27,39 @@ class RowView: UIView {
     private let switchControll = UISwitch()
     private let valueLabel = UILabel()
     private let textField = UITextField()
+    private let separator = UIView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        titleLabel.font = .systemFont(ofSize: 12.0, weight: .medium)
+        titleLabel.font = .systemFont(ofSize: 16.0, weight: .medium)
         titleLabel.textColor = .black
 
-        valueLabel.font = .systemFont(ofSize: 12.0, weight: .regular)
+        valueLabel.font = .systemFont(ofSize: 16.0, weight: .regular)
         valueLabel.textColor = .black
 
-        textField.font = .systemFont(ofSize: 12.0, weight: .regular)
+        textField.font = .systemFont(ofSize: 18.0, weight: .regular)
         textField.tintColor = .black
         textField.textColor = .black
+        textField.clipsToBounds = true
+        textField.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
+        textField.layer.cornerRadius = 4.0
+        textField.addTarget(self, action: #selector(self.textFieldHandler(_:)), for: .editingChanged)
 
-        let separator = UIView()
+        switchControll.addTarget(self, action: #selector(self.switchControllHandler(_:)), for: .valueChanged)
+
         separator.backgroundColor = UIColor.gray
 
+        layout()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Private
+
+    private func layout() {
         [titleLabel, valueLabel, separator, switchControll, textField].forEach({
             $0.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview($0)
@@ -63,16 +79,16 @@ class RowView: UIView {
             valueLabel.topAnchor.constraint(greaterThanOrEqualTo: separator.bottomAnchor),
             valueLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor),
             valueLabel.trailingAnchor.constraint(equalTo: switchControll.leadingAnchor, constant: -8.0),
+            valueLabel.centerYAnchor.constraint(equalTo: switchControll.centerYAnchor),
 
             textField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            textField.topAnchor.constraint(greaterThanOrEqualTo: separator.bottomAnchor),
-            textField.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor),
+            textField.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 4.0),
+            textField.bottomAnchor.constraint(equalTo: bottomAnchor),
             textField.trailingAnchor.constraint(equalTo: switchControll.leadingAnchor, constant: -8.0),
 
-            switchControll.topAnchor.constraint(greaterThanOrEqualTo: separator.bottomAnchor),
+            switchControll.topAnchor.constraint(greaterThanOrEqualTo: separator.bottomAnchor, constant: 4.0),
             switchControll.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor),
-            switchControll.trailingAnchor.constraint(equalTo: trailingAnchor),
-            switchControll.centerYAnchor.constraint(equalTo: valueLabel.centerYAnchor)
+            switchControll.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
 
         switchControll.setContentHuggingPriority(.defaultHigh, for: .horizontal)
@@ -81,10 +97,6 @@ class RowView: UIView {
         valueLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         textField.setContentHuggingPriority(.defaultLow, for: .horizontal)
         textField.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Actions
@@ -114,6 +126,6 @@ class RowView: UIView {
         titleLabel.text = preference.name
         titleLabel.textColor = preference.isSelected ? .black : .gray
 
-        switchControll.isOn = preference.isSelected
+        switchControll.setOn(preference.isSelected, animated: true)
     }
 }

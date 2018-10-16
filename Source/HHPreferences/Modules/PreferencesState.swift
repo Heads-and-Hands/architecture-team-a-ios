@@ -11,4 +11,6 @@ import HHModule
 struct PreferencesState: ARCHState {
 
     var preferences: [Preference] = []
+
+    var title: String = ""
 }

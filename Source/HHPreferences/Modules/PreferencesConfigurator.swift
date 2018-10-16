@@ -23,6 +23,7 @@ final class PreferencesConfigurator: ARCHModuleConfigurator {
         let eventHandler = PreferencesEventHandler()
         eventHandler.router = controller
         eventHandler.viewInput = controller
+        eventHandler.preferencesManager = PreferencesManager.shared
 
         if let moduleIO = moduleIO {
             eventHandler.moduleOutput = moduleIO(eventHandler)

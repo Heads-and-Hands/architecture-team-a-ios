@@ -8,14 +8,18 @@
 
 import HHModule
 import HHNetwork
+import HHPreferences
 
 final class NetworkEventHandler: ARCHEventHandler<NetworkState>, NetworkModuleInput {
 
     weak var moduleOutput: NetworkModuleOutput?
     var apiProvider: ApiProvider?
+    var preferencesManager: PreferencesProtocol?
 
     override func viewIsReady() {
         super.viewIsReady()
+
+        
 
         apiProvider?.requestTarget(.main, for: MainResponse.self, completion: { result in
             switch result {
