@@ -14,11 +14,17 @@ enum Preferences: String {
     func preferences() -> [Preference] {
         switch self {
         case .networkBasePath:
-            return [
-                Preference(name: "Debug", value: "http://gdemost.handh.ru/api/v1/", type: .constant, isSelected: false),
-                Preference(name: "Release", value: "https://yandex.ru", type: .constant, isSelected: true),
-                Preference(name: "Custom", value: "", type: .custom, isSelected: false)
-            ]
+            var release = Preference(name: "Release", value: "https://yandex.ru", type: .constant, isSelected: false)
+            var debug = Preference(name: "Debug", value: "http://gdemost.handh.ru/api/v1/", type: .constant, isSelected: false)
+            let custom = Preference(name: "Custom", value: "", type: .custom, isSelected: false)
+
+            #if DEBUG
+                debug.isSelected = true
+            #else
+                release.isSelected = true
+            #endif
+
+            return [release, debug, custom]
         }
     }
 }

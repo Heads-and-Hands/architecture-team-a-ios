@@ -25,10 +25,10 @@ public enum PreferenceType: Int, Codable {
 
 public struct Preference: Codable {
 
-    var type: PreferenceType
-    var name: String
-    var value: String
-    var isSelected: Bool
+    public var type: PreferenceType
+    public var name: String
+    public var value: String
+    public var isSelected: Bool
 
     public init(name: String, value: String, type: PreferenceType, isSelected: Bool) {
         self.type = type
