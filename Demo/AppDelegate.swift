@@ -8,6 +8,7 @@
 
 import UIKit
 import HHModule
+import InfoManager
 
 #if HHNetwork || HHPaginationDemo
 import HHNetwork
@@ -25,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: LaunchOptions?
         ) -> Bool {
 
-        let window = ARCHWindow()
+        let window = CustomARCHWindow()
         self.window = window
 
 //        window.rootViewController = SkeletonTestViewController()
@@ -52,6 +53,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
+    }
+}
+
+class CustomARCHWindow: ARCHWindow, InfoManagerDelegate {
+
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        guard let rootController = self.rootViewController else {
+            return
+        }
+
+        let vc = rootController.navigationController?.topViewController ?? rootController
+
+        if motion == UIEvent.EventSubtype.motionShake {
+            let infoManager = InfoManager()
+            infoManager.delegate = self
+            infoManager.presentValues(from: vc)
+        }
+    }
+
+    // MARK: InfoManagerDelegate
+
+    var values: [(key: String, value: String)] {
+        return [
+            (key: "userId", value: "1234567890"),
+            (key: "authToken", value: "\(UUID().uuidString) \(UUID().uuidString) \(UUID().uuidString)"),
+            (key: "fbsToken", value: UUID().uuidString),
+            (key: "authToken", value: UUID().uuidString),
+            (key: "authToken", value: UUID().uuidString),
+            (key: "authToken", value: UUID().uuidString),
+            (key: "authToken", value: UUID().uuidString),
+            (key: "authToken", value: UUID().uuidString),
+            (key: "authToken", value: UUID().uuidString),
+            (key: "authToken", value: UUID().uuidString),
+            (key: "authToken", value: UUID().uuidString)
+        ]
     }
 }
 
