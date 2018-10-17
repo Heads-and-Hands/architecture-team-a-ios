@@ -298,6 +298,7 @@
 		9CB4C4732177865A00E22322 /* HHStyles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB4C46C2177865A00E22322 /* HHStyles.framework */; };
 		9CB4C4742177865A00E22322 /* HHStyles.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB4C46C2177865A00E22322 /* HHStyles.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CB4C4792177874A00E22322 /* ARCHStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB4C4782177874A00E22322 /* ARCHStyle.swift */; };
+		9CB4C47E21778A1900E22322 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB4C47D21778A1900E22322 /* Styles.swift */; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
 		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
@@ -912,6 +913,7 @@
 		9CB4C46E2177865A00E22322 /* HHStyles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHStyles.h; sourceTree = "<group>"; };
 		9CB4C46F2177865A00E22322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CB4C4782177874A00E22322 /* ARCHStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStyle.swift; sourceTree = "<group>"; };
+		9CB4C47D21778A1900E22322 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
 		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1211,6 +1213,7 @@
 				50EA3025213421E800A95512 /* Label.swift */,
 				507C3FD12142AD4200A21073 /* HeaderView.swift */,
 				50B89519214BF00900242372 /* UIColor+.swift */,
+				9CB4C47D21778A1900E22322 /* Styles.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -2941,6 +2944,7 @@
 				50EA3021213420B600A95512 /* EmptyModuleViewController.swift in Sources */,
 				9CF7224A2147BB0500DE0915 /* ChildView.swift in Sources */,
 				5089236720FC8E7B0032985E /* ModulesUserStory.swift in Sources */,
+				9CB4C47E21778A1900E22322 /* Styles.swift in Sources */,
 				50EA3023213420B600A95512 /* EmptyModuleModuleIO.swift in Sources */,
 				9C1418062146B57C009F1073 /* ChildModuleProtocols.swift in Sources */,
 				9C1418042146B57C009F1073 /* ChildModuleEventHandler.swift in Sources */,
@@ -3992,7 +3996,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "-D HHModule";
+				OTHER_SWIFT_FLAGS = "-D HHStyles";
 				PRODUCT_BUNDLE_IDENTIFIER = handh.HHModuleDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4018,7 +4022,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "-D HHModule";
+				OTHER_SWIFT_FLAGS = "-D HHStyles";
 				PRODUCT_BUNDLE_IDENTIFIER = handh.HHModuleDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4327,7 +4331,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = HHStyles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4339,7 +4343,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -4358,7 +4362,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = HHStyles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4369,7 +4373,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
