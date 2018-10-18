@@ -8,45 +8,43 @@
 
 import HHStyles
 
-struct LabelStyle: OptionSet {
+class LabelStyle: ARCHBaseStyle<UILabel> {
 
-    static let bold = LabelStyle(
-        rawValue: ARCHStyle<UILabel> {
-            $0.font = .systemFont(ofSize: 28.0, weight: .bold)
-        })
+    static let header = LabelStyle(rawValue: ARCHStyle<UILabel> {
+        $0.font = .systemFont(ofSize: 28.0, weight: .bold)
+    })
 
-    static let green = LabelStyle(
-        rawValue: ARCHStyle<UILabel> {
-            $0.textColor = .green
-        })
+    static let regular = LabelStyle(rawValue: ARCHStyle<UILabel> {
+        $0.font = .systemFont(ofSize: 12.0, weight: .regular)
+        $0.numberOfLines = 0
+        $0.lineBreakMode = .byWordWrapping
+    })
 
-    static let all: LabelStyle = [.bold, .green]
+    static let red = LabelStyle(rawValue: ARCHStyle<UILabel> {
+        $0.textColor = .red
+    })
 
-    // MARK: - OptionSet
+    static let green = LabelStyle(rawValue: ARCHStyle<UILabel> {
+        $0.textColor = .green
+    })
 
-    var rawValue: ARCHStyle<UILabel>
+    static let greenBackground = LabelStyle(rawValue: ARCHStyle<UILabel> {
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.backgroundColor: UIColor.green
+        ]
 
-    init() {
-        rawValue = ARCHStyle<UILabel> { _ in }
-    }
+        $0.attributedText = NSAttributedString(string: " ", attributes: attributes)
+    })
 
-    init(rawValue: LabelStyle.RawValue) {
-        self.rawValue = rawValue
-    }
+    static let dischanged = LabelStyle(rawValue: ARCHStyle<UILabel> {
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 5.0
+        style.alignment = .justified
 
-    mutating func formUnion(_ other: LabelStyle) {
-        rawValue = ARCHStyle.compose(rawValue, other.rawValue)
-    }
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.paragraphStyle: style
+        ]
 
-    mutating func formIntersection(_ other: LabelStyle) {
-    }
-
-    mutating func formSymmetricDifference(_ other: LabelStyle) {
-    }
-
-    static func == (lhs: LabelStyle, rhs: LabelStyle) -> Bool {
-        let lhsLabel = UILabel(style: lhs.rawValue)
-        let rhsLabel = UILabel(style: rhs.rawValue)
-        return lhsLabel == rhsLabel
-    }
+        $0.attributedText = NSAttributedString(string: " ", attributes: attributes)
+    })
 }

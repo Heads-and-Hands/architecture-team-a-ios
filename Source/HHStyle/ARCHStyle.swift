@@ -12,7 +12,7 @@ public struct ARCHStyle<View: UIView> {
 
     // MARK: - Static
 
-    static func compose(_ styles: ARCHStyle<View>...) -> ARCHStyle<View> {
+    public static func compose(_ styles: ARCHStyle<View>...) -> ARCHStyle<View> {
         return ARCHStyle { view in
             for style in styles {
                 style.apply(to: view)
@@ -20,7 +20,11 @@ public struct ARCHStyle<View: UIView> {
         }
     }
 
+    // MARK: - Public
+
     public let style: (View) -> Void
+
+    // MARK: - Initialization
 
     public init(_ style: @escaping (View) -> Void) {
         self.style = style
@@ -28,20 +32,5 @@ public struct ARCHStyle<View: UIView> {
 
     public func apply(to view: View) {
         style(view)
-    }
-}
-
-extension UIView {
-
-    public convenience init<V>(style: ARCHStyle<V>) {
-        self.init(frame: .zero)
-        apply(style)
-    }
-
-    public func apply<V>(_ style: ARCHStyle<V>) {
-        guard let view = self as? V else {
-            return
-        }
-        style.apply(to: view)
     }
 }

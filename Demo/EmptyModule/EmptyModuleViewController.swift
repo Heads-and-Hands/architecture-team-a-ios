@@ -21,9 +21,10 @@ final class EmptyModuleViewController: ARCHViewController<EmptyModuleState, Empt
     // MARK: - View life cycle
 
 #if HHStyles
-    private let titleLabel = UILabel(style: LabelStyle.bold.rawValue)
-    private let valueLabel = UILabel(style: LabelStyle.green.rawValue)
-    private let compoundLabel = UILabel(style: LabelStyle.all.rawValue)
+    private let firstTitleLabel = UILabel(style: [LabelStyle.header, LabelStyle.red])
+    private let firstValueLabel = UILabel(style: [LabelStyle.regular, LabelStyle.green, LabelStyle.dischanged])
+    private let secondTitleLabel = UILabel(style: [LabelStyle.header, LabelStyle.green])
+    private let secondValueLabel = UILabel(style: [LabelStyle.regular, LabelStyle.red, LabelStyle.greenBackground])
 #endif
 
     override func viewDidLoad() {
@@ -32,19 +33,26 @@ final class EmptyModuleViewController: ARCHViewController<EmptyModuleState, Empt
         view.backgroundColor = .white
 
 #if HHStyles
-        titleLabel.text = "Bold"
-        valueLabel.text = "Green"
-        compoundLabel.text = "BoldGreen"
+        firstTitleLabel.text = "Red header"
+        firstValueLabel.text = """
+        Stubs on Wikipedia often lack comprehen- sive information. The huge cost of edit- ing Wikipedia and the presence of only a limited number of active contributors curb the consistent growth of Wikipedia.
+        """
+        secondTitleLabel.text = "Green Header"
+        secondValueLabel.text = """
+        Stubs on Wikipedia often lack comprehen- sive information. The huge cost of edit- ing Wikipedia and the presence of only a limited number of active contributors curb the consistent growth of Wikipedia.
+        """
 
-        let container = UIStackView(arrangedSubviews: [titleLabel, valueLabel, compoundLabel])
+        let container = UIStackView(arrangedSubviews: [firstTitleLabel, firstValueLabel, secondTitleLabel, secondValueLabel])
         container.axis = .vertical
         container.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(container)
 
         NSLayoutConstraint.activate([
-            container.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            container.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15.0),
+            container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0),
+            container.topAnchor.constraint(equalTo: view.topAnchor, constant: 15.0),
+            container.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -15.0)
         ])
 #else
         button.setTitle("BUTTON", for: .normal)

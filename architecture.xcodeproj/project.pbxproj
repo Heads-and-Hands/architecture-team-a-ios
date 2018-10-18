@@ -294,10 +294,13 @@
 		9C1418072146B57C009F1073 /* ChildModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */; };
 		9C1418082146B57C009F1073 /* ChildModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418032146B57C009F1073 /* ChildModuleState.swift */; };
 		9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14180A2146B6EC009F1073 /* ParentView.swift */; };
+		9C4BEDFF21789CEB0095EA95 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4BEDFD21789CA20095EA95 /* UILabel.swift */; };
+		9C4BEE022178AFF30095EA95 /* ARCHBaseStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4BEE002178ADB90095EA95 /* ARCHBaseStyle.swift */; };
+		9C4BEE032178B0090095EA95 /* ARCHStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB4C4782177874A00E22322 /* ARCHStyle.swift */; };
+		9C4BEE052178C29B0095EA95 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4BEE042178C29B0095EA95 /* UIView.swift */; };
 		9CB4C4702177865A00E22322 /* HHStyles.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CB4C46E2177865A00E22322 /* HHStyles.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CB4C4732177865A00E22322 /* HHStyles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB4C46C2177865A00E22322 /* HHStyles.framework */; };
 		9CB4C4742177865A00E22322 /* HHStyles.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB4C46C2177865A00E22322 /* HHStyles.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9CB4C4792177874A00E22322 /* ARCHStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB4C4782177874A00E22322 /* ARCHStyle.swift */; };
 		9CB4C47E21778A1900E22322 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB4C47D21778A1900E22322 /* Styles.swift */; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
@@ -909,6 +912,9 @@
 		9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleConfigurator.swift; sourceTree = "<group>"; };
 		9C1418032146B57C009F1073 /* ChildModuleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleState.swift; sourceTree = "<group>"; };
 		9C14180A2146B6EC009F1073 /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
+		9C4BEDFD21789CA20095EA95 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		9C4BEE002178ADB90095EA95 /* ARCHBaseStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHBaseStyle.swift; sourceTree = "<group>"; };
+		9C4BEE042178C29B0095EA95 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		9CB4C46C2177865A00E22322 /* HHStyles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHStyles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB4C46E2177865A00E22322 /* HHStyles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHStyles.h; sourceTree = "<group>"; };
 		9CB4C46F2177865A00E22322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1745,6 +1751,15 @@
 			path = ModuleDemo;
 			sourceTree = "<group>";
 		};
+		9C4BEDFC21789C8A0095EA95 /* Swizzling */ = {
+			isa = PBXGroup;
+			children = (
+				9C4BEDFD21789CA20095EA95 /* UILabel.swift */,
+				9C4BEE042178C29B0095EA95 /* UIView.swift */,
+			);
+			path = Swizzling;
+			sourceTree = "<group>";
+		};
 		9CB4C46D2177865A00E22322 /* HHStyles */ = {
 			isa = PBXGroup;
 			children = (
@@ -1757,7 +1772,9 @@
 		9CB4C47A2177875200E22322 /* HHStyle */ = {
 			isa = PBXGroup;
 			children = (
+				9C4BEDFC21789C8A0095EA95 /* Swizzling */,
 				9CB4C4782177874A00E22322 /* ARCHStyle.swift */,
+				9C4BEE002178ADB90095EA95 /* ARCHBaseStyle.swift */,
 			);
 			path = HHStyle;
 			sourceTree = "<group>";
@@ -2952,7 +2969,6 @@
 				9C1417F72146B23C009F1073 /* ParentModuleConfigurator.swift in Sources */,
 				9C1418052146B57C009F1073 /* ChildModuleViewController.swift in Sources */,
 				9C1417F52146B23C009F1073 /* ParentModuleProtocols.swift in Sources */,
-				9CB4C4792177874A00E22322 /* ARCHStyle.swift in Sources */,
 				50EA3026213421E800A95512 /* Label.swift in Sources */,
 				50EA3024213420B600A95512 /* EmptyModuleState.swift in Sources */,
 			);
@@ -3056,6 +3072,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4BEE052178C29B0095EA95 /* UIView.swift in Sources */,
+				9C4BEE032178B0090095EA95 /* ARCHStyle.swift in Sources */,
+				9C4BEDFF21789CEB0095EA95 /* UILabel.swift in Sources */,
+				9C4BEE022178AFF30095EA95 /* ARCHBaseStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
