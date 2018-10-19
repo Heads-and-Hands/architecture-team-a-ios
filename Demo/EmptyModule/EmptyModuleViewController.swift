@@ -13,7 +13,7 @@ import HHLens
 
 final class EmptyModuleViewController: ARCHViewController<EmptyModuleState, EmptyModuleEventHandler> {
 
-    private let label = Label()
+    private let label = UILabel()
     private let button = UIButton()
 
     // MARK: - View life cycle
