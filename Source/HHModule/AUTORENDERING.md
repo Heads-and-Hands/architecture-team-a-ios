@@ -23,8 +23,8 @@ protocol ARCHViewInput: class {
 
 ````
 protocol ARCHViewRenderable: ARCHViewInput {
-    associatedtype State: Any
-    func render(state: State)
+    associatedtype ViewState: Any
+    func render(state: ViewState)
 }
 ````
 который работает с конкретным типом данных, и для него написано расширение  проверяющее все соответсвия типов.
@@ -48,7 +48,7 @@ protocol ARCHViewRenderable: ARCHViewInput {
 
 ````
     // Some viewController
-    func render(state: State) {
+    func render(state: ViewState) {
         dataAdapter.update(state: state.list)
         tableView.reloadData
         

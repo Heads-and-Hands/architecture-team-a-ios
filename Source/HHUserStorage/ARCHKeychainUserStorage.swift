@@ -19,7 +19,7 @@ public class ARCHKeychainUserStorage<U: ARCHUser, T: ARCHToken>: ARCHUserStorage
         token = read(key: .token)
     }
 
-    public override func save(user: U, token: T) {
+    public override func save(user: U?, token: T?) {
         write(value: user, key: .user)
         write(value: token, key: .token)
 
@@ -33,7 +33,7 @@ public class ARCHKeychainUserStorage<U: ARCHUser, T: ARCHToken>: ARCHUserStorage
         case token = "KeychainUserStorageToken"
     }
 
-    private func write<T: Codable>(value: T, key: Keys) {
+    private func write<T: Codable>(value: T?, key: Keys) {
         if let data = try? JSONEncoder().encode(value) {
             keychain[data: key.rawValue] = data
         }

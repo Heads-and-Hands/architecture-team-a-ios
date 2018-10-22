@@ -10,9 +10,9 @@ import HHModule
 import UIKit
 
 class Label: UILabel, ARCHViewRenderable {
-    typealias State = String
+    typealias ViewState = String
 
-    func render(state: State) {
+    func render(state: ViewState) {
         text = state
     }
 }
