@@ -193,6 +193,7 @@
 		5093687C20F683010044CA62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5093687B20F683010044CA62 /* AppDelegate.swift */; };
 		5093688320F683030044CA62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093688220F683030044CA62 /* Assets.xcassets */; };
 		5093688620F683030044CA62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
+		50954D21217E30500003610A /* ARCHWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50954D20217E30500003610A /* ARCHWindow.swift */; };
 		50AC942F213D673B0007B7FA /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
 		50AC9435213D68730007B7FA /* HHListExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DDE7211DE83200E08A92 /* HHListExtension.framework */; };
 		50AC9436213D68730007B7FA /* HHListExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DDE7211DE83200E08A92 /* HHListExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -207,7 +208,6 @@
 		50BC80AE211DFACE00D77262 /* ARCHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232420FC8DA30032985E /* ARCHViewController.swift */; };
 		50BC80AF211DFAD100D77262 /* ARCHModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232520FC8DA30032985E /* ARCHModuleProtocols.swift */; };
 		50BC80B0211DFAD300D77262 /* ARCHEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232620FC8DA30032985E /* ARCHEventHandler.swift */; };
-		50BC80B1211DFAD700D77262 /* ARCHWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232C20FC8DA30032985E /* ARCHWindow.swift */; };
 		50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */; };
 		50BC80B3211DFAE200D77262 /* ARCHRouterPresentOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */; };
 		50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */; };
@@ -885,7 +885,6 @@
 		5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouterPushOptions.swift; sourceTree = "<group>"; };
 		5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouterPresentOptions.swift; sourceTree = "<group>"; };
 		5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouterWindowOptions.swift; sourceTree = "<group>"; };
-		5089232C20FC8DA30032985E /* ARCHWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHWindow.swift; sourceTree = "<group>"; };
 		5089232D20FC8DA30032985E /* ARCHRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouter.swift; sourceTree = "<group>"; };
 		5089233120FC8DA30032985E /* ARCHTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHTableViewDataSource.swift; sourceTree = "<group>"; };
 		5089233320FC8DA30032985E /* ARCHCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -904,6 +903,7 @@
 		5093688220F683030044CA62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5093688520F683030044CA62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5093688720F683030044CA62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50954D20217E30500003610A /* ARCHWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHWindow.swift; sourceTree = "<group>"; };
 		50B89519214BF00900242372 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		50BC80D02121748400D77262 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		50BC80D12121748400D77262 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -1514,8 +1514,8 @@
 			isa = PBXGroup;
 			children = (
 				5089232820FC8DA30032985E /* Options */,
-				5089232C20FC8DA30032985E /* ARCHWindow.swift */,
 				5089232D20FC8DA30032985E /* ARCHRouter.swift */,
+				50954D20217E30500003610A /* ARCHWindow.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -2941,11 +2941,11 @@
 				50BC80AE211DFACE00D77262 /* ARCHViewController.swift in Sources */,
 				50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */,
 				50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */,
-				50BC80B1211DFAD700D77262 /* ARCHWindow.swift in Sources */,
 				50BC80B5211DFAE900D77262 /* ARCHRouter.swift in Sources */,
 				50BC80AF211DFAD100D77262 /* ARCHModuleProtocols.swift in Sources */,
 				50BC80AD211DFACA00D77262 /* ARCHModuleID.swift in Sources */,
 				50BC80B3211DFAE200D77262 /* ARCHRouterPresentOptions.swift in Sources */,
+				50954D21217E30500003610A /* ARCHWindow.swift in Sources */,
 				50BC80AC211DFAC700D77262 /* ARCHModuleConfigurator.swift in Sources */,
 				50BC80B0211DFAD300D77262 /* ARCHEventHandler.swift in Sources */,
 			);

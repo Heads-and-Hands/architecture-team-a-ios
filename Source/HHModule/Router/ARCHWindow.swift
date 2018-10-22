@@ -8,6 +8,5 @@
 
 import UIKit
 
-public class ARCHWindow: UIWindow, ARCHRouter {
-
+extension UIWindow: ARCHRouter {
 }
