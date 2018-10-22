@@ -10,7 +10,7 @@ import HHModule
 
 final class ContainerParentViewController: ARCHViewController<ContainerParentState, ContainerParentEventHandler>, ARCHContainer {
 
-    var container: UIView = UIView()
+    private var container: UIView = UIView()
 
     private let childStateLabel = Label()
 
@@ -61,5 +61,11 @@ final class ContainerParentViewController: ARCHViewController<ContainerParentSta
     @objc
     private func closeButtonTapHandler(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+
+    // MARK: - ARCHContainer
+
+    func container(for id: UUID) -> UIView {
+        return container
     }
 }

@@ -32,13 +32,15 @@ final class ContainerParentConfigurator: ARCHModuleConfigurator {
 
         var childModulesIds: [ChildModuleTag: UUID] = [:]
         var childModulesStates: [ARCHState] = []
+        var id: UUID = UUID()
 
         ContainerChildConfigurator(moduleIO: { (moduleInput: ContainerChildModuleInput) -> ContainerChildModuleOutput? in
             let childState = moduleInput.getState()
             childModulesStates.append(childState)
             childModulesIds[.first] = childState.id
+            id = childState.id
             return eventHandler
-        }).router.transit(from: controller, options: [ARCHRouterBuildInOptions()], animated: true)
+        }).router.transit(from: controller, options: [ARCHRouterBuildInOptions(id: id)], animated: true)
 
         eventHandler.childModulesIds = childModulesIds
         eventHandler.state.childStates = childModulesStates

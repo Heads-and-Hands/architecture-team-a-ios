@@ -10,12 +10,16 @@ import UIKit
 
 public protocol ARCHContainer {
 
-    var container: UIView { get }
+    func container(for id: UUID) -> UIView
 }
 
 public class ARCHRouterBuildInOptions: ARCHRouterOptions {
 
-    public init() {}
+    private var id: UUID
+
+    public init(id: UUID) {
+        self.id = id
+    }
 
     public func proccess(transition: Transition, animated: Bool) -> Transition {
 
@@ -28,13 +32,14 @@ public class ARCHRouterBuildInOptions: ARCHRouterOptions {
         parent.addChild(child)
 
         child.view.translatesAutoresizingMaskIntoConstraints = false
-        parent.container.addSubview(child.view)
+        let container = parent.container(for: id)
+        container.addSubview(child.view)
 
         NSLayoutConstraint.activate([
-            child.view.topAnchor.constraint(equalTo: parent.container.topAnchor),
-            child.view.bottomAnchor.constraint(equalTo: parent.container.bottomAnchor),
-            child.view.leadingAnchor.constraint(equalTo: parent.container.leadingAnchor),
-            child.view.trailingAnchor.constraint(equalTo: parent.container.trailingAnchor)
+            child.view.topAnchor.constraint(equalTo: container.topAnchor),
+            child.view.bottomAnchor.constraint(equalTo: container.bottomAnchor),
+            child.view.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            child.view.trailingAnchor.constraint(equalTo: container.trailingAnchor)
         ])
 
         child.didMove(toParent: parent)
