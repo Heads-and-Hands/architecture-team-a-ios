@@ -11,4 +11,6 @@ import HHModule
 struct ContainerParentState: ARCHState {
 
     var childStates: [ARCHState] = []
+
+    var childTitle: String = ""
 }

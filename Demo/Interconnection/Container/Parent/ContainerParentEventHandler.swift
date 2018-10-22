@@ -12,7 +12,7 @@ enum ChildModuleTag {
     case first
 }
 
-final class ContainerParentEventHandler: ARCHEventHandler<ContainerParentState>, ContainerParentModuleInput, ARCHChildModuleOutput {
+final class ContainerParentEventHandler: ARCHEventHandler<ContainerParentState>, ContainerParentModuleInput, ARCHChildModuleOutput, ContainerParentViewOutput, ContainerChildModuleOutput {
 
     var childModulesIds: [ChildModuleTag: UUID] = [:]
 
@@ -23,17 +23,32 @@ final class ContainerParentEventHandler: ARCHEventHandler<ContainerParentState>,
 
         if var childState = childState(for: .first) as? ContainerChildState {
             childState.text = UUID().uuidString
-            let index = state.childStates.index(where: { $0.id == childState.id }) ?? 0
-            state.childStates[index] = childState
+            updateState(with: childState)
+        }
+    }
+
+    func needsChangeChildState() {
+        if var childState = childState(for: .first) as? ContainerChildState {
+            childState.text = UUID().uuidString
+            updateState(with: childState)
         }
     }
 
     // MARK: - ARCHChildModuleOutput
 
     func didChange(childState: ARCHState) {
+        updateState(with: childState)
     }
 
     // MARK: - Private
+
+    private func updateState(with childState: ARCHState) {
+        let index = state.childStates.index(where: { $0.id == childState.id }) ?? 0
+        beginStateChanges()
+        state.childTitle = (childState as? ContainerChildState)?.text ?? ""
+        state.childStates[index] = childState
+        commitStateChanges()
+    }
 
     private func childState(for tag: ChildModuleTag) -> ARCHState? {
         guard let uuid = childModulesIds[tag] else {

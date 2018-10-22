@@ -13,3 +13,8 @@ protocol ContainerParentModuleInput {
 
 protocol ContainerParentModuleOutput: class {
 }
+
+protocol ContainerParentViewOutput {
+
+    func needsChangeChildState()
+}

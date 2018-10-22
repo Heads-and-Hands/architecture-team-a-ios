@@ -26,7 +26,7 @@ final class ContainerChildViewController: ARCHViewController<ContainerChildState
         view.layer.cornerRadius = 6.0
 
         let titleLabel = UILabel()
-        titleLabel.text = "CHILD MODULE TITLE"
+        titleLabel.text = "CHILD MODULE"
         titleLabel.font = .systemFont(ofSize: 16.0, weight: .bold)
         titleLabel.textAlignment = .center
         titleLabel.textColor = .black

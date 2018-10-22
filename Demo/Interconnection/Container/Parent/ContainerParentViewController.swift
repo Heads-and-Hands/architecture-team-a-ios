@@ -12,6 +12,8 @@ final class ContainerParentViewController: ARCHViewController<ContainerParentSta
 
     var container: UIView = UIView()
 
+    private let childStateLabel = Label()
+
     // MARK: - View life cycle
 
     override func prepareRootView() {
@@ -19,14 +21,24 @@ final class ContainerParentViewController: ARCHViewController<ContainerParentSta
 
         view.backgroundColor = .white
 
-        container.translatesAutoresizingMaskIntoConstraints = false
+        childStateLabel.font = .systemFont(ofSize: 12.0, weight: .regular)
+        childStateLabel.textAlignment = .center
+        childStateLabel.textColor = .black
 
-        view.addSubview(container)
+        let button = DefaultButton(title: "Change child state")
+        button.addTarget(self, action: #selector(self.changeChildButtonTapHandler(_:)), for: .touchUpInside)
+
+        let stackView = UIStackView(arrangedSubviews: [container, childStateLabel, button])
+        stackView.axis = .vertical
+        stackView.spacing = 8.0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(stackView)
 
         NSLayoutConstraint.activate([
-            container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15.0),
-            container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0),
-            container.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15.0),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
 
@@ -34,5 +46,12 @@ final class ContainerParentViewController: ARCHViewController<ContainerParentSta
 
     override func render(state: State) {
         super.render(state: state)
+    }
+
+    // MARK: - Actons
+
+    @objc
+    private func changeChildButtonTapHandler(_ sender: UIButton) {
+        output?.needsChangeChildState()
     }
 }
