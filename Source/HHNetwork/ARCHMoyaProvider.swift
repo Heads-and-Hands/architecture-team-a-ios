@@ -20,7 +20,7 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
     private var requests: [MoyaRequest] = []
 
     @discardableResult
-    open func request<Model: Codable>(
+    open func sendRequest<Model: Codable>(
         target: T,
         for model: Model.Type,
         dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .iso8601,

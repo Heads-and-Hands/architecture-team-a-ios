@@ -17,7 +17,7 @@ final class NetworkEventHandler: ARCHEventHandler<NetworkState>, NetworkModuleIn
     override func viewIsReady() {
         super.viewIsReady()
 
-        apiProvider?.request(
+        apiProvider?.sendRequest(
             target: .main,
             for: MainResponse.self,
             completion: { result in

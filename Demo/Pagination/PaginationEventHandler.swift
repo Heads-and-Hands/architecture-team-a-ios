@@ -19,7 +19,7 @@ final class PaginationEventHandler: ARCHEventHandler<PaginationState>, Paginatio
 
         // Индикацию
 
-        let request = apiProvider?.request(
+        let request = apiProvider?.sendRequest(
             target: .main,
             for: MainResponse.self,
             completion: { [weak self] response in
