@@ -28,7 +28,10 @@ final class ContainerParentViewController: ARCHViewController<ContainerParentSta
         let button = DefaultButton(title: "Change child state")
         button.addTarget(self, action: #selector(self.changeChildButtonTapHandler(_:)), for: .touchUpInside)
 
-        let stackView = UIStackView(arrangedSubviews: [container, childStateLabel, button])
+        let closeButon = DefaultButton(title: "Close")
+        closeButon.addTarget(self, action: #selector(self.closeButtonTapHandler(_:)), for: .touchUpInside)
+
+        let stackView = UIStackView(arrangedSubviews: [container, childStateLabel, button, closeButon])
         stackView.axis = .vertical
         stackView.spacing = 8.0
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,5 +56,10 @@ final class ContainerParentViewController: ARCHViewController<ContainerParentSta
     @objc
     private func changeChildButtonTapHandler(_ sender: UIButton) {
         output?.needsChangeChildState()
+    }
+
+    @objc
+    private func closeButtonTapHandler(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }
