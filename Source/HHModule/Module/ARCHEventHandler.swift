@@ -69,4 +69,16 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
             viewInput?.update(state: state)
         }
     }
+
+    open func shouldRender(_ state: Any) -> Bool {
+        guard let state = state as? State, self.state.id == state.id else {
+            return false
+        }
+
+        ignoreStateChanges = true
+        self.state = state
+        ignoreStateChanges = false
+
+        return true
+    }
 }

@@ -12,7 +12,28 @@ import UIKit
  Родительский протокол, описывающий состояние модуля
  */
 public protocol ARCHState {
+
+    var id: UUID { get }
+
+    var childStates: [ARCHState] { get set }
+
     init()
+}
+
+public extension ARCHState {
+
+    var id: UUID {
+        return UUID(uuidString: "5cb26dd4-d5f3-11e8-9f8b-f2801f1b9fd1") ?? UUID()
+    }
+
+    var childStates: [ARCHState] {
+        get { return [] }
+        set {}
+    }
+
+    init(id: UUID) {
+        self.init()
+    }
 }
 
 public protocol ARCHViewInput: class {
@@ -64,4 +85,15 @@ public extension ARCHViewRenderable where State: Any {
 public protocol ACRHViewOutput {
     func viewIsReady()
     func viewSetNeedsRedraw()
+    func shouldRender(_ state: Any) -> Bool
+}
+
+public protocol ARCHModuleInput {
+
+    func getState() -> ARCHState
+}
+
+public protocol ARCHChildModuleOutput: class {
+
+    func didChange(childState: ARCHState)
 }

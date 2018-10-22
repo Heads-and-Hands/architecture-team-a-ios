@@ -9,4 +9,7 @@
 import HHModule
 
 struct InterconnectionState: ARCHState {
+
+    var id: UUID = UUID()
+
 }

@@ -303,6 +303,7 @@
 		9C23225B217DBBDD009AF7F7 /* ContainerParentConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23223E217DB5EF009AF7F7 /* ContainerParentConfigurator.swift */; };
 		9C23225C217DBBDD009AF7F7 /* ContainerParentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23223F217DB5EF009AF7F7 /* ContainerParentState.swift */; };
 		9C23225F217DC203009AF7F7 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23225E217DC203009AF7F7 /* DefaultButton.swift */; };
+		9C232260217DCEC4009AF7F7 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA3025213421E800A95512 /* Label.swift */; };
 		9C373834217A311100A867B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C373833217A311100A867B5 /* ViewController.swift */; };
 		9C373837217A311100A867B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C373835217A311100A867B5 /* Main.storyboard */; };
 		9C37383A217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C373838217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld */; };
@@ -3182,6 +3183,7 @@
 				9C232255217DBBD9009AF7F7 /* ContainerChildViewController.swift in Sources */,
 				9C232238217DAE9D009AF7F7 /* InterconnectionConfigurator.swift in Sources */,
 				9C37385A217A32CD00A867B5 /* ModulesUserStory.swift in Sources */,
+				9C232260217DCEC4009AF7F7 /* Label.swift in Sources */,
 				9C373860217A35DC00A867B5 /* EmptyModuleConfigurator.swift in Sources */,
 				9C37383A217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld in Sources */,
 				9C23225F217DC203009AF7F7 /* DefaultButton.swift in Sources */,

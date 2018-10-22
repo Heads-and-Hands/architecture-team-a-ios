@@ -10,9 +10,13 @@ import HHModule
 
 final class ContainerChildViewController: ARCHViewController<ContainerChildState, ContainerChildEventHandler> {
 
-    private let label = UILabel()
+    private let label = Label()
 
     // MARK: - View life cycle
+
+    override func didMove(toParent parent: UIViewController?) {
+        super.didMove(toParent: parent)
+    }
 
     override func prepareRootView() {
         super.prepareRootView()
@@ -55,7 +59,6 @@ final class ContainerChildViewController: ARCHViewController<ContainerChildState
 
     override func render(state: State) {
         super.render(state: state)
-        label.text = state.text
     }
 
     // MARK: - Actions

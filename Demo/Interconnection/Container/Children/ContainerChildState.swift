@@ -8,7 +8,20 @@
 
 import HHModule
 
+
 struct ContainerChildState: ARCHState {
 
-    var text: String = UUID().uuidString
+    var id: UUID
+
+    var text: String = ""
+
+    // MARK: - Initialization
+
+    init() {
+        self.id = UUID()
+    }
+
+    init(id: UUID) {
+        self.id = id
+    }
 }

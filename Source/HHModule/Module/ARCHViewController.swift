@@ -19,6 +19,10 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
     }
 
     open func render(state: State) {
+        guard output?.shouldRender(state) ?? true else {
+            return
+        }
+
         var views = autorenderViews
         let substates = self.substates(state: state)
 
@@ -35,6 +39,14 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
             view.set(visible: isVisible)
             index += 1
         }
+
+        let childStates = (substates.first(where: { $0 is [ARCHState] }) as? [ARCHState]) ?? []
+
+        children.compactMap({ $0 as? ARCHViewInput }).forEach({ input in
+            childStates.forEach({
+                input.update(state: $0)
+            })
+        })
 
         print("[ARCHViewController] end render(state:)")
     }
