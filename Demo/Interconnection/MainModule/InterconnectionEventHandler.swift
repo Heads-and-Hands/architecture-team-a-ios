@@ -19,6 +19,9 @@ final class InterconnectionEventHandler: ARCHEventHandler<InterconnectionState>,
     // MARK: - InterconnectionModuleViewOutput
 
     func didTapModuleContainer() {
+        ContainerParentConfigurator(moduleIO: nil)
+            .router
+            .transit(from: router, options: [ARCHRouterPresentOptions()], animated: true)
     }
 
     func didTapScrollViewContainter() {

@@ -291,6 +291,18 @@
 		9C232237217DAE9D009AF7F7 /* InterconnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23222C217DAD77009AF7F7 /* InterconnectionViewController.swift */; };
 		9C232238217DAE9D009AF7F7 /* InterconnectionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23222D217DAD77009AF7F7 /* InterconnectionConfigurator.swift */; };
 		9C232239217DAE9D009AF7F7 /* InterconnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23222E217DAD77009AF7F7 /* InterconnectionState.swift */; };
+		9C232252217DB8BE009AF7F7 /* ARCHRouterBuildInOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C232251217DB8BE009AF7F7 /* ARCHRouterBuildInOptions.swift */; };
+		9C232253217DBBD9009AF7F7 /* ContainerChildModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C232247217DB62A009AF7F7 /* ContainerChildModuleIO.swift */; };
+		9C232254217DBBD9009AF7F7 /* ContainerChildEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C232248217DB62A009AF7F7 /* ContainerChildEventHandler.swift */; };
+		9C232255217DBBD9009AF7F7 /* ContainerChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C232249217DB62A009AF7F7 /* ContainerChildViewController.swift */; };
+		9C232256217DBBD9009AF7F7 /* ContainerChildConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23224A217DB62A009AF7F7 /* ContainerChildConfigurator.swift */; };
+		9C232257217DBBD9009AF7F7 /* ContainerChildState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23224B217DB62A009AF7F7 /* ContainerChildState.swift */; };
+		9C232258217DBBDD009AF7F7 /* ContainerParentModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23223B217DB5EF009AF7F7 /* ContainerParentModuleIO.swift */; };
+		9C232259217DBBDD009AF7F7 /* ContainerParentEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23223C217DB5EF009AF7F7 /* ContainerParentEventHandler.swift */; };
+		9C23225A217DBBDD009AF7F7 /* ContainerParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23223D217DB5EF009AF7F7 /* ContainerParentViewController.swift */; };
+		9C23225B217DBBDD009AF7F7 /* ContainerParentConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23223E217DB5EF009AF7F7 /* ContainerParentConfigurator.swift */; };
+		9C23225C217DBBDD009AF7F7 /* ContainerParentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23223F217DB5EF009AF7F7 /* ContainerParentState.swift */; };
+		9C23225F217DC203009AF7F7 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23225E217DC203009AF7F7 /* DefaultButton.swift */; };
 		9C373834217A311100A867B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C373833217A311100A867B5 /* ViewController.swift */; };
 		9C373837217A311100A867B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C373835217A311100A867B5 /* Main.storyboard */; };
 		9C37383A217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C373838217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld */; };
@@ -938,6 +950,18 @@
 		9C23222C217DAD77009AF7F7 /* InterconnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterconnectionViewController.swift; sourceTree = "<group>"; };
 		9C23222D217DAD77009AF7F7 /* InterconnectionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterconnectionConfigurator.swift; sourceTree = "<group>"; };
 		9C23222E217DAD77009AF7F7 /* InterconnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterconnectionState.swift; sourceTree = "<group>"; };
+		9C23223B217DB5EF009AF7F7 /* ContainerParentModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerParentModuleIO.swift; sourceTree = "<group>"; };
+		9C23223C217DB5EF009AF7F7 /* ContainerParentEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerParentEventHandler.swift; sourceTree = "<group>"; };
+		9C23223D217DB5EF009AF7F7 /* ContainerParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerParentViewController.swift; sourceTree = "<group>"; };
+		9C23223E217DB5EF009AF7F7 /* ContainerParentConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerParentConfigurator.swift; sourceTree = "<group>"; };
+		9C23223F217DB5EF009AF7F7 /* ContainerParentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerParentState.swift; sourceTree = "<group>"; };
+		9C232247217DB62A009AF7F7 /* ContainerChildModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerChildModuleIO.swift; sourceTree = "<group>"; };
+		9C232248217DB62A009AF7F7 /* ContainerChildEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerChildEventHandler.swift; sourceTree = "<group>"; };
+		9C232249217DB62A009AF7F7 /* ContainerChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerChildViewController.swift; sourceTree = "<group>"; };
+		9C23224A217DB62A009AF7F7 /* ContainerChildConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerChildConfigurator.swift; sourceTree = "<group>"; };
+		9C23224B217DB62A009AF7F7 /* ContainerChildState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerChildState.swift; sourceTree = "<group>"; };
+		9C232251217DB8BE009AF7F7 /* ARCHRouterBuildInOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHRouterBuildInOptions.swift; sourceTree = "<group>"; };
+		9C23225E217DC203009AF7F7 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		9C37382F217A311100A867B5 /* HHInterconnectionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHInterconnectionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C373833217A311100A867B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9C373836217A311100A867B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1235,6 +1259,7 @@
 		50679791212572610034CDA2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				9C23225D217DC1E5009AF7F7 /* Buttons */,
 				9C1418092146B6A3009F1073 /* ModuleDemo */,
 				503B4264216A608200CD641D /* UILabel */,
 				9CF48BCD2167BDE70040AE49 /* UIButton */,
@@ -1489,6 +1514,7 @@
 				5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */,
 				5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */,
 				5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */,
+				9C232251217DB8BE009AF7F7 /* ARCHRouterBuildInOptions.swift */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -1778,6 +1804,7 @@
 		9C232229217DACD8009AF7F7 /* Interconnection */ = {
 			isa = PBXGroup;
 			children = (
+				9C23223A217DB454009AF7F7 /* Container */,
 				9C232234217DAD8D009AF7F7 /* MainModule */,
 			);
 			path = Interconnection;
@@ -1793,6 +1820,47 @@
 				9C23222E217DAD77009AF7F7 /* InterconnectionState.swift */,
 			);
 			path = MainModule;
+			sourceTree = "<group>";
+		};
+		9C23223A217DB454009AF7F7 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				9C232246217DB606009AF7F7 /* Children */,
+				9C232245217DB5F3009AF7F7 /* Parent */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		9C232245217DB5F3009AF7F7 /* Parent */ = {
+			isa = PBXGroup;
+			children = (
+				9C23223B217DB5EF009AF7F7 /* ContainerParentModuleIO.swift */,
+				9C23223C217DB5EF009AF7F7 /* ContainerParentEventHandler.swift */,
+				9C23223D217DB5EF009AF7F7 /* ContainerParentViewController.swift */,
+				9C23223E217DB5EF009AF7F7 /* ContainerParentConfigurator.swift */,
+				9C23223F217DB5EF009AF7F7 /* ContainerParentState.swift */,
+			);
+			path = Parent;
+			sourceTree = "<group>";
+		};
+		9C232246217DB606009AF7F7 /* Children */ = {
+			isa = PBXGroup;
+			children = (
+				9C232247217DB62A009AF7F7 /* ContainerChildModuleIO.swift */,
+				9C232248217DB62A009AF7F7 /* ContainerChildEventHandler.swift */,
+				9C232249217DB62A009AF7F7 /* ContainerChildViewController.swift */,
+				9C23224A217DB62A009AF7F7 /* ContainerChildConfigurator.swift */,
+				9C23224B217DB62A009AF7F7 /* ContainerChildState.swift */,
+			);
+			path = Children;
+			sourceTree = "<group>";
+		};
+		9C23225D217DC1E5009AF7F7 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				9C23225E217DC203009AF7F7 /* DefaultButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		9C373830217A311100A867B5 /* HHInterconnectionDemo */ = {
@@ -2888,6 +2956,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50BC80AE211DFACE00D77262 /* ARCHViewController.swift in Sources */,
+				9C232252217DB8BE009AF7F7 /* ARCHRouterBuildInOptions.swift in Sources */,
 				50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */,
 				50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */,
 				50BC80B1211DFAD700D77262 /* ARCHWindow.swift in Sources */,
@@ -3096,17 +3165,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C232235217DAE9D009AF7F7 /* InterconnectionModuleIO.swift in Sources */,
+				9C232259217DBBDD009AF7F7 /* ContainerParentEventHandler.swift in Sources */,
 				9C373859217A320900A867B5 /* AppDelegate.swift in Sources */,
+				9C232256217DBBD9009AF7F7 /* ContainerChildConfigurator.swift in Sources */,
+				9C23225B217DBBDD009AF7F7 /* ContainerParentConfigurator.swift in Sources */,
 				9C232236217DAE9D009AF7F7 /* InterconnectionEventHandler.swift in Sources */,
 				9C232237217DAE9D009AF7F7 /* InterconnectionViewController.swift in Sources */,
+				9C232254217DBBD9009AF7F7 /* ContainerChildEventHandler.swift in Sources */,
 				9C232239217DAE9D009AF7F7 /* InterconnectionState.swift in Sources */,
 				9C373834217A311100A867B5 /* ViewController.swift in Sources */,
+				9C232253217DBBD9009AF7F7 /* ContainerChildModuleIO.swift in Sources */,
+				9C23225C217DBBDD009AF7F7 /* ContainerParentState.swift in Sources */,
 				9C373863217A35DC00A867B5 /* EmptyModuleModuleIO.swift in Sources */,
 				9C373862217A35DC00A867B5 /* EmptyModuleEventHandler.swift in Sources */,
+				9C232258217DBBDD009AF7F7 /* ContainerParentModuleIO.swift in Sources */,
+				9C232255217DBBD9009AF7F7 /* ContainerChildViewController.swift in Sources */,
 				9C232238217DAE9D009AF7F7 /* InterconnectionConfigurator.swift in Sources */,
 				9C37385A217A32CD00A867B5 /* ModulesUserStory.swift in Sources */,
 				9C373860217A35DC00A867B5 /* EmptyModuleConfigurator.swift in Sources */,
 				9C37383A217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld in Sources */,
+				9C23225F217DC203009AF7F7 /* DefaultButton.swift in Sources */,
+				9C23225A217DBBDD009AF7F7 /* ContainerParentViewController.swift in Sources */,
+				9C232257217DBBD9009AF7F7 /* ContainerChildState.swift in Sources */,
 				9C373861217A35DC00A867B5 /* EmptyModuleViewController.swift in Sources */,
 				9C373864217A35DC00A867B5 /* EmptyModuleState.swift in Sources */,
 			);

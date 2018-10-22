@@ -15,10 +15,10 @@ final class InterconnectionViewController: ARCHViewController<InterconnectionSta
     override func prepareRootView() {
         super.prepareRootView()
 
-        let containerButton = configureButton("Container", action: #selector(self.containerButtonTapHandler(_:)))
-        let scrollViewContainerButton = configureButton("Scroll view container", action: #selector(self.scrollViewButtonTapHandler(_:)))
-        let tableSectionContainerButton = configureButton("Table section container", action: #selector(self.tableSectionButtonTapHandler(_:)))
-        let tableRowContainerButton = configureButton("Table row container", action: #selector(self.tableRowButtonTapHandler(_:)))
+        let containerButton = configureButton(title: "Container", action: #selector(self.containerButtonTapHandler(_:)))
+        let scrollViewContainerButton = configureButton(title: "Scroll view container", action: #selector(self.scrollViewButtonTapHandler(_:)))
+        let tableSectionContainerButton = configureButton(title: "Table section container", action: #selector(self.tableSectionButtonTapHandler(_:)))
+        let tableRowContainerButton = configureButton(title: "Table row container", action: #selector(self.tableRowButtonTapHandler(_:)))
 
         let stackView = UIStackView(arrangedSubviews: [containerButton, scrollViewContainerButton, tableSectionContainerButton, tableRowContainerButton])
 
@@ -45,25 +45,9 @@ final class InterconnectionViewController: ARCHViewController<InterconnectionSta
 
     // MARK: - Configuration
 
-    private func configureButton(_ title: String, action: Selector) -> UIButton {
-        let button = UIButton()
-
-        button.setTitle(title, for: .normal)
-
-        button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .selected)
-        button.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .highlighted)
-        button.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .disabled)
-
-        button.backgroundColor = .gray
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 6.0
-        button.translatesAutoresizingMaskIntoConstraints = false
-
-        button.heightAnchor.constraint(equalToConstant: 36.0).isActive = true
-
+    private func configureButton(title: String, action: Selector) -> UIButton {
+        let button = DefaultButton(title: title)
         button.addTarget(self, action: action, for: .touchUpInside)
-
         return button
     }
 
@@ -71,17 +55,21 @@ final class InterconnectionViewController: ARCHViewController<InterconnectionSta
 
     @objc
     private func containerButtonTapHandler(_ sender: UIButton) {
+        output?.didTapModuleContainer()
     }
 
     @objc
     private func scrollViewButtonTapHandler(_ sender: UIButton) {
+        output?.didTapScrollViewContainter()
     }
 
     @objc
     private func tableSectionButtonTapHandler(_ sender: UIButton) {
+        output?.didTapSectionTableContainer()
     }
 
     @objc
     private func tableRowButtonTapHandler(_ sender: UIButton) {
+        output?.didTapRowTableContainer()
     }
 }
