@@ -1,15 +1,15 @@
 //
-//  EmbededConfigurator.swift
+//  InterconnectionConfigurator.swift
 //  architecture
 //
-//  Created by Eugene Sorokin on 19/10/2018.
+//  Created by Eugene Sorokin on 22/10/2018.
 //  Copyright © 2018 HandH. All rights reserved.
 //
 
 import HHModule
 
-final class EmbededConfigurator: ARCHModuleConfigurator {
-    typealias ModuleIO = (EmbededModuleInput) -> EmbededModuleOutput?
+final class InterconnectionConfigurator: ARCHModuleConfigurator {
+    typealias ModuleIO = (InterconnectionModuleInput) -> InterconnectionModuleOutput?
 
     let moduleIO: ModuleIO?
 
@@ -18,9 +18,9 @@ final class EmbededConfigurator: ARCHModuleConfigurator {
     }
 
     var router: ARCHRouter {
-        let controller = EmbededViewController()
+        let controller = InterconnectionViewController()
 
-        let eventHandler = EmbededEventHandler()
+        let eventHandler = InterconnectionEventHandler()
         eventHandler.router = controller
         eventHandler.viewInput = controller
 

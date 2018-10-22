@@ -284,6 +284,13 @@
 		9C1418072146B57C009F1073 /* ChildModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */; };
 		9C1418082146B57C009F1073 /* ChildModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418032146B57C009F1073 /* ChildModuleState.swift */; };
 		9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14180A2146B6EC009F1073 /* ParentView.swift */; };
+		9C232224217DA98B009AF7F7 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
+		9C232225217DA98B009AF7F7 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C232235217DAE9D009AF7F7 /* InterconnectionModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23222A217DAD77009AF7F7 /* InterconnectionModuleIO.swift */; };
+		9C232236217DAE9D009AF7F7 /* InterconnectionEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23222B217DAD77009AF7F7 /* InterconnectionEventHandler.swift */; };
+		9C232237217DAE9D009AF7F7 /* InterconnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23222C217DAD77009AF7F7 /* InterconnectionViewController.swift */; };
+		9C232238217DAE9D009AF7F7 /* InterconnectionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23222D217DAD77009AF7F7 /* InterconnectionConfigurator.swift */; };
+		9C232239217DAE9D009AF7F7 /* InterconnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23222E217DAD77009AF7F7 /* InterconnectionState.swift */; };
 		9C373834217A311100A867B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C373833217A311100A867B5 /* ViewController.swift */; };
 		9C373837217A311100A867B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C373835217A311100A867B5 /* Main.storyboard */; };
 		9C37383A217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C373838217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld */; };
@@ -291,11 +298,6 @@
 		9C37383F217A311300A867B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C37383D217A311300A867B5 /* LaunchScreen.storyboard */; };
 		9C373859217A320900A867B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5093687B20F683010044CA62 /* AppDelegate.swift */; };
 		9C37385A217A32CD00A867B5 /* ModulesUserStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089235E20FC8E7B0032985E /* ModulesUserStory.swift */; };
-		9C37385B217A35AC00A867B5 /* EmbededModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37384E217A316500A867B5 /* EmbededModuleIO.swift */; };
-		9C37385C217A35AC00A867B5 /* EmbededEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37384F217A316500A867B5 /* EmbededEventHandler.swift */; };
-		9C37385D217A35AC00A867B5 /* EmbededViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C373850217A316600A867B5 /* EmbededViewController.swift */; };
-		9C37385E217A35AC00A867B5 /* EmbededConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C373851217A316600A867B5 /* EmbededConfigurator.swift */; };
-		9C37385F217A35AC00A867B5 /* EmbededState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C373852217A316600A867B5 /* EmbededState.swift */; };
 		9C373860217A35DC00A867B5 /* EmptyModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3F2118342500158C1F /* EmptyModuleConfigurator.swift */; };
 		9C373861217A35DC00A867B5 /* EmptyModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3E2118342500158C1F /* EmptyModuleViewController.swift */; };
 		9C373862217A35DC00A867B5 /* EmptyModuleEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3D2118342500158C1F /* EmptyModuleEventHandler.swift */; };
@@ -608,6 +610,13 @@
 			remoteGlobalIDString = 5072DD94211D84B800E08A92;
 			remoteInfo = HHModule;
 		};
+		9C232226217DA98B009AF7F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5072DD94211D84B800E08A92;
+			remoteInfo = HHModule;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -723,6 +732,17 @@
 				50EA303F2134529A00A95512 /* HHModule.framework in Embed Frameworks */,
 				50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */,
 				50B74A282142BA5A00F368A3 /* HHListExtension.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C232228217DA98C009AF7F7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9C232225217DA98B009AF7F7 /* HHModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -913,6 +933,11 @@
 		9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleConfigurator.swift; sourceTree = "<group>"; };
 		9C1418032146B57C009F1073 /* ChildModuleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleState.swift; sourceTree = "<group>"; };
 		9C14180A2146B6EC009F1073 /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
+		9C23222A217DAD77009AF7F7 /* InterconnectionModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterconnectionModuleIO.swift; sourceTree = "<group>"; };
+		9C23222B217DAD77009AF7F7 /* InterconnectionEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterconnectionEventHandler.swift; sourceTree = "<group>"; };
+		9C23222C217DAD77009AF7F7 /* InterconnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterconnectionViewController.swift; sourceTree = "<group>"; };
+		9C23222D217DAD77009AF7F7 /* InterconnectionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterconnectionConfigurator.swift; sourceTree = "<group>"; };
+		9C23222E217DAD77009AF7F7 /* InterconnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterconnectionState.swift; sourceTree = "<group>"; };
 		9C37382F217A311100A867B5 /* HHInterconnectionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHInterconnectionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C373833217A311100A867B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9C373836217A311100A867B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -920,11 +945,6 @@
 		9C37383B217A311300A867B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C37383E217A311300A867B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C373840217A311300A867B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C37384E217A316500A867B5 /* EmbededModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbededModuleIO.swift; sourceTree = "<group>"; };
-		9C37384F217A316500A867B5 /* EmbededEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbededEventHandler.swift; sourceTree = "<group>"; };
-		9C373850217A316600A867B5 /* EmbededViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbededViewController.swift; sourceTree = "<group>"; };
-		9C373851217A316600A867B5 /* EmbededConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbededConfigurator.swift; sourceTree = "<group>"; };
-		9C373852217A316600A867B5 /* EmbededState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbededState.swift; sourceTree = "<group>"; };
 		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
 		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1119,6 +1139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C232224217DA98B009AF7F7 /* HHModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1578,11 +1599,11 @@
 				5072DDD0211DE36600E08A92 /* ListExtension */,
 				50FA81EF211AE45900ADA769 /* List */,
 				9C1417FE2146B551009F1073 /* ChildModule */,
-				9C373858217A316D00A867B5 /* EmbededModule */,
 				9C1417EE2146B1EF009F1073 /* ParentModule */,
 				5010AA3B2118341300158C1F /* EmptyModule */,
 				50C98574212AEB670002EF4B /* Pagination */,
 				507F14D72137EAC80087DCDB /* Indication */,
+				9C232229217DACD8009AF7F7 /* Interconnection */,
 				5089235E20FC8E7B0032985E /* ModulesUserStory.swift */,
 				5093687B20F683010044CA62 /* AppDelegate.swift */,
 				5093688220F683030044CA62 /* Assets.xcassets */,
@@ -1754,6 +1775,26 @@
 			path = ModuleDemo;
 			sourceTree = "<group>";
 		};
+		9C232229217DACD8009AF7F7 /* Interconnection */ = {
+			isa = PBXGroup;
+			children = (
+				9C232234217DAD8D009AF7F7 /* MainModule */,
+			);
+			path = Interconnection;
+			sourceTree = "<group>";
+		};
+		9C232234217DAD8D009AF7F7 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				9C23222A217DAD77009AF7F7 /* InterconnectionModuleIO.swift */,
+				9C23222B217DAD77009AF7F7 /* InterconnectionEventHandler.swift */,
+				9C23222C217DAD77009AF7F7 /* InterconnectionViewController.swift */,
+				9C23222D217DAD77009AF7F7 /* InterconnectionConfigurator.swift */,
+				9C23222E217DAD77009AF7F7 /* InterconnectionState.swift */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
 		9C373830217A311100A867B5 /* HHInterconnectionDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1765,18 +1806,6 @@
 				9C373838217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld */,
 			);
 			path = HHInterconnectionDemo;
-			sourceTree = "<group>";
-		};
-		9C373858217A316D00A867B5 /* EmbededModule */ = {
-			isa = PBXGroup;
-			children = (
-				9C37384E217A316500A867B5 /* EmbededModuleIO.swift */,
-				9C37384F217A316500A867B5 /* EmbededEventHandler.swift */,
-				9C373850217A316600A867B5 /* EmbededViewController.swift */,
-				9C373851217A316600A867B5 /* EmbededConfigurator.swift */,
-				9C373852217A316600A867B5 /* EmbededState.swift */,
-			);
-			path = EmbededModule;
 			sourceTree = "<group>";
 		};
 		9CF48AE92167A3F60040AE49 /* HHLens */ = {
@@ -2270,10 +2299,12 @@
 				9C37382B217A311100A867B5 /* Sources */,
 				9C37382C217A311100A867B5 /* Frameworks */,
 				9C37382D217A311100A867B5 /* Resources */,
+				9C232228217DA98C009AF7F7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9C232227217DA98B009AF7F7 /* PBXTargetDependency */,
 			);
 			name = HHInterconnectionDemo;
 			productName = HHInterconnectionDemo;
@@ -3064,16 +3095,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C37385D217A35AC00A867B5 /* EmbededViewController.swift in Sources */,
-				9C37385B217A35AC00A867B5 /* EmbededModuleIO.swift in Sources */,
-				9C37385F217A35AC00A867B5 /* EmbededState.swift in Sources */,
+				9C232235217DAE9D009AF7F7 /* InterconnectionModuleIO.swift in Sources */,
 				9C373859217A320900A867B5 /* AppDelegate.swift in Sources */,
+				9C232236217DAE9D009AF7F7 /* InterconnectionEventHandler.swift in Sources */,
+				9C232237217DAE9D009AF7F7 /* InterconnectionViewController.swift in Sources */,
+				9C232239217DAE9D009AF7F7 /* InterconnectionState.swift in Sources */,
 				9C373834217A311100A867B5 /* ViewController.swift in Sources */,
 				9C373863217A35DC00A867B5 /* EmptyModuleModuleIO.swift in Sources */,
 				9C373862217A35DC00A867B5 /* EmptyModuleEventHandler.swift in Sources */,
+				9C232238217DAE9D009AF7F7 /* InterconnectionConfigurator.swift in Sources */,
 				9C37385A217A32CD00A867B5 /* ModulesUserStory.swift in Sources */,
-				9C37385E217A35AC00A867B5 /* EmbededConfigurator.swift in Sources */,
-				9C37385C217A35AC00A867B5 /* EmbededEventHandler.swift in Sources */,
 				9C373860217A35DC00A867B5 /* EmptyModuleConfigurator.swift in Sources */,
 				9C37383A217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld in Sources */,
 				9C373861217A35DC00A867B5 /* EmptyModuleViewController.swift in Sources */,
@@ -3306,6 +3337,11 @@
 			isa = PBXTargetDependency;
 			target = 5072DD94211D84B800E08A92 /* HHModule */;
 			targetProxy = 50EA302B2134529A00A95512 /* PBXContainerItemProxy */;
+		};
+		9C232227217DA98B009AF7F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5072DD94211D84B800E08A92 /* HHModule */;
+			targetProxy = 9C232226217DA98B009AF7F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3612,7 +3648,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X86NQK83T7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3642,7 +3678,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X86NQK83T7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -4354,6 +4390,7 @@
 		9C373841217A311300A867B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X86NQK83T7;
@@ -4365,7 +4402,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				OTHER_SWIFT_FLAGS = "-D HHModule";
+				OTHER_SWIFT_FLAGS = "-D INTERCONNECTION";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.handh.ios.HHInterconnectionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -4376,6 +4413,7 @@
 		9C373842217A311300A867B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X86NQK83T7;

@@ -33,6 +33,8 @@ enum ModulesUserStory: ARCHModuleID {
             return IndicationDemoConfigurator(moduleIO: nil)
 #elseif HHLens
             return EmptyModuleConfigurator(moduleIO: nil)
+#elseif INTERCONNECTION
+            return InterconnectionConfigurator(moduleIO: nil)
 #endif
         }
     }
