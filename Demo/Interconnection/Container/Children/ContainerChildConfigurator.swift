@@ -9,9 +9,10 @@
 import HHModule
 
 final class ContainerChildConfigurator: ARCHModuleConfigurator {
+
     typealias ModuleIO = (ContainerChildModuleInput) -> ContainerChildModuleOutput?
 
-    let moduleIO: ModuleIO?
+    var moduleIO: ModuleIO?
 
     init(moduleIO: ModuleIO?) {
         self.moduleIO = moduleIO

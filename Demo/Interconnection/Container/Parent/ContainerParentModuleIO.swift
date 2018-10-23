@@ -6,12 +6,12 @@
 //  Copyright © 2018 HandH. All rights reserved.
 //
 
-import Foundation
+import HHModule
 
-protocol ContainerParentModuleInput {
+protocol ContainerParentModuleInput: ARCHModuleInput {
 }
 
-protocol ContainerParentModuleOutput: class {
+protocol ContainerParentModuleOutput: ARCHModuleOutput {
 }
 
 protocol ContainerParentViewOutput {

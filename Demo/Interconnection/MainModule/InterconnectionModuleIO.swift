@@ -6,12 +6,12 @@
 //  Copyright © 2018 HandH. All rights reserved.
 //
 
-import Foundation
+import HHModule
 
-protocol InterconnectionModuleInput {
+protocol InterconnectionModuleInput: ARCHModuleInput  {
 }
 
-protocol InterconnectionModuleOutput: class {
+protocol InterconnectionModuleOutput: ARCHModuleOutput {
 }
 
 protocol InterconnectionModuleViewOutput: class {

@@ -30,74 +30,54 @@ final class ScrollParentConfigurator: ARCHModuleConfigurator {
 
         controller.output = eventHandler
 
-        var childModulesStates: [ARCHState] = []
-        var id: UUID = UUID()
-
+        var id = UUID()
         ContainerChildConfigurator(moduleIO: { (moduleInput: ContainerChildModuleInput) -> ContainerChildModuleOutput? in
-            let childState = moduleInput.getState()
-            childModulesStates.append(childState)
-            eventHandler.childModulesIds[.first] = childState.id
-            id = childState.id
-            return eventHandler
+            eventHandler.registerChildModule(moduleInput, for: "first")
+            id = moduleInput.getState().id
+            return nil
         }).router.transit(from: controller, options: [ARCHRouterBuildInOptions(id: id)], animated: true)
 
         ContainerChildConfigurator(moduleIO: { (moduleInput: ContainerChildModuleInput) -> ContainerChildModuleOutput? in
-            let childState = moduleInput.getState()
-            childModulesStates.append(childState)
-            eventHandler.childModulesIds[.second] = childState.id
-            id = childState.id
-            return eventHandler
+            eventHandler.registerChildModule(moduleInput, for: "second")
+            id = moduleInput.getState().id
+            return nil
         }).router.transit(from: controller, options: [ARCHRouterBuildInOptions(id: id)], animated: true)
 
         ContainerChildConfigurator(moduleIO: { (moduleInput: ContainerChildModuleInput) -> ContainerChildModuleOutput? in
-            let childState = moduleInput.getState()
-            childModulesStates.append(childState)
-            eventHandler.childModulesIds[.third] = childState.id
-            id = childState.id
-            return eventHandler
+            eventHandler.registerChildModule(moduleInput, for: "third")
+            id = moduleInput.getState().id
+            return nil
         }).router.transit(from: controller, options: [ARCHRouterBuildInOptions(id: id)], animated: true)
 
         ContainerChildConfigurator(moduleIO: { (moduleInput: ContainerChildModuleInput) -> ContainerChildModuleOutput? in
-            let childState = moduleInput.getState()
-            childModulesStates.append(childState)
-            eventHandler.childModulesIds[.fourth] = childState.id
-            id = childState.id
-            return eventHandler
+            eventHandler.registerChildModule(moduleInput, for: "fourth")
+            id = moduleInput.getState().id
+            return nil
         }).router.transit(from: controller, options: [ARCHRouterBuildInOptions(id: id)], animated: true)
 
         ContainerChildConfigurator(moduleIO: { (moduleInput: ContainerChildModuleInput) -> ContainerChildModuleOutput? in
-            let childState = moduleInput.getState()
-            childModulesStates.append(childState)
-            eventHandler.childModulesIds[.fifth] = childState.id
-            id = childState.id
-            return eventHandler
+            eventHandler.registerChildModule(moduleInput, for: "fifth")
+            id = moduleInput.getState().id
+            return nil
         }).router.transit(from: controller, options: [ARCHRouterBuildInOptions(id: id)], animated: true)
 
         ContainerChildConfigurator(moduleIO: { (moduleInput: ContainerChildModuleInput) -> ContainerChildModuleOutput? in
-            let childState = moduleInput.getState()
-            childModulesStates.append(childState)
-            eventHandler.childModulesIds[.sixth] = childState.id
-            id = childState.id
-            return eventHandler
+            eventHandler.registerChildModule(moduleInput, for: "sixth")
+            id = moduleInput.getState().id
+            return nil
         }).router.transit(from: controller, options: [ARCHRouterBuildInOptions(id: id)], animated: true)
 
         ContainerChildConfigurator(moduleIO: { (moduleInput: ContainerChildModuleInput) -> ContainerChildModuleOutput? in
-            let childState = moduleInput.getState()
-            childModulesStates.append(childState)
-            eventHandler.childModulesIds[.seventh] = childState.id
-            id = childState.id
-            return eventHandler
+            eventHandler.registerChildModule(moduleInput, for: "seventh")
+            id = moduleInput.getState().id
+            return nil
         }).router.transit(from: controller, options: [ARCHRouterBuildInOptions(id: id)], animated: true)
 
         ContainerChildConfigurator(moduleIO: { (moduleInput: ContainerChildModuleInput) -> ContainerChildModuleOutput? in
-            let childState = moduleInput.getState()
-            childModulesStates.append(childState)
-            eventHandler.childModulesIds[.eighth] = childState.id
-            id = childState.id
-            return eventHandler
+            eventHandler.registerChildModule(moduleInput, for: "eighth")
+            id = moduleInput.getState().id
+            return nil
         }).router.transit(from: controller, options: [ARCHRouterBuildInOptions(id: id)], animated: true)
-
-        eventHandler.state.childStates = childModulesStates
 
         return controller
     }

@@ -12,15 +12,15 @@ final class ScrollParentViewController: ARCHViewController<ScrollParentState, Sc
 
     // MARK: - View life cycle
 
-    let containers: [(tag: ScrollParentEventHandler.ModuleTag, view: UIView)] = [
-        (.first, UIView()),
-        (.second, UIView()),
-        (.third, UIView()),
-        (.fourth, UIView()),
-        (.fifth, UIView()),
-        (.sixth, UIView()),
-        (.seventh, UIView()),
-        (.eighth, UIView())
+    let containers: [(id: String, view: UIView)] = [
+        ("first", UIView()),
+        ("second", UIView()),
+        ("third", UIView()),
+        ("fourth", UIView()),
+        ("fifth", UIView()),
+        ("sixth", UIView()),
+        ("seventh", UIView()),
+        ("eighth", UIView())
     ]
 
     override func prepareRootView() {
@@ -82,9 +82,9 @@ final class ScrollParentViewController: ARCHViewController<ScrollParentState, Sc
     // MARK: - ARCHContainer
 
     func container(for id: UUID) -> UIView {
-        guard let tag = output?.tag(for: id) else {
+        guard let id = output?.reuseIdentifire(for: id) else {
             return UIView()
         }
-        return containers.first(where: { $0.tag == tag })?.view ?? UIView()
+        return containers.first(where: { $0.id == id })?.view ?? UIView()
     }
 }

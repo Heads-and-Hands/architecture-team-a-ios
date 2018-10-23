@@ -9,5 +9,6 @@
 import Foundation
 
 public protocol ARCHModuleConfigurator {
+
     var router: ARCHRouter { get }
 }

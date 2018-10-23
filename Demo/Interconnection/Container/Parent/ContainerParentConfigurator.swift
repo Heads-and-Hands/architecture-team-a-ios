@@ -11,7 +11,7 @@ import HHModule
 final class ContainerParentConfigurator: ARCHModuleConfigurator {
     typealias ModuleIO = (ContainerParentModuleInput) -> ContainerParentModuleOutput?
 
-    let moduleIO: ModuleIO?
+    var moduleIO: ModuleIO?
 
     init(moduleIO: ModuleIO?) {
         self.moduleIO = moduleIO
@@ -30,20 +30,12 @@ final class ContainerParentConfigurator: ARCHModuleConfigurator {
 
         controller.output = eventHandler
 
-        var childModulesIds: [ChildModuleTag: UUID] = [:]
-        var childModulesStates: [ARCHState] = []
-        var id: UUID = UUID()
-
+        var id = UUID()
         ContainerChildConfigurator(moduleIO: { (moduleInput: ContainerChildModuleInput) -> ContainerChildModuleOutput? in
-            let childState = moduleInput.getState()
-            childModulesStates.append(childState)
-            childModulesIds[.first] = childState.id
-            id = childState.id
-            return eventHandler
+            eventHandler.registerChildModule(moduleInput, for: "first")
+            id = moduleInput.getState().id
+            return nil
         }).router.transit(from: controller, options: [ARCHRouterBuildInOptions(id: id)], animated: true)
-
-        eventHandler.childModulesIds = childModulesIds
-        eventHandler.state.childStates = childModulesStates
 
         return controller
     }

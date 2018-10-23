@@ -86,14 +86,19 @@ public protocol ACRHViewOutput {
     func viewIsReady()
     func viewSetNeedsRedraw()
     func shouldRender(_ state: Any) -> Bool
+    func reuseIdentifire(for childId: UUID) -> String?
 }
 
 public protocol ARCHModuleInput {
 
     func getState() -> ARCHState
+
+    func setOutput(_ output: ARCHModuleOutput)
+
+    func registerChildModule(_ module: ARCHModuleInput, for reuseIdentifire: String)
 }
 
-public protocol ARCHChildModuleOutput: class {
+public protocol ARCHModuleOutput: class {
 
     func didChange(childState: ARCHState)
 }

@@ -6,15 +6,13 @@
 //  Copyright © 2018 HandH. All rights reserved.
 //
 
-import Foundation
+import HHModule
 
-protocol ScrollParentModuleInput {
+protocol ScrollParentModuleInput: ARCHModuleInput {
 }
 
-protocol ScrollParentModuleOutput: class {
+protocol ScrollParentModuleOutput: ARCHModuleOutput {
 }
 
 protocol ScrollParentModuleViewOutput: class {
-
-    func tag(for id: UUID) -> ScrollParentEventHandler.ModuleTag?
 }

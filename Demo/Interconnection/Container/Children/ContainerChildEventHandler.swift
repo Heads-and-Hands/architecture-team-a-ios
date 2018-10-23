@@ -16,12 +16,6 @@ final class ContainerChildEventHandler: ARCHEventHandler<ContainerChildState>, C
         super.viewIsReady()
     }
 
-    // MARK: - ARCHChildModuleInput
-
-    func getState() -> ARCHState {
-        return state
-    }
-
     // MARK: - ContainerChildModuleViewOutput
 
     func chageTextButtonDidTap() {

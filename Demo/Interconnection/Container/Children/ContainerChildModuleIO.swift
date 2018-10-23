@@ -11,7 +11,7 @@ import HHModule
 protocol ContainerChildModuleInput: ARCHModuleInput {
 }
 
-protocol ContainerChildModuleOutput: ARCHChildModuleOutput {
+protocol ContainerChildModuleOutput: ARCHModuleOutput {
 }
 
 protocol ContainerChildModuleViewOutput: class {
