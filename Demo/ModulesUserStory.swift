@@ -21,6 +21,8 @@ enum ModulesUserStory: ARCHModuleID {
             return EmptyModuleConfigurator(moduleIO: nil)
 #elseif HHList
             return ListConfigurator(moduleIO: nil)
+#elseif HHSectionList
+            return SectionListConfigurator(moduleIO: nil)
 #elseif HHListExtDemo
             return ListExtConfigurator(moduleIO: nil)
 #elseif HHNetwork

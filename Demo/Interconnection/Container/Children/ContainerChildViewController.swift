@@ -57,7 +57,7 @@ final class ContainerChildViewController: ARCHViewController<ContainerChildState
 
     // MARK: - Render
 
-    override func render(state: State) {
+    override func render(state: ViewState) {
         super.render(state: state)
     }
 

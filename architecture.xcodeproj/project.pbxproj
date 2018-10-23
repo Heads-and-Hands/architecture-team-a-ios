@@ -15,6 +15,36 @@
 		501AA65A211C6C8B002D3264 /* ARCHListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089233620FC8DA30032985E /* ARCHListDataSource.swift */; };
 		501AA65B211C6C8E002D3264 /* ARCHCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */; };
 		501AA65C211C6C9A002D3264 /* ARCHEmptyListDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81EB211ACF8D00ADA769 /* ARCHEmptyListDataAdapter.swift */; };
+		502A7B58217387F900C6A2E8 /* ARCHListDataSourceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B56217387EC00C6A2E8 /* ARCHListDataSourceAdapter.swift */; };
+		502A7B5D2173894C00C6A2E8 /* ARCHHeaderFooterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B5B2173893700C6A2E8 /* ARCHHeaderFooterViewModel.swift */; };
+		502A7B5E217389FA00C6A2E8 /* ARCHSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B592173883000C6A2E8 /* ARCHSectionViewModel.swift */; };
+		502A7B6021738C5D00C6A2E8 /* ARCHSectionDataSourceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B5F21738C5D00C6A2E8 /* ARCHSectionDataSourceAdapter.swift */; };
+		502A7B6221739BB800C6A2E8 /* ARCHHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B6121739BB800C6A2E8 /* ARCHHeaderFooterView.swift */; };
+		502A7B6921739CD100C6A2E8 /* ListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81F4211AE47C00ADA769 /* ListState.swift */; };
+		502A7B6A21739CD100C6A2E8 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81F2211AE47C00ADA769 /* ListViewController.swift */; };
+		502A7B6B21739CD100C6A2E8 /* ModulesUserStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089235E20FC8E7B0032985E /* ModulesUserStory.swift */; };
+		502A7B6C21739CD100C6A2E8 /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50679794212572610034CDA2 /* ExampleCell.swift */; };
+		502A7B6D21739CD100C6A2E8 /* SimpleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506797A1212572AE0034CDA2 /* SimpleEntity.swift */; };
+		502A7B6E21739CD100C6A2E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5093687B20F683010044CA62 /* AppDelegate.swift */; };
+		502A7B6F21739CD100C6A2E8 /* ListEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81F1211AE47C00ADA769 /* ListEventHandler.swift */; };
+		502A7B7021739CD100C6A2E8 /* ExampleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50679793212572610034CDA2 /* ExampleCellViewModel.swift */; };
+		502A7B7121739CD100C6A2E8 /* ListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81F3211AE47C00ADA769 /* ListConfigurator.swift */; };
+		502A7B7221739CD100C6A2E8 /* ListModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81F0211AE47C00ADA769 /* ListModuleIO.swift */; };
+		502A7B7421739CD100C6A2E8 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
+		502A7B7521739CD100C6A2E8 /* HHList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; };
+		502A7B7821739CD100C6A2E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093688220F683030044CA62 /* Assets.xcassets */; };
+		502A7B7921739CD100C6A2E8 /* ExampleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50679795212572610034CDA2 /* ExampleCell.xib */; };
+		502A7B7A21739CD100C6A2E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
+		502A7B7C21739CD100C6A2E8 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		502A7B7D21739CD100C6A2E8 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		502A7B8921739D6200C6A2E8 /* SectionListModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B8421739D6200C6A2E8 /* SectionListModuleIO.swift */; };
+		502A7B8B21739D6200C6A2E8 /* SectionListEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B8521739D6200C6A2E8 /* SectionListEventHandler.swift */; };
+		502A7B8D21739D6200C6A2E8 /* SectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B8621739D6200C6A2E8 /* SectionListViewController.swift */; };
+		502A7B8F21739D6200C6A2E8 /* SectionListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B8721739D6200C6A2E8 /* SectionListConfigurator.swift */; };
+		502A7B9121739D6200C6A2E8 /* SectionListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B8821739D6200C6A2E8 /* SectionListState.swift */; };
+		502A7B9F2173AA6900C6A2E8 /* Example2CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B9C2173AA6900C6A2E8 /* Example2CVCell.swift */; };
+		502A7BA12173AA6900C6A2E8 /* Example2CVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B9D2173AA6900C6A2E8 /* Example2CVCellViewModel.swift */; };
+		502A7BA32173AA6900C6A2E8 /* Example2CVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502A7B9E2173AA6900C6A2E8 /* Example2CVCell.xib */; };
 		503B4266216A608200CD641D /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503B4265216A608200CD641D /* UILabel.swift */; };
 		503FD70E213EA920008905ED /* ARCHIndicationLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD70C213EA914008905ED /* ARCHIndicationLayoutGuide.swift */; };
 		503FD713213FF4E2008905ED /* IndicationViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD712213FF4E2008905ED /* IndicationViewProvider.swift */; };
@@ -162,6 +192,7 @@
 		5093687C20F683010044CA62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5093687B20F683010044CA62 /* AppDelegate.swift */; };
 		5093688320F683030044CA62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093688220F683030044CA62 /* Assets.xcassets */; };
 		5093688620F683030044CA62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
+		50954D21217E30500003610A /* ARCHWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50954D20217E30500003610A /* ARCHWindow.swift */; };
 		50AC942F213D673B0007B7FA /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
 		50AC9435213D68730007B7FA /* HHListExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DDE7211DE83200E08A92 /* HHListExtension.framework */; };
 		50AC9436213D68730007B7FA /* HHListExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DDE7211DE83200E08A92 /* HHListExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -176,7 +207,6 @@
 		50BC80AE211DFACE00D77262 /* ARCHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232420FC8DA30032985E /* ARCHViewController.swift */; };
 		50BC80AF211DFAD100D77262 /* ARCHModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232520FC8DA30032985E /* ARCHModuleProtocols.swift */; };
 		50BC80B0211DFAD300D77262 /* ARCHEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232620FC8DA30032985E /* ARCHEventHandler.swift */; };
-		50BC80B1211DFAD700D77262 /* ARCHWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232C20FC8DA30032985E /* ARCHWindow.swift */; };
 		50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */; };
 		50BC80B3211DFAE200D77262 /* ARCHRouterPresentOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */; };
 		50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */; };
@@ -368,6 +398,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 501AA647211C6C4A002D3264;
 			remoteInfo = HHList;
+		};
+		502A7B6521739CD100C6A2E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 501AA647211C6C4A002D3264;
+			remoteInfo = HHList;
+		};
+		502A7B6721739CD100C6A2E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5072DD94211D84B800E08A92;
+			remoteInfo = HHModule;
 		};
 		503FD72221402CC2008905ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -638,6 +682,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		502A7B7B21739CD100C6A2E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				502A7B7C21739CD100C6A2E8 /* HHModule.framework in Embed Frameworks */,
+				502A7B7D21739CD100C6A2E8 /* HHList.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		503FD73821402CC2008905ED /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -784,6 +840,20 @@
 		501AA648211C6C4A002D3264 /* HHList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		501AA64A211C6C4B002D3264 /* HHList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHList.h; sourceTree = "<group>"; };
 		501AA64B211C6C4B002D3264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		502A7B56217387EC00C6A2E8 /* ARCHListDataSourceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHListDataSourceAdapter.swift; sourceTree = "<group>"; };
+		502A7B592173883000C6A2E8 /* ARCHSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHSectionViewModel.swift; sourceTree = "<group>"; };
+		502A7B5B2173893700C6A2E8 /* ARCHHeaderFooterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHHeaderFooterViewModel.swift; sourceTree = "<group>"; };
+		502A7B5F21738C5D00C6A2E8 /* ARCHSectionDataSourceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHSectionDataSourceAdapter.swift; sourceTree = "<group>"; };
+		502A7B6121739BB800C6A2E8 /* ARCHHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHHeaderFooterView.swift; sourceTree = "<group>"; };
+		502A7B8121739CD100C6A2E8 /* HHSectionListDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHSectionListDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		502A7B8421739D6200C6A2E8 /* SectionListModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListModuleIO.swift; sourceTree = "<group>"; };
+		502A7B8521739D6200C6A2E8 /* SectionListEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListEventHandler.swift; sourceTree = "<group>"; };
+		502A7B8621739D6200C6A2E8 /* SectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListViewController.swift; sourceTree = "<group>"; };
+		502A7B8721739D6200C6A2E8 /* SectionListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListConfigurator.swift; sourceTree = "<group>"; };
+		502A7B8821739D6200C6A2E8 /* SectionListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListState.swift; sourceTree = "<group>"; };
+		502A7B9C2173AA6900C6A2E8 /* Example2CVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2CVCell.swift; sourceTree = "<group>"; };
+		502A7B9D2173AA6900C6A2E8 /* Example2CVCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2CVCellViewModel.swift; sourceTree = "<group>"; };
+		502A7B9E2173AA6900C6A2E8 /* Example2CVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Example2CVCell.xib; sourceTree = "<group>"; };
 		5032B7F421186C4600271A1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5032B7F621186C4D00271A1D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		503B4265216A608200CD641D /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -870,7 +940,6 @@
 		5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouterPushOptions.swift; sourceTree = "<group>"; };
 		5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouterPresentOptions.swift; sourceTree = "<group>"; };
 		5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouterWindowOptions.swift; sourceTree = "<group>"; };
-		5089232C20FC8DA30032985E /* ARCHWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHWindow.swift; sourceTree = "<group>"; };
 		5089232D20FC8DA30032985E /* ARCHRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouter.swift; sourceTree = "<group>"; };
 		5089233120FC8DA30032985E /* ARCHTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHTableViewDataSource.swift; sourceTree = "<group>"; };
 		5089233320FC8DA30032985E /* ARCHCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -889,6 +958,7 @@
 		5093688220F683030044CA62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5093688520F683030044CA62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5093688720F683030044CA62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50954D20217E30500003610A /* ARCHWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHWindow.swift; sourceTree = "<group>"; };
 		50B89519214BF00900242372 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		50BC80D02121748400D77262 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		50BC80D12121748400D77262 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -1019,6 +1089,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		502A7B7321739CD100C6A2E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502A7B7421739CD100C6A2E8 /* HHModule.framework in Frameworks */,
+				502A7B7521739CD100C6A2E8 /* HHList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1241,6 +1320,18 @@
 			path = HHBestPractice;
 			sourceTree = "<group>";
 		};
+		502A7B8321739D4400C6A2E8 /* SectionList */ = {
+			isa = PBXGroup;
+			children = (
+				502A7B8721739D6200C6A2E8 /* SectionListConfigurator.swift */,
+				502A7B8621739D6200C6A2E8 /* SectionListViewController.swift */,
+				502A7B8521739D6200C6A2E8 /* SectionListEventHandler.swift */,
+				502A7B8421739D6200C6A2E8 /* SectionListModuleIO.swift */,
+				502A7B8821739D6200C6A2E8 /* SectionListState.swift */,
+			);
+			path = SectionList;
+			sourceTree = "<group>";
+		};
 		503B4264216A608200CD641D /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1290,6 +1381,9 @@
 				50679793212572610034CDA2 /* ExampleCellViewModel.swift */,
 				50679794212572610034CDA2 /* ExampleCell.swift */,
 				50679795212572610034CDA2 /* ExampleCell.xib */,
+				502A7B9C2173AA6900C6A2E8 /* Example2CVCell.swift */,
+				502A7B9D2173AA6900C6A2E8 /* Example2CVCellViewModel.swift */,
+				502A7B9E2173AA6900C6A2E8 /* Example2CVCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1513,8 +1607,8 @@
 			isa = PBXGroup;
 			children = (
 				5089232820FC8DA30032985E /* Options */,
-				5089232C20FC8DA30032985E /* ARCHWindow.swift */,
 				5089232D20FC8DA30032985E /* ARCHRouter.swift */,
+				50954D20217E30500003610A /* ARCHWindow.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -1548,8 +1642,13 @@
 				5089233220FC8DA30032985E /* CollectionView */,
 				5089233420FC8DA30032985E /* ARCHListView.swift */,
 				5089233520FC8DA30032985E /* ARCHCell.swift */,
+				502A7B6121739BB800C6A2E8 /* ARCHHeaderFooterView.swift */,
 				5089233620FC8DA30032985E /* ARCHListDataSource.swift */,
+				502A7B56217387EC00C6A2E8 /* ARCHListDataSourceAdapter.swift */,
+				502A7B5F21738C5D00C6A2E8 /* ARCHSectionDataSourceAdapter.swift */,
+				502A7B592173883000C6A2E8 /* ARCHSectionViewModel.swift */,
 				50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */,
+				502A7B5B2173893700C6A2E8 /* ARCHHeaderFooterViewModel.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -1621,6 +1720,7 @@
 				9CF48AE82167A3F60040AE49 /* HHLens.framework */,
 				50CD79A3216A5CDC005C11A6 /* HHLensDemo.app */,
 				9C37382F217A311100A867B5 /* HHInterconnectionDemo.app */,
+				502A7B8121739CD100C6A2E8 /* HHSectionListDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1635,6 +1735,7 @@
 				50D264672121B43300E3B47A /* Network */,
 				5072DDD0211DE36600E08A92 /* ListExtension */,
 				50FA81EF211AE45900ADA769 /* List */,
+				502A7B8321739D4400C6A2E8 /* SectionList */,
 				9C1417FE2146B551009F1073 /* ChildModule */,
 				9C1417EE2146B1EF009F1073 /* ParentModule */,
 				5010AA3B2118341300158C1F /* EmptyModule */,
@@ -2062,6 +2163,27 @@
 			productReference = 501AA648211C6C4A002D3264 /* HHList.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		502A7B6321739CD100C6A2E8 /* HHSectionListDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 502A7B7E21739CD100C6A2E8 /* Build configuration list for PBXNativeTarget "HHSectionListDemo" */;
+			buildPhases = (
+				502A7B6821739CD100C6A2E8 /* Sources */,
+				502A7B7321739CD100C6A2E8 /* Frameworks */,
+				502A7B7621739CD100C6A2E8 /* Swiftlint */,
+				502A7B7721739CD100C6A2E8 /* Resources */,
+				502A7B7B21739CD100C6A2E8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				502A7B6421739CD100C6A2E8 /* PBXTargetDependency */,
+				502A7B6621739CD100C6A2E8 /* PBXTargetDependency */,
+			);
+			name = HHSectionListDemo;
+			productName = HHLitDemo;
+			productReference = 502A7B8121739CD100C6A2E8 /* HHSectionListDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		503FD72021402CC2008905ED /* HHListControllerDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 503FD73B21402CC2008905ED /* Build configuration list for PBXNativeTarget "HHListControllerDemo" */;
@@ -2481,6 +2603,7 @@
 			targets = (
 				5093687720F683010044CA62 /* HHModuleDemo */,
 				5067976921256CF80034CDA2 /* HHListDemo */,
+				502A7B6321739CD100C6A2E8 /* HHSectionListDemo */,
 				503FD72021402CC2008905ED /* HHListControllerDemo */,
 				506797C62125761C0034CDA2 /* HHListExtDemo */,
 				507ABCAF21257C64003DBDD7 /* HHNetworkDemo */,
@@ -2506,6 +2629,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		502A7B7721739CD100C6A2E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502A7B7821739CD100C6A2E8 /* Assets.xcassets in Resources */,
+				502A7B7921739CD100C6A2E8 /* ExampleCell.xib in Resources */,
+				502A7BA32173AA6900C6A2E8 /* Example2CVCell.xib in Resources */,
+				502A7B7A21739CD100C6A2E8 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2667,6 +2801,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		502A7B7621739CD100C6A2E8 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n    if which swiftlint >/dev/null; then\n        swiftlint\n    fi\nfi";
+		};
 		503FD73321402CC2008905ED /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2898,13 +3046,42 @@
 			files = (
 				501AA65A211C6C8B002D3264 /* ARCHListDataSource.swift in Sources */,
 				503FD71921400D0E008905ED /* ARCHCollectionViewController.swift in Sources */,
+				502A7B5D2173894C00C6A2E8 /* ARCHHeaderFooterViewModel.swift in Sources */,
+				502A7B58217387F900C6A2E8 /* ARCHListDataSourceAdapter.swift in Sources */,
+				502A7B5E217389FA00C6A2E8 /* ARCHSectionViewModel.swift in Sources */,
 				501AA656211C6C7E002D3264 /* ARCHTableViewDataSource.swift in Sources */,
 				501AA65B211C6C8E002D3264 /* ARCHCellViewModel.swift in Sources */,
 				501AA657211C6C83002D3264 /* ARCHCollectionViewDataSource.swift in Sources */,
+				502A7B6221739BB800C6A2E8 /* ARCHHeaderFooterView.swift in Sources */,
+				502A7B6021738C5D00C6A2E8 /* ARCHSectionDataSourceAdapter.swift in Sources */,
 				501AA65C211C6C9A002D3264 /* ARCHEmptyListDataAdapter.swift in Sources */,
 				503FD71821400D0E008905ED /* ARCHTableViewController.swift in Sources */,
 				501AA658211C6C85002D3264 /* ARCHListView.swift in Sources */,
 				501AA659211C6C88002D3264 /* ARCHCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		502A7B6821739CD100C6A2E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502A7B6921739CD100C6A2E8 /* ListState.swift in Sources */,
+				502A7B6A21739CD100C6A2E8 /* ListViewController.swift in Sources */,
+				502A7BA12173AA6900C6A2E8 /* Example2CVCellViewModel.swift in Sources */,
+				502A7B6B21739CD100C6A2E8 /* ModulesUserStory.swift in Sources */,
+				502A7B6C21739CD100C6A2E8 /* ExampleCell.swift in Sources */,
+				502A7B8F21739D6200C6A2E8 /* SectionListConfigurator.swift in Sources */,
+				502A7B9121739D6200C6A2E8 /* SectionListState.swift in Sources */,
+				502A7B9F2173AA6900C6A2E8 /* Example2CVCell.swift in Sources */,
+				502A7B6D21739CD100C6A2E8 /* SimpleEntity.swift in Sources */,
+				502A7B8D21739D6200C6A2E8 /* SectionListViewController.swift in Sources */,
+				502A7B8B21739D6200C6A2E8 /* SectionListEventHandler.swift in Sources */,
+				502A7B6E21739CD100C6A2E8 /* AppDelegate.swift in Sources */,
+				502A7B6F21739CD100C6A2E8 /* ListEventHandler.swift in Sources */,
+				502A7B7021739CD100C6A2E8 /* ExampleCellViewModel.swift in Sources */,
+				502A7B8921739D6200C6A2E8 /* SectionListModuleIO.swift in Sources */,
+				502A7B7121739CD100C6A2E8 /* ListConfigurator.swift in Sources */,
+				502A7B7221739CD100C6A2E8 /* ListModuleIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2983,11 +3160,11 @@
 				9C232252217DB8BE009AF7F7 /* ARCHRouterBuildInOptions.swift in Sources */,
 				50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */,
 				50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */,
-				50BC80B1211DFAD700D77262 /* ARCHWindow.swift in Sources */,
 				50BC80B5211DFAE900D77262 /* ARCHRouter.swift in Sources */,
 				50BC80AF211DFAD100D77262 /* ARCHModuleProtocols.swift in Sources */,
 				50BC80AD211DFACA00D77262 /* ARCHModuleID.swift in Sources */,
 				50BC80B3211DFAE200D77262 /* ARCHRouterPresentOptions.swift in Sources */,
+				50954D21217E30500003610A /* ARCHWindow.swift in Sources */,
 				50BC80AC211DFAC700D77262 /* ARCHModuleConfigurator.swift in Sources */,
 				50BC80B0211DFAD300D77262 /* ARCHEventHandler.swift in Sources */,
 			);
@@ -3262,6 +3439,16 @@
 			isa = PBXTargetDependency;
 			target = 501AA647211C6C4A002D3264 /* HHList */;
 			targetProxy = 501AA64D211C6C4B002D3264 /* PBXContainerItemProxy */;
+		};
+		502A7B6421739CD100C6A2E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 501AA647211C6C4A002D3264 /* HHList */;
+			targetProxy = 502A7B6521739CD100C6A2E8 /* PBXContainerItemProxy */;
+		};
+		502A7B6621739CD100C6A2E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5072DD94211D84B800E08A92 /* HHModule */;
+			targetProxy = 502A7B6721739CD100C6A2E8 /* PBXContainerItemProxy */;
 		};
 		503FD72121402CC2008905ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3540,6 +3727,50 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		502A7B7F21739CD100C6A2E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-D HHSectionList";
+				PRODUCT_BUNDLE_IDENTIFIER = handh.HHSectionListDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		502A7B8021739CD100C6A2E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-D HHSectionList";
+				PRODUCT_BUNDLE_IDENTIFIER = handh.HHSectionListDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -4612,6 +4843,15 @@
 			buildConfigurations = (
 				501AA652211C6C4B002D3264 /* Debug */,
 				501AA653211C6C4B002D3264 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		502A7B7E21739CD100C6A2E8 /* Build configuration list for PBXNativeTarget "HHSectionListDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				502A7B7F21739CD100C6A2E8 /* Debug */,
+				502A7B8021739CD100C6A2E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

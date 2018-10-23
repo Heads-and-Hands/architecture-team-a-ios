@@ -68,7 +68,7 @@ final class ScrollParentViewController: ARCHViewController<ScrollParentState, Sc
 
     // MARK: - Render
 
-    override func render(state: State) {
+    override func render(state: ViewState) {
         super.render(state: state)
     }
 

@@ -17,7 +17,7 @@ import HHNetwork
 class AppDelegate: UIResponder, UIApplicationDelegate {
     typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
 
-    var window: UIWindow?
+    var window: UIWindow? = UIWindow()
     var authBufferedController: UIViewController?
 
     func application(
@@ -25,17 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: LaunchOptions?
         ) -> Bool {
 
-        let window = ARCHWindow()
-        self.window = window
-
-//        window.rootViewController = SkeletonTestViewController()
-//        window.makeKeyAndVisible()
         launchOn(window: window)
 
         return true
     }
 
-    private func launchOn(window: ARCHWindow) {
+    private func launchOn(window: UIWindow?) {
         ModulesUserStory.main.displayOn(window: window, animated: false)
     }
 

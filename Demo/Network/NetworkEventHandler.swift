@@ -17,13 +17,15 @@ final class NetworkEventHandler: ARCHEventHandler<NetworkState>, NetworkModuleIn
     override func viewIsReady() {
         super.viewIsReady()
 
-        apiProvider?.requestTarget(.main, for: MainResponse.self, completion: { result in
-            switch result {
-            case let .success(response):
-                print("\(response)")
-            case let .failure(error):
+        apiProvider?.sendRequest(
+            target: .main,
+            for: MainResponse.self,
+            completion: { result in
+                print("\(result)")
+            },
+            failure: { error in
                 print("\(error)")
             }
-        })
+        )
     }
 }

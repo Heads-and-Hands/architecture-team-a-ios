@@ -16,7 +16,7 @@ struct HeaderViewState {
 }
 
 class HeaderView: UIView, ARCHViewRenderable, ARCHSkeletonView {
-    typealias State = HeaderViewState
+    typealias ViewState = HeaderViewState
 
     let imageView = UIImageView()
     let stackView = UIStackView()
@@ -72,7 +72,7 @@ class HeaderView: UIView, ARCHViewRenderable, ARCHSkeletonView {
 
     // MARK: - ARCHViewRenderable
 
-    func render(state: State) {
+    func render(state: ViewState) {
         titleLabel.text = state.title
         detailLabel.text = state.detail
     }

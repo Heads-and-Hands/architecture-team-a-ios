@@ -39,7 +39,7 @@ final class InterconnectionViewController: ARCHViewController<InterconnectionSta
 
     // MARK: - Render
 
-    override func render(state: State) {
+    override func render(state: ViewState) {
         super.render(state: state)
     }
 

@@ -47,7 +47,7 @@ final class ContainerParentViewController: ARCHViewController<ContainerParentSta
 
     // MARK: - Render
 
-    override func render(state: State) {
+    override func render(state: ViewState) {
         super.render(state: state)
     }
 

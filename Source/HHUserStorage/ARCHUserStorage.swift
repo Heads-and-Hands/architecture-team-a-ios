@@ -28,7 +28,7 @@ public class ARCHUserStorage<User: ARCHUser, Token: ARCHToken> {
 
     public init() {}
 
-    public func save(user: User, token: Token) {
+    public func save(user: User?, token: Token?) {
         let oldUser = self.user
 
         self.user = user

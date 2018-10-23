@@ -21,7 +21,7 @@ struct ParentViewState {
 
 class ParentView: UIView, ARCHViewRenderable {
 
-    typealias State = ParentViewState
+    typealias ViewState = ParentViewState
 
     weak var output: ParentViewProtocol?
 
