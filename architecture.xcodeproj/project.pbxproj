@@ -284,6 +284,11 @@
 		9C1418072146B57C009F1073 /* ChildModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */; };
 		9C1418082146B57C009F1073 /* ChildModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418032146B57C009F1073 /* ChildModuleState.swift */; };
 		9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14180A2146B6EC009F1073 /* ParentView.swift */; };
+		9C19492E217F2D1200069B18 /* ScrollParentModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C194929217F2D1200069B18 /* ScrollParentModuleIO.swift */; };
+		9C19492F217F2D1200069B18 /* ScrollParentEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19492A217F2D1200069B18 /* ScrollParentEventHandler.swift */; };
+		9C194930217F2D1200069B18 /* ScrollParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19492B217F2D1200069B18 /* ScrollParentViewController.swift */; };
+		9C194931217F2D1200069B18 /* ScrollParentConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19492C217F2D1200069B18 /* ScrollParentConfigurator.swift */; };
+		9C194932217F2D1200069B18 /* ScrollParentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19492D217F2D1200069B18 /* ScrollParentState.swift */; };
 		9C232224217DA98B009AF7F7 /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
 		9C232225217DA98B009AF7F7 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C232235217DAE9D009AF7F7 /* InterconnectionModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23222A217DAD77009AF7F7 /* InterconnectionModuleIO.swift */; };
@@ -946,6 +951,11 @@
 		9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleConfigurator.swift; sourceTree = "<group>"; };
 		9C1418032146B57C009F1073 /* ChildModuleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModuleState.swift; sourceTree = "<group>"; };
 		9C14180A2146B6EC009F1073 /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
+		9C194929217F2D1200069B18 /* ScrollParentModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollParentModuleIO.swift; sourceTree = "<group>"; };
+		9C19492A217F2D1200069B18 /* ScrollParentEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollParentEventHandler.swift; sourceTree = "<group>"; };
+		9C19492B217F2D1200069B18 /* ScrollParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollParentViewController.swift; sourceTree = "<group>"; };
+		9C19492C217F2D1200069B18 /* ScrollParentConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollParentConfigurator.swift; sourceTree = "<group>"; };
+		9C19492D217F2D1200069B18 /* ScrollParentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollParentState.swift; sourceTree = "<group>"; };
 		9C23222A217DAD77009AF7F7 /* InterconnectionModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterconnectionModuleIO.swift; sourceTree = "<group>"; };
 		9C23222B217DAD77009AF7F7 /* InterconnectionEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterconnectionEventHandler.swift; sourceTree = "<group>"; };
 		9C23222C217DAD77009AF7F7 /* InterconnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterconnectionViewController.swift; sourceTree = "<group>"; };
@@ -1802,9 +1812,22 @@
 			path = ModuleDemo;
 			sourceTree = "<group>";
 		};
+		9C194928217F2C7800069B18 /* ScrollViewContainer */ = {
+			isa = PBXGroup;
+			children = (
+				9C194929217F2D1200069B18 /* ScrollParentModuleIO.swift */,
+				9C19492A217F2D1200069B18 /* ScrollParentEventHandler.swift */,
+				9C19492B217F2D1200069B18 /* ScrollParentViewController.swift */,
+				9C19492C217F2D1200069B18 /* ScrollParentConfigurator.swift */,
+				9C19492D217F2D1200069B18 /* ScrollParentState.swift */,
+			);
+			path = ScrollViewContainer;
+			sourceTree = "<group>";
+		};
 		9C232229217DACD8009AF7F7 /* Interconnection */ = {
 			isa = PBXGroup;
 			children = (
+				9C194928217F2C7800069B18 /* ScrollViewContainer */,
 				9C23223A217DB454009AF7F7 /* Container */,
 				9C232234217DAD8D009AF7F7 /* MainModule */,
 			);
@@ -3170,20 +3193,25 @@
 				9C373859217A320900A867B5 /* AppDelegate.swift in Sources */,
 				9C232256217DBBD9009AF7F7 /* ContainerChildConfigurator.swift in Sources */,
 				9C23225B217DBBDD009AF7F7 /* ContainerParentConfigurator.swift in Sources */,
+				9C194932217F2D1200069B18 /* ScrollParentState.swift in Sources */,
 				9C232236217DAE9D009AF7F7 /* InterconnectionEventHandler.swift in Sources */,
+				9C19492F217F2D1200069B18 /* ScrollParentEventHandler.swift in Sources */,
 				9C232237217DAE9D009AF7F7 /* InterconnectionViewController.swift in Sources */,
 				9C232254217DBBD9009AF7F7 /* ContainerChildEventHandler.swift in Sources */,
 				9C232239217DAE9D009AF7F7 /* InterconnectionState.swift in Sources */,
 				9C373834217A311100A867B5 /* ViewController.swift in Sources */,
 				9C232253217DBBD9009AF7F7 /* ContainerChildModuleIO.swift in Sources */,
 				9C23225C217DBBDD009AF7F7 /* ContainerParentState.swift in Sources */,
+				9C194931217F2D1200069B18 /* ScrollParentConfigurator.swift in Sources */,
 				9C373863217A35DC00A867B5 /* EmptyModuleModuleIO.swift in Sources */,
+				9C194930217F2D1200069B18 /* ScrollParentViewController.swift in Sources */,
 				9C373862217A35DC00A867B5 /* EmptyModuleEventHandler.swift in Sources */,
 				9C232258217DBBDD009AF7F7 /* ContainerParentModuleIO.swift in Sources */,
 				9C232255217DBBD9009AF7F7 /* ContainerChildViewController.swift in Sources */,
 				9C232238217DAE9D009AF7F7 /* InterconnectionConfigurator.swift in Sources */,
 				9C37385A217A32CD00A867B5 /* ModulesUserStory.swift in Sources */,
 				9C232260217DCEC4009AF7F7 /* Label.swift in Sources */,
+				9C19492E217F2D1200069B18 /* ScrollParentModuleIO.swift in Sources */,
 				9C373860217A35DC00A867B5 /* EmptyModuleConfigurator.swift in Sources */,
 				9C37383A217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld in Sources */,
 				9C23225F217DC203009AF7F7 /* DefaultButton.swift in Sources */,

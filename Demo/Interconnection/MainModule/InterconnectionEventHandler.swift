@@ -25,6 +25,9 @@ final class InterconnectionEventHandler: ARCHEventHandler<InterconnectionState>,
     }
 
     func didTapScrollViewContainter() {
+        ScrollParentConfigurator(moduleIO: nil)
+            .router
+            .transit(from: router, options: [ARCHRouterPresentOptions()], animated: true)
     }
 
     func didTapSectionTableContainer() {
