@@ -361,6 +361,20 @@
 		9C37386C217A35EB00A867B5 /* EmptyModuleEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3D2118342500158C1F /* EmptyModuleEventHandler.swift */; };
 		9C37386D217A35EB00A867B5 /* EmptyModuleModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA3C2118342500158C1F /* EmptyModuleModuleIO.swift */; };
 		9C37386E217A35EB00A867B5 /* EmptyModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010AA402118342500158C1F /* EmptyModuleState.swift */; };
+		9CBC9963218054EA00E407F2 /* SectionParentModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC995E218054EA00E407F2 /* SectionParentModuleIO.swift */; };
+		9CBC9964218054EA00E407F2 /* SectionParentEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC995F218054EA00E407F2 /* SectionParentEventHandler.swift */; };
+		9CBC9965218054EA00E407F2 /* SectionParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC9960218054EA00E407F2 /* SectionParentViewController.swift */; };
+		9CBC9966218054EA00E407F2 /* SectionParentConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC9961218054EA00E407F2 /* SectionParentConfigurator.swift */; };
+		9CBC9967218054EA00E407F2 /* SectionParentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC9962218054EA00E407F2 /* SectionParentState.swift */; };
+		9CBC99682180551C00E407F2 /* HHList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; };
+		9CBC99692180551C00E407F2 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CBC99752180646900E407F2 /* SectionChildEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC99702180646900E407F2 /* SectionChildEventHandler.swift */; };
+		9CBC99782180646900E407F2 /* SectionChildState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC99732180646900E407F2 /* SectionChildState.swift */; };
+		9CBC99832180662800E407F2 /* ChildOneTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC99802180662800E407F2 /* ChildOneTVCell.swift */; };
+		9CBC99852180662800E407F2 /* ChildOneTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC99822180662800E407F2 /* ChildOneTVCellViewModel.swift */; };
+		9CBC99872180782400E407F2 /* ChildSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC99862180782400E407F2 /* ChildSectionViewModel.swift */; };
+		9CBC9989218079B500E407F2 /* ARCHStateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC9988218079B500E407F2 /* ARCHStateDataSource.swift */; };
+		9CBC998B21808B6700E407F2 /* SectionChildModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC998A21808B6700E407F2 /* SectionChildModuleIO.swift */; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
 		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
@@ -679,6 +693,13 @@
 			remoteGlobalIDString = 5072DD94211D84B800E08A92;
 			remoteInfo = HHModule;
 		};
+		9CBC996A2180551C00E407F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5093687020F683010044CA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 501AA647211C6C4A002D3264;
+			remoteInfo = HHList;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -816,6 +837,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9CBC99692180551C00E407F2 /* HHList.framework in Embed Frameworks */,
 				9C232225217DA98B009AF7F7 /* HHModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -1050,6 +1072,18 @@
 		9C37383B217A311300A867B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C37383E217A311300A867B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C373840217A311300A867B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CBC995E218054EA00E407F2 /* SectionParentModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionParentModuleIO.swift; sourceTree = "<group>"; };
+		9CBC995F218054EA00E407F2 /* SectionParentEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionParentEventHandler.swift; sourceTree = "<group>"; };
+		9CBC9960218054EA00E407F2 /* SectionParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionParentViewController.swift; sourceTree = "<group>"; };
+		9CBC9961218054EA00E407F2 /* SectionParentConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionParentConfigurator.swift; sourceTree = "<group>"; };
+		9CBC9962218054EA00E407F2 /* SectionParentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionParentState.swift; sourceTree = "<group>"; };
+		9CBC99702180646900E407F2 /* SectionChildEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionChildEventHandler.swift; sourceTree = "<group>"; };
+		9CBC99732180646900E407F2 /* SectionChildState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionChildState.swift; sourceTree = "<group>"; };
+		9CBC99802180662800E407F2 /* ChildOneTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildOneTVCell.swift; sourceTree = "<group>"; };
+		9CBC99822180662800E407F2 /* ChildOneTVCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildOneTVCellViewModel.swift; sourceTree = "<group>"; };
+		9CBC99862180782400E407F2 /* ChildSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildSectionViewModel.swift; sourceTree = "<group>"; };
+		9CBC9988218079B500E407F2 /* ARCHStateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStateDataSource.swift; sourceTree = "<group>"; };
+		9CBC998A21808B6700E407F2 /* SectionChildModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionChildModuleIO.swift; sourceTree = "<group>"; };
 		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
 		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1253,6 +1287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBC99682180551C00E407F2 /* HHList.framework in Frameworks */,
 				9C232224217DA98B009AF7F7 /* HHModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1928,8 +1963,8 @@
 		9C232229217DACD8009AF7F7 /* Interconnection */ = {
 			isa = PBXGroup;
 			children = (
-				9C194928217F2C7800069B18 /* ScrollViewContainer */,
-				9C23223A217DB454009AF7F7 /* Container */,
+				9CBC996D21805D3700E407F2 /* ChildModules */,
+				9CBC996C21805D0600E407F2 /* ParentModules */,
 				9C232234217DAD8D009AF7F7 /* MainModule */,
 			);
 			path = Interconnection;
@@ -1950,25 +1985,16 @@
 		9C23223A217DB454009AF7F7 /* Container */ = {
 			isa = PBXGroup;
 			children = (
-				9C232246217DB606009AF7F7 /* Children */,
-				9C232245217DB5F3009AF7F7 /* Parent */,
-			);
-			path = Container;
-			sourceTree = "<group>";
-		};
-		9C232245217DB5F3009AF7F7 /* Parent */ = {
-			isa = PBXGroup;
-			children = (
 				9C23223B217DB5EF009AF7F7 /* ContainerParentModuleIO.swift */,
 				9C23223C217DB5EF009AF7F7 /* ContainerParentEventHandler.swift */,
 				9C23223D217DB5EF009AF7F7 /* ContainerParentViewController.swift */,
 				9C23223E217DB5EF009AF7F7 /* ContainerParentConfigurator.swift */,
 				9C23223F217DB5EF009AF7F7 /* ContainerParentState.swift */,
 			);
-			path = Parent;
+			path = Container;
 			sourceTree = "<group>";
 		};
-		9C232246217DB606009AF7F7 /* Children */ = {
+		9C232246217DB606009AF7F7 /* Container */ = {
 			isa = PBXGroup;
 			children = (
 				9C232247217DB62A009AF7F7 /* ContainerChildModuleIO.swift */,
@@ -1977,7 +2003,7 @@
 				9C23224A217DB62A009AF7F7 /* ContainerChildConfigurator.swift */,
 				9C23224B217DB62A009AF7F7 /* ContainerChildState.swift */,
 			);
-			path = Children;
+			path = Container;
 			sourceTree = "<group>";
 		};
 		9C23225D217DC1E5009AF7F7 /* Buttons */ = {
@@ -1999,6 +2025,59 @@
 				9C373838217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld */,
 			);
 			path = HHInterconnectionDemo;
+			sourceTree = "<group>";
+		};
+		9CBC9953218052E700E407F2 /* SectionContainer */ = {
+			isa = PBXGroup;
+			children = (
+				9CBC995E218054EA00E407F2 /* SectionParentModuleIO.swift */,
+				9CBC995F218054EA00E407F2 /* SectionParentEventHandler.swift */,
+				9CBC9960218054EA00E407F2 /* SectionParentViewController.swift */,
+				9CBC9961218054EA00E407F2 /* SectionParentConfigurator.swift */,
+				9CBC9962218054EA00E407F2 /* SectionParentState.swift */,
+			);
+			path = SectionContainer;
+			sourceTree = "<group>";
+		};
+		9CBC996C21805D0600E407F2 /* ParentModules */ = {
+			isa = PBXGroup;
+			children = (
+				9C23223A217DB454009AF7F7 /* Container */,
+				9C194928217F2C7800069B18 /* ScrollViewContainer */,
+				9CBC9953218052E700E407F2 /* SectionContainer */,
+			);
+			path = ParentModules;
+			sourceTree = "<group>";
+		};
+		9CBC996D21805D3700E407F2 /* ChildModules */ = {
+			isa = PBXGroup;
+			children = (
+				9CBC996E2180644500E407F2 /* Section */,
+				9C232246217DB606009AF7F7 /* Container */,
+			);
+			path = ChildModules;
+			sourceTree = "<group>";
+		};
+		9CBC996E2180644500E407F2 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				9CBC99792180654800E407F2 /* Cells */,
+				9CBC99702180646900E407F2 /* SectionChildEventHandler.swift */,
+				9CBC998A21808B6700E407F2 /* SectionChildModuleIO.swift */,
+				9CBC99732180646900E407F2 /* SectionChildState.swift */,
+				9CBC9988218079B500E407F2 /* ARCHStateDataSource.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		9CBC99792180654800E407F2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9CBC99802180662800E407F2 /* ChildOneTVCell.swift */,
+				9CBC99822180662800E407F2 /* ChildOneTVCellViewModel.swift */,
+				9CBC99862180782400E407F2 /* ChildSectionViewModel.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9CF48AE92167A3F60040AE49 /* HHLens */ = {
@@ -2519,6 +2598,7 @@
 			);
 			dependencies = (
 				9C232227217DA98B009AF7F7 /* PBXTargetDependency */,
+				9CBC996B2180551C00E407F2 /* PBXTargetDependency */,
 			);
 			name = HHInterconnectionDemo;
 			productName = HHInterconnectionDemo;
@@ -3367,30 +3447,42 @@
 			files = (
 				9C232235217DAE9D009AF7F7 /* InterconnectionModuleIO.swift in Sources */,
 				9C232259217DBBDD009AF7F7 /* ContainerParentEventHandler.swift in Sources */,
+				9CBC99752180646900E407F2 /* SectionChildEventHandler.swift in Sources */,
 				9C373859217A320900A867B5 /* AppDelegate.swift in Sources */,
 				9C232256217DBBD9009AF7F7 /* ContainerChildConfigurator.swift in Sources */,
 				9C23225B217DBBDD009AF7F7 /* ContainerParentConfigurator.swift in Sources */,
 				9C194932217F2D1200069B18 /* ScrollParentState.swift in Sources */,
+				9CBC99872180782400E407F2 /* ChildSectionViewModel.swift in Sources */,
+				9CBC998B21808B6700E407F2 /* SectionChildModuleIO.swift in Sources */,
 				9C232236217DAE9D009AF7F7 /* InterconnectionEventHandler.swift in Sources */,
 				9C19492F217F2D1200069B18 /* ScrollParentEventHandler.swift in Sources */,
 				9C232237217DAE9D009AF7F7 /* InterconnectionViewController.swift in Sources */,
+				9CBC9964218054EA00E407F2 /* SectionParentEventHandler.swift in Sources */,
 				9C232254217DBBD9009AF7F7 /* ContainerChildEventHandler.swift in Sources */,
+				9CBC9967218054EA00E407F2 /* SectionParentState.swift in Sources */,
 				9C232239217DAE9D009AF7F7 /* InterconnectionState.swift in Sources */,
 				9C373834217A311100A867B5 /* ViewController.swift in Sources */,
 				9C232253217DBBD9009AF7F7 /* ContainerChildModuleIO.swift in Sources */,
 				9C23225C217DBBDD009AF7F7 /* ContainerParentState.swift in Sources */,
 				9C194931217F2D1200069B18 /* ScrollParentConfigurator.swift in Sources */,
+				9CBC99852180662800E407F2 /* ChildOneTVCellViewModel.swift in Sources */,
 				9C373863217A35DC00A867B5 /* EmptyModuleModuleIO.swift in Sources */,
 				9C194930217F2D1200069B18 /* ScrollParentViewController.swift in Sources */,
 				9C373862217A35DC00A867B5 /* EmptyModuleEventHandler.swift in Sources */,
 				9C232258217DBBDD009AF7F7 /* ContainerParentModuleIO.swift in Sources */,
+				9CBC9965218054EA00E407F2 /* SectionParentViewController.swift in Sources */,
+				9CBC99782180646900E407F2 /* SectionChildState.swift in Sources */,
+				9CBC9963218054EA00E407F2 /* SectionParentModuleIO.swift in Sources */,
 				9C232255217DBBD9009AF7F7 /* ContainerChildViewController.swift in Sources */,
 				9C232238217DAE9D009AF7F7 /* InterconnectionConfigurator.swift in Sources */,
 				9C37385A217A32CD00A867B5 /* ModulesUserStory.swift in Sources */,
 				9C232260217DCEC4009AF7F7 /* Label.swift in Sources */,
 				9C19492E217F2D1200069B18 /* ScrollParentModuleIO.swift in Sources */,
+				9CBC99832180662800E407F2 /* ChildOneTVCell.swift in Sources */,
+				9CBC9989218079B500E407F2 /* ARCHStateDataSource.swift in Sources */,
 				9C373860217A35DC00A867B5 /* EmptyModuleConfigurator.swift in Sources */,
 				9C37383A217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld in Sources */,
+				9CBC9966218054EA00E407F2 /* SectionParentConfigurator.swift in Sources */,
 				9C23225F217DC203009AF7F7 /* DefaultButton.swift in Sources */,
 				9C23225A217DBBDD009AF7F7 /* ContainerParentViewController.swift in Sources */,
 				9C232257217DBBD9009AF7F7 /* ContainerChildState.swift in Sources */,
@@ -3640,6 +3732,11 @@
 			target = 5072DD94211D84B800E08A92 /* HHModule */;
 			targetProxy = 9C232226217DA98B009AF7F7 /* PBXContainerItemProxy */;
 		};
+		9CBC996B2180551C00E407F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 501AA647211C6C4A002D3264 /* HHList */;
+			targetProxy = 9CBC996A2180551C00E407F2 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -3677,7 +3774,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X86NQK83T7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3707,7 +3804,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X86NQK83T7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
