@@ -11,7 +11,7 @@ import HHModule
 
 public class RouterEmbedNaviVCOptions: ARCHRouterOptions {
 
-    public func proccess(transition: Transition, animated: Bool) -> Transition {
+    public func proccess(transition: ARCHTransition, animated: Bool) -> ARCHTransition {
         guard let toVC = transition.to as? UIViewController else {
             return transition
         }

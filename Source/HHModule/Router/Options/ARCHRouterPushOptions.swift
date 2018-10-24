@@ -12,7 +12,7 @@ public class ARCHRouterPushOptions: ARCHRouterOptions {
 
     public init() {}
 
-    public func proccess(transition: Transition, animated: Bool) -> Transition {
+    public func proccess(transition: ARCHTransition, animated: Bool) -> ARCHTransition {
         guard let fromViewController = transition.from as? UIViewController else {
             return transition
         }
