@@ -12,7 +12,28 @@ import UIKit
  Родительский протокол, описывающий состояние модуля
  */
 public protocol ARCHState {
+
+    var id: UUID { get }
+
+    var childStates: [ARCHState] { get set }
+
     init()
+}
+
+public extension ARCHState {
+
+    var id: UUID {
+        return UUID(uuidString: "5cb26dd4-d5f3-11e8-9f8b-f2801f1b9fd1") ?? UUID()
+    }
+
+    var childStates: [ARCHState] {
+        get { return [] }
+        set {}
+    }
+
+    init(id: UUID) {
+        self.init()
+    }
 }
 
 public protocol ARCHViewInput: class {
@@ -42,14 +63,14 @@ public extension ARCHViewInput {
 }
 
 public protocol ARCHViewRenderable: ARCHViewInput {
-    associatedtype State: Any
-    func render(state: State)
+    associatedtype ViewState: Any
+    func render(state: ViewState)
 }
 
-public extension ARCHViewRenderable where State: Any {
+public extension ARCHViewRenderable where ViewState: Any {
 
     func update(state: Any) -> Bool {
-        if let state = state as? State {
+        if let state = state as? ViewState {
             render(state: state)
             return true
         } else {
@@ -64,4 +85,20 @@ public extension ARCHViewRenderable where State: Any {
 public protocol ACRHViewOutput {
     func viewIsReady()
     func viewSetNeedsRedraw()
+    func shouldRender(_ state: Any) -> Bool
+    func reuseIdentifire(for childId: UUID) -> String?
+}
+
+public protocol ARCHModuleInput {
+
+    func getState() -> ARCHState
+
+    func setOutput(_ output: ARCHModuleOutput)
+
+    func registerChildModule(_ module: ARCHModuleInput, for reuseIdentifire: String)
+}
+
+public protocol ARCHModuleOutput: class {
+
+    func didChange(childState: ARCHState)
 }

@@ -39,7 +39,7 @@ final class PaginationViewController: ARCHViewController<PaginationState, Pagina
 
     // MARK: - Render
 
-    override func render(state: State) {
+    override func render(state: ViewState) {
         super.render(state: state)
 
         listController.data = state.list

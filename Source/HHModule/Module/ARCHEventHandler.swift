@@ -21,12 +21,16 @@ open class ARCHStateHandler<T> {
     }
 }
 
-open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
+open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput, ARCHModuleInput, ARCHModuleOutput {
     public weak var router: ARCHRouter?
     public weak var viewInput: ARCHViewInput?
+    public weak var childModuleOutput: ARCHModuleOutput?
     public var stateHandler: ARCHStateHandler<State>?
 
+    public var childIdentifires: [String: UUID] = [:]
+
     private var ignoreStateChanges: Bool = false
+    private var isShouldRenderMethodCalled: Bool = false
 
     public init() {}
 
@@ -37,6 +41,10 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
         didSet {
             if let state = stateHandler?.currentState {
                 self.state = state
+            }
+
+            if !isShouldRenderMethodCalled {
+                childModuleOutput?.didChange(childState: state)
             }
 
             viewSetNeedsRedraw()
@@ -58,6 +66,16 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
         commitStateChanges()
     }
 
+    open func updateState(with childState: ARCHState) {
+        guard let index = state.childStates.index(where: { $0.id == childState.id }) else {
+            return
+        }
+
+        ignoreStateChanges = true
+        self.state.childStates[index] = childState
+        ignoreStateChanges = false
+    }
+
     // MARK: - ACRHViewOutput
 
     open func viewIsReady() {
@@ -68,5 +86,59 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
         if !ignoreStateChanges {
             viewInput?.update(state: state)
         }
+    }
+
+    open func shouldRender(_ state: Any) -> Bool {
+        guard let state = state as? State, self.state.id == state.id else {
+            return false
+        }
+
+        ignoreStateChanges = true
+        isShouldRenderMethodCalled = true
+        self.state = state
+        isShouldRenderMethodCalled = false
+        ignoreStateChanges = false
+
+        return true
+    }
+
+    open func reuseIdentifire(for childId: UUID) -> String? {
+        guard let row = childIdentifires.first(where: { $0.value == childId }) else {
+            return nil
+        }
+        return row.key
+    }
+
+    // MARK: - ARCHModuleInput
+
+    open func getState() -> ARCHState {
+        return state
+    }
+
+    open func setOutput(_ output: ARCHModuleOutput) {
+        self.childModuleOutput = output
+    }
+
+    open func registerChildModule(_ module: ARCHModuleInput, for reuseIdentifire: String) {
+        let childState = module.getState()
+        childIdentifires[reuseIdentifire] = childState.id
+        state.childStates.append(childState)
+        module.setOutput(self)
+    }
+
+    // MARK: - ARCHModuleOutput
+
+    open func didChange(childState: ARCHState) {
+        updateState(with: childState)
+    }
+
+    // MARK: - Private
+
+    public func childState(for reuseIdentifire: String) -> ARCHState? {
+        guard let uuid = childIdentifires[reuseIdentifire] else {
+            return nil
+        }
+
+        return state.childStates.first(where: { $0.id == uuid })
     }
 }

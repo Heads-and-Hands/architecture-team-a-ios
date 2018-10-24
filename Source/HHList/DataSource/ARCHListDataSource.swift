@@ -8,15 +8,15 @@
 
 import UIKit
 
-public protocol ARCHListDataSourceAdapter: class {
-    var sectionsCount: Int { get }
-
-    func numberOfRowsIn(section: Int) -> Int
-    func cellViewModelAt(indexPath: IndexPath) -> ARCHCellViewModel
-}
-
 public protocol ARCHListDataSourceDelegate: class {
     func configure(cell: Any, viewModel: ARCHCellViewModel, indexPath: IndexPath)
+    func configure(header: Any, viewModel: ARCHHeaderFooterViewModel, indexPath: IndexPath)
+    func configure(footer: Any, viewModel: ARCHHeaderFooterViewModel, indexPath: IndexPath)
+}
+
+public extension ARCHListDataSourceDelegate {
+    func configure(header: Any, viewModel: ARCHHeaderFooterViewModel, indexPath: IndexPath) {}
+    func configure(footer: Any, viewModel: ARCHHeaderFooterViewModel, indexPath: IndexPath) {}
 }
 
 open class ARCHListDataSource<View: ARCHListView>: NSObject {
@@ -49,6 +49,14 @@ open class ARCHListDataSource<View: ARCHListView>: NSObject {
         view.register(cell: cell, cellID: cellID(viewModelClass: viewModel))
     }
 
+    public func register(header: View.HeaderFooterType.Type, for viewModel: ARCHHeaderFooterViewModel.Type) {
+        view.register(header: header, headerID: headerFooterID(viewModelClass: viewModel))
+    }
+
+    public func register(footer: View.HeaderFooterType.Type, for viewModel: ARCHHeaderFooterViewModel.Type) {
+        view.register(footer: footer, footerID: headerFooterID(viewModelClass: viewModel))
+    }
+
     public var sectionsCount: Int {
         return dataAdapter?.sectionsCount ?? 0
     }
@@ -77,9 +85,53 @@ open class ARCHListDataSource<View: ARCHListView>: NSObject {
         return cell
     }
 
+    public func reusableHeader(indexPath: IndexPath) -> View.HeaderFooterType? {
+        guard let headerViewModel = dataAdapter?.headerViewModelAt(indexPath: indexPath) else {
+            return nil
+        }
+
+        let id = headerFooterID(viewModelClass: type(of: headerViewModel))
+
+        guard let view = view.reusableHeaderWith(id: id, indexPath: indexPath) else {
+            fatalError("Not found header view id \(id) indexPath \(indexPath)")
+        }
+
+        delegate?.configure(header: view, viewModel: headerViewModel, indexPath: indexPath)
+
+        if var headerView = view as? ARCHHeaderFooterViewAbstract {
+            headerView.abstractViewModel = headerViewModel
+        }
+
+        return view
+    }
+
+    public func reusableFooter(indexPath: IndexPath) -> View.HeaderFooterType? {
+        guard let footerViewModel = dataAdapter?.footerViewModelAt(indexPath: indexPath) else {
+            return nil
+        }
+
+        let id = headerFooterID(viewModelClass: type(of: footerViewModel))
+
+        guard let view = view.reusableFooterWith(id: id, indexPath: indexPath) else {
+            fatalError("Not found header view id \(id) indexPath \(indexPath)")
+        }
+
+        delegate?.configure(footer: view, viewModel: footerViewModel, indexPath: indexPath)
+
+        if var footerView = view as? ARCHHeaderFooterViewAbstract {
+            footerView.abstractViewModel = footerViewModel
+        }
+
+        return view
+    }
+
     // MARK: - Helpers
 
     private func cellID(viewModelClass: ARCHCellViewModel.Type) -> String {
+        return String(describing: viewModelClass)
+    }
+
+    private func headerFooterID(viewModelClass: ARCHHeaderFooterViewModel.Type) -> String {
         return String(describing: viewModelClass)
     }
 

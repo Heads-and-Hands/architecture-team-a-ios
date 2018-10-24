@@ -81,7 +81,7 @@ final class ListViewController: ARCHViewController<ListState, ListEventHandler>,
 
     // MARK: - Render
 
-    override func render(state: State) {
+    override func render(state: ViewState) {
         super.render(state: state)
 
 #if CONTROLLER

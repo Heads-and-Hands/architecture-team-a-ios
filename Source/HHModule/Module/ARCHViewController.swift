@@ -10,7 +10,7 @@ import UIKit
 
 open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewController, ARCHRouter, ARCHViewRenderable {
 
-    public typealias State = S
+    public typealias ViewState = S
 
     public var output: Out?
 
@@ -18,7 +18,11 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
         return []
     }
 
-    open func render(state: State) {
+    open func render(state: ViewState) {
+        guard output?.shouldRender(state) ?? true else {
+            return
+        }
+
         var views = autorenderViews
         let substates = self.substates(state: state)
 
@@ -36,10 +40,18 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
             index += 1
         }
 
+        let childStates = (substates.first(where: { $0 is [ARCHState] }) as? [ARCHState]) ?? []
+
+        children.compactMap({ $0 as? ARCHViewInput }).forEach({ input in
+            childStates.forEach({
+                input.update(state: $0)
+            })
+        })
+
         print("[ARCHViewController] end render(state:)")
     }
 
-    private func substates(state: State) -> [Any] {
+    private func substates(state: ViewState) -> [Any] {
         return Mirror(reflecting: state).children.map { $0.value }
     }
 

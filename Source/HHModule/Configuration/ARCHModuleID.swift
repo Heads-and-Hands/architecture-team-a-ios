@@ -46,7 +46,7 @@ public extension ARCHModuleID {
                                     animated: animated)
     }
 
-    func displayOn(window: ARCHWindow, animated: Bool) {
+    func displayOn(window: UIWindow?, animated: Bool) {
         configurator.router.transit(from: window,
                                     options: [ARCHRouterWindowOptions()],
                                     animated: animated)

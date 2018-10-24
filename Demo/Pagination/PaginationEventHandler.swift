@@ -19,9 +19,10 @@ final class PaginationEventHandler: ARCHEventHandler<PaginationState>, Paginatio
 
         // Индикацию
 
-        let request = apiProvider?.requestTarget(.main, for: MainResponse.self, completion: { [weak self] result in
-            switch result {
-            case let .success(response):
+        let request = apiProvider?.sendRequest(
+            target: .main,
+            for: MainResponse.self,
+            completion: { [weak self] response in
                 self?.beginStateChanges()
                 completion(response.objects.count, response.objects.count)
                 if offset == 0 {
@@ -33,12 +34,12 @@ final class PaginationEventHandler: ARCHEventHandler<PaginationState>, Paginatio
                 // Индикация
 
                 self?.commitStateChanges()
-            case let .failure(error):
+            },
+            failure: { error in
                 print("\(error)")
-
                 // Индикация
             }
-        })
+        )
 
         return ARCHPagingManagerRequestWrapper(block: {
             request?.cancel()

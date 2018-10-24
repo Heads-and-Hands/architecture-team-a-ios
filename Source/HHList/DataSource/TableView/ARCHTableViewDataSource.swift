@@ -21,10 +21,21 @@ open class ARCHTableViewDataSource: ARCHListDataSource<UITableView>, UITableView
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return reusableCell(indexPath: indexPath)
     }
+
+    // TODO: TAbleView Delegate
+
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return reusableHeader(indexPath: IndexPath(row: 0, section: section))
+    }
+
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return reusableFooter(indexPath: IndexPath(row: 0, section: section))
+    }
 }
 
 extension UITableView: ARCHListView {
     public typealias CellType = UITableViewCell
+    public typealias HeaderFooterType = UITableViewHeaderFooterView
     public typealias DataSourceType = UITableViewDataSource
 
     public func reloadDataSource() {
@@ -47,7 +58,37 @@ extension UITableView: ARCHListView {
         }
     }
 
+    public func register(header: HeaderFooterType.Type, headerID: String) {
+        register(reusableView: header, viewID: headerID)
+    }
+
+    public func register(footer: HeaderFooterType.Type, footerID: String) {
+        register(reusableView: footer, viewID: footerID)
+    }
+
     public func reusableCellWith(id: String, indexPath: IndexPath) -> CellType? {
         return dequeueReusableCell(withIdentifier: id)
+    }
+
+    public func reusableHeaderWith(id: String, indexPath: IndexPath) -> HeaderFooterType? {
+        return dequeueReusableHeaderFooterView(withIdentifier: id)
+    }
+
+    public func reusableFooterWith(id: String, indexPath: IndexPath) -> HeaderFooterType? {
+        return dequeueReusableHeaderFooterView(withIdentifier: id)
+    }
+
+    // MARK: - Private
+
+    func register(reusableView: HeaderFooterType.Type, viewID: String) {
+        let bundle = Bundle(for: reusableView)
+        let nibName = String(describing: reusableView)
+
+        if bundle.path(forResource: nibName, ofType: "nib") == nil {
+            register(reusableView, forHeaderFooterViewReuseIdentifier: viewID)
+        } else {
+            let nib = UINib(nibName: nibName, bundle: bundle)
+            register(nib, forHeaderFooterViewReuseIdentifier: viewID)
+        }
     }
 }

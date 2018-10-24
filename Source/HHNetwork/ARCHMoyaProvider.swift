@@ -20,12 +20,13 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
     private var requests: [MoyaRequest] = []
 
     @discardableResult
-    open func requestTarget<Model: Codable>(
-        _ target: T,
+    open func sendRequest<Model: Codable>(
+        target: T,
         for model: Model.Type,
         dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .iso8601,
         progressBlock: Moya.ProgressBlock? = nil,
-        completion: @escaping (Result<Model, ARCHNetworkError>) -> Void
+        completion: @escaping (Model) -> Void,
+        failure: @escaping (ARCHNetworkError) -> Void
         ) -> Cancellable {
 
         let completion = { [weak self] (result: Result<Moya.Response, Moya.MoyaError>) in
@@ -38,23 +39,21 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
                 do {
                     let decoder = self.jsonDecoder(dateDecodingStrategy: dateDecodingStrategy)
                     let model = try response.filterSuccessfulStatusCodes().map(model, using: decoder)
-                    completion(.success(model))
+                    completion(model)
                 } catch {
-                    let networkError = self.map(error: error, dateDecodingStrategy: dateDecodingStrategy)
-                    completion(.failure(networkError))
+                    failure(self.map(error: error, dateDecodingStrategy: dateDecodingStrategy))
                 }
             case let .failure(error):
                 let providerError = self.map(error: error, dateDecodingStrategy: dateDecodingStrategy)
                 if providerError.status != NSURLErrorCancelled {
-                    completion(.failure(providerError))
+                    failure(providerError)
                 }
             }
         }
 
-        let request = MoyaRequest(target: target,
-                                  progress: progressBlock,
-                                  completion: completion)
-        return send(request: request)
+        return send(request: MoyaRequest(target: target,
+                                         progress: progressBlock,
+                                         completion: completion))
     }
 
     private func send(request: MoyaRequest) -> Cancellable {
