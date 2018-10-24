@@ -71,7 +71,9 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput, ARCHModuleInput, 
             return
         }
 
-        updateState { self.state.childStates[index] = childState }
+        ignoreStateChanges = true
+        self.state.childStates[index] = childState
+        ignoreStateChanges = false
     }
 
     // MARK: - ACRHViewOutput
