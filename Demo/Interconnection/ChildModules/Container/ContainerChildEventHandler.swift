@@ -20,7 +20,5 @@ final class ContainerChildEventHandler: ARCHEventHandler<ContainerChildState>, C
 
     func chageTextButtonDidTap() {
         state.text = UUID().uuidString
-
-        moduleOutput?.didChange(childState: state)
     }
 }

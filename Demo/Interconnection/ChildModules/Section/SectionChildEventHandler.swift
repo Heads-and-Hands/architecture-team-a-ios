@@ -44,6 +44,6 @@ final class SectionChildEventHandler: ARCHEventHandler<SectionChildState>, Secti
         }
 
         state.viewModel.cellViewModels[index] = viewModel
-        moduleOutput?.didChange(childState: state)
+        childModuleOutput?.didChange(childState: state)
     }
 }
