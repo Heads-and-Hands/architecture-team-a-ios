@@ -12,3 +12,8 @@ protocol ARCHStateDataSource {
 
     var sectionViewModel: ARCHSectionViewModel { get }
 }
+
+protocol ARCHChildModule {
+
+    func configure(for dataSource: ARCHTableViewDataSource)
+}

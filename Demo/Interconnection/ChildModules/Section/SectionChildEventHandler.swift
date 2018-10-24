@@ -9,11 +9,6 @@
 import HHModule
 import HHList
 
-protocol ARCHChildModule {
-
-    func configure(for dataSource: ARCHTableViewDataSource)
-}
-
 final class SectionChildEventHandler: ARCHEventHandler<SectionChildState>, SectionChildModuleInput, ChildOneTVCellEventHandler, ARCHChildModule {
 
     weak var moduleOutput: SectionChildModuleOutput?

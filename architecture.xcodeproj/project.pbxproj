@@ -373,7 +373,7 @@
 		9CBC99832180662800E407F2 /* ChildOneTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC99802180662800E407F2 /* ChildOneTVCell.swift */; };
 		9CBC99852180662800E407F2 /* ChildOneTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC99822180662800E407F2 /* ChildOneTVCellViewModel.swift */; };
 		9CBC99872180782400E407F2 /* ChildSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC99862180782400E407F2 /* ChildSectionViewModel.swift */; };
-		9CBC9989218079B500E407F2 /* ARCHStateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC9988218079B500E407F2 /* ARCHStateDataSource.swift */; };
+		9CBC9989218079B500E407F2 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC9988218079B500E407F2 /* Protocols.swift */; };
 		9CBC998B21808B6700E407F2 /* SectionChildModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC998A21808B6700E407F2 /* SectionChildModuleIO.swift */; };
 		9CBC998F218099AF00E407F2 /* ChildOneTVHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC998E218099AF00E407F2 /* ChildOneTVHeader.swift */; };
 		9CBC9991218099BE00E407F2 /* ChildOneTVHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC9990218099BE00E407F2 /* ChildOneTVHeaderViewModel.swift */; };
@@ -1084,7 +1084,7 @@
 		9CBC99802180662800E407F2 /* ChildOneTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildOneTVCell.swift; sourceTree = "<group>"; };
 		9CBC99822180662800E407F2 /* ChildOneTVCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildOneTVCellViewModel.swift; sourceTree = "<group>"; };
 		9CBC99862180782400E407F2 /* ChildSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildSectionViewModel.swift; sourceTree = "<group>"; };
-		9CBC9988218079B500E407F2 /* ARCHStateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStateDataSource.swift; sourceTree = "<group>"; };
+		9CBC9988218079B500E407F2 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		9CBC998A21808B6700E407F2 /* SectionChildModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionChildModuleIO.swift; sourceTree = "<group>"; };
 		9CBC998E218099AF00E407F2 /* ChildOneTVHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildOneTVHeader.swift; sourceTree = "<group>"; };
 		9CBC9990218099BE00E407F2 /* ChildOneTVHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildOneTVHeaderViewModel.swift; sourceTree = "<group>"; };
@@ -2069,7 +2069,7 @@
 				9CBC99702180646900E407F2 /* SectionChildEventHandler.swift */,
 				9CBC998A21808B6700E407F2 /* SectionChildModuleIO.swift */,
 				9CBC99732180646900E407F2 /* SectionChildState.swift */,
-				9CBC9988218079B500E407F2 /* ARCHStateDataSource.swift */,
+				9CBC9988218079B500E407F2 /* Protocols.swift */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -3487,7 +3487,7 @@
 				9C232260217DCEC4009AF7F7 /* Label.swift in Sources */,
 				9C19492E217F2D1200069B18 /* ScrollParentModuleIO.swift in Sources */,
 				9CBC99832180662800E407F2 /* ChildOneTVCell.swift in Sources */,
-				9CBC9989218079B500E407F2 /* ARCHStateDataSource.swift in Sources */,
+				9CBC9989218079B500E407F2 /* Protocols.swift in Sources */,
 				9C373860217A35DC00A867B5 /* EmptyModuleConfigurator.swift in Sources */,
 				9C37383A217A311100A867B5 /* HHInterconnectionDemo.xcdatamodeld in Sources */,
 				9CBC9966218054EA00E407F2 /* SectionParentConfigurator.swift in Sources */,
