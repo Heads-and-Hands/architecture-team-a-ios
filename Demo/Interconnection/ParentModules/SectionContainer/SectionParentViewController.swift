@@ -9,7 +9,7 @@
 import HHModule
 import HHList
 
-final class SectionParentViewController: ARCHViewController<SectionParentState, SectionParentEventHandler> {
+final class SectionParentViewController: ARCHViewController<SectionParentState, SectionParentEventHandler>, UITableViewDelegate {
 
     let tableView = UITableView(frame: .zero, style: .plain)
 
@@ -30,6 +30,7 @@ final class SectionParentViewController: ARCHViewController<SectionParentState, 
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = dataSource
+        tableView.delegate = self
 
         view.addSubview(tableView)
 
@@ -64,5 +65,15 @@ final class SectionParentViewController: ARCHViewController<SectionParentState, 
     @objc
     private func closeButtonTapHandler(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+
+    // MARK: - UITableViewDelegate
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return ChildOneTVHeader()
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36
     }
 }

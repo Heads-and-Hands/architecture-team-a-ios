@@ -375,6 +375,8 @@
 		9CBC99872180782400E407F2 /* ChildSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC99862180782400E407F2 /* ChildSectionViewModel.swift */; };
 		9CBC9989218079B500E407F2 /* ARCHStateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC9988218079B500E407F2 /* ARCHStateDataSource.swift */; };
 		9CBC998B21808B6700E407F2 /* SectionChildModuleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC998A21808B6700E407F2 /* SectionChildModuleIO.swift */; };
+		9CBC998F218099AF00E407F2 /* ChildOneTVHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC998E218099AF00E407F2 /* ChildOneTVHeader.swift */; };
+		9CBC9991218099BE00E407F2 /* ChildOneTVHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC9990218099BE00E407F2 /* ChildOneTVHeaderViewModel.swift */; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
 		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
@@ -1084,6 +1086,8 @@
 		9CBC99862180782400E407F2 /* ChildSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildSectionViewModel.swift; sourceTree = "<group>"; };
 		9CBC9988218079B500E407F2 /* ARCHStateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHStateDataSource.swift; sourceTree = "<group>"; };
 		9CBC998A21808B6700E407F2 /* SectionChildModuleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionChildModuleIO.swift; sourceTree = "<group>"; };
+		9CBC998E218099AF00E407F2 /* ChildOneTVHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildOneTVHeader.swift; sourceTree = "<group>"; };
+		9CBC9990218099BE00E407F2 /* ChildOneTVHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildOneTVHeaderViewModel.swift; sourceTree = "<group>"; };
 		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
 		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2076,6 +2080,8 @@
 				9CBC99802180662800E407F2 /* ChildOneTVCell.swift */,
 				9CBC99822180662800E407F2 /* ChildOneTVCellViewModel.swift */,
 				9CBC99862180782400E407F2 /* ChildSectionViewModel.swift */,
+				9CBC998E218099AF00E407F2 /* ChildOneTVHeader.swift */,
+				9CBC9990218099BE00E407F2 /* ChildOneTVHeaderViewModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -3445,6 +3451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBC9991218099BE00E407F2 /* ChildOneTVHeaderViewModel.swift in Sources */,
 				9C232235217DAE9D009AF7F7 /* InterconnectionModuleIO.swift in Sources */,
 				9C232259217DBBDD009AF7F7 /* ContainerParentEventHandler.swift in Sources */,
 				9CBC99752180646900E407F2 /* SectionChildEventHandler.swift in Sources */,
@@ -3475,6 +3482,7 @@
 				9CBC9963218054EA00E407F2 /* SectionParentModuleIO.swift in Sources */,
 				9C232255217DBBD9009AF7F7 /* ContainerChildViewController.swift in Sources */,
 				9C232238217DAE9D009AF7F7 /* InterconnectionConfigurator.swift in Sources */,
+				9CBC998F218099AF00E407F2 /* ChildOneTVHeader.swift in Sources */,
 				9C37385A217A32CD00A867B5 /* ModulesUserStory.swift in Sources */,
 				9C232260217DCEC4009AF7F7 /* Label.swift in Sources */,
 				9C19492E217F2D1200069B18 /* ScrollParentModuleIO.swift in Sources */,

@@ -19,7 +19,7 @@ class ChildOneSectionViewModel: ARCHSectionViewModel {
     // MARK: - ARCHSectionViewModel
 
     var headerViewModel: ARCHHeaderFooterViewModel? {
-        return nil
+        return ChildOneTVHeaderViewModel()
     }
 
     var footerViewModel: ARCHHeaderFooterViewModel? {

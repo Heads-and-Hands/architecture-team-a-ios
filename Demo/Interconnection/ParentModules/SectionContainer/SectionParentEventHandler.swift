@@ -8,6 +8,7 @@
 
 import HHModule
 import HHList
+import UIKit
 
 final class SectionParentEventHandler: ARCHEventHandler<SectionParentState>, SectionParentModuleInput, ARCHSectionDataSourceAdapter {
 

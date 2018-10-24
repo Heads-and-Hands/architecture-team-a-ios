@@ -33,6 +33,8 @@ final class SectionParentConfigurator: ARCHModuleConfigurator {
 
         registerChildModule(for: "main settings", router: controller, dataSource: controller.dataSource, input: eventHandler)
 
+        registerChildModule(for: "subsettings", router: controller, dataSource: controller.dataSource, input: eventHandler)
+
         return controller
     }
 

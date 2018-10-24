@@ -34,6 +34,7 @@ final class SectionChildEventHandler: ARCHEventHandler<SectionChildState>, Secti
 
     func configure(for dataSource: ARCHTableViewDataSource) {
         dataSource.register(cell: ChildOneTVCell.self, for: ChildOneTVCellViewModel.self)
+        dataSource.register(header: ChildOneTVHeader.self, for: ChildOneTVHeaderViewModel.self)
     }
 
     // MARK: - ChildOneTVCellEventHandler
