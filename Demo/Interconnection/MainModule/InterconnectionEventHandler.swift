@@ -35,7 +35,10 @@ final class InterconnectionEventHandler: ARCHEventHandler<InterconnectionState>,
             .router
             .transit(from: router, options: [ARCHRouterPresentOptions()], animated: true)
     }
-
+    
     func didTapRowTableContainer() {
+        CellParentConfigurator(moduleIO: nil)
+            .router
+            .transit(from: router, options: [ARCHRouterPresentOptions()], animated: true)
     }
 }

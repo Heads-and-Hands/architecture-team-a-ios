@@ -1,5 +1,5 @@
 //
-//  SectionChildState.swift
+//  CellChildState.swift
 //  architecture
 //
 //  Created by Eugene Sorokin on 24/10/2018.
@@ -9,7 +9,7 @@
 import HHModule
 import HHList
 
-struct SectionChildState: ARCHState, ARCHStateSectionDataSource {
+struct CellChildState: ARCHState, ARCHStateDataSource {
 
     var id: UUID
 
@@ -23,9 +23,9 @@ struct SectionChildState: ARCHState, ARCHStateSectionDataSource {
         self.id = id
     }
 
-    var viewModel: ChildOneSectionViewModel = ChildOneSectionViewModel(cellViewModels: [])
+    var viewModel: ChildOneTVCellViewModel = ChildOneTVCellViewModel(title: "", isOn: false, eventHandler: nil)
 
-    var sectionViewModel: ARCHSectionViewModel {
+    var cellViewModel: ARCHCellViewModel {
         return viewModel
     }
 }

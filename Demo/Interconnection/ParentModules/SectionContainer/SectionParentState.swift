@@ -14,6 +14,6 @@ struct SectionParentState: ARCHState {
     var childStates: [ARCHState] = []
 
     var sectionViewModels: [ARCHSectionViewModel] {
-        return childStates.compactMap({ ($0 as? ARCHStateDataSource)?.sectionViewModel })
+        return childStates.compactMap({ ($0 as? ARCHStateSectionDataSource)?.sectionViewModel })
     }
 }

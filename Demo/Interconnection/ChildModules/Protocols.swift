@@ -1,5 +1,5 @@
 //
-//  ARCHStateDataSource.swift
+//  ARCHStateSectionDataSource.swift
 //  HHInterconnectionDemo
 //
 //  Created by Eugene Sorokin on 24/10/2018.
@@ -8,9 +8,14 @@
 
 import HHList
 
-protocol ARCHStateDataSource {
+protocol ARCHStateSectionDataSource {
 
     var sectionViewModel: ARCHSectionViewModel { get }
+}
+
+protocol ARCHStateDataSource {
+
+    var cellViewModel: ARCHCellViewModel { get }
 }
 
 protocol ARCHChildModule {
