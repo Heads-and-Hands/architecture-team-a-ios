@@ -8,6 +8,12 @@
 
 import Foundation
 
+struct ARCHServerError: Codable {
+    var code: Int
+    var name: String
+    var message: String
+}
+
 public struct ARCHNetworkError: Swift.Error, Codable {
 
     public var status: Int
