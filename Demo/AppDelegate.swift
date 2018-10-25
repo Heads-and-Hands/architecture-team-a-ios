@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func launchOn(window: UIWindow?) {
-        ModulesUserStory.main.displayOn(window: window, animated: false)
+        Stories.MainStory.mainTitle.router.transit(from: window, options: [ARCHRouterWindowOptions()], animated: false)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
