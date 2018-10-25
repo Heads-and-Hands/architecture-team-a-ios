@@ -17,7 +17,7 @@ import HHNetwork
 class AppDelegate: UIResponder, UIApplicationDelegate {
     typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
 
-    var window: UIWindow? = UIWindow()
+    var window: UIWindow? = CustomWindow()
     var authBufferedController: UIViewController?
 
     func application(
@@ -79,3 +79,39 @@ extension AppDelegate: ARCHUserStorageDelegate {
     }
 }
 #endif
+
+class CustomWindow: UIWindow {
+
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == UIEvent.EventSubtype.motionShake {
+
+            var topViewController = rootViewController
+
+            if let navigationController = topViewController?.navigationController {
+                topViewController = navigationController
+            }
+
+            var viewController = topViewController
+
+            while let controller = viewController {
+                topViewController = viewController
+                viewController = topController(for: controller)
+            }
+
+            guard let router = topViewController as? ARCHRouter else {
+                return
+            }
+
+            GenStories.maincatalogconfigurator.present(from: router, animated: true)
+        }
+    }
+
+    private func topController(for viewController: UIViewController) -> UIViewController? {
+
+        if let nc = viewController as? UINavigationController {
+            return nc.topViewController
+        } else {
+            return viewController.presentedViewController
+        }
+    }
+}

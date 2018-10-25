@@ -9,4 +9,8 @@
 import UIKit
 
 extension UIWindow: ARCHRouter {
+
+    public var moduleID: String {
+        return String()
+    }
 }

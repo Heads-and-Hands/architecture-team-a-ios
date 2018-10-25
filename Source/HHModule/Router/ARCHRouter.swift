@@ -16,6 +16,8 @@ public protocol ARCHRouterOptions {
 
 public protocol ARCHRouter: class {
     func transit(from: ARCHRouter?, options: [ARCHRouterOptions], animated: Bool)
+
+    var moduleID: String { get }
 }
 
 public extension ARCHRouter {

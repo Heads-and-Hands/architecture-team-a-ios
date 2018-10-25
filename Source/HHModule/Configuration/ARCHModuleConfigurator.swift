@@ -10,17 +10,32 @@ import Foundation
 
 public protocol ARCHModuleConfigurator: class {
 
-    associatedtype ModuleIO
+    associatedtype ModuleInput
+
+    associatedtype ModuleOutput
+
+    typealias ModuleIO = (ModuleInput) -> ModuleOutput
+
+    static var moduleID: String { get }
 
     static func configure(moduleIO: ModuleIO?) -> ARCHRouter
 
-    static var moduleID: String { get }
+    static func find(where block: ((ModuleInput) -> Bool)?) -> ARCHRouter?
 }
 
 public extension ARCHModuleConfigurator {
 
     static var moduleID: String {
         return "\(type(of: Self.self))"
+    }
+
+    static func find(where block: ((ModuleInput) -> Bool)?) -> ARCHRouter? {
+        if let router = UIViewController() as? ARCHRouter {
+            if router.moduleID == Self.moduleID {
+                return router
+            }
+        }
+        return nil
     }
 }
 
