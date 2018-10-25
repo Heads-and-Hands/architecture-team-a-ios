@@ -10,7 +10,10 @@ import HHModule
 import HHList
 import HHListExtension
 import HHIndication
+
+#if HHSkeleton
 import HHSkeleton
+#endif
 
 enum ActionType: Int {
     case load = 0

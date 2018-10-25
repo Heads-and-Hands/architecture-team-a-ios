@@ -2693,7 +2693,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		508F842921396D1D00137D66 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2779,7 +2779,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		50C9859D212AEBFF0002EF4B /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;

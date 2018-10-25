@@ -10,7 +10,7 @@ import HHModule
 
 extension ARCHModuleID {
 
-    func displayEmbedNaviVCOn(window: ARCHWindow, animated: Bool) {
+    func displayEmbedNaviVCOn(window: UIWindow?, animated: Bool) {
         let options: [ARCHRouterOptions] = [
             RouterEmbedNaviVCOptions(),
             ARCHRouterWindowOptions()
