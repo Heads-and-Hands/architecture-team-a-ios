@@ -14,8 +14,21 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
 
     public var output: Out?
 
+    public var moduleID: String
+
     open var autorenderIgnoreViews: [ARCHViewInput] {
         return []
+    }
+
+    // MARK: - Initializtion
+
+    public init(moduleID: String) {
+        self.moduleID = moduleID
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     open func render(state: ViewState) {
@@ -36,7 +49,7 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
             index += 1
         }
 
-        print("[ARCHViewController] end render(state:)")
+        print("[ARCHViewController][CONFIGURATOR:\(moduleID)] end render(state:)")
     }
 
     private func substates(state: ViewState) -> [Any] {

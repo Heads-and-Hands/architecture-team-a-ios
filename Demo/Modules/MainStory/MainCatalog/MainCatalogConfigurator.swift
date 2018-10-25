@@ -11,14 +11,8 @@ import HHModule
 final class MainCatalogConfigurator: ARCHModuleConfigurator {
     typealias ModuleIO = (MainCatalogModuleInput) -> MainCatalogModuleOutput?
 
-    let moduleIO: ModuleIO?
-
-    init(moduleIO: ModuleIO?) {
-        self.moduleIO = moduleIO
-    }
-
-    var router: ARCHRouter {
-        let controller = MainCatalogViewController()
+    static func configure(moduleIO: ((MainCatalogModuleInput) -> MainCatalogModuleOutput?)?) -> ARCHRouter {
+        let controller = MainCatalogViewController(moduleID: moduleID)
 
         let eventHandler = MainCatalogEventHandler()
         eventHandler.router = controller

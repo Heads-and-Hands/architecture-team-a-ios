@@ -11,8 +11,6 @@ import Foundation
 public protocol ARCHModuleID {
     var rawValue: String { get }
     var moduleID: String { get }
-
-    var configurator: ARCHModuleConfigurator { get }
 }
 
 public extension ARCHModuleID {
@@ -29,26 +27,5 @@ public extension ARCHModuleID {
 
     var moduleID: String {
         return "\(type(of: self))" + rawValue
-    }
-}
-
-public extension ARCHModuleID {
-
-    func push(from: ARCHRouter?, animated: Bool) {
-        configurator.router.transit(from: from,
-                                    options: [ARCHRouterPushOptions()],
-                                    animated: animated)
-    }
-
-    func present(from: ARCHRouter?, animated: Bool) {
-        configurator.router.transit(from: from,
-                                    options: [ARCHRouterPresentOptions()],
-                                    animated: animated)
-    }
-
-    func displayOn(window: UIWindow?, animated: Bool) {
-        configurator.router.transit(from: window,
-                                    options: [ARCHRouterWindowOptions()],
-                                    animated: animated)
     }
 }

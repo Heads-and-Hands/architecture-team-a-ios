@@ -11,14 +11,8 @@ import HHModule
 final class ProfileTitleConfigurator: ARCHModuleConfigurator {
     typealias ModuleIO = (ProfileTitleModuleInput) -> ProfileTitleModuleOutput?
 
-    let moduleIO: ModuleIO?
-
-    init(moduleIO: ModuleIO?) {
-        self.moduleIO = moduleIO
-    }
-
-    var router: ARCHRouter {
-        let controller = ProfileTitleViewController()
+    static func configure(moduleIO: ((ProfileTitleModuleInput) -> ProfileTitleModuleOutput?)?) -> ARCHRouter {
+        let controller = ProfileTitleViewController(moduleID: moduleID)
 
         let eventHandler = ProfileTitleEventHandler()
         eventHandler.router = controller

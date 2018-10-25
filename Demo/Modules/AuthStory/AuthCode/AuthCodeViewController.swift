@@ -15,7 +15,14 @@ final class AuthCodeViewController: ARCHViewController<AuthCodeState, AuthCodeEv
     override func prepareRootView() {
         super.prepareRootView()
 
-        // TODO: Some code setting UI
+        view.backgroundColor = .white
+
+        let label = UILabel(frame: view.bounds)
+        label.text = "AuthStory code page"
+        label.textAlignment = .center
+
+        view.addSubview(label)
+        label.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 
     // MARK: - Render

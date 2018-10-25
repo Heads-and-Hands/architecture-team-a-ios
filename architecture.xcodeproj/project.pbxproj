@@ -360,6 +360,7 @@
 		9CC035FF2181B25A00D267FE /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC035FA2181B25A00D267FE /* ProfileEditViewController.swift */; };
 		9CC036002181B25A00D267FE /* ProfileEditConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC035FB2181B25A00D267FE /* ProfileEditConfigurator.swift */; };
 		9CC036012181B25A00D267FE /* ProfileEditState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC035FC2181B25A00D267FE /* ProfileEditState.swift */; };
+		9CC036052181CDC100D267FE /* Stories.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC036042181CDC000D267FE /* Stories.generated.swift */; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
 		9CF48B352167A4650040AE49 /* Comparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B0B2167A4530040AE49 /* Comparator.swift */; };
@@ -1052,6 +1053,7 @@
 		9CC035FA2181B25A00D267FE /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		9CC035FB2181B25A00D267FE /* ProfileEditConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditConfigurator.swift; sourceTree = "<group>"; };
 		9CC035FC2181B25A00D267FE /* ProfileEditState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditState.swift; sourceTree = "<group>"; };
+		9CC036042181CDC000D267FE /* Stories.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stories.generated.swift; sourceTree = "<group>"; };
 		9CF48AE82167A3F60040AE49 /* HHLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF48AEA2167A3F60040AE49 /* HHLens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHLens.h; sourceTree = "<group>"; };
 		9CF48AEB2167A3F60040AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1919,6 +1921,7 @@
 				9CC035B52181B0FF00D267FE /* AuthStory */,
 				9CC035B42181B0F500D267FE /* ProfileStory */,
 				9CC035AD2181B0A100D267FE /* Stories.swift */,
+				9CC036042181CDC000D267FE /* Stories.generated.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -2535,6 +2538,7 @@
 				9CC035932181AD1500D267FE /* Frameworks */,
 				9CC035942181AD1500D267FE /* Resources */,
 				9CC035B32181B0DD00D267FE /* Embed Frameworks */,
+				9CC036032181BF8A00D267FE /* Sourcery */,
 			);
 			buildRules = (
 			);
@@ -3057,6 +3061,24 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n    if which swiftlint >/dev/null; then\n        swiftlint\n    fi\nfi";
 		};
+		9CC036032181BF8A00D267FE /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which sourcery >/dev/null; then\nsourcery --sources \"Demo/Modules\" \\\n--output \"Demo/Modules\" \\\n--templates .\nelse\necho \"Sourcery not installed\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -3389,6 +3411,7 @@
 				9CC035BD2181B15A00D267FE /* AuthMainEventHandler.swift in Sources */,
 				9CC035BF2181B15A00D267FE /* AuthMainConfigurator.swift in Sources */,
 				9CC035F32181B23900D267FE /* ProfileTitleEventHandler.swift in Sources */,
+				9CC036052181CDC100D267FE /* Stories.generated.swift in Sources */,
 				9CC035FD2181B25A00D267FE /* ProfileEditModuleIO.swift in Sources */,
 				9CC035EB2181B20900D267FE /* MainCatalogState.swift in Sources */,
 				9CC035BC2181B15A00D267FE /* AuthMainModuleIO.swift in Sources */,

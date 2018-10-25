@@ -11,14 +11,9 @@ import HHModule
 final class AuthMainConfigurator: ARCHModuleConfigurator {
     typealias ModuleIO = (AuthMainModuleInput) -> AuthMainModuleOutput?
 
-    let moduleIO: ModuleIO?
 
-    init(moduleIO: ModuleIO?) {
-        self.moduleIO = moduleIO
-    }
-
-    var router: ARCHRouter {
-        let controller = AuthMainViewController()
+    static func configure(moduleIO: ((AuthMainModuleInput) -> AuthMainModuleOutput?)?) -> ARCHRouter {
+        let controller = AuthMainViewController(moduleID: moduleID)
 
         let eventHandler = AuthMainEventHandler()
         eventHandler.router = controller
