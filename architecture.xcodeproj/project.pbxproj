@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5016B4E321833342000D66B5 /* ARCHRouterWindowOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016B4E221833342000D66B5 /* ARCHRouterWindowOptions.swift */; };
+		5016B4E5218336E4000D66B5 /* ARCHWindowTransitionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016B4E4218336E4000D66B5 /* ARCHWindowTransitionOptions.swift */; };
 		501AA64C211C6C4B002D3264 /* HHList.h in Headers */ = {isa = PBXBuildFile; fileRef = 501AA64A211C6C4B002D3264 /* HHList.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		501AA656211C6C7E002D3264 /* ARCHTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089233120FC8DA30032985E /* ARCHTableViewDataSource.swift */; };
 		501AA657211C6C83002D3264 /* ARCHCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089233320FC8DA30032985E /* ARCHCollectionViewDataSource.swift */; };
@@ -210,7 +212,6 @@
 		50BC80B0211DFAD300D77262 /* ARCHEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232620FC8DA30032985E /* ARCHEventHandler.swift */; };
 		50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */; };
 		50BC80B3211DFAE200D77262 /* ARCHRouterPresentOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */; };
-		50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */; };
 		50BC80B5211DFAE900D77262 /* ARCHRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089232D20FC8DA30032985E /* ARCHRouter.swift */; };
 		50C98553212AB66C0002EF4B /* Multidelegate.md in Resources */ = {isa = PBXBuildFile; fileRef = 50C98552212AB66C0002EF4B /* Multidelegate.md */; };
 		50C98562212AE9D20002EF4B /* HHPagingManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 50C98560212AE9D20002EF4B /* HHPagingManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -775,6 +776,8 @@
 		5010AA3F2118342500158C1F /* EmptyModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModuleConfigurator.swift; sourceTree = "<group>"; };
 		5010AA402118342500158C1F /* EmptyModuleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModuleState.swift; sourceTree = "<group>"; };
 		5010AA462118375B00158C1F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5016B4E221833342000D66B5 /* ARCHRouterWindowOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouterWindowOptions.swift; sourceTree = "<group>"; };
+		5016B4E4218336E4000D66B5 /* ARCHWindowTransitionOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHWindowTransitionOptions.swift; sourceTree = "<group>"; };
 		501AA635211C6AD9002D3264 /* ___FILEBASENAME___ModuleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "___FILEBASENAME___ModuleIO.swift"; sourceTree = "<group>"; };
 		501AA636211C6AD9002D3264 /* ___FILEBASENAME___EventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "___FILEBASENAME___EventHandler.swift"; sourceTree = "<group>"; };
 		501AA637211C6AD9002D3264 /* ___FILEBASENAME___ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "___FILEBASENAME___ViewController.swift"; sourceTree = "<group>"; };
@@ -884,7 +887,6 @@
 		5089232620FC8DA30032985E /* ARCHEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHEventHandler.swift; sourceTree = "<group>"; };
 		5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouterPushOptions.swift; sourceTree = "<group>"; };
 		5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouterPresentOptions.swift; sourceTree = "<group>"; };
-		5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouterWindowOptions.swift; sourceTree = "<group>"; };
 		5089232D20FC8DA30032985E /* ARCHRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHRouter.swift; sourceTree = "<group>"; };
 		5089233120FC8DA30032985E /* ARCHTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHTableViewDataSource.swift; sourceTree = "<group>"; };
 		5089233320FC8DA30032985E /* ARCHCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -1185,6 +1187,15 @@
 				5010AA402118342500158C1F /* EmptyModuleState.swift */,
 			);
 			path = EmptyModule;
+			sourceTree = "<group>";
+		};
+		5016B4E121833342000D66B5 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				5016B4E221833342000D66B5 /* ARCHRouterWindowOptions.swift */,
+				5016B4E4218336E4000D66B5 /* ARCHWindowTransitionOptions.swift */,
+			);
+			path = Window;
 			sourceTree = "<group>";
 		};
 		501AA633211C6AD9002D3264 /* HHTemplates */ = {
@@ -1523,9 +1534,9 @@
 		5089232820FC8DA30032985E /* Options */ = {
 			isa = PBXGroup;
 			children = (
+				5016B4E121833342000D66B5 /* Window */,
 				5089232920FC8DA30032985E /* ARCHRouterPushOptions.swift */,
 				5089232A20FC8DA30032985E /* ARCHRouterPresentOptions.swift */,
-				5089232B20FC8DA30032985E /* ARCHRouterWindowOptions.swift */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -2675,7 +2686,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		507C3FE12142B32800A21073 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2939,13 +2950,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				50BC80AE211DFACE00D77262 /* ARCHViewController.swift in Sources */,
-				50BC80B4211DFAE500D77262 /* ARCHRouterWindowOptions.swift in Sources */,
 				50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */,
+				5016B4E5218336E4000D66B5 /* ARCHWindowTransitionOptions.swift in Sources */,
 				50BC80B5211DFAE900D77262 /* ARCHRouter.swift in Sources */,
 				50BC80AF211DFAD100D77262 /* ARCHModuleProtocols.swift in Sources */,
 				50BC80AD211DFACA00D77262 /* ARCHModuleID.swift in Sources */,
 				50BC80B3211DFAE200D77262 /* ARCHRouterPresentOptions.swift in Sources */,
 				50954D21217E30500003610A /* ARCHWindow.swift in Sources */,
+				5016B4E321833342000D66B5 /* ARCHRouterWindowOptions.swift in Sources */,
 				50BC80AC211DFAC700D77262 /* ARCHModuleConfigurator.swift in Sources */,
 				50BC80B0211DFAD300D77262 /* ARCHEventHandler.swift in Sources */,
 			);
@@ -3459,6 +3471,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3481,6 +3497,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3503,6 +3523,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3525,6 +3549,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3615,6 +3643,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3637,6 +3669,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3715,6 +3751,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HHModule/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -3745,6 +3785,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HHModule/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

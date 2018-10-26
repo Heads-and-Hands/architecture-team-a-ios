@@ -17,7 +17,7 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
         let completion: Moya.Completion
     }
 
-    let debugLog: ((String) -> Void)? = {
+    private let debugLog: ((String) -> Void)? = {
         if let debugMode = ProcessInfo.processInfo.environment["HHNetworkDebugMode"], Int(debugMode) == 1 {
             return { print($0) }
         } else {

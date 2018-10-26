@@ -20,15 +20,15 @@ public protocol ARCHUserStorageDelegate: class {
     func didUpdateUser(from: ARCHUser?, to: ARCHUser?)
 }
 
-public class ARCHUserStorage<User: ARCHUser, Token: ARCHToken> {
-    private let delegates = NSPointerArray.weakObjects()
+open class ARCHUserStorage<User: ARCHUser, Token: ARCHToken> {
+    public let delegates = NSPointerArray.weakObjects()
 
     public var user: User?
     public var token: Token?
 
     public init() {}
 
-    public func save(user: User?, token: Token?) {
+    open func save(user: User?, token: Token?) {
         let oldUser = self.user
 
         self.user = user
