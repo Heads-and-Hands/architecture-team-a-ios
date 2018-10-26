@@ -120,12 +120,8 @@ class CustomWindow: UIWindow {
                 GenStories.authcodeconfigurator.present(from: router, animated: true)
             }
 
-            if let searchRouter = GenStories.maincatalogconfigurator.find(where: {
-                return $0.value == 2
-            }), CustomWindow.counter > 3 {
-                if let vc = searchRouter as? UIViewController {
-                    vc.dismiss(animated: false, completion: nil)
-                }
+            if CustomWindow.counter > 3 {
+                GenStories.maincatalogconfigurator.drop(where: { return $0.value == 2 })
             }
         }
     }
