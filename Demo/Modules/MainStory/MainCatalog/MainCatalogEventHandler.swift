@@ -12,7 +12,11 @@ final class MainCatalogEventHandler: ARCHEventHandler<MainCatalogState>, MainCat
 
     weak var moduleOutput: MainCatalogModuleOutput?
 
+    var value: Int = 0
+
     override func viewIsReady() {
         super.viewIsReady()
+
+        state.value = String(value)
     }
 }

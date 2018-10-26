@@ -16,6 +16,10 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
 
     public var moduleID: String
 
+    public var moduleInput: Any? {
+        return output
+    }
+
     open var autorenderIgnoreViews: [ARCHViewInput] {
         return []
     }

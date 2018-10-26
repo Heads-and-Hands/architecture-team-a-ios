@@ -30,10 +30,40 @@ public extension ARCHModuleConfigurator {
     }
 
     static func find(where block: ((ModuleInput) -> Bool)?) -> ARCHRouter? {
-        if let router = UIViewController() as? ARCHRouter {
-            if router.moduleID == Self.moduleID {
+        guard let window = UIApplication.shared.delegate?.window else {
+            return nil
+        }
+
+        var topViewController = window?.rootViewController
+
+        if let navigationController = topViewController?.navigationController {
+            topViewController = navigationController.topViewController
+        }
+
+        while let controller = topViewController {
+            if let router = Self.check(viewController: controller, with: block) {
                 return router
             }
+
+            if let nc = controller as? UINavigationController {
+                topViewController = nc.topViewController
+            } else {
+                topViewController = controller.presentedViewController
+            }
+        }
+        return nil
+    }
+
+    static func check(viewController: UIViewController, with block: ((ModuleInput) -> Bool)?) -> ARCHRouter?  {
+        if let router = viewController as? ARCHRouter,
+            router.moduleID == Self.moduleID {
+            if let block = block {
+                if let input = router.moduleInput as? ModuleInput, block(input) {
+                    return router
+                }
+                return nil
+            }
+            return router
         }
         return nil
     }

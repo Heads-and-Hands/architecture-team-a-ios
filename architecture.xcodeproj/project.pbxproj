@@ -313,6 +313,7 @@
 		50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
 		50EA303F2134529A00A95512 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C0E55342182FD16000B4708 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA3025213421E800A95512 /* Label.swift */; };
 		9C1417F42146B23C009F1073 /* ParentModuleEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417EF2146B23B009F1073 /* ParentModuleEventHandler.swift */; };
 		9C1417F52146B23C009F1073 /* ParentModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F02146B23B009F1073 /* ParentModuleProtocols.swift */; };
 		9C1417F62146B23C009F1073 /* ParentModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F12146B23C009F1073 /* ParentModuleViewController.swift */; };
@@ -3420,6 +3421,7 @@
 				9CC035C82181B18B00D267FE /* AuthCodeEventHandler.swift in Sources */,
 				9CC036002181B25A00D267FE /* ProfileEditConfigurator.swift in Sources */,
 				9CC035DC2181B1E800D267FE /* MainTitleModuleIO.swift in Sources */,
+				9C0E55342182FD16000B4708 /* Label.swift in Sources */,
 				9CC035CB2181B18B00D267FE /* AuthCodeState.swift in Sources */,
 				9CC035C02181B15A00D267FE /* AuthMainState.swift in Sources */,
 				9CC035DD2181B1E800D267FE /* MainTitleEventHandler.swift in Sources */,

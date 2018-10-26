@@ -9,4 +9,6 @@
 import HHModule
 
 struct MainCatalogState: ARCHState {
+
+     var value: String = ""
 }

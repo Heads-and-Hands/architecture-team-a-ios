@@ -18,6 +18,8 @@ public protocol ARCHRouter: class {
     func transit(from: ARCHRouter?, options: [ARCHRouterOptions], animated: Bool)
 
     var moduleID: String { get }
+
+    var moduleInput: Any? { get }
 }
 
 public extension ARCHRouter {

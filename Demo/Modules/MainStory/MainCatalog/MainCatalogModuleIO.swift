@@ -9,6 +9,8 @@
 import Foundation
 
 protocol MainCatalogModuleInput {
+
+    var value: Int { get set }
 }
 
 protocol MainCatalogModuleOutput: class {

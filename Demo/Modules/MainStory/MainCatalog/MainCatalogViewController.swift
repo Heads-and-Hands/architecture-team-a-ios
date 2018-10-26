@@ -10,6 +10,8 @@ import HHModule
 
 final class MainCatalogViewController: ARCHViewController<MainCatalogState, MainCatalogEventHandler> {
 
+    private let valueLabel = Label()
+
     // MARK: - View life cycle
 
     override func prepareRootView() {
@@ -17,12 +19,24 @@ final class MainCatalogViewController: ARCHViewController<MainCatalogState, Main
 
         view.backgroundColor = .white
 
-        let label = UILabel(frame: view.bounds)
+        let label = UILabel()
         label.text = "MainStory catalog page"
         label.textAlignment = .center
 
-        view.addSubview(label)
-        label.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        valueLabel.font = UIFont.systemFont(ofSize: 36.0, weight: .bold)
+        valueLabel.textAlignment = .center
+
+        let stack = UIStackView(arrangedSubviews: [label, valueLabel])
+        stack.axis = .vertical
+        stack.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(stack)
+
+        NSLayoutConstraint.activate([
+            stack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stack.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
 
     // MARK: - Render

@@ -82,7 +82,10 @@ extension AppDelegate: ARCHUserStorageDelegate {
 
 class CustomWindow: UIWindow {
 
+    static var counter: Int = 0
+
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+
         if motion == UIEvent.EventSubtype.motionShake {
 
             var topViewController = rootViewController
@@ -102,7 +105,28 @@ class CustomWindow: UIWindow {
                 return
             }
 
-            GenStories.maincatalogconfigurator.present(from: router, animated: true)
+            CustomWindow.counter += 1
+
+            switch CustomWindow.counter {
+            case 1:
+                GenStories.maincatalogconfigurator.present(from: router, animated: true)
+            case 2:
+                GenStories.maincatalogconfigurator.configure(moduleIO: { moduleInput -> MainCatalogModuleOutput? in
+                    var input = moduleInput
+                    input.value = 2
+                    return nil
+                }).transit(from: router, options: [ARCHRouterPresentOptions()], animated: true)
+            default:
+                GenStories.authcodeconfigurator.present(from: router, animated: true)
+            }
+
+            if let searchRouter = GenStories.maincatalogconfigurator.find(where: {
+                return $0.value == 2
+            }), CustomWindow.counter > 3 {
+                if let vc = searchRouter as? UIViewController {
+                    vc.dismiss(animated: false, completion: nil)
+                }
+            }
         }
     }
 
