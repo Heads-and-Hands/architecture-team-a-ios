@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func launchOn(window: UIWindow?) {
-        GenStories.maintitleconfigurator.displayOn(window: window, animated: false)
+        MainStory.title.displayOn(window: window, animated: false)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -107,22 +107,22 @@ class CustomWindow: UIWindow {
 
             CustomWindow.counter += 1
 
-            switch CustomWindow.counter {
-            case 1:
-                GenStories.maincatalogconfigurator.present(from: router, animated: true)
-            case 2:
-                GenStories.maincatalogconfigurator.configure(moduleIO: { moduleInput -> MainCatalogModuleOutput? in
-                    var input = moduleInput
-                    input.value = 2
-                    return nil
-                }).transit(from: router, options: [ARCHRouterPresentOptions()], animated: true)
-            default:
-                GenStories.authcodeconfigurator.present(from: router, animated: true)
-            }
-
-            if CustomWindow.counter > 3 {
-                GenStories.maincatalogconfigurator.drop(where: { return $0.value == 2 })
-            }
+//            switch CustomWindow.counter {
+//            case 1:
+//                MainStory.mainCatalog.present(from: router, animated: true)
+//            case 2:
+//                MainStory.mainCatalog.configure(moduleIO: { moduleInput -> MainCatalogModuleOutput? in
+//                    var input = moduleInput
+//                    input.value = 2
+//                    return nil
+//                }).transit(from: router, options: [ARCHRouterPresentOptions()], animated: true)
+//            default:
+//                AuthStory.authCode.present(from: router, animated: true)
+//            }
+//
+//            if CustomWindow.counter > 3 {
+//                MainStory.mainCatalog.drop(where: { return $0.value == 2 })
+//            }
         }
     }
 
