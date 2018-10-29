@@ -8,27 +8,28 @@
 
 import HHModule
 
+typealias EmptyModuleIO = (inout EmptyModuleModuleInput) -> Void
+
 final class EmptyModuleConfigurator: ARCHModuleConfigurator {
-    typealias ModuleIO = (EmptyModuleModuleInput) -> EmptyModuleModuleOutput?
 
-    let moduleIO: ModuleIO?
+    let moduleIO: EmptyModuleIO?
 
-    init(moduleIO: ModuleIO?) {
+    init(moduleIO: EmptyModuleIO?) {
         self.moduleIO = moduleIO
     }
 
-    var router: ARCHRouter {
+    var module: ARCHModule {
         let controller = EmptyModuleViewController()
+        controller.output = {
+            let eventHandler = EmptyModuleEventHandler()
+            eventHandler.router = controller
+            eventHandler.viewInput = controller
+            return eventHandler
+        }()
 
-        let eventHandler = EmptyModuleEventHandler()
-        eventHandler.router = controller
-        eventHandler.viewInput = controller
-
-        if let moduleIO = moduleIO {
-            eventHandler.moduleOutput = moduleIO(eventHandler)
+        if var moduleInput = controller.moduleInput as? EmptyModuleModuleInput {
+            moduleIO?(&moduleInput)
         }
-
-        controller.output = eventHandler
 
         return controller
     }

@@ -27,6 +27,7 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
     public var stateHandler: ARCHStateHandler<State>?
 
     private var ignoreStateChanges: Bool = false
+    private var renderDisable: Bool = false
 
     public init() {}
 
@@ -58,6 +59,12 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
         commitStateChanges()
     }
 
+    open func updateStateWithoutRender(_ block: () -> Void) {
+        renderDisable = true
+        updateState(block)
+        renderDisable = false
+    }
+
     // MARK: - ACRHViewOutput
 
     open func viewIsReady() {
@@ -65,7 +72,7 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
     }
 
     open func viewSetNeedsRedraw() {
-        if !ignoreStateChanges {
+        if !ignoreStateChanges, !renderDisable {
             viewInput?.update(state: state)
         }
     }

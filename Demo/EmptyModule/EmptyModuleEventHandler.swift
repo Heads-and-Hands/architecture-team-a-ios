@@ -17,4 +17,16 @@ final class EmptyModuleEventHandler: ARCHEventHandler<EmptyModuleState>, EmptyMo
 
         state.text = "Hello world"
     }
+
+    // MARK: - EmptyModuleModuleInput
+
+    var someValue: Int = 0 {
+        didSet {
+            print("Change some value")
+        }
+    }
+
+    func set(moduleOutput: ARCHModuleOutput) {
+        self.moduleOutput = moduleOutput as? EmptyModuleModuleOutput
+    }
 }

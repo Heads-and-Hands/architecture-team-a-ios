@@ -8,11 +8,12 @@
 
 import UIKit
 
-open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewController, ARCHRouter, ARCHViewRenderable {
+@IBDesignable open class ARCHViewController<State: ARCHState, ViewOutput: ACRHViewOutput>: UIViewController, ARCHModule, ARCHRouter, ARCHViewRenderable {
+    public typealias ViewState = State
 
-    public typealias ViewState = S
+    public var output: ViewOutput?
 
-    public var output: Out?
+    private var moduleIsReady: Bool = false
 
     open var autorenderIgnoreViews: [ARCHViewInput] {
         return []
@@ -75,13 +76,37 @@ open class ARCHViewController<S: ARCHState, Out: ACRHViewOutput>: UIViewControll
             })
     }
 
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-
-        prepareRootView()
-        output?.viewIsReady()
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+//    override open func viewDidLoad() {
+//        super.viewDidLoad()
+//        completeLoadFromIB?(self)
+//        prepareRootView()
+//        output?.viewIsReady()
+//    }
+
     open func prepareRootView() {
+    }
+
+    // MARK: - ARCHModule
+
+    public var router: ARCHRouter {
+        if !moduleIsReady {
+            moduleIsReady = true
+            prepareRootView()
+            output?.viewIsReady()
+        }
+        // TODO: Check is ready
+        return self
+    }
+    
+    public var moduleInput: ARCHModuleInput? {
+        return output as? ARCHModuleInput
     }
 }

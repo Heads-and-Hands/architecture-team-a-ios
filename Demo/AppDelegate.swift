@@ -31,7 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func launchOn(window: UIWindow?) {
-        ModulesUserStory.main.displayOn(window: window, animated: false)
+        ModulesUserStory.main { moduleInput in
+            moduleInput.someValue = 1_234
+//            moduleInput.set(moduleOutput: <#T##ARCHModuleOutput#>)
+        }.displayOn(window: window, animated: false)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

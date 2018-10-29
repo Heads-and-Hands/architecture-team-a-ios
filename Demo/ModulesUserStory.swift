@@ -10,16 +10,23 @@ import Foundation
 import HHModule
 
 enum ModulesUserStory: ARCHModuleID {
+#if HHModule
+    case main(EmptyModuleIO)
+#else
     case main
+#endif
 
     var configurator: ARCHModuleConfigurator {
         switch self {
-        case .main:
 #if HHModule
-            return ChildModuleConfigurator(moduleIO: nil)
-            //return ParentModuleConfigurator(moduleIO: nil)
-            //return EmptyModuleConfigurator(moduleIO: nil)
-#elseif HHList
+        case let .main(moduleIO):
+            return EmptyModuleConfigurator(moduleIO: moduleIO)
+#else
+        case .main:
+            fatalError()
+#endif
+/*
+#if HHList
             return ListConfigurator(moduleIO: nil)
 #elseif HHSectionList
             return SectionListConfigurator(moduleIO: nil)
@@ -36,6 +43,7 @@ enum ModulesUserStory: ARCHModuleID {
 #elseif HHLens
             return EmptyModuleConfigurator(moduleIO: nil)
 #endif
+*/
         }
     }
 }

@@ -8,8 +8,9 @@
 
 import HHModule
 
-protocol EmptyModuleModuleInput {
+protocol EmptyModuleModuleInput: ARCHModuleInput {
+    var someValue: Int { get set }
 }
 
-protocol EmptyModuleModuleOutput: class {
+protocol EmptyModuleModuleOutput: ARCHModuleOutput {
 }

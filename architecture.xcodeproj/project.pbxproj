@@ -196,6 +196,7 @@
 		5093688320F683030044CA62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093688220F683030044CA62 /* Assets.xcassets */; };
 		5093688620F683030044CA62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
 		50954D21217E30500003610A /* ARCHWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50954D20217E30500003610A /* ARCHWindow.swift */; };
+		50954D28217F250E0003610A /* ARCHModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50954D27217F250E0003610A /* ARCHModule.swift */; };
 		50AC942F213D673B0007B7FA /* HHModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; };
 		50AC9435213D68730007B7FA /* HHListExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DDE7211DE83200E08A92 /* HHListExtension.framework */; };
 		50AC9436213D68730007B7FA /* HHListExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DDE7211DE83200E08A92 /* HHListExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -314,16 +315,6 @@
 		50EA303D2134529A00A95512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5093688420F683030044CA62 /* LaunchScreen.storyboard */; };
 		50EA303F2134529A00A95512 /* HHModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5072DD95211D84B800E08A92 /* HHModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50EA30402134529A00A95512 /* HHList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 501AA648211C6C4A002D3264 /* HHList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9C1417F42146B23C009F1073 /* ParentModuleEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417EF2146B23B009F1073 /* ParentModuleEventHandler.swift */; };
-		9C1417F52146B23C009F1073 /* ParentModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F02146B23B009F1073 /* ParentModuleProtocols.swift */; };
-		9C1417F62146B23C009F1073 /* ParentModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F12146B23C009F1073 /* ParentModuleViewController.swift */; };
-		9C1417F72146B23C009F1073 /* ParentModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F22146B23C009F1073 /* ParentModuleConfigurator.swift */; };
-		9C1417F82146B23C009F1073 /* ParentModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417F32146B23C009F1073 /* ParentModuleState.swift */; };
-		9C1418042146B57C009F1073 /* ChildModuleEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1417FF2146B57C009F1073 /* ChildModuleEventHandler.swift */; };
-		9C1418052146B57C009F1073 /* ChildModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418002146B57C009F1073 /* ChildModuleViewController.swift */; };
-		9C1418062146B57C009F1073 /* ChildModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418012146B57C009F1073 /* ChildModuleProtocols.swift */; };
-		9C1418072146B57C009F1073 /* ChildModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418022146B57C009F1073 /* ChildModuleConfigurator.swift */; };
-		9C1418082146B57C009F1073 /* ChildModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1418032146B57C009F1073 /* ChildModuleState.swift */; };
 		9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14180A2146B6EC009F1073 /* ParentView.swift */; };
 		9CF48AFA2167A3F70040AE49 /* HHLens.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF48AEA2167A3F60040AE49 /* HHLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF48B322167A4650040AE49 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF48B082167A4520040AE49 /* Operators.swift */; };
@@ -906,6 +897,7 @@
 		5093688520F683030044CA62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5093688720F683030044CA62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50954D20217E30500003610A /* ARCHWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCHWindow.swift; sourceTree = "<group>"; };
+		50954D27217F250E0003610A /* ARCHModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHModule.swift; sourceTree = "<group>"; };
 		50B89519214BF00900242372 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		50BC80D02121748400D77262 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		50BC80D12121748400D77262 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -1507,6 +1499,7 @@
 			children = (
 				5089232120FC8DA30032985E /* ARCHModuleConfigurator.swift */,
 				5089232220FC8DA30032985E /* ARCHModuleID.swift */,
+				50954D27217F250E0003610A /* ARCHModule.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -2952,6 +2945,7 @@
 				50BC80AE211DFACE00D77262 /* ARCHViewController.swift in Sources */,
 				50BC80B2211DFADF00D77262 /* ARCHRouterPushOptions.swift in Sources */,
 				5016B4E5218336E4000D66B5 /* ARCHWindowTransitionOptions.swift in Sources */,
+				50954D28217F250E0003610A /* ARCHModule.swift in Sources */,
 				50BC80B5211DFAE900D77262 /* ARCHRouter.swift in Sources */,
 				50BC80AF211DFAD100D77262 /* ARCHModuleProtocols.swift in Sources */,
 				50BC80AD211DFACA00D77262 /* ARCHModuleID.swift in Sources */,
@@ -3037,24 +3031,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C1418072146B57C009F1073 /* ChildModuleConfigurator.swift in Sources */,
 				50EA3022213420B600A95512 /* EmptyModuleEventHandler.swift in Sources */,
 				507ABCCF21257C97003DBDD7 /* EmptyModuleConfigurator.swift in Sources */,
 				9C14180B2146B6EC009F1073 /* ParentView.swift in Sources */,
-				9C1417F42146B23C009F1073 /* ParentModuleEventHandler.swift in Sources */,
-				9C1418082146B57C009F1073 /* ChildModuleState.swift in Sources */,
 				5093687C20F683010044CA62 /* AppDelegate.swift in Sources */,
-				9C1417F62146B23C009F1073 /* ParentModuleViewController.swift in Sources */,
 				50EA3021213420B600A95512 /* EmptyModuleViewController.swift in Sources */,
 				9CF7224A2147BB0500DE0915 /* ChildView.swift in Sources */,
 				5089236720FC8E7B0032985E /* ModulesUserStory.swift in Sources */,
 				50EA3023213420B600A95512 /* EmptyModuleModuleIO.swift in Sources */,
-				9C1418062146B57C009F1073 /* ChildModuleProtocols.swift in Sources */,
-				9C1418042146B57C009F1073 /* ChildModuleEventHandler.swift in Sources */,
-				9C1417F82146B23C009F1073 /* ParentModuleState.swift in Sources */,
-				9C1417F72146B23C009F1073 /* ParentModuleConfigurator.swift in Sources */,
-				9C1418052146B57C009F1073 /* ChildModuleViewController.swift in Sources */,
-				9C1417F52146B23C009F1073 /* ParentModuleProtocols.swift in Sources */,
 				50EA3026213421E800A95512 /* Label.swift in Sources */,
 				50EA3024213420B600A95512 /* EmptyModuleState.swift in Sources */,
 			);
