@@ -3075,7 +3075,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which sourcery >/dev/null; then\nsourcery --sources \"Demo/Modules\" \\\n--output \"Demo/Modules\" \\\n--templates \"./Sourcery\"\nelse\necho \"Sourcery not installed\"\nfi\n\npython \"./Sourcery/Script.py\"\n";
+			shellScript = "if which sourcery >/dev/null; then\nsourcery --sources \"Demo/Modules\" \\\n--output \"Demo/Modules\" \\\n--templates \"./Sourcery\"\nelse\necho \"Sourcery not installed\"\nfi\n\npython \"./Sourcery/Script.py\" \"/Demo/Modules\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
