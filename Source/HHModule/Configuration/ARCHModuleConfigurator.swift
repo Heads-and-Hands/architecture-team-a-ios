@@ -53,7 +53,11 @@ public extension ARCHModuleConfigurator {
 
     static func drop(where block: ((ModuleInput) -> Bool)?) {
         if let viewController = Self.find(where: block) as? UIViewController {
-            viewController.dismiss(animated: false, completion: nil)
+            if let navigationController = viewController.navigationController {
+                navigationController.popToViewController(viewController, animated: false)
+            } else {
+                viewController.dismiss(animated: false, completion: nil)
+            }
         }
     }
 
