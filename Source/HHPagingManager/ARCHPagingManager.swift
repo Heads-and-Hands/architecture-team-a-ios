@@ -30,6 +30,14 @@ open class ARCHPagingManager: NSObject, ARCHPagingManagerInput {
         indexPath.row >= nextOffset
     }
 
+    private let debugLog: ((String) -> Void)? = {
+        if let debugMode = ProcessInfo.processInfo.environment["ARCHPagingManagerDebugMode"], Int(debugMode) == 1 {
+            return { print($0) }
+        } else {
+            return nil
+        }
+    }()
+
     /**
      @param pageSize - кол-во элементов на странице, по дефолту 40
      @param trigerBlock - клажура проверяющая можно ли загружать следующую страницу, по дефолту:
@@ -49,6 +57,7 @@ open class ARCHPagingManager: NSObject, ARCHPagingManagerInput {
     // MARK: - ARCHPagingManagerInput
 
     public func willDisplayCell(indexPath: IndexPath) {
+        debugLog?("[ARCHPagingManager] Will display cell by \(indexPath)")
         if triggerBlock(indexPath, nextOffset) {
             performLoadNextData()
         }
@@ -59,21 +68,33 @@ open class ARCHPagingManager: NSObject, ARCHPagingManagerInput {
             return
         }
 
-        performRequest(offset: offset)
+        debugLog?("[ARCHPagingManager] performLoadNextData")
+        addQueueRequest(offset: offset)
     }
 
     @objc
     public func performRefreshData() {
+        // TODO: исправить рефреш запрос
+        debugLog?("[ARCHPagingManager] performRefreshData")
         guard !isLoading && !reachedEnd else {
             return
         }
 
-        performRequest(offset: offset)
+        addQueueRequest(offset: offset)
     }
 
     // MARK: Private
 
+    private func addQueueRequest(offset: Int) {
+        debugLog?("[ARCHPagingManager] addQueueRequest")
+        DispatchQueue.main.async { [weak self] in
+            self?.performRequest(offset: offset)
+        }
+    }
+
     private func performRequest(offset: Int, completion: (() -> Void)? = nil) {
+        debugLog?("[ARCHPagingManager] performRequest by offset \(offset)")
+
         isLoading = true
         currentRequest?.cancel()
         currentRequest = output?.performRequest(offset: offset, pageSize: pageSize, completion: { [weak self] count, total in
@@ -83,6 +104,7 @@ open class ARCHPagingManager: NSObject, ARCHPagingManagerInput {
                 self?.reachedEnd = offset + count >= total
             }
 
+            self?.debugLog?("[ARCHPagingManager] end current request reachedEnd \(String(describing: self?.reachedEnd))")
             completion?()
             self?.isLoading = false
         })

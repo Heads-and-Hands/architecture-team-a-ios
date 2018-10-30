@@ -44,6 +44,12 @@ final class EmptyModuleViewController: ARCHViewController<EmptyModuleState, Empt
         configure()
     }
 
+    override func render(state: ViewState) {
+        print("[\(Thread.isMainThread ? "main" : "back")]render text \(state.text)")
+        output?.updateText()
+        label.text = state.text
+    }
+
     // MARK: - Configure
 
     private func configure() {

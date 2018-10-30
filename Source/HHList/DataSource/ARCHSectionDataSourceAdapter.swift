@@ -8,8 +8,6 @@
 
 import Foundation
 
-// TODO: Добавить информацию о ячейках для регистрации во вью
-
 public protocol ARCHSectionDataSourceAdapter: ARCHListDataSourceAdapter {
     var sectionsCount: Int { get }
 

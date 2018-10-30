@@ -9,6 +9,7 @@
 import HHModule
 
 final class NetworkConfigurator: ARCHModuleConfigurator {
+
     typealias ModuleIO = (NetworkModuleInput) -> NetworkModuleOutput?
 
     let moduleIO: ModuleIO?
@@ -17,7 +18,7 @@ final class NetworkConfigurator: ARCHModuleConfigurator {
         self.moduleIO = moduleIO
     }
 
-    var router: ARCHRouter {
+     var module: ARCHModule {
         let controller = NetworkViewController()
 
         let eventHandler = NetworkEventHandler()

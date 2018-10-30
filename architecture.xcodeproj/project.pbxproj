@@ -17,6 +17,8 @@
 		501AA65A211C6C8B002D3264 /* ARCHListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089233620FC8DA30032985E /* ARCHListDataSource.swift */; };
 		501AA65B211C6C8E002D3264 /* ARCHCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA8208211C630900ADA769 /* ARCHCellViewModel.swift */; };
 		501AA65C211C6C9A002D3264 /* ARCHEmptyListDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA81EB211ACF8D00ADA769 /* ARCHEmptyListDataAdapter.swift */; };
+		5027156A2188A3E200DF483E /* ARCHSectionListDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502715682188A3CA00DF483E /* ARCHSectionListDataAdapter.swift */; };
+		5027156C2188A99400DF483E /* ARCHSectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027156B2188A99400DF483E /* ARCHSectionCollectionViewController.swift */; };
 		502A7B58217387F900C6A2E8 /* ARCHListDataSourceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B56217387EC00C6A2E8 /* ARCHListDataSourceAdapter.swift */; };
 		502A7B5D2173894C00C6A2E8 /* ARCHHeaderFooterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B5B2173893700C6A2E8 /* ARCHHeaderFooterViewModel.swift */; };
 		502A7B5E217389FA00C6A2E8 /* ARCHSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A7B592173883000C6A2E8 /* ARCHSectionViewModel.swift */; };
@@ -779,6 +781,8 @@
 		501AA648211C6C4A002D3264 /* HHList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		501AA64A211C6C4B002D3264 /* HHList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHList.h; sourceTree = "<group>"; };
 		501AA64B211C6C4B002D3264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		502715682188A3CA00DF483E /* ARCHSectionListDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHSectionListDataAdapter.swift; sourceTree = "<group>"; };
+		5027156B2188A99400DF483E /* ARCHSectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHSectionCollectionViewController.swift; sourceTree = "<group>"; };
 		502A7B56217387EC00C6A2E8 /* ARCHListDataSourceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHListDataSourceAdapter.swift; sourceTree = "<group>"; };
 		502A7B592173883000C6A2E8 /* ARCHSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHSectionViewModel.swift; sourceTree = "<group>"; };
 		502A7B5B2173893700C6A2E8 /* ARCHHeaderFooterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCHHeaderFooterViewModel.swift; sourceTree = "<group>"; };
@@ -1256,6 +1260,7 @@
 			children = (
 				503FD71621400D0E008905ED /* ARCHTableViewController.swift */,
 				503FD71721400D0E008905ED /* ARCHCollectionViewController.swift */,
+				5027156B2188A99400DF483E /* ARCHSectionCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1583,6 +1588,7 @@
 			isa = PBXGroup;
 			children = (
 				50FA81EB211ACF8D00ADA769 /* ARCHEmptyListDataAdapter.swift */,
+				502715682188A3CA00DF483E /* ARCHSectionListDataAdapter.swift */,
 			);
 			path = DataAdapter;
 			sourceTree = "<group>";
@@ -2830,10 +2836,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5027156A2188A3E200DF483E /* ARCHSectionListDataAdapter.swift in Sources */,
 				501AA65A211C6C8B002D3264 /* ARCHListDataSource.swift in Sources */,
 				503FD71921400D0E008905ED /* ARCHCollectionViewController.swift in Sources */,
 				502A7B5D2173894C00C6A2E8 /* ARCHHeaderFooterViewModel.swift in Sources */,
 				502A7B58217387F900C6A2E8 /* ARCHListDataSourceAdapter.swift in Sources */,
+				5027156C2188A99400DF483E /* ARCHSectionCollectionViewController.swift in Sources */,
 				502A7B5E217389FA00C6A2E8 /* ARCHSectionViewModel.swift in Sources */,
 				501AA656211C6C7E002D3264 /* ARCHTableViewDataSource.swift in Sources */,
 				501AA65B211C6C8E002D3264 /* ARCHCellViewModel.swift in Sources */,

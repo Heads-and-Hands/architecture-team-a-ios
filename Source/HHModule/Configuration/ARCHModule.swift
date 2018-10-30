@@ -40,6 +40,6 @@ public extension ARCHSubModule where Self: UIView {
             leftAnchor.constraint(equalTo: container.leftAnchor),
             rightAnchor.constraint(equalTo: container.rightAnchor),
             bottomAnchor.constraint(equalTo: container.bottomAnchor)
-            ])
+        ])
     }
 }

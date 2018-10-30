@@ -19,7 +19,7 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
 
     private let debugLog: ((String) -> Void)? = {
         if let debugMode = ProcessInfo.processInfo.environment["HHNetworkDebugMode"], Int(debugMode) == 1 {
-            return { print($0) }
+            return { print("[\(Thread.isMainThread ? "main": "back")]" + $0) }
         } else {
             return nil
         }
@@ -79,6 +79,7 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
                     self?.add(request: request)
                     // TODO: ... проверить что есть плагин
                 } else {
+                    self?.debugLog?("[ARCHMoyaProvider] prepare completion response")
                     self?.remove(request: request)
                     request.completion(.success(response))
                 }
@@ -91,12 +92,12 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
 
     private func repeatRequests() {
         debugLog?("[ARCHMoyaProvider] repeat requests")
+        objc_sync_enter(self)
         while !requests.isEmpty {
-            objc_sync_enter(self)
             let request = requests.removeFirst()
             _ = send(request: request)
-            objc_sync_exit(self)
         }
+        objc_sync_exit(self)
     }
 
     private func remove(request: MoyaRequest) {

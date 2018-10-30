@@ -19,9 +19,24 @@ import UIKit
         return []
     }
 
+    private let debugLog: ((String) -> Void)? = {
+        if let debugMode = ProcessInfo.processInfo.environment["ARCHViewControllerDebugMode"], Int(debugMode) == 1 {
+            return { print("[\(Thread.isMainThread ? "Main" : "Back")][ARCHViewController] " + $0) }
+        } else {
+            return nil
+        }
+    }()
+
     open func render(state: ViewState) {
+        debugLog?("begin render state")
+
         var views = autorenderViews
+        debugLog?("Autorender views:")
+        views.forEach({ debugLog?("\(type(of: $0))") })
+
         let substates = self.substates(state: state)
+        debugLog?("Autorender states:")
+        substates.forEach({ debugLog?("\(type(of: $0))") })
 
         var index: Int = 0
         while index < views.count {
@@ -29,6 +44,7 @@ import UIKit
             var isVisible = false
 
             for substate in substates where view.update(state: substate) {
+                debugLog?("Display state \(type(of: state)) view \(type(of: view))")
                 isVisible = true
                 break
             }
@@ -37,7 +53,7 @@ import UIKit
             index += 1
         }
 
-        print("[ARCHViewController] end render(state:)")
+        debugLog?("end render state")
     }
 
     private func substates(state: ViewState) -> [Any] {
@@ -84,13 +100,6 @@ import UIKit
         super.init(coder: aDecoder)
     }
 
-//    override open func viewDidLoad() {
-//        super.viewDidLoad()
-//        completeLoadFromIB?(self)
-//        prepareRootView()
-//        output?.viewIsReady()
-//    }
-
     open func prepareRootView() {
     }
 
@@ -102,10 +111,9 @@ import UIKit
             prepareRootView()
             output?.viewIsReady()
         }
-        // TODO: Check is ready
         return self
     }
-    
+
     public var moduleInput: ARCHModuleInput? {
         return output as? ARCHModuleInput
     }
