@@ -44,7 +44,6 @@ import UIKit
             var isVisible = false
 
             for substate in substates where view.update(state: substate) {
-                debugLog?("Display state \(type(of: state)) view \(type(of: view))")
                 isVisible = true
                 break
             }
@@ -60,36 +59,40 @@ import UIKit
         return Mirror(reflecting: state).children.map { $0.value }
     }
 
+    /**
+     Извлекаем свойства для каждого наследника данного класса
+     */
     private var autorenderViews: [ARCHViewInput] {
-        var mirrors: [Mirror] = []
-        var mirror: Mirror = Mirror(reflecting: self)
+        var properies: [ARCHViewInput] = []
+        let parentType = String(describing: ARCHViewController<State, ViewOutput>.self)
+        var mirror = Mirror(reflecting: self)
 
-        mirrors.append(mirror)
-
-        while let superclassMirror = mirror.superclassMirror,
-            String(describing: mirror.subjectType) != String(describing: UIViewController.self) {
-                mirrors.append(superclassMirror)
-                mirror = superclassMirror
-        }
-
-        let children = mirrors.reduce([], { (result: [Mirror.Child], mirror: Mirror) -> [Mirror.Child] in
-            var result = result
-            result.append(contentsOf: mirror.children)
-            return result
-        })
-
-        return children
-            .compactMap({ item -> ARCHViewInput? in
-                guard let value = item.value as? ARCHViewInput else {
+        repeat {
+            let currentProperties = mirror.children.compactMap { _, value -> ARCHViewInput? in
+                guard let viewInput = value as? ARCHViewInput else {
+                    debugLog?("Not supported \(type(of: value))")
                     return nil
                 }
 
-                if autorenderIgnoreViews.contains(where: { $0 === value }) {
+                if autorenderIgnoreViews.contains(where: { $0 === viewInput }) {
+                    debugLog?("Ignored property \(type(of: value))")
                     return nil
                 } else {
-                    return value
+                    debugLog?("Add property \(type(of: value))")
+                    return viewInput
                 }
-            })
+            }
+
+            properies.append(contentsOf: currentProperties)
+
+            if let superClassMirror = mirror.superclassMirror {
+                mirror = superClassMirror
+            } else {
+                break
+            }
+        } while String(describing: mirror.subjectType) != parentType
+
+        return properies
     }
 
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
