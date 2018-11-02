@@ -40,8 +40,6 @@ open class ARCHIndicationHelper<T: ARCHIndicationState>: ARCHViewInput {
             return false
         }
 
-        // TODO: Добавить аниматор
-
         currentView?.removeFrom(container: container.contextView)
 
         guard let provider = providerBy(type: state.type) else {
@@ -62,7 +60,6 @@ open class ARCHIndicationHelper<T: ARCHIndicationState>: ARCHViewInput {
 
     open func set(visible: Bool) {
         if !visible, let container = container {
-            // TODO: Анимация
             currentView?.removeFrom(container: container.contextView)
         }
     }

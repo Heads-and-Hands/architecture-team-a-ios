@@ -11,7 +11,7 @@ import HHIndication
 import HHModule
 import Skeleton
 
-public class ARCHSkeletonViewProvider: UIView, ARCHIndicationViewProvider, ARCHIndicationView, GradientsOwner {
+open class ARCHSkeletonViewProvider: UIView, ARCHIndicationViewProvider, ARCHIndicationView, GradientsOwner {
 
     private let gradientView = GradientContainerView()
     private let maskLayer = CAShapeLayer()
@@ -45,6 +45,16 @@ public class ARCHSkeletonViewProvider: UIView, ARCHIndicationViewProvider, ARCHI
         return true
     }
 
+    // MARK: - ARCHIndicationView
+
+    open func showIn(container: UIView, layoutGuide: UILayoutGuide, animated: Bool) {
+        fatalError("Need implementation")
+    }
+
+    open func removeFrom(container: UIView) {
+        fatalError("Need implementation")
+    }
+
     // MARK: - GradientsOwner
 
     public var gradientLayers: [CAGradientLayer] {
@@ -53,26 +63,26 @@ public class ARCHSkeletonViewProvider: UIView, ARCHIndicationViewProvider, ARCHI
 
     // MARK: - Override
 
-    public override func willMove(toSuperview newSuperview: UIView?) {
+    open override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
 
         addSubview(gradientView)
     }
 
-    public override func didMoveToSuperview() {
+    open override func didMoveToSuperview() {
         super.didMoveToSuperview()
 
         slide(to: .right)
     }
 
-    public override func removeFromSuperview() {
+    open override func removeFromSuperview() {
         super.removeFromSuperview()
 
         stopSliding()
         views.forEach({ $0.set(isEnableSkeleton: false) })
     }
 
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
 
         if superview == nil {
