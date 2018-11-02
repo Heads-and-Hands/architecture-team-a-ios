@@ -17,7 +17,7 @@ import HHNetwork
 class AppDelegate: UIResponder, UIApplicationDelegate {
     typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
 
-    var window: UIWindow?
+    var window: UIWindow? = CustomWindow()
     var authBufferedController: UIViewController?
 
     func application(
@@ -25,18 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: LaunchOptions?
         ) -> Bool {
 
-        let window = ARCHWindow()
-        self.window = window
-
-//        window.rootViewController = SkeletonTestViewController()
-//        window.makeKeyAndVisible()
         launchOn(window: window)
 
         return true
     }
 
-    private func launchOn(window: ARCHWindow) {
-        ModulesUserStory.main.displayOn(window: window, animated: false)
+    private func launchOn(window: UIWindow?) {
+        MainStory.title.displayOn(window: window, animated: false)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -84,3 +79,59 @@ extension AppDelegate: ARCHUserStorageDelegate {
     }
 }
 #endif
+
+class CustomWindow: UIWindow {
+
+    static var counter: Int = 0
+
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+
+        if motion == UIEvent.EventSubtype.motionShake {
+
+            var topViewController = rootViewController
+
+            if let navigationController = topViewController?.navigationController {
+                topViewController = navigationController
+            }
+
+            var viewController = topViewController
+
+            while let controller = viewController {
+                topViewController = viewController
+                viewController = topController(for: controller)
+            }
+
+            guard let router = topViewController as? ARCHRouter else {
+                return
+            }
+
+            CustomWindow.counter += 1
+
+            switch CustomWindow.counter {
+            case 1:
+                MainStory.catalog.present(from: router, animated: true)
+            case 2:
+                MainStory.catalog.configure(moduleIO: { moduleInput -> MainCatalogModuleOutput? in
+                    var input = moduleInput
+                    input.value = 2
+                    return nil
+                }).transit(from: router, options: [ARCHRouterPresentOptions()], animated: true)
+            default:
+                AuthStory.code.present(from: router, animated: true)
+            }
+
+            if CustomWindow.counter > 3 {
+                MainStory.catalog.drop(where: {  return $0.value == 2  })
+            }
+        }
+    }
+
+    private func topController(for viewController: UIViewController) -> UIViewController? {
+
+        if let nc = viewController as? UINavigationController {
+            return nc.topViewController
+        } else {
+            return viewController.presentedViewController
+        }
+    }
+}

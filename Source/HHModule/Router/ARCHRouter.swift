@@ -8,13 +8,18 @@
 
 import Foundation
 
+public typealias ARCHTransition = (from: AnyObject?, to: AnyObject)
+
 public protocol ARCHRouterOptions {
-    typealias Transition = (from: AnyObject?, to: AnyObject)
-    func proccess(transition: Transition, animated: Bool) -> Transition
+    func proccess(transition: ARCHTransition, animated: Bool) -> ARCHTransition
 }
 
 public protocol ARCHRouter: class {
     func transit(from: ARCHRouter?, options: [ARCHRouterOptions], animated: Bool)
+
+    var moduleID: String { get }
+
+    var moduleInput: Any? { get }
 }
 
 public extension ARCHRouter {

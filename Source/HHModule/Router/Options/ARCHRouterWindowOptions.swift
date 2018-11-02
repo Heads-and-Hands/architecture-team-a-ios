@@ -12,7 +12,7 @@ public class ARCHRouterWindowOptions: ARCHRouterOptions {
 
     public init() {}
 
-    public func proccess(transition: Transition, animated: Bool) -> Transition {
+    public func proccess(transition: ARCHTransition, animated: Bool) -> ARCHTransition {
         if let from = transition.from as? UIWindow, let to = transition.to as? UIViewController {
 
             // TODO: Добавить поддержку анимации

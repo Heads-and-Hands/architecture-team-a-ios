@@ -42,14 +42,14 @@ public extension ARCHViewInput {
 }
 
 public protocol ARCHViewRenderable: ARCHViewInput {
-    associatedtype State: Any
-    func render(state: State)
+    associatedtype ViewState: Any
+    func render(state: ViewState)
 }
 
-public extension ARCHViewRenderable where State: Any {
+public extension ARCHViewRenderable where ViewState: Any {
 
     func update(state: Any) -> Bool {
-        if let state = state as? State {
+        if let state = state as? ViewState {
             render(state: state)
             return true
         } else {

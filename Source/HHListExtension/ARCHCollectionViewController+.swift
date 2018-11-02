@@ -11,7 +11,7 @@ import HHList
 
 extension ARCHCollectionViewController: ARCHViewRenderable {
 
-    public typealias State = [D]
+    public typealias ViewState = [D]
 
     // MARK: - ARCHViewInput
 
@@ -24,7 +24,7 @@ extension ARCHCollectionViewController: ARCHViewRenderable {
 
     // MARK: - ARCHViewRenderable
 
-    public func render(state: State) {
+    public func render(state: ViewState) {
         data = state
     }
 }

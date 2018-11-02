@@ -8,6 +8,13 @@
 
 import UIKit
 
-public class ARCHWindow: UIWindow, ARCHRouter {
+extension UIWindow: ARCHRouter {
 
+    public var moduleID: String {
+        return String()
+    }
+
+    public var moduleInput: Any? {
+        return self
+    }
 }

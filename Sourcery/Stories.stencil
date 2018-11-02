@@ -1,0 +1,7 @@
+import HHModule
+
+internal struct GenStories: ARCHModuleID {
+{% for type in types.based.ARCHModuleConfigurator %}
+    internal static var {{ type.localName }} = {{ type.name }}.self
+{% endfor %}
+}

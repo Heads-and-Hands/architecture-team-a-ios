@@ -20,7 +20,7 @@ struct ChildViewState {
 
 class ChildView: UIView, ARCHViewRenderable {
 
-    typealias State = ChildViewState
+    typealias ViewState = ChildViewState
 
     weak var output: ChildViewProtocol?
 
