@@ -87,6 +87,8 @@ open class ARCHPagingManager: NSObject, ARCHPagingManagerInput {
 
     private func addQueueRequest(offset: Int) {
         debugLog?("[ARCHPagingManager] addQueueRequest")
+        isLoading = true
+
         DispatchQueue.main.async { [weak self] in
             self?.performRequest(offset: offset)
         }
@@ -95,7 +97,6 @@ open class ARCHPagingManager: NSObject, ARCHPagingManagerInput {
     private func performRequest(offset: Int, completion: (() -> Void)? = nil) {
         debugLog?("[ARCHPagingManager] performRequest by offset \(offset)")
 
-        isLoading = true
         currentRequest?.cancel()
         currentRequest = output?.performRequest(offset: offset, pageSize: pageSize, completion: { [weak self] count, total in
             if let count = count, let total = total {
