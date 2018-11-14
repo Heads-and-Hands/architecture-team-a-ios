@@ -20,6 +20,7 @@ public struct ARCHNetworkError: Swift.Error, Codable {
     public var code: Int
     public var name: String
     public var message: String
+    public var fields: [String: String] = [:]
 
     public init(
         status: Int = 0,
@@ -45,4 +46,9 @@ public struct ARCHNetworkError: Swift.Error, Codable {
     public var errorDescription: String {
         return message
     }
+}
+
+public protocol ARCHNetworkErrorDecodable {
+
+    var error: ARCHNetworkError { get }
 }
