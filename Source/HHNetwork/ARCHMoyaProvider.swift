@@ -27,6 +27,8 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
 
     private var requests: [MoyaRequest] = []
 
+    public var errorStatusDataHandler: ((JSONDecoder, Data) throws -> ARCHNetworkErrorDecodable)?
+
     @discardableResult
     open func sendRequest<Model: Codable>(
         target: T,
@@ -155,6 +157,11 @@ private extension ARCHMoyaProvider {
             debugLog?("[ARCHMoyaProvider] will parse moya error .statusCode")
             do {
                 let decoder = jsonDecoder(dateDecodingStrategy: dateDecodingStrategy)
+
+                if let handler = errorStatusDataHandler {
+                    return try handler(decoder, response.data).error
+                }
+
                 let serverError = try decoder.decode(ARCHServerError.self, from: response.data)
                 return ARCHNetworkError(status: response.statusCode,
                                         code: serverError.code,
