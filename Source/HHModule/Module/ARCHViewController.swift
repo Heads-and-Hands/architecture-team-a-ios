@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable open class ARCHViewController<State: ARCHState, ViewOutput: ACRHViewOutput>: UIViewController, ARCHModule, ARCHRouter, ARCHViewRenderable {
+open class ARCHViewController<State: ARCHState, ViewOutput: ACRHViewOutput>: UIViewController, ARCHModule, ARCHRouter, ARCHViewRenderable {
     public typealias ViewState = State
 
     public var output: ViewOutput?
@@ -120,4 +120,6 @@ import UIKit
     public var moduleInput: ARCHModuleInput? {
         return output as? ARCHModuleInput
     }
+
+    public var moduleID: String?
 }
