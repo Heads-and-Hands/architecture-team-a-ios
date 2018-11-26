@@ -18,6 +18,7 @@ public protocol ARCHModuleOutput: class {
 public protocol ARCHModule: ARCHSubModule {
     var router: ARCHRouter { get }
     var moduleInput: ARCHModuleInput? { get }
+    var moduleID: String? { get set }
 }
 
 public protocol ARCHSubModule {
