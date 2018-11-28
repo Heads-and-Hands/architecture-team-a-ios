@@ -74,13 +74,7 @@ open class ARCHPagingManager: NSObject, ARCHPagingManagerInput {
 
     @objc
     public func performRefreshData() {
-        // TODO: исправить рефреш запрос
-        debugLog?("[ARCHPagingManager] performRefreshData")
-        guard !isLoading && !reachedEnd else {
-            return
-        }
-
-        addQueueRequest(offset: offset)
+        addQueueRequest(offset: 0)
     }
 
     // MARK: Private

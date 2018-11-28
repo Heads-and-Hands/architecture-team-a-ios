@@ -56,11 +56,12 @@ open class ARCHCollectionViewController<D: Hashable, VM: ARCHCellViewModel & ARC
     }
 
     convenience public init(
-        collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()),
+        mapBlock: ((D) -> VM?)? = nil
         ) {
 
         let dataSource = ARCHCollectionViewDataSource(view: collectionView)
-        let dataAdapter = ARCHEmptyListDataAdapter<D, VM>()
+        let dataAdapter = ARCHEmptyListDataAdapter<D, VM>(map: mapBlock)
         self.init(dataSource: dataSource, dataAdapter: dataAdapter)
     }
 

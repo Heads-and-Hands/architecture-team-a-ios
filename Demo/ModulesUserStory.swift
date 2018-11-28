@@ -23,9 +23,6 @@ enum ModulesUserStory: ARCHModuleID {
             return EmptyModuleConfigurator(moduleIO: moduleIO)
 #else
         case .main:
-            fatalError()
-#endif
-/*
 #if HHList
             return ListConfigurator(moduleIO: nil)
 #elseif HHSectionList
@@ -43,7 +40,7 @@ enum ModulesUserStory: ARCHModuleID {
 #elseif HHLens
             return EmptyModuleConfigurator(moduleIO: nil)
 #endif
-*/
+#endif
         }
     }
 }

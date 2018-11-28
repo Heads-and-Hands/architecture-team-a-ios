@@ -9,6 +9,7 @@
 import HHModule
 
 final class ListConfigurator: ARCHModuleConfigurator {
+
     typealias ModuleIO = (ListModuleInput) -> ListModuleOutput?
 
     let moduleIO: ModuleIO?
@@ -17,7 +18,7 @@ final class ListConfigurator: ARCHModuleConfigurator {
         self.moduleIO = moduleIO
     }
 
-    var router: ARCHRouter {
+    var module: ARCHModule {
         let controller = ListViewController()
 
         let eventHandler = ListEventHandler()
