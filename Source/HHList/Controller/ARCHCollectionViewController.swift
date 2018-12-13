@@ -87,4 +87,8 @@ open class ARCHCollectionViewController<D: Hashable, VM: ARCHCellViewModel & ARC
         dataAdapter.data = data
         collectionView.reloadData()
     }
+
+    public func viewModelAt(indexPath: IndexPath) -> VM? {
+        return dataAdapter.cellViewModelAt(indexPath: indexPath) as? VM
+    }
 }

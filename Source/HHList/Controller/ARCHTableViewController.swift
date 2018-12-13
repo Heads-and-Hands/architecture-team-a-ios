@@ -78,4 +78,8 @@ open class ARCHTableViewController<D: Hashable, VM: ARCHCellViewModel & ARCHMode
         dataAdapter.data = data
         tableView.reloadData()
     }
+
+    public func viewModelAt(indexPath: IndexPath) -> VM? {
+        return dataAdapter.cellViewModelAt(indexPath: indexPath) as? VM
+    }
 }

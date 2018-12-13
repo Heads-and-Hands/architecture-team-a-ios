@@ -27,6 +27,23 @@ open class ARCHViewController<State: ARCHState, ViewOutput: ACRHViewOutput>: UIV
         }
     }()
 
+    open func insert(to module: ARCHRouter, container: UIView, animated: Bool) {
+        guard let vc = module as? UIViewController else {
+            return
+        }
+        vc.addChild(self)
+
+        container.addSubview(view)
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: container.topAnchor),
+            view.leftAnchor.constraint(equalTo: container.leftAnchor),
+            view.rightAnchor.constraint(equalTo: container.rightAnchor),
+            view.bottomAnchor.constraint(equalTo: container.bottomAnchor)
+        ])
+
+        didMove(toParent: self)
+    }
+
     open func render(state: ViewState) {
         debugLog?("begin render state")
 

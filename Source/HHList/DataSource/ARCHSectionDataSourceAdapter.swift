@@ -11,28 +11,31 @@ import Foundation
 public protocol ARCHSectionDataSourceAdapter: ARCHListDataSourceAdapter {
     var sectionsCount: Int { get }
 
-    func sectionViewModelAt(index: Int) -> ARCHSectionViewModel
+    func sectionViewModelAt(index: Int) -> ARCHSectionViewModel?
 }
 
 public extension ARCHSectionDataSourceAdapter {
 
     func numberOfRowsIn(section: Int) -> Int {
         let sectionViewModel = sectionViewModelAt(index: section)
-        return sectionViewModel.numberOfItems
+        return sectionViewModel?.numberOfItems ?? 0
     }
 
     func cellViewModelAt(indexPath: IndexPath) -> ARCHCellViewModel {
-        let sectionViewModel = sectionViewModelAt(index: indexPath.section)
+        guard let sectionViewModel = sectionViewModelAt(index: indexPath.section) else {
+            fatalError("Not found sectionVM indexPath \(indexPath)")
+        }
+
         return sectionViewModel.cellViewModel(at: indexPath.item)
     }
 
     func headerViewModelAt(indexPath: IndexPath) -> ARCHHeaderFooterViewModel? {
         let sectionViewModel = sectionViewModelAt(index: indexPath.section)
-        return sectionViewModel.headerViewModel
+        return sectionViewModel?.headerViewModel
     }
 
     func footerViewModelAt(indexPath: IndexPath) -> ARCHHeaderFooterViewModel? {
         let sectionViewModel = sectionViewModelAt(index: indexPath.section)
-        return sectionViewModel.footerViewModel
+        return sectionViewModel?.footerViewModel
     }
 }

@@ -23,13 +23,17 @@ public class ARCHSectionListDataAdapter<T: Any, VM: ARCHSectionViewModel>: ARCHS
         return data.count
     }
 
-    public func sectionViewModelAt(index: Int) -> ARCHSectionViewModel {
-        let data = self.data[index]
+    public func sectionViewModelAt(index: Int) -> ARCHSectionViewModel? {
+        guard index < data.count else {
+            return nil
+        }
 
-        if let viewModel = map(data) {
+        let item = data[index]
+
+        if let viewModel = map(item) {
             return viewModel
         } else {
-            fatalError("Not found section viewModel. Data: \(data.self); VMType: \(VM.self)")
+            fatalError("Not found section viewModel. Data: \(item.self); VMType: \(VM.self)")
         }
     }
 }
