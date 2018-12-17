@@ -96,6 +96,8 @@ open class ARCHListDataSource<View: ARCHListView>: NSObject {
             fatalError("Not found header view id \(id) indexPath \(indexPath)")
         }
 
+        print("[HHList] \(id) >> extract header \(type(of: view))")
+
         delegate?.configure(header: view, viewModel: headerViewModel, indexPath: indexPath)
 
         if var headerView = view as? ARCHHeaderFooterViewAbstract {
@@ -115,6 +117,8 @@ open class ARCHListDataSource<View: ARCHListView>: NSObject {
         guard let view = view.reusableFooterWith(id: id, indexPath: indexPath) else {
             fatalError("Not found header view id \(id) indexPath \(indexPath)")
         }
+
+        print("[HHList] \(id) >> extract footer \(type(of: view))")
 
         delegate?.configure(footer: view, viewModel: footerViewModel, indexPath: indexPath)
 
@@ -158,17 +162,5 @@ open class ARCHListDataSource<View: ARCHListView>: NSObject {
         }
 
         return super.forwardingTarget(for: aSelector)
-    }
-}
-
-private extension NSPointerArray {
-
-    func addObject(_ object: AnyObject?) {
-        guard let object = object else {
-            return
-        }
-
-        let pointer = Unmanaged.passUnretained(object).toOpaque()
-        addPointer(pointer)
     }
 }

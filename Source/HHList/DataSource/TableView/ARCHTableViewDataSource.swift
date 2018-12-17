@@ -22,13 +22,15 @@ open class ARCHTableViewDataSource: ARCHListDataSource<UITableView>, UITableView
         return reusableCell(indexPath: indexPath)
     }
 
-    // TODO: TAbleView Delegate
+    // TODO: TableView Delegate
 
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        print("[HHList] reusableHeader section \(section)")
         return reusableHeader(indexPath: IndexPath(row: 0, section: section))
     }
 
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        print("[HHList] footer section \(section)")
         return reusableFooter(indexPath: IndexPath(row: 0, section: section))
     }
 }
@@ -71,10 +73,12 @@ extension UITableView: ARCHListView {
     }
 
     public func reusableHeaderWith(id: String, indexPath: IndexPath) -> HeaderFooterType? {
+        print("[HHList] reusableHeader id: \(id), indexPath: \(indexPath)")
         return dequeueReusableHeaderFooterView(withIdentifier: id)
     }
 
     public func reusableFooterWith(id: String, indexPath: IndexPath) -> HeaderFooterType? {
+        print("[HHList] reusableFooterWith id: \(id), indexPath: \(indexPath)")
         return dequeueReusableHeaderFooterView(withIdentifier: id)
     }
 

@@ -30,6 +30,8 @@ public class ARCHSectionListDataAdapter<T: Any, VM: ARCHSectionViewModel>: ARCHS
 
         let item = data[index]
 
+        print("[HHList] make scetion viewModel at index \(index)")
+
         if let viewModel = map(item) {
             return viewModel
         } else {
