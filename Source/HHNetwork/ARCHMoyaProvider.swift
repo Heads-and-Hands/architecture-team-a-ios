@@ -139,6 +139,7 @@ private extension ARCHMoyaProvider {
     }
 
     func map(error: Swift.Error, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy) -> ARCHNetworkError {
+        debugLog?("[ARCHMoyaProvider] map error \(error)")
         switch error {
         case let moyaError as MoyaError:
             return mapMoya(error: moyaError, dateDecodingStrategy: dateDecodingStrategy)
