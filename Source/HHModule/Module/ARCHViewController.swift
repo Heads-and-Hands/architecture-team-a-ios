@@ -33,6 +33,7 @@ open class ARCHViewController<State: ARCHState, ViewOutput: ACRHViewOutput>: UIV
         }
         vc.addChild(self)
 
+        view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: container.topAnchor),
