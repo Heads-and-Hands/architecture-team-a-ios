@@ -28,6 +28,7 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
 
     private var ignoreStateChanges: Bool = false
     private var renderDisable: Bool = false
+    private var syncRender: Bool = false
 
     private var redrawQueue = DispatchQueue(label: "RedrawQueue", qos: .userInteractive)
 
@@ -67,6 +68,14 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
         viewSetNeedsRedraw()
     }
 
+    open func syncUpdateState(_ block: () -> Void) {
+        debugLog?("sync begin")
+        syncRender = true
+        updateState(block)
+        syncRender = false
+        debugLog?("sync commit")
+    }
+
     open func updateState(_ block: () -> Void) {
         beginStateChanges()
         block()
@@ -95,8 +104,14 @@ open class ARCHEventHandler<State: ARCHState>: ACRHViewOutput {
         debugLog?("viewSetNeedsRedraw")
 
         let state = self.state
-        redrawQueue.async { [weak self] in
-            self?.viewRedraw(state: state)
+
+        if syncRender {
+            debugLog?("[SYNC] viewInput >> update(state:)")
+            viewInput?.update(state: state)
+        } else {
+            redrawQueue.async { [weak self] in
+                self?.viewRedraw(state: state)
+            }
         }
     }
 
