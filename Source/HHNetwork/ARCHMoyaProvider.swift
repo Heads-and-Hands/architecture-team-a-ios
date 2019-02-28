@@ -33,7 +33,6 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
     open func sendRequest<Model: Codable>(
         target: T,
         for model: Model.Type,
-        dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .iso8601,
         progressBlock: Moya.ProgressBlock? = nil,
         completion: @escaping (Model) -> Void,
         failure: @escaping (ARCHNetworkError) -> Void
@@ -44,6 +43,8 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
                 return
             }
 
+            let dateDecodingStrategy = self.dateDecodingStrategy
+            
             switch result {
             case let .success(response):
                 do {
@@ -70,6 +71,10 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
         return send(request: MoyaRequest(target: target,
                                          progress: progressBlock,
                                          completion: completion))
+    }
+
+    open var dateDecodingStrategy: JSONDecoder.DateDecodingStrategy {
+        return .iso8601
     }
 
     private func send(request: MoyaRequest) -> Cancellable {
