@@ -220,20 +220,15 @@ fi
 
 title "FASTLANE CONFIGURATION"
 
-#fastlane produce # --skip_itc
-
+bundle exec fastlane produce # --skip_itc
 bundle exec fastlane match development # --readonly
-
 bundle exec fastlane match appstore # --readonly
 
 title "GIT CONFIGURATION"
-
 message "Initializing 'git' repository..."
 
 git init
-
 git add .
-
 git commit -S -m "Initial commit"
 
 message "Initializing 'git-flow'..."
@@ -254,7 +249,6 @@ cd "${NEW_APP_NAME}.xcodeproj"
 python ../../profiles.py -t "${DEVELOPMENT_TEAM}" -d "${DEBUG_PROFILE_SPECIFIER}" -r "${RELEASE_PROFILE_SPECIFIER}" -i "${CODE_SIGN_IDENTITY}"
 
 cd ..
-
 cd ..
 
 LOG_FILE="${OLD_LOG}"
