@@ -19,8 +19,7 @@ final class NetworkEventHandler: ARCHEventHandler<NetworkState>, NetworkModuleIn
 
         apiProvider?.sendRequest(
             target: .main,
-            for: MainResponse.self,
-            completion: { result in
+            completion: { (result: MainResponse) in
                 print("\(result)")
             },
             failure: { error in

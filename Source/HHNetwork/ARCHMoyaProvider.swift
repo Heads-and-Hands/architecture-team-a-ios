@@ -32,7 +32,6 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
     @discardableResult
     open func sendRequest<Model: Codable>(
         target: T,
-        for modelType: Model.Type,
         additionalStatusCodes statusCodes: [Int] = [],
         parsingBlock: ((Data) -> Model)? = nil,
         progressBlock: Moya.ProgressBlock? = nil,
@@ -57,7 +56,7 @@ open class ARCHMoyaProvider<T: ARCHTargetType>: MoyaProvider<T>, ARCHUserStorage
                         model = parsingBlock(response.data)
                     } else {
                         let decoder = self.jsonDecoder(dateDecodingStrategy: dateDecodingStrategy)
-                        model = try response.map(modelType, using: decoder)
+                        model = try response.map(Model.self, using: decoder)
                     }
                     completion(model)
                     self.debugLog?("[ARCHMoyaProvider] did success send request")
